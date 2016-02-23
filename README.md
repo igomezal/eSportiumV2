@@ -34,7 +34,7 @@ Funcionalidad privada: Podrá realizar apuestas, consultar su saldo de puntos ac
 
 * Iván Gómez Alonso i.gomezal@alumnos.urjc.es [@igomezal](https://github.com/igomezal)
 
-* Sergio Gonzalez Mejias [@sergiownd](https://github.com/sergiownd)
+* Sergio Gonzalez Mejias s.gonzalezmej@alumnos.urjc.es [@sergiownd](https://github.com/sergiownd)
 
 ### Otros:
 
