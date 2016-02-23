@@ -38,4 +38,4 @@ Funcionalidad privada: Podrá realizar apuestas, consultar su saldo de puntos ac
 
 ### Otros:
 
-* Trello: https://trello.com/b/KRu90MLU/esportiumv2
+* Trello: https://trello.com/b/KRu90MLU
