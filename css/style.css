@@ -51,3 +51,10 @@
     text-align: center;
     
 }
+#headerRegistro{
+    text-align: center;
+}
+
+#errortxt{
+    color: red;
+}
