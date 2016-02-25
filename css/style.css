@@ -38,3 +38,16 @@
     border-bottom-left-radius:6px;
     border-bottom-right-radius: 6px;
 }
+
+
+#lolGames>div>div>img{
+    float:left
+}
+
+#lolGames>div>div{
+    margin-top: 10px;
+    height: 200px;
+    width: 310px;
+    text-align: center;
+    
+}
