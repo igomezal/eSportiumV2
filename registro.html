@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+        <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jS.js"></script>
+        <title>Registro</title>
+    </head>
+    <body>
+      <div class="container-fluid">
+       <div id="titulo">
+            <img src="img/logo.png"/> <h1>eSportiumV2</h1>
+        </div>
+        <nav class="navbar navbar-inverse" id="menuSuperior">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">eSportium</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#"><span class="glyphicon glyphicon-record" aria-hidden="true"> Directo</span></a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-hourglass" aria-hidden="true"> Finalizadas </span></a></li>
+                    </ul>
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-default">Buscar</button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" data-toggle="modal" data-target="#login" id="usuarioMenu"><span class="glyphicon glyphicon-user"></span> Acceder</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div id="registro">
+            <div id="headerRegistro"class="container-fluid">
+                <p><h4>Regístrate en eSportiumV2 para apostar en los últimos campeonatos de los mejores juegos en línea multijugador</h4></p>
+                <p>También tendrás acceso a comentar las apuestas y los partidos en directo junto con otros jugadores</p>
+            </div>
+
+            <form>
+             <div class="form-group">
+                <label for="InputUser1">Usuario</label>
+                <input type="text" class="form-control" id="InputUser1" placeholder="Nombre de Usuario">
+              </div>
+              <div class="form-group">
+                <label for="InputEmail1">Correo</label>
+                <input type="email" class="form-control" id="InputEmail1" placeholder="Correo">
+              </div>
+              <div id="divPassword" class="form-group">
+                <label for="InputPassword1">Contraseña</label>
+                <input type="password" class="form-control" id="InputPassword1" placeholder="Contraseña">
+              </div>
+              <div id="divConfirm" class="form-group">
+                <label for="InputPasswordConfirm1">Confirma tu contraseña</label>
+                <input type="password" class="form-control" id="InputPasswordConfirm1" placeholder="Contraseña">
+              </div>
+              <button type="button" class="btn btn-primary" id="btnEnviar">Enviar</button>
+            </form>
+            
+        </div>
+    </body>
+</html>
