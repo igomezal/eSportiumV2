@@ -11,7 +11,7 @@
         <title>Registro</title>
     </head>
     <body>
-      <div class="container-fluid">
+      <div class="container">
        <div id="titulo">
             <img src="img/logo.png"/> <h1>eSportiumV2</h1>
         </div>
@@ -73,5 +73,36 @@
             </form>
             
         </div>
+        <!--Modal de Log In-->
+        <div class="modal fade" id="login" role="dialog" aria-labelledby="etiquetaModal">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <div id="tituloAcceso">
+                            <img class="logoLogin" src="img/logo.png"/>
+                            <h3 id="etiquetaModal">Acceso</h3>
+                        </div>
+                        <form name="formularioLogIn" class="form-group">
+                            <input type="text" name="NombreUsuario" autocomplete="on" placeholder="Usuario" class="form-control">
+                            <br/>
+                            <input type="password" name="Password" autocomplete="on" placeholder="Contraseña" class="form-control">
+                            <br/>
+                            <button class="btn btn-primary">¡Acceder!</button>
+                            <div class="checkbox checkDerecho">
+                                <label>
+                                    <input type="checkbox" value="">Recordarme
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer footer-login">
+                        No eres un miembro aún, registrate <a href="registro.html">aqui.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+<!--Fin modal login-->
     </body>
 </html>
