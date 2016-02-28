@@ -52,25 +52,36 @@
                 <p>También tendrás acceso a comentar las apuestas y los partidos en directo junto con otros jugadores</p>
             </div>
 
-            <form>
-             <div class="form-group">
-                <label for="InputUser1">Usuario</label>
-                <input type="text" class="form-control" id="InputUser1" placeholder="Nombre de Usuario">
-              </div>
-              <div class="form-group">
-                <label for="InputEmail1">Correo</label>
-                <input type="email" class="form-control" id="InputEmail1" placeholder="Correo">
-              </div>
-              <div id="divPassword" class="form-group">
-                <label for="InputPassword1">Contraseña</label>
-                <input type="password" class="form-control" id="InputPassword1" placeholder="Contraseña">
-              </div>
-              <div id="divConfirm" class="form-group">
-                <label for="InputPasswordConfirm1">Confirma tu contraseña</label>
-                <input type="password" class="form-control" id="InputPasswordConfirm1" placeholder="Contraseña">
-              </div>
-              <button type="button" class="btn btn-primary" id="btnEnviar" disabled>Enviar</button>
-            </form>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <form>
+                         <div class="form-group">
+                            <label for="InputUser1">Usuario</label>
+                            <input type="text" class="form-control" id="InputUser1" placeholder="Nombre de Usuario">
+                          </div>
+                          <div class="form-group">
+                            <label for="InputEmail1">Correo</label>
+                            <input type="email" class="form-control" id="InputEmail1" placeholder="Correo">
+                          </div>
+                          <div id="divPassword" class="form-group">
+                            <label for="InputPassword1">Contraseña</label>
+                            <input type="password" class="form-control" id="InputPassword1" placeholder="Contraseña">
+                          </div>
+                          <div id="divConfirm" class="form-group">
+                            <label for="InputPasswordConfirm1">Confirma tu contraseña</label>
+                            <input type="password" class="form-control" id="InputPasswordConfirm1" placeholder="Contraseña">
+                          </div>
+                          <button type="button" class="btn btn-primary" id="btnEnviar" disabled>Enviar</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6 hidden-sm hidden-xs">
+                        <div class="container-fluid" id="headerRegistro">
+                            <img id="imgRegistrar" class="img-rounded" src="http://images.eldiario.es/juegoreviews/eSports_EDIIMA20150722_0726_5.jpg">
+                        </div>
+                    </div>
+                </div>
+          </div>
             
         </div>
         <!--Modal de Log In-->
