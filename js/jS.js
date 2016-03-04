@@ -19,9 +19,9 @@ var checkPassword = function (){
     if (pass1 === pass2){
         $("#divConfirm #errortxt").remove();
         $("#divConfirm").removeClass("has-error");
-        $("#btnEnviar").prop("disabled", false);
         if(pass1.length > 6){
             //Cargar la página con el usuario registrado
+            $("#btnEnviar").prop("disabled", false);
         }
     }else{
         $("#divConfirm").addClass("has-error");
