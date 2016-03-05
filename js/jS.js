@@ -1,6 +1,11 @@
 $(document).ready( function (){
     $("#InputPassword1").keyup(checkPassword);
     $("#InputPasswordConfirm1").keyup(checkPassword);
+    
+    $("#enviar").click(function(){
+        var mensaje = $('#chat-input').val();
+        $('#chat').append('<p><span>usuario:</span> '+mensaje+'</p>');
+    });
 });
 
 var checkPassword = function (){
