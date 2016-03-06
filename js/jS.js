@@ -6,6 +6,7 @@ $(document).ready( function (){
         var mensaje = $('#chat-input').val();
         $('#chat').append('<p><span>usuario:</span> '+mensaje+'</p>');
     });
+    $("input[name='spin-apuesta']").TouchSpin();
 });
 
 var checkPassword = function (){

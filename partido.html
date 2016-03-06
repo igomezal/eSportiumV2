@@ -3,11 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap.css" rel="stylesheet"/>
+        <link href="css/jquery.bootstrap-touchspin.css" rel="stylesheet"/>
         <link rel="stylesheet" href="css/style.css" type="text/css" />
-        <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/jS.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/jS.js"></script>
+        <script type="text/javascript" src="js/jquery.bootstrap-touchspin.js"></script>
         <title>eSportiumV2 - FNATIC VS Origen</title>
     </head>
     <body>
@@ -51,9 +53,9 @@
             <div class="container-fluid">
                 <div class="row panel panel-default" id="apuesta">
                    <div class="panel-body">
-                       <div class="col-md-3 col-sm-4"><button class="btn btn-primary">Apostar</button> Fnatic <div class="btn btn-info">70%</div></div>
+                       <div class="col-md-3 col-sm-4"><button class="btn btn-primary" data-toggle="modal" data-target="#apostar">Apostar</button> Fnatic <div class="btn btn-info">70%</div></div>
                     <div class="col-md-2 col-sm-4 col-md-offset-2">Bo5</div>
-                       <div class="col-md-3 col-sm-4 col-md-offset-2 form-inline"><button class="btn btn-primary">Apostar</button> Origen <button class="btn btn-info">30%</button></div>
+                       <div class="col-md-3 col-sm-4 col-md-offset-2 form-inline"><button class="btn btn-primary" data-toggle="modal" data-target="#apostar">Apostar</button> Origen <button class="btn btn-info">30%</button></div>
                     </div>
                 </div>
                 <br>
@@ -159,6 +161,21 @@
             </div>
             </div>
             
+            <!--Modal de apuesta-->
+            <div class="modal fade" id="apostar" role="dialog" aria-labelledby="etiquetaModal">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <h3 class="etiquetaModal">Apostar por equipo</h3>
+                            <input id="spin-apuessta" type="text" value="0" name="spin-apuesta">
+                            <br/>
+                            <button class="btn btn-primary">Realizar Apuesta</button>
+                            <button class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Fin de modal de apuesta-->
             
             <!--Modal de Log In-->
             <div class="modal fade" id="login" role="dialog" aria-labelledby="etiquetaModal">
