@@ -95,3 +95,35 @@
   text-align: left;
   vertical-align: middle;
 }
+
+
+#csGames>div>div>img{
+    float:left
+}
+
+#csGames>div>div{
+    margin-top: 10px;
+    height: 200px;
+    width: 310px;
+    text-align: center;
+}
+#codGames>div>div>img{
+    float:left
+}
+
+#codGames>div>div{
+    margin-top: 10px;
+    height: 200px;
+    width: 310px;
+    text-align: center;
+} 
+
+#partido1lol>a:hover{
+    text-decoration: none;
+}
+#partido2lol>a:hover{
+    text-decoration: none;
+}
+#partido3lol>a:hover{
+    text-decoration: none;
+}
