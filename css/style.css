@@ -1,129 +1,174 @@
-#titulo{
+#titulo {
     text-align: center;
     font-family: Impact, Charcoal, sans-serif;
-    text-shadow:  2px 2px 8px #6c5e5e;
-    height:  150px;
+    text-shadow: 2px 2px 8px #6c5e5e;
+    height: 150px;
     border-top: 0px;
 }
-#titulo h1{
-    display:inline-block
+
+#titulo h1 {
+    display: inline-block
 }
+
 #h2kLogo {
     float: left;
 }
-#uolLogo{
+
+#uolLogo {
     float: right;
 }
 
-.logoLogin{
+.logoLogin {
     height: 40px;
     width: 40px;
-
 }
 
-.checkDerecho{
-    float:right;
+.checkDerecho {
+    float: right;
 }
 
-#etiquetaModal{
+#etiquetaModal {
     display: inline;
 }
 
-#tituloAcceso{
+#tituloAcceso {
     margin-bottom: 10px;
 }
 
-#apuesta{
+#apuesta {
     text-align: center;
 }
 
-#apuesta div{
-    
-}
+#apuesta div {}
 
-#chat{
+#chat {
     height: 350px;
 }
-#chat span{
-    color:orangered;
+
+#chat span {
+    color: orangered;
 }
 
-.footer-login{
+.footer-login {
     background-color: #f5f5f5;
-    border-bottom-left-radius:6px;
+    border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
 }
 
-
-#lolGames>div>div>img{
-    float:left
+#lolGames>div>div>img {
+    float: left
 }
 
-#lolGames>div>div{
+#lolGames>div>div {
     margin-top: 10px;
     height: 200px;
     width: 310px;
     text-align: center;
-    
 }
-#headerRegistro{
+
+#headerRegistro {
     text-align: center;
 }
 
-#errortxt{
+#errortxt {
     color: #a94442;
 }
-#imgRegistrar{
+
+#imgRegistrar {
     width: 500px;
     height: 321px;
 }
+
 .modal {
-  text-align: center;
+    text-align: center;
 }
 
-@media screen and (min-width: 768px) { 
-  .modal:before {
-    display: inline-block;
-    vertical-align: middle;
-    content: " ";
-    height: 100%;
-  }
+@media screen and (min-width: 768px) {
+    .modal:before {
+        display: inline-block;
+        vertical-align: middle;
+        content: " ";
+        height: 100%;
+    }
 }
 
 .modal-dialog {
-  display: inline-block;
-  text-align: left;
-  vertical-align: middle;
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
 }
 
-
-#csGames>div>div>img{
-    float:left
+#csGames>div>div>img {
+    float: left
 }
 
-#csGames>div>div{
+#csGames>div>div {
     margin-top: 10px;
     height: 200px;
     width: 310px;
     text-align: center;
 }
-#codGames>div>div>img{
-    float:left
+
+#codGames>div>div>img {
+    float: left
 }
 
-#codGames>div>div{
+#codGames>div>div {
     margin-top: 10px;
     height: 200px;
     width: 310px;
     text-align: center;
-} 
+}
 
-#partido1lol>a:hover{
+#partido1lol>a:hover {
     text-decoration: none;
 }
-#partido2lol>a:hover{
+
+#partido2lol>a:hover {
     text-decoration: none;
 }
-#partido3lol>a:hover{
+
+#partido3lol>a:hover {
     text-decoration: none;
+}
+
+.section-title h2.big-title {
+    transform: translateY(0px);
+}
+
+.muestra {
+    display: inline-block;
+    border-radius: 50px;
+    font-family: "Montserrat", sans-serif;
+    padding: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: default;
+}
+
+.logo {
+    display: inline-block;
+    border-radius: 50px;
+    font-family: "Montserrat", sans-serif;
+    padding: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.no-pointer {
+    cursor: default;
+}
+
+.container-top {
+    padding-top: 30px;
+}
+
+.btn-sp {
+    padding: 15px 12px;
+}
+
+.footer-margin {
+    margin-top: 25px !important;
+    margin-bottom: 15px !important;
 }

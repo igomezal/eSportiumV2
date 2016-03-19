@@ -1,126 +1,171 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/bootstrap.css" rel="stylesheet"/>
-        <link href="css/jquery.bootstrap-touchspin.css" rel="stylesheet"/>
-        <link rel="stylesheet" href="css/style.css" type="text/css" />
-        <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/jS.js"></script>
-        <script type="text/javascript" src="js/jquery.bootstrap-touchspin.js"></script>
-        <title>eSportiumV2 - FNATIC VS Origen</title>
-    </head>
-    <body>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Estilos-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/jquery.bootstrap-touchspin.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/ionicons.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" />
+    <link rel="stylesheet" href="css/ten.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+    <!--Scripts-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jS.js"></script>
+    <script type="text/javascript" src="js/jquery.bootstrap-touchspin.js"></script>
+    <script type="text/javascript" src="js/easings.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <title>eSportiumV2 - FNATIC VS Origen</title>
+</head>
+
+<body>
+    <header class="main-header">
         <div class="container">
-            <div id="titulo">
-                <img src="img/logo.png"/> <h1>eSportiumV2</h1>
+            <a href="index.html"><img src="img/logo.png" alt="Logo eSportiumV2"><span class="logo">eSportiumV2</span></a>
+            <div class="menu">
+                <div class="montserrat-text uppercase menu-text">Menu</div>
+                <div class="menu-icon">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
             </div>
-            <nav class="navbar navbar-inverse" id="menuSuperior">
-                <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#">eSportium</a>
-                    </div>
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav">
-                            <li><a href="#"><span class="glyphicon glyphicon-record" aria-hidden="true"> Directo</span></a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-hourglass" aria-hidden="true"> Finalizadas </span></a></li>
+
+            <div class="menu-content">
+                <a href="#" class="close-button"><i class="icon ion-ios-close-empty"></i></a>
+                <div class="menu-info">
+                    <h4 class="white-text montserrat-text">eSportiumV2 - Hagan sus apuestas</h4>
+                    <footer>&copy; eSportiumV2 2016. Todos los derechos reservados.</footer>
+                </div>
+                <div class="menu-wrapper">
+                    <nav>
+                        <ul class="first-level_menu">
+                            <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio</a></li>
+                            <li><a href="#" class="current"><span class="glyphicon glyphicon-record" aria-hidden="true"></span> Directo</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-hourglass" aria-hidden="true"></span> Finalizados</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#login" id="usuarioMenu"><span class="glyphicon glyphicon-user"></span> Acceder</a></li>
                         </ul>
-                        <form class="navbar-form navbar-left" role="search">
-                            <div class="form-group">
-                                <input type="text" class="form-control">
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container boxed-width">
+        <div class="container-fluid">
+            <div class="panel panel-default" id="apuesta">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#apostar">Apostar</button>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-3 col-sm-offset-1  col-xs-offset-1 muestra">
+                                    Fnatic
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <div class=" btn btn-info no-pointer">70%</div>
+                                </div>
                             </div>
-                            <button type="submit" class="btn btn-default">Buscar</button>
-                        </form>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                <a href="#" data-toggle="modal" data-target="#login" id="usuarioMenu"><span class="glyphicon glyphicon-user"></span> Acceder</a>
-                            </li>
-                        </ul>
+                        </div>
+                        <div class="col-md-2 col-md-offset-2 muestra">Bo5</div>
+                        <div class="col-md-3 col-md-offset-2">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#apostar">Apostar</button>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-3 col-xs-offset-1 col-sm-offset-1 muestra">
+                                    Origen
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-4">
+                                    <div class="btn btn-info no-pointer">30%</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </nav>
-            
-            <!--Contenido del partido-->
-            <div class="container-fluid">
-                <div class="row panel panel-default" id="apuesta">
-                   <div class="panel-body">
-                       <div class="col-md-3 col-sm-4"><button class="btn btn-primary" data-toggle="modal" data-target="#apostar">Apostar</button> Fnatic <div class="btn btn-info">70%</div></div>
-                    <div class="col-md-2 col-sm-4 col-md-offset-2">Bo5</div>
-                       <div class="col-md-3 col-sm-4 col-md-offset-2 form-inline"><button class="btn btn-primary" data-toggle="modal" data-target="#apostar">Apostar</button> Origen <button class="btn btn-info">30%</button></div>
-                    </div>
-                </div>
-                <br>
-                <div class="row top-buffer" id="contenido-apuesta">
+            </div>
+
+            <div class="darker-section">
+                <div class="row container container-top">
                     <div class="col-md-8">
-                        <div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3EwuH3-xmds" allowfullscreen></iframe></div>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3EwuH3-xmds" allowfullscreen></iframe>
+                        </div>
                         <br>
-                    </div> 
+                    </div>
                     <div class="col-md-4">
                         <div class="form-control" id="chat"></div>
                         <br>
-                        <div class="form-inline">
-                            <input class="form-control input-lg" id="chat-input"/>
-                            <button type="button" class="btn btn-primary btn-lg" id="enviar">Enviar</button>
+                        <div class="row">
+                            <div class="col-md-8 col-sm-10 col-xs-6">
+                                <input class="form-control input-lg" id="chat-input" />
+                            </div>
+                            <div class="col-md-4 col-sm-2 col-xs-4">
+                                <button type="button" class="btn btn-primary" id="enviar">Enviar</button>
+                            </div>
                         </div>
                         <br>
                     </div>
                 </div>
-                <br>
-            <div class="row" id="informacion-jugadores">
-                <div class="col-md-5">
-                <h2>Fnatic</h2>
-                <div class="table-responsive">
-                    <table class="table table-bordered table-hover table-striped">
-                        <thead>
-                            <tr>
-                                <th>Invocador</th>
-                                <th>Posición</th>
-                                <th>KDA</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>Gamsu</th>
-                                <th>Top</th>
-                                <th>3.5</th>
-                            </tr>
-                            <tr>
-                                <th>Spirit</th>
-                                <th>Jungla</th>
-                                <th>3.6</th>
-                            </tr>
-                            <tr>
-                                <th>Febiven</th>
-                                <th>Mid</th>
-                                <th>5.0</th>
-                            </tr>
-                            <tr>
-                                <th>Rekkles</th>
-                                <th>ADC</th>
-                                <th>4.3</th>
-                            </tr>
-                            <tr>
-                                <th>Klaj</th>
-                                <th>Support</th>
-                                <th>2.3</th>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                </div>
-                <div class="col-md-5 col-md-offset-2">
-                    <h2>Origen</h2>
+            </div>
+            <div class="row boxed-width" id="informacion-jugadores">
+                <div class="col-md-5 col-sm-6">
+                    <div class="section-title">
+                        <h2 class="big-title">Fnatic</h2>
+                    </div>
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover table-striped">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Invocador</th>
+                                    <th>Posición</th>
+                                    <th>KDA</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>Gamsu</th>
+                                    <th>Top</th>
+                                    <th>3.5</th>
+                                </tr>
+                                <tr>
+                                    <th>Spirit</th>
+                                    <th>Jungla</th>
+                                    <th>3.6</th>
+                                </tr>
+                                <tr>
+                                    <th>Febiven</th>
+                                    <th>Mid</th>
+                                    <th>5.0</th>
+                                </tr>
+                                <tr>
+                                    <th>Rekkles</th>
+                                    <th>ADC</th>
+                                    <th>4.3</th>
+                                </tr>
+                                <tr>
+                                    <th>Klaj</th>
+                                    <th>Support</th>
+                                    <th>2.3</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-5 col-md-offset-2 col-sm-6">
+                    <div class="section-title">
+                        <h2 class="big-title">Origen</h2>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>Invocador</th>
@@ -157,56 +202,90 @@
                             </tbody>
                         </table>
                     </div>
-            </div>
-            </div>
-            </div>
-            
-            <!--Modal de apuesta-->
-            <div class="modal fade" id="apostar" role="dialog" aria-labelledby="etiquetaModal">
-                <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <h3 class="etiquetaModal">Apostar por equipo</h3>
-                            <input id="spin-apuessta" type="text" value="0" name="spin-apuesta">
-                            <br/>
-                            <button class="btn btn-primary">Realizar Apuesta</button>
-                            <button class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                        </div>
-                    </div>
                 </div>
             </div>
-            <!--Fin de modal de apuesta-->
-            
-            <!--Modal de Log In-->
-            <div class="modal fade" id="login" role="dialog" aria-labelledby="etiquetaModal">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <div id="tituloAcceso">
-                            <img class="logoLogin" src="img/logo.png"/>
-                            <h3 id="etiquetaModal">Acceso</h3>
-                        </div>
-                        <form name="formularioLogIn" class="form-group">
-                            <input type="text" name="NombreUsuario" autocomplete="on" placeholder="Usuario" class="form-control">
-                            <br/>
-                            <input type="password" name="Password" autocomplete="on" placeholder="Contraseña" class="form-control">
-                            <br/>
-                            <button class="btn btn-primary">¡Acceder!</button>
-                            <div class="checkbox checkDerecho">
-                                <label>
-                                    <input type="checkbox" value="">Recordarme
-                                </label>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer footer-login">
-                        No eres un miembro aún, registrate <a href="registro.html">aqui.</a>
-                    </div>
-                </div>
-            </div>
-            </div>
-            <!--Fin de modal de Log In-->
         </div>
-    </body>
+    </div>
+
+    <footer class="main-footer footer-margin">
+        <div class="container">
+            <div class="col-md-2">
+                <a href="#"><img src="img/logo.png" alt="Logo eSportiumV2"></a>
+            </div>
+            <div class="col-md-7">
+                <div class="row">
+                    <nav>
+                        <ul>
+                            <li><a href="#" class="link">Sobre Nosotros</a></li>
+                            <li><a href="#" class="link">Preguntas Frecuentes</a></li>
+                            <li><a href="#" class="link">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="social-icons">
+                    <a href="" class="social-icon__"><i class="icon ion-social-facebook"></i></a>
+                    <a href="" class="social-icon__"><i class="icon ion-social-youtube"></i></a>
+                    <a href="" class="social-icon__"><i class="icon ion-social-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--Modal de apuesta-->
+    <div class="modal fade" id="apostar" role="dialog" aria-labelledby="etiquetaModal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h3 class="etiquetaModal">Apostar por equipo</h3>
+                    <input class="input-lg" id="spin-apuessta" type="text" value="0" name="spin-apuesta">
+                    <br/>
+                    <div class="row">
+                        <div class="col-md-7 col-sm-7 col-xs-7">
+                            <button class="btn btn-primary btn-sp">Realizar Apuesta</button>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <button class="btn btn-danger btn-sp" data-dismiss="modal">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fin de modal de apuesta-->
+
+    <!--Modal de Log In-->
+    <div class="modal fade" id="login" role="dialog" aria-labelledby="etiquetaModal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <div id="tituloAcceso">
+                        <img class="logoLogin" src="img/logo.png" />
+                        <h3 id="etiquetaModal">Acceso</h3>
+                    </div>
+                    <form name="formularioLogIn" class="form-group">
+                        <input type="text" name="NombreUsuario" autocomplete="on" placeholder="Usuario" class="form-control">
+                        <br/>
+                        <input type="password" name="Password" autocomplete="on" placeholder="Contraseña" class="form-control">
+                        <br/>
+                        <button class="btn btn-primary">¡Acceder!</button>
+                        <div class="checkbox checkDerecho">
+                            <label>
+                                <input type="checkbox" value="">Recordarme
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer footer-login">
+                    No eres un miembro aún, registrate <a href="registro.html" class="link">aqui</a>.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fin de modal de Log In-->
+
+</body>
+
 </html>
