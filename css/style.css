@@ -172,3 +172,40 @@
     margin-top: 25px !important;
     margin-bottom: 15px !important;
 }
+
+.no-margin-bottom {
+    margin-bottom: 0px;
+}
+
+.small-text {
+    font-size: 12px;
+}
+
+.karma {
+    padding: 12px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    overflow: hidden;
+    margin-bottom: 0;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+
+    .profile {
+        width: 50%;
+        margin: 0 auto;
+    }
