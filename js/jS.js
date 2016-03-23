@@ -1,4 +1,8 @@
 $(document).ready(function () {
+    fakewaffle.responsiveTabs(['xs']);
+    $('.panel-collapse').on('show.bs.collapse', function (e) {
+        $(e.target).closest('.panel').siblings().find('.panel-collapse').collapse('hide');
+    });
     $("#InputPassword1").keyup(checkPassword);
     $("#InputPasswordConfirm1").keyup(checkPassword);
 
@@ -14,8 +18,6 @@ $(document).ready(function () {
         var mes = fecha.getMonth() + 2;
         $('#comentado').append('<li class="list-group-item"><p>Usuario: ' + mensaje + '</p><span class="small-text">' + fecha.getDate() + '/0' + mes + '/' + fecha.getFullYear() % 100 + '</span></li>');
     });
-
-    $('#tab-colapsable').tabCollapse();
 });
 
 var checkPassword = function () {

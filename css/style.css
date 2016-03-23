@@ -204,8 +204,16 @@
     border-radius: 4px;
 }
 
+.profile {
+    width: 50%;
+    margin: 0 auto;
+}
 
-    .profile {
-        width: 50%;
-        margin: 0 auto;
-    }
+a.accordion-toggle {
+    display: block;
+    padding: 10px 15px;
+}
+
+div.panel-heading {
+    padding: 0;
+}
