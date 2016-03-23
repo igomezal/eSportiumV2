@@ -14,6 +14,8 @@ $(document).ready(function () {
         var mes = fecha.getMonth() + 2;
         $('#comentado').append('<li class="list-group-item"><p>Usuario: ' + mensaje + '</p><span class="small-text">' + fecha.getDate() + '/0' + mes + '/' + fecha.getFullYear() % 100 + '</span></li>');
     });
+
+    $('#tab-colapsable').tabCollapse();
 });
 
 var checkPassword = function () {
