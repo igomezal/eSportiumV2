@@ -54,9 +54,13 @@
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
 }
-
-#lolGames>div>div>img {
-    float: left
+/*La siguiente clase puede hacerse con #lolGames>div>div>a>img en caso de que
+existan otras imágenes que no tienen que tener este tamaño.
+Lo mismo para el resto de juegos.*/
+#lolGames img {
+    float: left;
+    width: 150px;
+    height: 150px;
 }
 
 #lolGames>div>div {
@@ -98,8 +102,10 @@
     vertical-align: middle;
 }
 
-#csGames>div>div>img {
-    float: left
+#csGames img {
+    float: left;
+    width: 150px;
+    height: 150px;
 }
 
 #csGames>div>div {
@@ -109,8 +115,10 @@
     text-align: center;
 }
 
-#codGames>div>div>img {
-    float: left
+#codGames img {
+    float: left;
+    width: 150px;
+    height: 150px;
 }
 
 #codGames>div>div {
