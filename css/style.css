@@ -56,19 +56,19 @@
 }
 /*La siguiente clase puede hacerse con #lolGames>div>div>a>img en caso de que
 existan otras imágenes que no tienen que tener este tamaño.
-Lo mismo para el resto de juegos.*/
+Lo mismo para el resto de juegos.
 #lolGames img {
     float: left;
-    width: 150px;
+    /*width: 150px;
     height: 150px;
 }
 
-#lolGames>div>div {
+/*#lolGames>div>div {
     margin-top: 10px;
     height: 200px;
     width: 310px;
     text-align: center;
-}
+}*/
 
 #headerRegistro {
     text-align: center;
@@ -102,7 +102,7 @@ Lo mismo para el resto de juegos.*/
     vertical-align: middle;
 }
 
-#csGames img {
+/*#csGames img {
     float: left;
     width: 150px;
     height: 150px;
@@ -126,7 +126,7 @@ Lo mismo para el resto de juegos.*/
     height: 200px;
     width: 310px;
     text-align: center;
-}
+}*/
 
 #partido1lol>a:hover {
     text-decoration: none;
