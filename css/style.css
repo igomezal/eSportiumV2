@@ -194,3 +194,6 @@ div.panel-heading {
     background-color: #3f50a5;
     transition: all .2s ease-out;
 }
+.panel-title a:hover{
+    color: crimson;
+}
