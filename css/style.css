@@ -54,21 +54,6 @@
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
 }
-/*La siguiente clase puede hacerse con #lolGames>div>div>a>img en caso de que
-existan otras imágenes que no tienen que tener este tamaño.
-Lo mismo para el resto de juegos.
-#lolGames img {
-    float: left;
-    /*width: 150px;
-    height: 150px;
-}
-
-/*#lolGames>div>div {
-    margin-top: 10px;
-    height: 200px;
-    width: 310px;
-    text-align: center;
-}*/
 
 #headerRegistro {
     text-align: center;
@@ -100,44 +85,6 @@ Lo mismo para el resto de juegos.
     display: inline-block;
     text-align: left;
     vertical-align: middle;
-}
-
-/*#csGames img {
-    float: left;
-    width: 150px;
-    height: 150px;
-}
-
-#csGames>div>div {
-    margin-top: 10px;
-    height: 200px;
-    width: 310px;
-    text-align: center;
-}
-
-#codGames img {
-    float: left;
-    width: 150px;
-    height: 150px;
-}
-
-#codGames>div>div {
-    margin-top: 10px;
-    height: 200px;
-    width: 310px;
-    text-align: center;
-}*/
-
-#partido1lol>a:hover {
-    text-decoration: none;
-}
-
-#partido2lol>a:hover {
-    text-decoration: none;
-}
-
-#partido3lol>a:hover {
-    text-decoration: none;
 }
 
 .section-title h2.big-title {
@@ -224,4 +171,26 @@ a.accordion-toggle {
 
 div.panel-heading {
     padding: 0;
+}
+.panel-collapse a,
+.tab-content a{
+    color: #7f7f7f;
+    transition: all .2s ease-in-out;
+}
+.panel-collapse a:hover:after,
+.tab-content a:hover:after{
+    width: 50%;
+}
+.panel-collapse a:after,
+.tab-content a:after{
+        content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    height: 1px;
+    width: 0;
+    background-color: #3f50a5;
+    transition: all .2s ease-out;
 }
