@@ -26,39 +26,38 @@
 </head>
 
 <body>
-    <header class="main-header">
-        <div class="container">
-            <a href="index.html"><img src="img/logo.png" alt="Logo eSportiumV2"><span class="logo">eSportiumV2</span></a>
-            <div class="menu">
-                <div class="montserrat-text uppercase menu-text">Menu</div>
-                <div class="menu-icon">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
+    <div class="container">
+        <header class="main-header">
+            <div class="container">
+                <a href="index.html"><img src="img/logo.png" alt="Logo eSportiumV2"><span class="logo">eSportiumV2</span></a>
+                <div class="menu">
+                    <div class="montserrat-text uppercase menu-text">Menu</div>
+                    <div class="menu-icon">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+
+                <div class="menu-content">
+                    <a href="#" class="close-button"><i class="icon ion-ios-close-empty"></i></a>
+                    <div class="menu-info">
+                        <h4 class="white-text montserrat-text">eSportiumV2 - Hagan sus apuestas</h4>
+                        <footer>&copy; eSportiumV2 2016. Todos los derechos reservados.</footer>
+                    </div>
+                    <div class="menu-wrapper">
+                        <nav>
+                            <ul class="first-level_menu">
+                                <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio</a></li>
+                                <li><a class="current" href="#"><span class="glyphicon glyphicon-record" aria-hidden="true"></span> Directo</a></li>
+                                <li><a href="#"><span class="glyphicon glyphicon-hourglass" aria-hidden="true"></span> Finalizados</a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#login" id="usuarioMenu"><span class="glyphicon glyphicon-user"></span> Acceder</a></li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </div>
-
-            <div class="menu-content">
-                <a href="#" class="close-button"><i class="icon ion-ios-close-empty"></i></a>
-                <div class="menu-info">
-                    <h4 class="white-text montserrat-text">eSportiumV2 - Hagan sus apuestas</h4>
-                    <footer>&copy; eSportiumV2 2016. Todos los derechos reservados.</footer>
-                </div>
-                <div class="menu-wrapper">
-                    <nav>
-                        <ul class="first-level_menu">
-                            <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio</a></li>
-                            <li><a class="current" href="#"><span class="glyphicon glyphicon-record" aria-hidden="true"></span> Directo</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-hourglass" aria-hidden="true"></span> Finalizados</a></li>
-                            <li><a href="#" data-toggle="modal" data-target="#login" id="usuarioMenu"><span class="glyphicon glyphicon-user"></span> Acceder</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <div class="container boxed-width">
+        </header>
         <div class="container-fluid">
             <div class="panel panel-default" id="apuesta">
                 <div class="panel-body">
@@ -94,30 +93,32 @@
                 </div>
             </div>
 
-            <div class="darker-section">
-                <div class="row container container-top">
-                    <div class="col-md-8">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3EwuH3-xmds" allowfullscreen></iframe>
-                        </div>
-                        <br>
+
+            <div class="row">
+
+                <div class="col-md-8">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3EwuH3-xmds" allowfullscreen></iframe>
                     </div>
-                    <div class="col-md-4">
-                        <div class="form-control" id="chat"></div>
-                        <br>
-                        <div class="row">
-                            <div class="col-md-8 col-sm-10 col-xs-6">
-                                <textarea class="form-control input-lg" rows="1" id="chat-input"></textarea>
-                            </div>
-                            <div class="col-md-4 col-sm-2 col-xs-4">
-                                <button type="button" class="btn btn-primary" id="enviar">Enviar</button>
-                            </div>
-                        </div>
-                        <br>
-                    </div>
+                    <br>
                 </div>
+                <div class="col-md-4">
+                    <div class="form-control" id="chat"></div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-8 col-sm-10 col-xs-6">
+                            <textarea class="form-control input-lg" rows="1" id="chat-input"></textarea>
+                        </div>
+                        <div class="col-md-4 col-sm-2 col-xs-4">
+                            <button type="button" class="btn btn-primary" id="enviar">Enviar</button>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+
             </div>
-            <div class="row boxed-width" id="informacion-jugadores">
+
+            <div class="row" id="informacion-jugadores">
                 <div class="col-md-5 col-sm-6">
                     <div class="section-title">
                         <h2 class="big-title">Fnatic</h2>
@@ -206,33 +207,34 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <footer class="main-footer footer-margin">
-        <div class="container">
-            <div class="col-md-2">
-                <a href="#"><img src="img/logo.png" alt="Logo eSportiumV2"></a>
-            </div>
-            <div class="col-md-7">
-                <div class="row">
-                    <nav>
-                        <ul>
-                            <li><a href="#" class="link">Sobre Nosotros</a></li>
-                            <li><a href="#" class="link">Preguntas Frecuentes</a></li>
-                            <li><a href="#" class="link">Contacto</a></li>
-                        </ul>
-                    </nav>
+
+        <footer class="main-footer footer-margin">
+            <div class="container">
+                <div class="col-md-2">
+                    <a href="#"><img src="img/logo.png" alt="Logo eSportiumV2"></a>
+                </div>
+                <div class="col-md-7">
+                    <div class="row">
+                        <nav>
+                            <ul>
+                                <li><a href="#" class="link">Sobre Nosotros</a></li>
+                                <li><a href="#" class="link">Preguntas Frecuentes</a></li>
+                                <li><a href="#" class="link">Contacto</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="social-icons">
+                        <a href="" class="social-icon__"><i class="icon ion-social-facebook"></i></a>
+                        <a href="" class="social-icon__"><i class="icon ion-social-youtube"></i></a>
+                        <a href="" class="social-icon__"><i class="icon ion-social-twitter"></i></a>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="social-icons">
-                    <a href="" class="social-icon__"><i class="icon ion-social-facebook"></i></a>
-                    <a href="" class="social-icon__"><i class="icon ion-social-youtube"></i></a>
-                    <a href="" class="social-icon__"><i class="icon ion-social-twitter"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
     <!--Modal de apuesta-->
     <div class="modal fade" id="apostar" role="dialog" aria-labelledby="etiquetaModal">
