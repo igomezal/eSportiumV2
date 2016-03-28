@@ -63,6 +63,9 @@ Funcionalidad privada: Podrá realizar apuestas, consultar su saldo de puntos ac
 ![Partido](https://github.com/igomezal/eSportiumV2/blob/master/diagrama/imagenes/partido.png?raw=true "Partido")
 > Partido
 
+![Finalizados](https://github.com/igomezal/eSportiumV2/blob/master/diagrama/imagenes/finalizados.png?raw=true "Finalizados")
+>Finalizados
+
 ![FAQ](https://github.com/igomezal/eSportiumV2/blob/master/diagrama/imagenes/faq.png?raw=true "FAQ")
 > FAQ
 
