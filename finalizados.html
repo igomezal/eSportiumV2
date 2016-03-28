@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Estilos-->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/jquery.bootstrap-touchspin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/ionicons.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" />
+    <link href="css/bootstrap-tabs-x.min.css" media="all" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/ten.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+    <!--Scripts-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/responsive-tabs.js"></script>
+    <script type="text/javascript" src="js/script-responsive.js"></script>
+    <script type="text/javascript" src="js/jS.js"></script>
+    <script type="text/javascript" src="js/jquery.bootstrap-touchspin.js"></script>
+    <script type="text/javascript" src="js/easings.js"></script>
+    <script src="js/bootstrap-tabs-x.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <title>eSportiumV2</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="main-header">
+            <div class="container">
+                <a href="index.html"><img src="img/logo.png" alt="Logo eSportiumV2"><span class="logo">eSportiumV2</span></a>
+                <div class="menu">
+                    <div class="montserrat-text uppercase menu-text">Menu</div>
+                    <div class="menu-icon">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+
+                <div class="menu-content">
+                    <a href="#" class="close-button"><i class="icon ion-ios-close-empty"></i></a>
+                    <div class="menu-info">
+                        <h4 class="white-text montserrat-text">eSportiumV2 - Hagan sus apuestas</h4>
+                        <footer>&copy; eSportiumV2 2016. Todos los derechos reservados.</footer>
+                    </div>
+                    <div class="menu-wrapper">
+                        <nav>
+                            <ul class="first-level_menu">
+                                <li><a class="current" href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio</a></li>
+                                <li><a href="#"><span class="glyphicon glyphicon-record" aria-hidden="true"></span> Directo</a></li>
+                                <li><a href="#"><span class="glyphicon glyphicon-hourglass" aria-hidden="true"></span> Finalizados</a></li>
+                                <li><a href="#" data-toggle="modal" data-target="#login" id="usuarioMenu"><span class="glyphicon glyphicon-user"></span> Acceder</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="left-title no-margin-bottom">
+            <h3 class="montserrat-text white-text uppercase"><span class="glyphicon glyphicon-hourglass" aria-hidden="true" style="top:3px"></span> Finalizados</h3>
+        </div>
+        <div class="container">
+            <div class="tabs-x tabs-above tab-bordered row">
+                <ul class="nav nav-tabs responsive">
+                    <li class="active"><a data-toggle="tab" href="#lol">League of Legends</a></li>
+                    <li><a data-toggle="tab" href="#cs">Counter Strike: GO</a></li>
+                    <li><a data-toggle="tab" href="#cod">Call of Duty: BO3</a></li>
+                </ul>
+                <div class="tab-content panel responsive">
+                    <div id="lol" class="tab-pane fade in active">
+                        <div class="container">
+                            <div class="row" id="lolGames">
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div id="partido1lol">
+                                        <a href="partido.html">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <img class="img-responsive" alt="fnatic" src="img/fnaticLogo.png">
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <img class="img-responsive" alt="uol" src="img/UOLLogo.png">
+                                            </div>
+                                            <center>
+                                                <h1>Ganador UOL</h1></center>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div id="partido2lol">
+                                        <a href="partido.html">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <img class="img-responsive" alt="h2k" src="img/H2KLogo.png">
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <img class="img-responsive" alt="origen" src="img/origenLogo.png">
+                                            </div>
+                                            <center>
+                                                <h1>Ganador Origen</h1></center>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="cs" class="tab-pane fade">
+                        <div class="container">
+                            <div class="row" id="csGames">
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div id="partido1cs">
+                                        <a href="partido.html">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <img class="img-responsive" alt="giants" src="img/giantsLogo.png">
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <img class="img-responsive" alt="envy" src="img/envyLogo.png">
+                                            </div>
+                                            <center>
+                                                <h1>Ganador Giants</h1></center>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div id="partido2cs">
+                                        <a href="partido.html">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <img class="img-responsive" alt="c9" src="img/c9Logo.png">
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <img class="img-responsive" alt="fnatic" src="img/fnaticLogo.png">
+                                            </div>
+                                            <center>
+                                                <h1>Ganador Cloud9</h1></center>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div id="partido3cs">
+                                        <a href="partido.html">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <img class="img-responsive" alt="nip" src="img/nipLogo.png">
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <img class="img-responsive" alt="navi" src="img/naviLogo.png">
+                                            </div>
+                                            <center>
+                                                <h1>Ganador NaVi</h1></center>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="cod" class="tab-pane fade">
+                        <div class="container">
+                            <div class="row" id="codGames">
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div id="partido1cod">
+                                        <a href="partido.html">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <img class="img-responsive" alt="millenium" src="img/milleniumLogo.png">
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <img class="img-responsive" alt="splyce" src="img/splyceLogo.png">
+                                            </div>
+                                            <center>
+                                                <h1>Ganador Splyce</h1></center>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div id="partido2cod">
+                                        <a href="partido.html">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <img class="img-responsive" alt="infused" src="img/infusedLogo.png">
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <img class="img-responsive" alt="excel" src="img/excelLogo.png">
+                                            </div>
+                                            <center>
+                                                <h1>Ganador exceL</h1></center>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-6">
+                                    <div id="partido3cod">
+                                        <a href="partido.html">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <img class="img-responsive" alt="epsilon" src="img/epsilonLogo.png">
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                <img class="img-responsive" alt="giants" src="img/giantsLogo.png">
+                                            </div>
+                                            <center>
+                                                <h1>Ganador Giants</h1></center>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Este es el cierre del div del tabs above -->
+
+        <footer class="main-footer footer-margin">
+            <div class="container">
+                <div class="col-md-2">
+                    <a href="#"><img src="img/logo.png" alt="Logo eSportiumV2"></a>
+                </div>
+                <div class="col-md-7">
+                    <div class="row">
+                        <nav>
+                            <ul>
+                                <li><a href="sobre.html" class="link">Sobre Nosotros</a></li>
+                                <li><a href="faq.html" class="link">Preguntas Frecuentes</a></li>
+                                <li><a href="contacto.html" class="link">Contacto</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=100011773530946&fref=ts" class="social-icon__"><i class="icon ion-social-facebook"></i></a>
+                        <a href="https://www.youtube.com/channel/UCcao_1K-Nz7QfimvZwBlMdw" class="social-icon__"><i class="icon ion-social-youtube"></i></a>
+                        <a href="https://twitter.com/esportiumv2" class="social-icon__"><i class="icon ion-social-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!--Modal de Log In-->
+        <div class="modal fade" id="login" role="dialog" aria-labelledby="etiquetaModal">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <div id="tituloAcceso">
+                            <img class="logoLogin" src="img/logo.png" />
+                            <h3 id="etiquetaModal">Acceso</h3>
+                        </div>
+                        <form name="formularioLogIn" class="form-group">
+                            <input type="text" name="NombreUsuario" autocomplete="on" placeholder="Usuario" class="form-control">
+                            <br/>
+                            <input type="password" name="Password" autocomplete="on" placeholder="Contraseña" class="form-control">
+                            <br/>
+                            <button class="btn btn-primary">¡Acceder!</button>
+                            <div class="checkbox checkDerecho">
+                                <label>
+                                    <input type="checkbox" value="">Recordarme
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer footer-login">
+                        No eres un miembro aún, registrate <a class="link" href="registro.html">aqui.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fin de modal de Log In-->
+</body>
+
+</html>
