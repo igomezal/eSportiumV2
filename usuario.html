@@ -51,9 +51,8 @@
                         <nav>
                             <ul class="first-level_menu">
                                 <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-record" aria-hidden="true"></span> Directo</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-hourglass" aria-hidden="true"></span> Finalizados</a></li>
-                                <li><a href="#" data-toggle="modal" data-target="#login" id="usuarioMenu"><span class="glyphicon glyphicon-user"></span> Acceder</a></li>
+                                <li><a href="finalizados.html"><span class="glyphicon glyphicon-hourglass" aria-hidden="true"></span> Finalizados</a></li>
+                                <li><a class="current" href="usuario.html"><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -75,7 +74,7 @@
                     </div>
 
                     <ul class="list-group">
-                        <li class="list-group-item">Miembro desde 20/04/16</li>
+                        <li class="list-group-item">Miembro desde 20/03/16</li>
                         <li class="list-group-item">Número de apuestas realizadas: 2</li>
                         <li class="list-group-item">Género: Masculino</li>
                     </ul>
@@ -102,7 +101,7 @@
                                 <div class="row">
                                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
                                         <div>
-                                            <a href="partido.html">
+                                            <a href="partido-finalizado.html">
                                                 <div class="row">
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><img class="img-responsive" alt="fnatic" src="img/fnaticLogo.png"></div>
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -114,7 +113,7 @@
                                     </div>
                                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
                                         <div>
-                                            <a href="partido.html">
+                                            <a href="partido-finalizado.html">
                                                 <div class="row">
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><img class="img-responsive" alt="h2k" src="img/H2KLogo.png"></div>
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><img class="img-responsive" alt="origen" src="img/origenLogo.png"></div>
@@ -138,12 +137,12 @@
                     </div>
                     <ul class="list-group" id="comentado">
                         <li class="list-group-item">
-                            <p>Admin: Bienvenido a eSportiumV2</p><span class="small-text">20/04/16</span>
+                            <p>Admin: Bienvenido a eSportiumV2</p><span class="small-text">20/03/16</span>
                         </li>
                     </ul>
                     <div class="row">
                         <div class="col-lg-7 col-md-7 col-sm-9 col-xs-7">
-                            <textarea class="form-control" rows="1" id="comment"></textarea>
+                            <input class="form-control" rows="1" id="comment">
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                             <button type="button" class="btn btn-primary" id="enviar">Comentar</button>
@@ -156,13 +155,13 @@
         <footer class="main-footer footer-margin">
             <div class="container">
                 <div class="col-md-2">
-                    <a href="#"><img src="img/logo.png" alt="Logo eSportiumV2"></a>
+                    <a href="index.html"><img src="img/logo.png" alt="Logo eSportiumV2"></a>
                 </div>
                 <div class="col-md-7">
                     <div class="row">
                         <nav>
                             <ul>
-                                <li><a href="#" class="link">Sobre Nosotros</a></li>
+                                <li><a href="sobre.html" class="link">Sobre Nosotros</a></li>
                                 <li><a href="faq.html" class="link">Preguntas Frecuentes</a></li>
                                 <li><a href="contacto.html" class="link">Contacto</a></li>
                             </ul>
@@ -171,9 +170,9 @@
                 </div>
                 <div class="col-md-3">
                     <div class="social-icons">
-                        <a href="" class="social-icon__"><i class="icon ion-social-facebook"></i></a>
-                        <a href="" class="social-icon__"><i class="icon ion-social-youtube"></i></a>
-                        <a href="" class="social-icon__"><i class="icon ion-social-twitter"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100011773530946&fref=ts" class="social-icon__"><i class="icon ion-social-facebook"></i></a>
+                        <a href="https://www.youtube.com/channel/UCcao_1K-Nz7QfimvZwBlMdw" class="social-icon__"><i class="icon ion-social-youtube"></i></a>
+                        <a href="https://twitter.com/esportiumv2" class="social-icon__"><i class="icon ion-social-twitter"></i></a>
                     </div>
                 </div>
             </div>
@@ -181,36 +180,6 @@
 
     </div>
 
-    <!--Modal de Log In-->
-    <div class="modal fade" id="login" role="dialog" aria-labelledby="etiquetaModal">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <div id="tituloAcceso">
-                        <img class="logoLogin" src="img/logo.png" />
-                        <h3 id="etiquetaModal">Acceso</h3>
-                    </div>
-                    <form name="formularioLogIn" class="form-group">
-                        <input type="text" name="NombreUsuario" autocomplete="on" placeholder="Usuario" class="form-control">
-                        <br/>
-                        <input type="password" name="Password" autocomplete="on" placeholder="Contraseña" class="form-control">
-                        <br/>
-                        <button class="btn btn-primary">¡Acceder!</button>
-                        <div class="checkbox checkDerecho">
-                            <label>
-                                <input type="checkbox" value="">Recordarme
-                            </label>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer footer-login">
-                    No eres un miembro aún, registrate <a href="registro.html" class="link">aqui</a>.
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Fin de modal de Log In-->
 </body>
 
 </html>

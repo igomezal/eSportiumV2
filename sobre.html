@@ -49,8 +49,7 @@
                         <nav>
                             <ul class="first-level_menu">
                                 <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-record" aria-hidden="true"></span> Directo</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-hourglass" aria-hidden="true"></span> Finalizados</a></li>
+                                <li><a href="finalizados.html"><span class="glyphicon glyphicon-hourglass" aria-hidden="true"></span> Finalizados</a></li>
                                 <li><a href="#" data-toggle="modal" data-target="#login" id="usuarioMenu"><span class="glyphicon glyphicon-user"></span> Acceder</a></li>
                             </ul>
                         </nav>
@@ -147,18 +146,19 @@
                         <img class="logoLogin" src="img/logo.png" />
                         <h3 id="etiquetaModal">Acceso</h3>
                     </div>
-                    <form name="formularioLogIn" class="form-group">
+                    <div name="formularioLogIn" class="form-group">
                         <input type="text" name="NombreUsuario" autocomplete="on" placeholder="Usuario" class="form-control">
                         <br/>
                         <input type="password" name="Password" autocomplete="on" placeholder="Contraseña" class="form-control">
                         <br/>
-                        <button class="btn btn-primary">¡Acceder!</button>
+                        <a href="usuario.html">
+                        <button class="btn btn-primary">¡Acceder!</button></a>
                         <div class="checkbox checkDerecho">
                             <label>
                                 <input type="checkbox" value="">Recordarme
                             </label>
                         </div>
-                    </form>
+                    </div>
                 </div>
                 <div class="modal-footer footer-login">
                     No eres un miembro aún, registrate <a href="registro.html" class="link">aqui</a>.

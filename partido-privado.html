@@ -50,7 +50,7 @@
                             <ul class="first-level_menu">
                                 <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio</a></li>
                                 <li><a href="finalizados.html"><span class="glyphicon glyphicon-hourglass" aria-hidden="true"></span> Finalizados</a></li>
-                                <li><a href="#" data-toggle="modal" data-target="#login" id="usuarioMenu"><span class="glyphicon glyphicon-user"></span> Acceder</a></li>
+                                <li><a href="usuario.html"><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -64,7 +64,7 @@
                         <div class="col-md-3">
                             <div class="row">
                                 <div class="col-md-4 col-sm-4 col-xs-4">
-                                    <button class="btn btn-primary" data-toggle="modal" data-target="#login">Apostar</button>
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#apostar">Apostar</button>
                                 </div>
                                 <div class="col-md-3 col-sm-3 col-xs-3 col-sm-offset-1  col-xs-offset-1 muestra">
                                     Fnatic
@@ -78,7 +78,7 @@
                         <div class="col-md-3 col-md-offset-2">
                             <div class="row">
                                 <div class="col-md-4 col-sm-4 col-xs-4">
-                                    <button class="btn btn-primary" data-toggle="modal" data-target="#login">Apostar</button>
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#apostar">Apostar</button>
                                 </div>
                                 <div class="col-md-3 col-sm-3 col-xs-3 col-xs-offset-1 col-sm-offset-1 muestra">
                                     Origen
@@ -241,11 +241,13 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <h3 class="etiquetaModal">Apostar por equipo</h3>
+                    <div class="karma btn-success no-pointer">6300 puntos</div>
+                    <br/>
                     <input class="input-lg" id="spin-apuessta" type="text" value="0" name="spin-apuesta">
                     <br/>
                     <div class="row">
                         <div class="col-md-7 col-sm-7 col-xs-7">
-                            <button class="btn btn-primary btn-sp">Realizar Apuesta</button>
+                            <button class="btn btn-primary btn-sp" data-dismiss="modal">Realizar Apuesta</button>
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-4">
                             <button class="btn btn-danger btn-sp" data-dismiss="modal">Cancelar</button>
@@ -256,39 +258,6 @@
         </div>
     </div>
     <!--Fin de modal de apuesta-->
-
-    <!--Modal de Log In-->
-    <div class="modal fade" id="login" role="dialog" aria-labelledby="etiquetaModal">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <div id="tituloAcceso">
-                        <img class="logoLogin" src="img/logo.png" />
-                        <h3 id="etiquetaModal">Acceso</h3>
-                    </div>
-                    <div name="formularioLogIn" class="form-group">
-                        <input type="text" name="NombreUsuario" autocomplete="on" placeholder="Usuario" class="form-control">
-                        <br/>
-                        <input type="password" name="Password" autocomplete="on" placeholder="Contraseña" class="form-control">
-                        <br/>
-                        <a href="usuario.html">
-                            <button class="btn btn-primary">¡Acceder!</button>
-                        </a>
-                        <div class="checkbox checkDerecho">
-                            <label>
-                                <input type="checkbox" value="">Recordarme
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer footer-login">
-                    No eres un miembro aún, registrate <a href="registro.html" class="link">aqui</a>.
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Fin de modal de Log In-->
 
 </body>
 
