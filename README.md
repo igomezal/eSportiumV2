@@ -43,7 +43,7 @@ Funcionalidad privada: Podrá realizar apuestas, consultar su saldo de puntos ac
 ### Fase 2:
 
 1. Para descargar el tag de la fase 2 haga click en el link "release" situado en la parte superior y luego  fase 2. Una vez dentro seleccionar source code (zip) para comenzar la descarga.
-2. Para su ejecución es necesario un browser (Google Chrome, Internet Explorer, Mozilla Firefox o Safari), es compatible con Windows, Linux y MAC OSX.
+2. Para su ejecución es necesario un browser (Google Chrome, Internet Explorer, Mozilla Firefox o Safari), es compatible con los dispositivos móviles, Windows, Linux y MAC OSX.
 3. Extraer todos los archivos del .zip y hacer doble click en el archivo "index.html". Se encontrará en la ventana principal de la página.
 <Enter>
 
