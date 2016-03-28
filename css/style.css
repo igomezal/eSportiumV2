@@ -197,3 +197,7 @@ div.panel-heading {
 .panel-title a:hover{
     color: crimson;
 }
+.section-title h2.translate {
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+}
