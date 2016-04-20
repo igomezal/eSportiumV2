@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Estilos-
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/jquery.bootstrap-touchspin.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/ionicons.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/flexslider.css" type="text/css" />
+    <link href="css/bootstrap-tabs-x.min.css" media="all" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/ten.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+    <!--Scripts
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/responsive-tabs.js"></script>
+    <script type="text/javascript" src="js/script-responsive.js"></script>
+    <script type="text/javascript" src="js/jS.js"></script>
+    <script type="text/javascript" src="js/jquery.bootstrap-touchspin.js"></script>
+    <script type="text/javascript" src="js/easings.js"></script>
+    <script src="js/bootstrap-tabs-x.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/main.js"></script>-->
+    <title>eSportiumV2</title>
+</head>
+
+<body>
+    <div class="container">
+        <headerv2></headerv2>
+        <br>
+        <br>
+        <br>
+
+        <div class="left-title no-margin-bottom">
+            <h3 class="montserrat-text white-text uppercase"><span class="glyphicon glyphicon-record" aria-hidden="true" style="top:3px"></span> En directo</h3>
+        </div>
+
+        <!-- Angular Partidos en directo-->
+        <div class="container">
+          <div class="tabs-x tabs-above tab-bordered row">
+            <ul class="nav nav-tabs responsive">
+              <li *ngFor="#juego of juegos; #i = index" (click)="setPruebasDir(juego.id)" [class.active]="i == 0"><a data-toggle="tab" href="#{{juego.id}}">{{juego.nombre}}</a><li>
+            </ul>
+            <div class="tab-content panel responsive">
+              <div *ngFor="#juego of juegos;#ind = index" id="{{juego.id}}" class="tab-pane fade" [class.in]="ind == 0" [class.active]="ind == 0">
+                <div class="container">
+                  <div class="row">
+                    <div *ngFor="#partido of arrayDirtemp; #indpart = index" class="col-lg-4 col-md-6 col-sm-6" [class.hidden]="partido.juego != juego.id || partido.estado != 'directo'">
+                      <h2 *ngIf="isVacio(arrayDirtemp)">No hay partidos </h2>
+                        <div id="partido{{partido.id}}">
+                        <a href="partido-finalizado.html">
+                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <img class="img-responsive" alt="{{partido.eq1}}" src="img/{{partido.logo1}}.png">
+                          </div>
+                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <img class="img-responsive" alt="{{partido.eq2}}" src="img/{{partido.logo2}}.png">
+                          </div>
+                          <center>
+                            <h1><span *ngIf="partido.ganando == 'eq1'" class="glyphicon glyphicon-triangle-top" style="top:3px"></span>
+                               {{partido.diferencia}}
+                               <span><img src="img/moneyicon.png"></span>
+                               <span *ngIf="partido.ganando == 'eq2'" class="glyphicon glyphicon-triangle-top" style="top:3px"></span>
+                            </h1>
+                          </center>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <!-- /Angular -->
+
+        <!-- Finalizados -->
+
+        <div class="left-title no-margin-bottom">
+            <h3 class="montserrat-text white-text uppercase"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" style="top:3px"></span> Próximos partidos</h3>
+        </div>
+        <div class="container">
+          <div class="tabs-x tabs-above tab-bordered row">
+            <ul class="nav nav-tabs responsive">
+              <li *ngFor="#juego of juegos; #i = index" (click)="setPruebasFin(juego.id)" [class.active]="i == 0"><a data-toggle="tab" href="#{{juego.id}}fin">{{juego.nombre}}</a><li>
+            </ul>
+            <div class="tab-content panel responsive">
+              <div *ngFor="#juego of juegos;#ind = index" id="{{juego.id}}fin" class="tab-pane fade" [class.in]="ind == 0" [class.active]="ind == 0">
+                <div class="container">
+                  <div class="row">
+                    <div *ngFor="#partido of arrayFintemp; #indpart = index" class="col-lg-4 col-md-6 col-sm-6" [class.hidden]="partido.juego != juego.id || partido.estado != 'finalizado'">
+                      <h2 *ngIf="isVacio(arrayFintemp)" >No hay partidos</h2>
+                      <div id="partido{{partido.id}}">
+                        <a href="partido-finalizado.html">
+                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <img class="img-responsive" alt="{{partido.eq1}}" src="img/{{partido.logo1}}.png">
+                          </div>
+                          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <img class="img-responsive" alt="{{partido.eq2}}" src="img/{{partido.logo2}}.png">
+                          </div>
+                          <center>
+                            <h1><span *ngIf="partido.ganando == 'eq1'" class="glyphicon glyphicon-triangle-top" style="top:3px"></span>
+                               {{partido.diferencia}}
+                               <span><img src="img/moneyicon.png"></span>
+                               <span *ngIf="partido.ganando == 'eq2'" class="glyphicon glyphicon-triangle-top" style="top:3px"></span>
+                            </h1>
+                          </center>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <footer class="main-footer footer-margin">
+            <div class="container">
+                <div class="col-md-2">
+                    <a href="index.html"><img src="img/logo.png" alt="Logo eSportiumV2"></a>
+                </div>
+                <div class="col-md-7">
+                    <div class="row">
+                        <nav>
+                            <ul>
+                                <li><a href="sobre.html" class="link">Sobre Nosotros</a></li>
+                                <li><a href="faq.html" class="link">Preguntas Frecuentes</a></li>
+                                <li><a href="contacto.html" class="link">Contacto</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/profile.php?id=100011773530946&fref=ts" class="social-icon__"><i class="icon ion-social-facebook"></i></a>
+                        <a href="https://www.youtube.com/channel/UCcao_1K-Nz7QfimvZwBlMdw" class="social-icon__"><i class="icon ion-social-youtube"></i></a>
+                        <a href="https://twitter.com/esportiumv2" class="social-icon__"><i class="icon ion-social-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!--Modal de Log In-->
+        <div class="modal fade" id="login" role="dialog" aria-labelledby="etiquetaModal">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <div id="tituloAcceso">
+                            <img class="logoLogin" src="img/logo.png" />
+                            <h3 id="etiquetaModal">Acceso</h3>
+                        </div>
+                        <div name="formularioLogIn" class="form-group">
+                            <input type="text" name="NombreUsuario" autocomplete="on" placeholder="Usuario" class="form-control">
+                            <br/>
+                            <input type="password" name="Password" autocomplete="on" placeholder="Contraseña" class="form-control">
+                            <br/>
+                            <a href="usuario.html">
+                                <button class="btn btn-primary">¡Acceder!</button>
+                            </a>
+                            <div class="checkbox checkDerecho">
+                                <label>
+                                    <input type="checkbox" value="">Recordarme
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer footer-login">
+                        No eres un miembro aún, registrate <a class="link" href="registro.html">aqui.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fin de modal de Log In-->
+</body>
+
+</html>

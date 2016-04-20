@@ -1,0 +1,16 @@
+
+  <head>
+
+  </head>
+  <body>
+    <h2>Partidos</h2>
+
+    <headerv2></headerv2>
+
+  <ul>
+    <li *ngFor="#partido of partidos">
+      <p> {{partido.id}} {{partido.eq1}} {{partido.eq2}} {{partido.estado}} </p>
+    </li>
+  <ul>
+
+  <router-outlet></router-outlet>
