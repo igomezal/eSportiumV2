@@ -48,6 +48,8 @@ export class PartidoService {
     new Partido(3,'eq13','UOLLogo','eq23','nipLogo',this.jugs,this.jugs,'lol','finalizado','1000','eq1'),
     new Partido(4,'eq14','nipLogo','eq24','c9Logo',this.jugs,this.jugs,'cod','directo','1:3','eq1'),
     new Partido(5,'eq15','c9Logo','eq25','fnaticLogo',this.jugs,this.jugs,'lol','directo','1800','eq2'),
+    new Partido(6,'eq16','c9Logo','eq26','fnaticLogo',this.jugs,this.jugs,'cs','proximo','300','eq1'),
+
   ];
 
   getPartidos(){

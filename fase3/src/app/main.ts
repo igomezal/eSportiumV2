@@ -5,13 +5,15 @@ import {Partido, PartidoService} from './partido.service';
 import {JugadorService} from './jugador.interface';
 import {HeaderComponent} from './header.component';
 import {Juego,JuegoService} from './juego.interface';
+import {indexComponent} from './index.component';
+import {Perfil} from './profile.component';
 /* pruebaUsuario */import {Usuario,UsuarioService} from './usuario.interface';
 
 @Component({
   selector: 'main-app',
   providers: [ROUTER_PROVIDERS,PartidoService,JugadorService,JuegoService,/* pruebaUsuario */UsuarioService],
-  templateUrl: 'app/index.html', //Esto antes era index.html de fuera de app
-  directives: [ROUTER_DIRECTIVES, HeaderComponent],
+  templateUrl: 'app/header.component.html', //Esto antes era index.html  de fuera de app
+  directives: [ROUTER_DIRECTIVES],
   /*styleUrls:['./css/bootstrap-tabs-x.css','./css/bootstrap-tabs-x.min.css', //Si quito estos comentarios en chrome deja de funcionar
     './css/bootstrap-theme.css',
     './css/bootstrap-theme.css.map',
@@ -29,8 +31,9 @@ import {Juego,JuegoService} from './juego.interface';
   pipes: []
 })
 @RouteConfig([
-
-].concat(CliRouteConfig))
+  {path: '/inicio', name: 'Inicio', component: indexComponent, useAsDefault: true},
+  {path: '/usuario', name: 'Perfil', component: Perfil},
+])
 
 export class MainApp {
 
@@ -40,66 +43,14 @@ export class MainApp {
 
   //
 
-  juegos: Juego[];
-
-  arrayDirtemp: Partido[];
-  arrayFintemp: Partido[];
-
-  partidos: Partido[];
-
- constructor (private _Partidoservice: PartidoService, private _JuegoService: JuegoService, /* pruebaUsuario */private _Usuarioservice: UsuarioService){}
+ constructor (/* pruebaUsuario */private _Usuarioservice: UsuarioService){}
 
  ngOnInit(){
-   this._Partidoservice.getPartidos().subscribe(
-     partidos => this.partidos = partidos,
-     error => console.log(error)
-   );
-   this._JuegoService.getJuegos().subscribe(
-     juegos => this.juegos = juegos,
-     error => console.log(error)
-   );
-   this._Partidoservice.getPartidos().subscribe(
-     partidos => this.arrayDirtemp = partidos,
-     error => console.log(error)
-   );
-   this._Partidoservice.getPartidos().subscribe(
-     partidos => this.arrayFintemp = partidos,
-     error => console.log(error)
-   );
    /* pruebaUsuario */
    this._Usuarioservice.getUsuario().subscribe(
      usuario => this.usuario = usuario,
      error => console.log(error)
    )
- }
-
- setPruebasDir(s: String){
-   this.arrayDirtemp = [];
-   for(var i =0; i<this.partidos.length; i++){
-     if(this.partidos[i].juego == s){
-       if(this.partidos[i].estado == 'directo'){
-         this.arrayDirtemp.push(this.partidos[i]);
-       }
-     }
-   }
- }
-
- setPruebasFin(s: String){
-   this.arrayFintemp = [];
-   for(var i =0; i<this.partidos.length; i++){
-     if(this.partidos[i].juego == s){
-       if(this.partidos[i].estado == 'finalizado'){
-         this.arrayFintemp.push(this.partidos[i]);
-       }
-     }
-   }
- }
-
- isVacio(a: Partido[]){
-   if(a.length == 0){
-     return true;
-   }
-   return false;
  }
 
  ngAfterContentInit() {

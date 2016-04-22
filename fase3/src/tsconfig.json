@@ -15,20 +15,23 @@
     "sourceRoot": "/",
     "target": "es5"
   },
-
+  "filesGlob": [],
+  "atom": {
+    "rewriteTsconfig": true
+  },
   "files": [
     "app.ts",
-    "main.ts",
-    "main.spec.ts",
-    "typings.d.ts",
-    "app/partido.service.ts",
+    "app/header.component.ts",
+    "app/index.component.ts",
+    "app/juego.interface.ts",
     "app/jugador.interface.ts",
     "app/main.spec.ts",
     "app/main.ts",
-    "app/header.component.ts",
-    "app/utils.ts",
-    "app/juego.interface.ts",
+    "app/partido.service.ts",
     "app/profile.component.ts",
-    "app/usuario.interface.ts"
+    "app/route-config.ts",
+    "app/usuario.interface.ts",
+    "app/utils.ts",
+    "typings.d.ts"
   ]
 }

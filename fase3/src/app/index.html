@@ -46,7 +46,7 @@
         </div>
           <!-- /Angular -->
 
-        <!-- Finalizados -->
+        <!-- Proximos -->
 
         <div class="left-title no-margin-bottom">
             <h3 class="montserrat-text white-text uppercase"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true" style="top:3px"></span> Próximos partidos</h3>
@@ -54,13 +54,13 @@
         <div class="container">
           <div class="tabs-x tabs-above tab-bordered row">
             <ul class="nav nav-tabs responsive">
-              <li *ngFor="#juego of juegos; #i = index" (click)="setPruebasFin(juego.id)" [class.active]="i == 0"><a data-toggle="tab" href="#{{juego.id}}fin">{{juego.nombre}}</a><li>
+              <li *ngFor="#juego of juegos; #i = index" (click)="setPruebasProx(juego.id)" [class.active]="i == 0"><a data-toggle="tab" href="#{{juego.id}}prox">{{juego.nombre}}</a><li>
             </ul>
             <div class="tab-content panel responsive">
-              <div *ngFor="#juego of juegos;#ind = index" id="{{juego.id}}fin" class="tab-pane fade" [class.in]="ind == 0" [class.active]="ind == 0">
+              <div *ngFor="#juego of juegos;#ind = index" id="{{juego.id}}prox" class="tab-pane fade" [class.in]="ind == 0" [class.active]="ind == 0">
                 <div class="container">
                   <div class="row">
-                    <div *ngFor="#partido of arrayFintemp; #indpart = index" class="col-lg-4 col-md-6 col-sm-6" [class.hidden]="partido.juego != juego.id || partido.estado != 'finalizado'">
+                    <div *ngFor="#partido of arrayFintemp; #indpart = index" class="col-lg-4 col-md-6 col-sm-6" [class.hidden]="partido.juego != juego.id || partido.estado != 'proximo'">
                       <h2 *ngIf="isVacio(arrayFintemp)" >No hay partidos</h2>
                       <div id="partido{{partido.id}}">
                         <a href="partido-finalizado.html">
@@ -99,7 +99,7 @@
                     <div class="row">
                         <nav>
                             <ul>
-                                <li><a href="sobre.html" class="link">Sobre Nosotros</a></li>
+                                <li><a [routerLink]="['Perfil']" class="link">Sobre Nosotros</a></li>
                                 <li><a href="faq.html" class="link">Preguntas Frecuentes</a></li>
                                 <li><a href="contacto.html" class="link">Contacto</a></li>
                             </ul>
@@ -115,37 +115,3 @@
                 </div>
             </div>
         </footer>
-
-        <!--Modal de Log In-->
-        <div class="modal fade" id="login" role="dialog" aria-labelledby="etiquetaModal">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <div id="tituloAcceso">
-                            <img class="logoLogin" src="img/logo.png" />
-                            <h3 id="etiquetaModal">Acceso</h3>
-                        </div>
-                        <div name="formularioLogIn" class="form-group">
-                            <input type="text" name="NombreUsuario" autocomplete="on" placeholder="Usuario" class="form-control">
-                            <br/>
-                            <input type="password" name="Password" autocomplete="on" placeholder="Contraseña" class="form-control">
-                            <br/>
-                            <a href="usuario.html">
-                                <button class="btn btn-primary">¡Acceder!</button>
-                            </a>
-                            <div class="checkbox checkDerecho">
-                                <label>
-                                    <input type="checkbox" value="">Recordarme
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer footer-login">
-                        No eres un miembro aún, registrate <a class="link" href="registro.html">aqui.</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Fin de modal de Log In-->

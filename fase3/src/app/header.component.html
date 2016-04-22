@@ -28,3 +28,40 @@
         </div>
     </div>
 </header>
+
+
+        <!--Modal de Log In-->
+        <div class="modal fade" id="login" role="dialog" aria-labelledby="etiquetaModal">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <div id="tituloAcceso">
+                            <img class="logoLogin" src="img/logo.png" />
+                            <h3 id="etiquetaModal">Acceso</h3>
+                        </div>
+                        <div name="formularioLogIn" class="form-group">
+                            <input type="text" name="NombreUsuario" autocomplete="on" placeholder="Usuario" class="form-control">
+                            <br/>
+                            <input type="password" name="Password" autocomplete="on" placeholder="Contraseña" class="form-control">
+                            <br/>
+                            <a href="usuario.html">
+                                <button class="btn btn-primary">¡Acceder!</button>
+                            </a>
+                            <div class="checkbox checkDerecho">
+                                <label>
+                                    <input type="checkbox" value="">Recordarme
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer footer-login">
+                        No eres un miembro aún, registrate <a class="link" href="registro.html">aqui.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+    <!--Fin de modal de Log In-->
+
+<router-outlet></router-outlet>
