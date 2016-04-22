@@ -29,6 +29,7 @@
     "app/utils.ts",
     "app/juego.interface.ts",
     "app/profile.component.ts",
-    "app/usuario.interface.ts"
+    "app/usuario.interface.ts",
+    "mock-bdd.component.ts"
   ]
 }
