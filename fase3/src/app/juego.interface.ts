@@ -17,7 +17,7 @@ export class Juego {
 @Injectable()
 export class JuegoService{
 
-  constructor(){}
+constructor(){}
 
   private juegos =[
     new Juego('League of Legends','lol'),

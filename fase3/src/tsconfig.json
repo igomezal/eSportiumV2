@@ -27,6 +27,8 @@
     "app/main.ts",
     "app/header.component.ts",
     "app/utils.ts",
-    "app/juego.interface.ts"
+    "app/juego.interface.ts",
+    "app/profile.component.ts",
+    "app/usuario.interface.ts"
   ]
 }

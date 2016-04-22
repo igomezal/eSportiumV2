@@ -1,0 +1,99 @@
+
+<div class="container">
+<headerv2></headerv2>
+<br>
+<br>
+<br>
+<br>
+
+  <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-5 col-sm-offset-0 col-xs-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-body"><img class="img-responsive" src="../img/{{usuario.foto}}"></div>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-12">
+                <div class="left-title">
+                    <h2 class="big-title montserrat-text white-text">{{usuario.name}}</h2>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">Miembro desde {{usuario.fecha}}</li>
+                    <li class="list-group-item">Número de apuestas realizadas: {{usuario.apuestas}}</li>
+                    <li class="list-group-item">Género: {{usuario.genero}}</li>
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-9 col-md-9">
+                <div class="left-title no-margin-bottom">
+                    <h3 class="montserrat-text white-text uppercase">Apuestas</h3>
+                </div>
+                <div class="tabs-x tabs-left tab-bordered">
+                    <ul class="nav nav-tabs small-text responsive" role="tablist">
+                        <li class="active"><a href="#actuales" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-record"></i> Actuales</a></li>
+                        <li><a href="#terminadas" role="tab-kv" data-toggle="tab"><i class="glyphicon glyphicon-hourglass"></i>
+                Finalizadas</a></li>
+                    </ul>
+                    <div class="tab-content panel responsive">
+                        <div class="tab-pane fade in active darker-text" id="actuales">
+                            <h3 class="alert alert-warning"><center>No hay apuestas activas.</center></h3>
+                        </div>
+                        <div class="tab-pane fade darker-text" id="terminadas">
+                            <div class="row">
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                                    <div>
+                                        <a href="partido-finalizado.html">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><img class="img-responsive" alt="fnatic" src="../img/fnaticLogo.png"></div>
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                                    <img class="img-responsive" alt="uol" src="../img/UOLLogo.png"></div>
+                                            </div>
+                                            <p class="blue-text">Ganaste 232 puntos</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+                                    <div>
+                                        <a href="partido-finalizado.html">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><img class="img-responsive" alt="h2k" src="../img/H2KLogo.png"></div>
+                                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><img class="img-responsive" alt="origen" src="../img/origenLogo.png"></div>
+                                            </div>
+                                            <p class="blue-text">Perdiste 123 puntos</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="left-title no-margin-bottom">
+                    <h3 class="montserrat-text white-text uppercase">Karma</h3>
+                </div>
+                <div class="karma btn-success no-pointer">{{usuario.karma}} puntos</div>
+                <div class="left-title no-margin-bottom">
+                    <h3 class="montserrat-text white-text uppercase">Comentarios</h3>
+                </div>
+                <ul class="list-group" id="comentado">
+                    <li class="list-group-item">
+                        <p>Admin: Bienvenido a eSportiumV2</p><span class="small-text">20/03/16</span>
+                    </li>
+                </ul>
+                <div class="row">
+                    <div class="col-lg-7 col-md-7 col-sm-9 col-xs-7">
+                        <input class="form-control" rows="1" id="comment">
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                        <button type="button" class="btn btn-primary" id="enviar">Comentar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

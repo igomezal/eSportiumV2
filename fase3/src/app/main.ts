@@ -5,10 +5,11 @@ import {Partido, PartidoService} from './partido.service';
 import {JugadorService} from './jugador.interface';
 import {HeaderComponent} from './header.component';
 import {Juego,JuegoService} from './juego.interface';
+/* pruebaUsuario */import {Usuario,UsuarioService} from './usuario.interface';
 
 @Component({
   selector: 'main-app',
-  providers: [ROUTER_PROVIDERS,PartidoService,JugadorService,JuegoService],
+  providers: [ROUTER_PROVIDERS,PartidoService,JugadorService,JuegoService,/* pruebaUsuario */UsuarioService],
   templateUrl: 'app/index.html', //Esto antes era index.html de fuera de app
   directives: [ROUTER_DIRECTIVES, HeaderComponent],
   /*styleUrls:['./css/bootstrap-tabs-x.css','./css/bootstrap-tabs-x.min.css', //Si quito estos comentarios en chrome deja de funcionar
@@ -33,6 +34,12 @@ import {Juego,JuegoService} from './juego.interface';
 
 export class MainApp {
 
+  //
+  /* pruebaUsuario */usuario: Usuario;
+  //Todo lo añadadido de usuario es para probar esta clase, cuando se cree en routing se quita
+
+  //
+
   juegos: Juego[];
 
   arrayDirtemp: Partido[];
@@ -40,7 +47,7 @@ export class MainApp {
 
   partidos: Partido[];
 
- constructor (private _Partidoservice: PartidoService, private _JuegoService: JuegoService){}
+ constructor (private _Partidoservice: PartidoService, private _JuegoService: JuegoService, /* pruebaUsuario */private _Usuarioservice: UsuarioService){}
 
  ngOnInit(){
    this._Partidoservice.getPartidos().subscribe(
@@ -59,6 +66,11 @@ export class MainApp {
      partidos => this.arrayFintemp = partidos,
      error => console.log(error)
    );
+   /* pruebaUsuario */
+   this._Usuarioservice.getUsuario().subscribe(
+     usuario => this.usuario = usuario,
+     error => console.log(error)
+   )
  }
 
  setPruebasDir(s: String){
