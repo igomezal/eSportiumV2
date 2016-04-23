@@ -21,17 +21,17 @@
   },
   "files": [
     "app.ts",
-    "app/header.component.ts",
+    "app/cabecera.component.ts",
     "app/index.component.ts",
     "app/juego.interface.ts",
     "app/jugador.interface.ts",
-    "app/main.spec.ts",
     "app/main.ts",
     "app/partido.service.ts",
     "app/profile.component.ts",
     "app/route-config.ts",
     "app/usuario.interface.ts",
     "app/utils.ts",
-    "typings.d.ts"
+    "typings.d.ts",
+    "app/pie.component.ts"
   ]
 }

@@ -23,7 +23,9 @@ export class Partido {
     public juego: string,
     public estado: string,
     public diferencia: string,
-    public ganando: string
+    public ganando: string,
+    public url: string,
+    public rondas: string
   ) {}
 
 }
@@ -31,7 +33,12 @@ export class Partido {
 @Injectable()
 export class PartidoService {
 
-  jugs: Jugador[];
+  jugs: Jugador[] = [
+    new Jugador('Jug1','mid',1.5),
+    new Jugador('Jug2','top',2.5),
+    new Jugador('Jug3','noidea',3.5),
+    new Jugador('Jug4','feed',0.0)
+  ];;
 
   constructor (private service: JugadorService){}
 
@@ -43,12 +50,12 @@ export class PartidoService {
   }
 
   private partidos = [
-    new Partido(1,'eq11','c9Logo','eq21','fnaticLogo',this.jugs,this.jugs,'lol','directo','800','eq2'),
-    new Partido(2,'eq12','fnaticLogo','eq22','UOLLogo',this.jugs,this.jugs,'cs','directo','500','eq2'),
-    new Partido(3,'eq13','UOLLogo','eq23','nipLogo',this.jugs,this.jugs,'lol','finalizado','1000','eq1'),
-    new Partido(4,'eq14','nipLogo','eq24','c9Logo',this.jugs,this.jugs,'cod','directo','1:3','eq1'),
-    new Partido(5,'eq15','c9Logo','eq25','fnaticLogo',this.jugs,this.jugs,'lol','directo','1800','eq2'),
-    new Partido(6,'eq16','c9Logo','eq26','fnaticLogo',this.jugs,this.jugs,'cs','proximo','300','eq1'),
+    new Partido(0,'eq11','c9Logo','eq21','fnaticLogo',this.jugs,this.jugs,'lol','directo','800','eq2','https://www.youtube.com/embed/3EwuH3-xmds','BO5'),
+    new Partido(1,'eq12','fnaticLogo','eq22','UOLLogo',this.jugs,this.jugs,'cs','directo','500','eq2','https://www.youtube.com/embed/3EwuH3-xmds','BO3'),
+    new Partido(2,'eq13','UOLLogo','eq23','nipLogo',this.jugs,this.jugs,'lol','finalizado','1000','eq1','https://www.youtube.com/embed/3EwuH3-xmds','BO5'),
+    new Partido(3,'eq14','nipLogo','eq24','c9Logo',this.jugs,this.jugs,'cod','directo','1:3','eq1','https://www.youtube.com/embed/3EwuH3-xmds','BO5'),
+    new Partido(4,'eq15','c9Logo','eq25','fnaticLogo',this.jugs,this.jugs,'lol','directo','1800','eq2','https://www.youtube.com/embed/3EwuH3-xmds','BO3'),
+    new Partido(5,'eq16','c9Logo','eq26','fnaticLogo',this.jugs,this.jugs,'cs','proximo','300','eq1','https://www.youtube.com/embed/3EwuH3-xmds','BO3'),
 
   ];
 
@@ -58,6 +65,10 @@ export class PartidoService {
 
   getPartidosJuego(juego : string){
     return Promise.resolve(this.partidos).then(partidosjuego => partidosjuego.filter(partidojuego => partidojuego.juego === juego));
+  }
+  
+  getPartido(id:number){
+    return withObserver(this.partidos[id]);
   }
 
 }

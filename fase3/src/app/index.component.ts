@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {ROUTER_DIRECTIVES} from 'angular2/router';
+import {ROUTER_DIRECTIVES,Router} from 'angular2/router';
 import {Partido, PartidoService} from './partido.service';
 import {JugadorService} from './jugador.interface';
 import {Juego,JuegoService} from './juego.interface';
@@ -19,7 +19,7 @@ export class indexComponent {
 
   partidos: Partido[];
 
-  constructor (private _Partidoservice: PartidoService, private _JuegoService: JuegoService){}
+  constructor (private _Partidoservice: PartidoService, private _JuegoService: JuegoService, private _router:Router){}
 
   ngOnInit(){
    this._Partidoservice.getPartidos().subscribe(
@@ -67,6 +67,11 @@ export class indexComponent {
      return true;
    }
    return false;
+  }
+  
+  goToPartido(partido: Partido){
+    let link = ['Partido',{id:partido.id}];
+    this._router.navigate(link);
   }
 
 }

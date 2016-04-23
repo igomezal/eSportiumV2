@@ -1,19 +1,21 @@
-import {Component} from 'angular2/core';
+import {Component, AfterContentInit, OnInit} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
 import {CliRouteConfig} from './route-config';
 import {Partido, PartidoService} from './partido.service';
 import {JugadorService} from './jugador.interface';
-import {HeaderComponent} from './header.component';
+import {CabeceraComponent} from './cabecera.component';
 import {Juego,JuegoService} from './juego.interface';
 import {indexComponent} from './index.component';
 import {Perfil} from './profile.component';
 /* pruebaUsuario */import {Usuario,UsuarioService} from './usuario.interface';
+import {PieComponent} from './pie.component';
+import {PartidoComponent} from './partido.component';
 
 @Component({
   selector: 'main-app',
   providers: [ROUTER_PROVIDERS,PartidoService,JugadorService,JuegoService,/* pruebaUsuario */UsuarioService],
-  templateUrl: 'app/header.component.html', //Esto antes era index.html  de fuera de app
-  directives: [ROUTER_DIRECTIVES],
+  templateUrl: 'app/main.html', //Esto antes era index.html  de fuera de app
+  directives: [CabeceraComponent,PieComponent,ROUTER_DIRECTIVES],
   /*styleUrls:['./css/bootstrap-tabs-x.css','./css/bootstrap-tabs-x.min.css', //Si quito estos comentarios en chrome deja de funcionar
     './css/bootstrap-theme.css',
     './css/bootstrap-theme.css.map',
@@ -31,11 +33,16 @@ import {Perfil} from './profile.component';
   pipes: []
 })
 @RouteConfig([
-  {path: '/inicio', name: 'Inicio', component: indexComponent, useAsDefault: true},
+  {path: '/', name: 'Inicio', component: indexComponent, useAsDefault: true},
   {path: '/usuario', name: 'Perfil', component: Perfil},
+  {path:'/finalizados', name: 'Finalizados', component:indexComponent},
+  {path:'/sobre',name:'Sobre',component:indexComponent},
+  {path:'/faq',name:'FAQ',component:indexComponent},
+  {path:'/contacto', name:'Contacto', component:indexComponent},
+  {path:'/partido/:id', name:'Partido', component:PartidoComponent}
 ])
 
-export class MainApp {
+export class MainApp implements OnInit {
 
   //
   /* pruebaUsuario */usuario: Usuario;
@@ -85,12 +92,4 @@ export class MainApp {
        document.head.appendChild(h);
    }
 
-
-
-
-  defaultMeaning: number = 42;
-
-  meaningOfLife(meaning?: number) {
-    return `The meaning of life is ${meaning || this.defaultMeaning}`;
-  }
 }

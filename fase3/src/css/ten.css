@@ -215,6 +215,7 @@ blockquote.bq {
 a {
     color: #7f7f7f;
     transition: all .2s ease-in-out;
+    cursor:pointer;
 }
 
 a:hover {

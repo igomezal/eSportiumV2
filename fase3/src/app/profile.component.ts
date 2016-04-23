@@ -10,13 +10,13 @@ import {ROUTER_DIRECTIVES} from 'angular2/router'
 })
 
 export class Perfil {
-  usuario = Usuario;
+  usuario:Usuario;
   constructor (private _Usuarioservice: UsuarioService){}
 
-  /*ngOnInit(){
+  ngOnInit(){
     this._Usuarioservice.getUsuario().subscribe(
       usuario => this.usuario = usuario,
       error => console.log(error)
     );
-  }*/
+  }
 }
