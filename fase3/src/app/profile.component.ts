@@ -18,5 +18,7 @@ export class Perfil {
       usuario => this.usuario = usuario,
       error => console.log(error)
     );
-  }
+  }   
+
+
 }

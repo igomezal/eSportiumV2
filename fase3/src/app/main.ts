@@ -10,6 +10,7 @@ import {Perfil} from './profile.component';
 /* pruebaUsuario */import {Usuario,UsuarioService} from './usuario.interface';
 import {PieComponent} from './pie.component';
 import {PartidoComponent} from './partido.component';
+import {RegistroComponent} from './registro.component';
 
 @Component({
   selector: 'main-app',
@@ -39,7 +40,8 @@ import {PartidoComponent} from './partido.component';
   {path:'/sobre',name:'Sobre',component:indexComponent},
   {path:'/faq',name:'FAQ',component:indexComponent},
   {path:'/contacto', name:'Contacto', component:indexComponent},
-  {path:'/partido/:id', name:'Partido', component:PartidoComponent}
+  {path:'/partido/:id', name:'Partido', component:PartidoComponent},
+  {path:'/registro', name:'Registro', component:RegistroComponent} 
 ])
 
 export class MainApp implements OnInit {

@@ -12,8 +12,8 @@
                 </div>
 
                 <ul class="list-group">
-                    <li class="list-group-item">Miembro desde {{usuario.fecha}}</li>
-                    <li class="list-group-item">Número de apuestas realizadas: {{usuario.apuestas}}</li>
+                    <li class="list-group-item">Miembro desde {{usuario.fecha | date:'d'}}/{{usuario.fecha | date:'M'}}/{{usuario.fecha | date:'y'}}</li>
+                    <li class="list-group-item">Número de apuestas realizadas: {{usuario.apuestas.length}}</li>
                     <li class="list-group-item">Género: {{usuario.genero}}</li>
                 </ul>
 
@@ -90,4 +90,3 @@
             </div>
         </div>
     </div>
-

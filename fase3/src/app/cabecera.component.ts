@@ -20,4 +20,8 @@ export class CabeceraComponent{
     this._router.navigate(['Finalizados']);
   }
   
+  goToRegistro(){
+    this._router.navigate(['Registro']);
+  }
+  
 }
