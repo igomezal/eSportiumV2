@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component, AfterContentInit } from 'angular2/core';
 import {ROUTER_DIRECTIVES,Router} from 'angular2/router';
 import {Partido, PartidoService} from './partido.service';
 import {JugadorService} from './jugador.interface';
@@ -74,4 +74,15 @@ export class indexComponent {
     this._router.navigate(link);
   }
 
+ ngAfterContentInit() {
+   var q = document.createElement("script");
+       q.type = "text/javascript";
+       q.src = "js/responsive-tabs.js";
+       document.head.appendChild(q);
+   
+       var o = document.createElement("script");
+       o.type = "text/javascript";
+       o.src = "js/script-responsive.js";
+       document.head.appendChild(o);
+   }
 }

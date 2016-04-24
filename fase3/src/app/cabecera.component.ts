@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component, AfterContentInit } from 'angular2/core';
 import {Router} from 'angular2/router';
 
 @Component({
@@ -27,5 +27,12 @@ export class CabeceraComponent{
   goToUsuario(){
     this._router.navigate(['Perfil']);
   }
+  
+  ngAfterContentInit() {
+       var h = document.createElement("script");
+       h.type = "text/javascript";
+       h.src = "js/main.js";
+       document.head.appendChild(h);
+   }
 
 }
