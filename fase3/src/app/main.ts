@@ -11,6 +11,9 @@ import {Perfil} from './profile.component';
 import {PieComponent} from './pie.component';
 import {PartidoComponent} from './partido.component';
 import {RegistroComponent} from './registro.component';
+import {AboutUsComponent} from './aboutus.component';
+import {FaqComponent} from './faq.component';
+import {ContactoComponent} from './contacto.component';
 
 @Component({
   selector: 'main-app',
@@ -37,11 +40,11 @@ import {RegistroComponent} from './registro.component';
   {path: '/', name: 'Inicio', component: indexComponent, useAsDefault: true},
   {path: '/usuario', name: 'Perfil', component: Perfil},
   {path:'/finalizados', name: 'Finalizados', component:indexComponent},
-  {path:'/sobre',name:'Sobre',component:indexComponent},
-  {path:'/faq',name:'FAQ',component:indexComponent},
-  {path:'/contacto', name:'Contacto', component:indexComponent},
+  {path:'/sobre',name:'Sobre',component:AboutUsComponent},
+  {path:'/faq',name:'FAQ',component:FaqComponent},
+  {path:'/contacto', name:'Contacto', component:ContactoComponent},
   {path:'/partido/:id', name:'Partido', component:PartidoComponent},
-  {path:'/registro', name:'Registro', component:RegistroComponent} 
+  {path:'/registro', name:'Registro', component:RegistroComponent}
 ])
 
 export class MainApp implements OnInit {
