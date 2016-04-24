@@ -3,18 +3,18 @@
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-5 col-sm-offset-0 col-xs-offset-4">
                 <div class="panel panel-default">
-                    <div class="panel-body"><img class="img-responsive" src="../img/{{usuario.foto}}"></div>
+                    <div class="panel-body"><img class="img-responsive" src="../img/{{sesion.foto}}"></div>
                 </div>
             </div>
             <div class="col-md-9 col-sm-9 col-xs-12">
                 <div class="left-title">
-                    <h2 class="big-title montserrat-text white-text">{{usuario.name}}</h2>
+                    <h2 class="big-title montserrat-text white-text">{{sesion.name}}</h2>
                 </div>
 
                 <ul class="list-group">
-                    <li class="list-group-item">Miembro desde {{usuario.fecha | date:'d'}}/{{usuario.fecha | date:'M'}}/{{usuario.fecha | date:'y'}}</li>
-                    <li class="list-group-item">Número de apuestas realizadas: {{usuario.apuestas.length}}</li>
-                    <li class="list-group-item">Género: {{usuario.genero}}</li>
+                    <li class="list-group-item">Miembro desde {{sesion.fecha | date:'d'}}/{{sesion.fecha | date:'M'}}/{{sesion.fecha | date:'y'}}</li>
+                    <li class="list-group-item">Número de apuestas realizadas: {{sesion.apuestas.length}}</li>
+                    <li class="list-group-item">Género: {{sesion.genero}}</li>
                 </ul>
 
             </div>
@@ -70,7 +70,7 @@
                 <div class="left-title no-margin-bottom">
                     <h3 class="montserrat-text white-text uppercase">Karma</h3>
                 </div>
-                <div class="karma btn-success no-pointer">{{usuario.karma}} puntos</div>
+                <div class="karma btn-success no-pointer">{{sesion.karma}} puntos</div>
                 <div class="left-title no-margin-bottom">
                     <h3 class="montserrat-text white-text uppercase">Comentarios</h3>
                 </div>

@@ -19,14 +19,9 @@ export class RegistroComponent{
 
     add(nombre:string,correo:string,genero:string, clave:string, clave2:string){
         if(clave === clave2){
-            this._usuarioService.addUsuario(nombre,correo,genero,clave); //Revisar para usar observadores?
+            this._usuarioService.addUsuario(nombre,correo,genero,clave); 
             this.exito = true;
             this.error = false;
-
-            this._usuarioService.getUsuarios().subscribe(
-               usuario => console.log(usuario),
-               error => console.log(error)
-            );
         }else{
             this.error = true;
             this.exito = false;

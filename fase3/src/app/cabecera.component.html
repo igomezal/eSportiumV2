@@ -21,7 +21,9 @@
                     <ul class="first-level_menu">
                         <li><a class="cerrar" (click)="goToInicio()"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio</a></li>
                         <li><a class="cerrar" (click)="goToFinalizados()"><span class="glyphicon glyphicon-hourglass" aria-hidden="true"></span> Finalizados</a></li>
-                        <li><a href="#" data-toggle="modal" data-target="#login" id="usuarioMenu"><span class="glyphicon glyphicon-user"></span> Acceder</a></li>
+                        <li *ngIf="!sesion" ><a href="#" data-toggle="modal" data-target="#login" id="usuarioMenu"><span class="glyphicon glyphicon-user"></span> Acceder</a></li>
+                        <li *ngIf="admin"><a class="cerrar" (click)="goToAdmin()"><span class="glyphicon glyphicon glyphicon-eye-open" aria-hidden="true"></span> Administración</a></li>
+                        <li *ngIf="sesion" class="cerrar" ><a class="cerrar" (click)="goToUsuario()"><span class="glyphicon  glyphicon-user" aria-hidden="true"></span> Ver Perfil</a></li>
                     </ul>
                 </nav>
             </div>
@@ -41,11 +43,11 @@
                     <h3 id="etiquetaModal">Acceso</h3>
                 </div>
                 <div name="formularioLogIn" class="form-group">
-                    <input type="text" name="NombreUsuario" autocomplete="on" placeholder="Usuario" class="form-control">
+                    <input type="text" name="NombreUsuario" autocomplete="on" placeholder="Usuario" class="form-control" #NombreUsuario>
                     <br/>
-                    <input type="password" name="Password" autocomplete="on" placeholder="Contraseña" class="form-control">
+                    <input type="password" name="Password" autocomplete="on" placeholder="Contraseña" class="form-control" #Clave>
                     <br/>
-                    <a class="cerrar" data-dismiss="modal" (click)="goToUsuario()">
+                    <a class="cerrar" data-dismiss="modal" (click)="login(NombreUsuario.value,Clave.value)">
                         <button class="btn btn-primary">¡Acceder!</button>
                     </a>
                     <div class="checkbox checkDerecho">

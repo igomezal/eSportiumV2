@@ -33,6 +33,7 @@
     "app/cabecera.component.ts",
     "app/contacto.component.ts",
     "app/faq.component.ts",
+    "app/finalizados.component.ts",
     "app/index.component.ts",
     "app/juego.interface.ts",
     "app/jugador.interface.ts",

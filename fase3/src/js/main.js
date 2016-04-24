@@ -90,7 +90,7 @@ $(document).ready(function(){
 	});
 	
 	// hide meny content
-	$(".cerrar").click(function(e){
+	$(document).on("click",".cerrar",function(e){
 		e.preventDefault();
 		var links_length = $(".first-level_menu").children("li").length;
 		// reset links' styles
