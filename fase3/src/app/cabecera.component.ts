@@ -7,21 +7,25 @@ import {Router} from 'angular2/router';
 })
 
 export class CabeceraComponent{
-  
+
   constructor(private _router:Router){
-    
+
   }
-  
+
   goToInicio(){
     this._router.navigate(['Inicio']);
   }
-  
+
   goToFinalizados(){
     this._router.navigate(['Finalizados']);
   }
-  
+
   goToRegistro(){
     this._router.navigate(['Registro']);
   }
-  
+
+  goToUsuario(){
+    this._router.navigate(['Perfil']);
+  }
+
 }
