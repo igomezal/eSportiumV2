@@ -1,5 +1,5 @@
     <div class="container">
-       
+
 
         <div class="left-title no-margin-bottom">
             <h3 class="montserrat-text white-text uppercase"><span class="glyphicon glyphicon-record" aria-hidden="true" style="top:3px"></span> En directo</h3>
@@ -15,7 +15,7 @@
               <div *ngFor="#juego of juegos;#ind = index" id="{{juego.id}}" class="tab-pane fade" [class.in]="ind == 0" [class.active]="ind == 0">
                 <div class="container">
                   <div class="row">
-                    <div *ngFor="#partido of arrayDirtemp; #indpart = index" (click)="goToPartido(partido)" class="col-lg-4 col-md-6 col-sm-6" [class.hidden]="partido.juego != juego.id || partido.estado != 'directo'">
+                    <div *ngFor="#partido of arrayDirtemp; #indpart = index" (click)="goToPartido(partido)" class="col-lg-4 col-md-6 col-sm-6" [class.hidden]="partido.juego != juego.id || partido.estado != 'Directo'">
                       <h2 *ngIf="isVacio(arrayDirtemp)">No hay partidos </h2>
                         <div id="partido{{partido.id}}">
                         <a>
@@ -57,7 +57,7 @@
               <div *ngFor="#juego of juegos;#ind = index" id="{{juego.id}}prox" class="tab-pane fade" [class.in]="ind == 0" [class.active]="ind == 0">
                 <div class="container">
                   <div class="row">
-                    <div *ngFor="#partido of arrayFintemp; #indpart = index" class="col-lg-4 col-md-6 col-sm-6" [class.hidden]="partido.juego != juego.id || partido.estado != 'proximo'">
+                    <div *ngFor="#partido of arrayFintemp; #indpart = index" class="col-lg-4 col-md-6 col-sm-6" [class.hidden]="partido.juego != juego.id || partido.estado != 'Proximamente'">
                       <h2 *ngIf="isVacio(arrayFintemp)" >No hay partidos</h2>
                       <div id="partido{{partido.id}}">
                         <a href="partido-finalizado.html">
