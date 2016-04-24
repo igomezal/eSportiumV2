@@ -1,4 +1,4 @@
-import {Component,OnInit,AfterContentInit } from 'angular2/core';
+import {Component,OnInit} from 'angular2/core';
 import {RouteParams} from 'angular2/router';
 
 import {PartidoService} from './partido.service';
@@ -22,13 +22,5 @@ export class PartidoComponent implements OnInit {
             partido => this.partido = partido,
             error => console.log(error)
         );
-    }
-    
-     ngAfterContentInit() {
-       var ñ = document.createElement("script");
-       ñ.type = "text/javascript";
-       ñ.src = "js/jS.js";
-       document.head.appendChild(ñ);
-   }
-    
+    }   
 }

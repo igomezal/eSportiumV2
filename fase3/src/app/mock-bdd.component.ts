@@ -26,5 +26,5 @@ export var PARTIDOS: Partido[] = [
 ]
 
 export var USUARIO: Usuario[] = [
-  { "id":1 ,"name": "Pepe Lamela", "fecha": "23/03/1990","genero": "Hombre", "apuestas": [1,2,3], "finalizados" : [1,2], "karma": 1600, "foto": "../img/icon-profile.png", "clave": "1234", "correo": "fake@fake.es"},
+  { "id":1 ,"name": "Pepe Lamela", "fecha": "23/03/1990","genero": "Hombre", "apuestas": [1,2,3], "finalizados" : [1,2], "karma": 1600, "foto": "../img/icon-profile.png", "clave": "1234", "correo": "fake@fake.es","admin":false},
 ]

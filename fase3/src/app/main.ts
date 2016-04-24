@@ -44,7 +44,8 @@ import {ContactoComponent} from './contacto.component';
   {path:'/faq',name:'FAQ',component:FaqComponent},
   {path:'/contacto', name:'Contacto', component:ContactoComponent},
   {path:'/partido/:id', name:'Partido', component:PartidoComponent},
-  {path:'/registro', name:'Registro', component:RegistroComponent}
+  {path:'/registro', name:'Registro', component:RegistroComponent},
+  {path:'/admin',name:'Admin',component:indexComponent}
 ])
 
 export class MainApp implements OnInit {
