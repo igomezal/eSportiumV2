@@ -14,6 +14,7 @@ import {RegistroComponent} from './registro.component';
 import {AboutUsComponent} from './aboutus.component';
 import {FaqComponent} from './faq.component';
 import {ContactoComponent} from './contacto.component';
+import {finalizadosComponent} from './finalizados.component';
 
 @Component({
   selector: 'main-app',
@@ -39,7 +40,7 @@ import {ContactoComponent} from './contacto.component';
 @RouteConfig([
   {path: '/', name: 'Inicio', component: indexComponent, useAsDefault: true},
   {path: '/usuario', name: 'Perfil', component: Perfil},
-  {path:'/finalizados', name: 'Finalizados', component:indexComponent},
+  {path:'/finalizados', name: 'Finalizados', component:finalizadosComponent},
   {path:'/sobre',name:'Sobre',component:AboutUsComponent},
   {path:'/faq',name:'FAQ',component:FaqComponent},
   {path:'/contacto', name:'Contacto', component:ContactoComponent},
