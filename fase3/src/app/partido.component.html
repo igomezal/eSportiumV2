@@ -1,3 +1,4 @@
+<cabecera (event)='log($event)'></cabecera>
 <br>
 <div class="container-fluid">
         <div class="panel panel-default" id="apuesta">
@@ -6,7 +7,7 @@
                     <div class="col-md-3">
                         <div class="row">
                             <div class="col-md-4 col-sm-4 col-xs-4">
-                                <button class="btn btn-primary" data-toggle="modal" data-target="#login2">Apostar</button>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#apostar" (click)="actualizar()" [disabled]="!(partido.estado==='proximo')">Apostar</button>
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-3 col-sm-offset-1  col-xs-offset-1 muestra">
                                 {{partido.eq1}}
@@ -20,7 +21,7 @@
                     <div class="col-md-3 col-md-offset-2">
                         <div class="row">
                             <div class="col-md-4 col-sm-4 col-xs-4">
-                                <button class="btn btn-primary" data-toggle="modal" data-target="#login2">Apostar</button>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#apostar" (click)="actualizar()" [disabled]="!(partido.estado==='proximo')">Apostar</button>
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-3 col-xs-offset-1 col-sm-offset-1 muestra">
                                 {{partido.eq2}}
@@ -110,18 +111,19 @@
     </div>
     
    <!--Modal de apuesta-->
-    <div class="modal fade" id="apostar" role="dialog" aria-labelledby="etiquetaModal">
+    <div *ngIf="sesion"  class="modal fade" id="apostar" role="dialog" aria-labelledby="etiquetaModal">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-body">
                     <h3 class="etiquetaModal">Apostar por equipo</h3>
-                    <div class="karma btn-success no-pointer">6300 puntos</div>
+                    <div class="karma btn-success no-pointer">{{sesion.karma}}</div>
                     <br/>
-                    <input class="input-lg" id="spin-apuessta" type="text" value="0" name="spin-apuesta">
-                    <br/>
+                    <center><input class="input-lg" id="spin-apuessta" type="text" value="0" name="spin-apuesta" #apuesta></center>
+                    <br>
+                    <br>
                     <div class="row">
                         <div class="col-md-7 col-sm-7 col-xs-7">
-                            <button class="btn btn-primary btn-sp" data-dismiss="modal">Realizar Apuesta</button>
+                            <button class="btn btn-primary btn-sp" data-dismiss="modal" (click)="apostar(apuesta.value);">Realizar Apuesta</button>
                         </div>
                         <div class="col-md-4 col-sm-4 col-xs-4">
                             <button class="btn btn-danger btn-sp" data-dismiss="modal">Cancelar</button>
@@ -134,7 +136,7 @@
     <!--Fin de modal de apuesta-->
     
     <!--Modal de Log In-->
-<div class="modal fade" id="login2" role="dialog" aria-labelledby="etiquetaModal">
+<div *ngIf="!sesion"  class="modal fade" id="apostar" role="dialog" aria-labelledby="etiquetaModal">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-body">
@@ -144,11 +146,11 @@
                     <h3 id="etiquetaModal">Acceso</h3>
                 </div>
                 <div name="formularioLogIn" class="form-group">
-                    <input type="text" name="NombreUsuario" autocomplete="on" placeholder="Usuario" class="form-control">
+                    <input type="text" name="NombreUsuario" autocomplete="on" placeholder="Usuario" class="form-control" #NombreUsuario>
                     <br/>
-                    <input type="password" name="Password" autocomplete="on" placeholder="Contraseña" class="form-control">
+                    <input type="password" name="Password" autocomplete="on" placeholder="Contraseña" class="form-control" #Clave>
                     <br/>
-                    <a class="cerrar" data-dismiss="modal" (click)="goToUsuario()">
+                    <a class="cerrar" data-dismiss="modal" (click)="login(NombreUsuario.value,Clave.value)">
                         <button class="btn btn-primary">¡Acceder!</button>
                     </a>
                     <div class="checkbox checkDerecho">

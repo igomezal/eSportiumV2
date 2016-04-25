@@ -10,8 +10,8 @@ export class Usuario {
     public name: string,
     public fecha: any,
     public genero: string,
-    public apuestas: number[], //esto se obtendra de los ids de los partdos de la BDD
-    public finalizados : number[], //esto se obtendra de los ids de los partdos de la BDD
+    public apuestas: {id:number,karma:number}[], //esto se obtendra de los ids de los partdos de la BDD
+    public finalizados : {id:number,karma:number}[], //esto se obtendra de los ids de los partdos de la BDD
     public karma: number,
     public foto: string,
     public clave: string,
@@ -24,8 +24,8 @@ export class Usuario {
 
 @Injectable()
 export class UsuarioService{
-  private apuestas = [1,2,3];
-  private finalizados = [1,2,3];
+  private apuestas = [{"id":1,"karma":200},{"id":2,"karma":200},{"id":3,"karma":200}];
+  private finalizados = [{"id":1,"karma":200},{"id":2,"karma":200},{"id":3,"karma":200}];
   private sesion:Usuario;
   private usuario:Usuario[] = [new Usuario (0,'yeah',new Date('December 25, 1995 23:15:30'),'Masculino', this.apuestas,this.finalizados,600,'icon-profile.png','1234','falso@falso.es',false),
   new Usuario (0,'administrator',new Date('December 25, 1995 23:15:30'),'Masculino', this.apuestas,this.finalizados,600,'icon-profile.png','administrator','falso@falso.es',true)];
@@ -73,5 +73,28 @@ export class UsuarioService{
     return withObserver(this.admin);
   }
   
+  setAdmin(admin:boolean){
+    this.admin = admin;
+    return withObserver(this.admin);
+  }
   
+  setSesion(sesion:Usuario){
+    this.sesion = sesion;
+    return withObserver(this.sesion);
+  }
+  
+  apostar(partido:Partido,apuesta:number){
+    this.sesion.apuestas.push({"id":partido.id,"karma":apuesta});
+    this.sesion.karma -= apuesta;
+    this.almacenarSesion(this.sesion);
+    return withObserver(this.sesion);
+  }
+  
+  almacenarSesion(sesion:Usuario){ //Almacenamos los cambios realizados en la sesion
+    for(var i=0; i < this.usuario.length; i++) {
+        if(this.usuario[i].name === this.sesion.name){
+          this.usuario[i] = sesion;
+        }
+    }
+  }
 }

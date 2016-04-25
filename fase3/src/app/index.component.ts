@@ -44,7 +44,7 @@ export class indexComponent {
    this.arrayDirtemp = [];
    for(var i =0; i<this.partidos.length; i++){
      if(this.partidos[i].juego == s){
-       if(this.partidos[i].estado == 'Directo'){
+       if(this.partidos[i].estado == 'directo'){
          this.arrayDirtemp.push(this.partidos[i]);
        }
      }
@@ -55,7 +55,7 @@ export class indexComponent {
    this.arrayFintemp = [];
    for(var i =0; i<this.partidos.length; i++){
      if(this.partidos[i].juego == s){
-       if(this.partidos[i].estado == 'Proximamente'){
+       if(this.partidos[i].estado == 'proximo'){
          this.arrayFintemp.push(this.partidos[i]);
        }
      }
@@ -63,12 +63,12 @@ export class indexComponent {
   }
 
   isVacio(a: Partido[]){
-   if(a.length == 0){
+   if(a.length === 0){
      return true;
    }
    return false;
   }
-
+  
   goToPartido(partido: Partido){
     let link = ['Partido',{id:partido.id}];
     this._router.navigate(link);
@@ -79,7 +79,7 @@ export class indexComponent {
        q.type = "text/javascript";
        q.src = "js/responsive-tabs.js";
        document.head.appendChild(q);
-
+   
        var o = document.createElement("script");
        o.type = "text/javascript";
        o.src = "js/script-responsive.js";

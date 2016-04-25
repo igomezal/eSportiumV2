@@ -14,18 +14,7 @@ import {RegistroComponent} from './registro.component';
 import {AboutUsComponent} from './aboutus.component';
 import {FaqComponent} from './faq.component';
 import {ContactoComponent} from './contacto.component';
-<<<<<<< HEAD
-import {addJuegoComponent} from './admin/add_juegos.component';
-import {addPartidoComponent} from './admin/add_partidos.component';
-import {gestionJuegosComponent} from './admin/gestion_juegos.component';
-import {editJuegoComponent} from './admin/edit_juego.component';
-import {homeComponent} from './admin/home.component';
-import {ajustesComponent} from './admin/ajustes.component';
-import {gestionPartidosComponent} from './admin/gestion_partidos.component';
-import {editPartidoComponent} from './admin/edit_partido.component';
-=======
 import {finalizadosComponent} from './finalizados.component';
->>>>>>> origin/Fase3Carlos
 
 @Component({
   selector: 'main-app',
@@ -49,7 +38,7 @@ import {finalizadosComponent} from './finalizados.component';
   pipes: []
 })
 @RouteConfig([
-  {path: '/', name: 'Inicio', component: indexComponent,  useAsDefault: true},
+  {path: '/', name: 'Inicio', component: indexComponent, useAsDefault: true},
   {path: '/usuario', name: 'Perfil', component: Perfil},
   {path:'/finalizados', name: 'Finalizados', component:finalizadosComponent},
   {path:'/sobre',name:'Sobre',component:AboutUsComponent},
@@ -57,19 +46,7 @@ import {finalizadosComponent} from './finalizados.component';
   {path:'/contacto', name:'Contacto', component:ContactoComponent},
   {path:'/partido/:id', name:'Partido', component:PartidoComponent},
   {path:'/registro', name:'Registro', component:RegistroComponent},
-<<<<<<< HEAD
-  {path:'/addJuego', name:'AddJuego', component:addJuegoComponent},
-  {path:'/addPartido', name:'AddPartido', component:addPartidoComponent},
-  {path:'/juegos', name:'GestionJuegos', component:gestionJuegosComponent},
-  {path:'/editJuego/:id', name:'EditarJuego', component:editJuegoComponent},
-  {path:'/admin', name:'AdminHome', component:homeComponent},
-  {path:'/partidos', name:'GestionPartidos', component:gestionPartidosComponent},
-  {path:'/ajustes', name:'Ajustes', component:ajustesComponent},
-  {path:'/editPartido/:id', name:'EditarPartido', component:editPartidoComponent},
-
-=======
   {path:'/admin',name:'Admin',component:indexComponent}
->>>>>>> origin/Fase3Carlos
 ])
 
 export class MainApp implements OnInit {

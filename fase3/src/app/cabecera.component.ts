@@ -1,6 +1,7 @@
-import {Component, AfterContentInit ,OnInit } from 'angular2/core';
+import {Component, AfterContentInit ,OnInit} from 'angular2/core';
 import {Router} from 'angular2/router';
 import {Usuario,UsuarioService} from './usuario.interface';
+
 
 @Component({
   selector: 'cabecera',
@@ -8,12 +9,14 @@ import {Usuario,UsuarioService} from './usuario.interface';
 })
 
 export class CabeceraComponent implements OnInit{
-  
+   
   sesion:Usuario;
   admin:boolean;
-
+  
+  
+  
   constructor(private _router:Router,private _usuarioService: UsuarioService){
-
+    
   }
   
   ngOnInit(){
@@ -60,12 +63,29 @@ export class CabeceraComponent implements OnInit{
     );
     console.log(this.sesion);
   }
+  salir(){
+    this._usuarioService.setSesion(undefined);
+    this._usuarioService.setAdmin(false);
+    this.goToInicio();
+  }
   
   ngAfterContentInit() {
        var h = document.createElement("script");
        h.type = "text/javascript";
        h.src = "js/main.js";
        document.head.appendChild(h);
+   }
+   
+   actualizar(){
+     this._usuarioService.getSesion().subscribe(
+        usuario => this.sesion = usuario,
+        error => console.log(error)
+      );
+    
+      this._usuarioService.getAdmin().subscribe(
+        admin => this.admin = admin,
+        error => console.log(error)
+      );
    }
 
 }

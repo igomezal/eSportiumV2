@@ -50,12 +50,12 @@ export class PartidoService {
   }
 
   private partidos = [
-    new Partido(0,'eq11','c9Logo','eq21','fnaticLogo',this.jugs,this.jugs,'lol','Directo','800','eq2','https://www.youtube.com/embed/3EwuH3-xmds','BO5'),
-    new Partido(1,'eq12','fnaticLogo','eq22','UOLLogo',this.jugs,this.jugs,'cs','Directo','500','eq2','https://www.youtube.com/embed/3EwuH3-xmds','BO3'),
-    new Partido(2,'eq13','UOLLogo','eq23','nipLogo',this.jugs,this.jugs,'lol','Finalizado','1000','eq1','https://www.youtube.com/embed/3EwuH3-xmds','BO5'),
-    new Partido(3,'eq14','nipLogo','eq24','c9Logo',this.jugs,this.jugs,'cod','Directo','1:3','eq1','https://www.youtube.com/embed/3EwuH3-xmds','BO5'),
-    new Partido(4,'eq15','c9Logo','eq25','fnaticLogo',this.jugs,this.jugs,'lol','Directo','1800','eq2','https://www.youtube.com/embed/3EwuH3-xmds','BO3'),
-    new Partido(5,'eq16','c9Logo','eq26','fnaticLogo',this.jugs,this.jugs,'cs','Proximamente','300','eq1','https://www.youtube.com/embed/3EwuH3-xmds','BO3'),
+    new Partido(0,'eq11','c9Logo','eq21','fnaticLogo',this.jugs,this.jugs,'lol','directo','800','eq2','https://www.youtube.com/embed/3EwuH3-xmds','BO5'),
+    new Partido(1,'eq12','fnaticLogo','eq22','UOLLogo',this.jugs,this.jugs,'cs','directo','500','eq2','https://www.youtube.com/embed/3EwuH3-xmds','BO3'),
+    new Partido(2,'eq13','UOLLogo','eq23','nipLogo',this.jugs,this.jugs,'lol','finalizado','1000','eq1','https://www.youtube.com/embed/3EwuH3-xmds','BO5'),
+    new Partido(3,'eq14','nipLogo','eq24','c9Logo',this.jugs,this.jugs,'cod','directo','1:3','eq1','https://www.youtube.com/embed/3EwuH3-xmds','BO5'),
+    new Partido(4,'eq15','c9Logo','eq25','fnaticLogo',this.jugs,this.jugs,'lol','directo','1800','eq2','https://www.youtube.com/embed/3EwuH3-xmds','BO3'),
+    new Partido(5,'eq16','c9Logo','eq26','fnaticLogo',this.jugs,this.jugs,'cs','proximo','300','eq1','https://www.youtube.com/embed/3EwuH3-xmds','BO3')
 
   ];
 
@@ -66,57 +66,9 @@ export class PartidoService {
   getPartidosJuego(juego : string){
     return Promise.resolve(this.partidos).then(partidosjuego => partidosjuego.filter(partidojuego => partidojuego.juego === juego));
   }
-
+  
   getPartido(id:number){
     return withObserver(this.partidos[id]);
-  }
-
-  anadirPartido(juego:string, eq1: string, logo1:string, porcen1:string, eq2: string, logo2:string, porcen2:string, url: string, rondas: string, estado: string){ //Faltaría lo de jugadores de cada equipo
-    let i = this.partidos.length;
-    let ganan;
-    if( porcen1 > porcen2){
-      ganan = 'eq1';
-    }else{
-      ganan = 'eq2';
-    }
-    let p = new Partido(i, eq1, logo1, eq2, logo2, this.jugs, this.jugs, juego, estado, '500', ganan, 'https://www.youtube.com/embed/3EwuH3-xmds', rondas);
-    this.partidos.push(p);
-    console.log(this.partidos);
-    return withObserver(this.partidos);
-  }
-
-  editarPartido(id: number, juego:string, eq1: string, logo1:string, porcen1:string, eq2: string, logo2:string, porcen2:string, url: string, rondas: string, estado: string){
-    this.partidos[id].eq1 = eq1;
-    this.partidos[id].logo1 = logo1;
-    this.partidos[id].diferencia = porcen1;
-    this.partidos[id].eq2 = eq2;
-    this.partidos[id].logo2 = logo2;
-    this.partidos[id].url = url;
-    this.partidos[id].estado = estado;
-    this.partidos[id].rondas = rondas;
-    this.partidos[id].juego = juego;
-    let ganan;
-    if( porcen1 > porcen2){
-      ganan = 'eq1';
-    }else{
-      ganan = 'eq2';
-    }
-    alert("Partido editado");
-    return withObserver(new Partido(id, eq1, logo1, eq2, logo2, this.jugs, this.jugs, juego, estado, '500', ganan , 'https://www.youtube.com/embed/3EwuH3-xmds', rondas))
-  }
-
-  eliminarPartido(id : number){
-    let p: Partido;
-    p = this.partidos[id];
-    var r = confirm("¿Quierres borrar el partido?");
-    if (r == true){
-      this.partidos.splice(id, 1);
-      alert("Partido eliminado");
-      return withObserver (p);
-    }else{
-      alert("Casi la lias");
-    }
-
   }
 
 }
