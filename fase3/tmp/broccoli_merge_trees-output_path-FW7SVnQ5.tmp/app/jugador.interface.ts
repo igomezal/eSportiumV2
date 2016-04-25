@@ -1,0 +1,1 @@
+/Users/sergiownd/Desktop/preactica daw/src/app/jugador.interface.ts

@@ -1,0 +1,1 @@
+/Users/sergiownd/Desktop/PracticaDaw/src/app/aboutus.component.ts

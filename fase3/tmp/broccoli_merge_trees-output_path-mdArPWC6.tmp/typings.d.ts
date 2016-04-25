@@ -1,0 +1,1 @@
+/Users/sergiownd/Desktop/Universidad/3º/DAW/main/src/typings.d.ts
