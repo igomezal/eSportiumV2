@@ -74,3 +74,13 @@ Funcionalidad privada: Podrá realizar apuestas, consultar su saldo de puntos ac
 
 ![Sobre Nosotros](https://github.com/igomezal/eSportiumV2/blob/master/diagrama/imagenes/nosotros.png?raw=true "Sobre Nosotros")
 >Sobre Nosotros
+
+### Fase 2:
+
+1. Para descargar el tag de la fase 3 haga click en el link "release" situado en la parte superior y luego  fase 3. Una vez dentro seleccionar source code (zip) para comenzar la descarga.
+2. Para su ejecución es necesario un browser (Google Chrome, Internet Explorer, Mozilla Firefox o Safari), es compatible con los dispositivos móviles, Windows, Linux y MAC OSX.
+3. Extraer todos los archivos del .zip y mediante la consola nos debemos mover a donde hemos extraido el zip y entrar en fase 3, una vez en esta carpeta ejecutar el comando ng serve.
+<Enter>
+
+![Diagrama de Clases](https://github.com/igomezal/eSportiumV2/blob/master/diagrama/diagramaclasesfase3.png?raw=true)
+>Diagrama de Clases
