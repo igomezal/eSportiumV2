@@ -15,7 +15,7 @@
 
                 <ul class="list-group">
                     <li class="list-group-item">Miembro desde {{sesion.fecha | date:'d'}}/{{sesion.fecha | date:'M'}}/{{sesion.fecha | date:'y'}}</li>
-                    <li class="list-group-item">Número de apuestas realizadas: {{sesion.apuestas.length}}</li>
+                    <li class="list-group-item">Número de apuestas realizadas: {{sesion.apuestas.length + sesion.finalizados.length}}</li>
                     <li class="list-group-item">Género: {{sesion.genero}}</li>
                 </ul>
 
