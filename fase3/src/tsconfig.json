@@ -24,6 +24,7 @@
     "app/aboutus.component.ts",
     "app/cabecera.component.ts",
     "app/contacto.component.ts",
+    "app/editarpefil.component.ts",
     "app/faq.component.ts",
     "app/finalizados.component.ts",
     "app/index.component.ts",

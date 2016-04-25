@@ -15,6 +15,7 @@ import {AboutUsComponent} from './aboutus.component';
 import {FaqComponent} from './faq.component';
 import {ContactoComponent} from './contacto.component';
 import {finalizadosComponent} from './finalizados.component';
+import {editarPerfil} from './editarpefil.component';
 
 @Component({
   selector: 'main-app',
@@ -46,7 +47,8 @@ import {finalizadosComponent} from './finalizados.component';
   {path:'/contacto', name:'Contacto', component:ContactoComponent},
   {path:'/partido/:id', name:'Partido', component:PartidoComponent},
   {path:'/registro', name:'Registro', component:RegistroComponent},
-  {path:'/admin',name:'Admin',component:indexComponent}
+  {path:'/admin',name:'Admin',component:indexComponent},
+  {path: '/editar', name:'Editar',component:editarPerfil}
 ])
 
 export class MainApp implements OnInit {

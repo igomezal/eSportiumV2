@@ -30,11 +30,11 @@ export class UsuarioService{
   private usuario:Usuario[] = [new Usuario (0,'yeah',new Date('December 25, 1995 23:15:30'),'Masculino', this.apuestas,this.finalizados,600,'icon-profile.png','1234','falso@falso.es',false),
   new Usuario (0,'administrator',new Date('December 25, 1995 23:15:30'),'Masculino', this.apuestas,this.finalizados,600,'icon-profile.png','administrator','falso@falso.es',true)];
   private admin:boolean = false;
-  
+
   getUsuario(){
     return withObserver(this.usuario[0]);
   }
-  
+
   addUsuario(nombre:string,correo:string, genero:string , clave: string){
     let id = this.usuario.length
     let today = Date.now();
@@ -42,16 +42,16 @@ export class UsuarioService{
     this.usuario.push(user);
     return withObserver(user);
   }
-  
+
   getUsuarios(){
     return withObserver(this.usuario);
   }
-  
+
   getSesion(){
     console.log(this.sesion);
     return withObserver(this.sesion);
   }
-  
+
   login(nombre:string, clave:string){
     var user:Usuario;
     for(var i=0; i < this.usuario.length; i++) {
@@ -65,31 +65,40 @@ export class UsuarioService{
     }else{
       console.log("Usuario/Contraseña incorrecta");
     }
-    
+
     return withObserver(this.sesion);
   }
-  
+
   getAdmin(){
     return withObserver(this.admin);
   }
-  
+
   setAdmin(admin:boolean){
     this.admin = admin;
     return withObserver(this.admin);
   }
-  
+
   setSesion(sesion:Usuario){
     this.sesion = sesion;
     return withObserver(this.sesion);
   }
-  
+
   apostar(partido:Partido,apuesta:number){
     this.sesion.apuestas.push({"id":partido.id,"karma":apuesta});
     this.sesion.karma -= apuesta;
     this.almacenarSesion(this.sesion);
     return withObserver(this.sesion);
   }
-  
+
+  editarDatos(constraseña:string,foto:string,correo:string,genero:string){
+    this.sesion.clave = constraseña;
+    this.sesion.foto = foto;
+    this.sesion.correo = correo;
+    this.sesion.genero = genero;
+    this.almacenarSesion(this.sesion);
+    return withObserver(this.sesion);
+  }
+
   almacenarSesion(sesion:Usuario){ //Almacenamos los cambios realizados en la sesion
     for(var i=0; i < this.usuario.length; i++) {
         if(this.usuario[i].name === this.sesion.name){

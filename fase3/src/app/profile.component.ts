@@ -9,7 +9,7 @@ import {ROUTER_DIRECTIVES,Router} from 'angular2/router';
 })
 
 export class Perfil {
-  
+
   sesion:Usuario;
   partidoAc:Partido[];
   partidoFin:Partido[];
@@ -22,7 +22,7 @@ export class Perfil {
     );
     this.getPartido();
   }
-  
+
   getApuesta(id:number){
     for(var i = 0; i<this.sesion.apuestas.length; i++){
       if(this.sesion.apuestas[i].id === id){
@@ -30,7 +30,7 @@ export class Perfil {
       }
     }
   }
-  
+
   getPartido(){
     this.partidoAc = [];
     for(var i = 0; i<this.sesion.apuestas.length; i++){
@@ -39,7 +39,7 @@ export class Perfil {
         error => console.log(error)
       );
     }
-    
+
     this.partidoFin = [];
     for(var i = 0; i<this.sesion.finalizados.length; i++){
       this._partidoService.getPartido(this.sesion.finalizados[i].id).subscribe(
@@ -48,9 +48,13 @@ export class Perfil {
       );
     }
   }
-  
+
   goToPartido(partido: Partido){
     let link = ['Partido',{id:partido.id}];
+    this._router.navigate(link);
+  }
+  goToEditar(partido: Partido){
+    let link = ['Editar'];
     this._router.navigate(link);
   }
 }
