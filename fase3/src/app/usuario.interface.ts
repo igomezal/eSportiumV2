@@ -53,21 +53,26 @@ export class UsuarioService{
   }
 
   login(nombre:string, clave:string){
-    var user:Usuario;
-    for(var i=0; i < this.usuario.length; i++) {
-        if(this.usuario[i].name === nombre){
-          user = this.usuario[i];
-        }
-    }
-    if(user.clave === clave){
-      this.sesion = user;
-      this.admin = user.admin;
-    }else{
-      console.log("Usuario/Contraseña incorrecta");
-    }
+      var user:Usuario;
+      for(var i=0; i < this.usuario.length; i++) {
+          if(this.usuario[i].name === nombre){
+            user = this.usuario[i];
+          }
+      }
+      if (user == undefined){
+        alert("Error, usuario o contraseña incorrecta");
+      } else{
+      if(user.clave === clave){
+        this.sesion = user;
+        this.admin = user.admin;
+      }else{
+        console.log("Usuario/Contraseña incorrecta");
+      }
 
-    return withObserver(this.sesion);
+      return withObserver(this.sesion);
+    }
   }
+
 
   getAdmin(){
     return withObserver(this.admin);
