@@ -26,6 +26,7 @@ export class editarPerfil {
           var fotov:string;
           var correov:string;
           var generov:string;
+          var clavev:string;
           if (foto === ""){
             fotov = this.sesion.foto;
           }else{
@@ -41,7 +42,12 @@ export class editarPerfil {
           }else{
             generov = genero;
           }
-          this._usuarioService.editarDatos(clave1,fotov,correov,generov);
+          if(clave1==""){
+            clavev = this.sesion.clave; 
+          }else{
+            clavev = clave1;
+          }
+          this._usuarioService.editarDatos(clavev,fotov,correov,generov);
           this.exito = true;
           this.error = false;
       }else{
