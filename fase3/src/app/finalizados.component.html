@@ -16,7 +16,7 @@
           <div *ngFor="#juego of juegos;#ind = index" id="{{juego.id}}" class="tab-pane fade" [class.in]="ind == 0" [class.active]="ind == 0">
             <div class="container">
               <div class="row">
-                <div *ngFor="#partido of arrayDirtemp; #indpart = index" (click)="goToPartido(partido)" class="col-lg-4 col-md-6 col-sm-6" [class.hidden]="partido.juego != juego.id || partido.estado != 'finalizado'">
+                <div *ngFor="#partido of arrayDirtemp; #indpart = index" (click)="goToPartido(partido)" class="col-lg-4 col-md-6 col-sm-6" [class.hidden]="partido.juego != juego.id || partido.estado != 'Finalizado'">
                   <h2 *ngIf="isVacio(arrayDirtemp)">No hay partidos </h2>
                     <div id="partido{{partido.id}}">
                     <a>

@@ -4,8 +4,7 @@ import {Usuario} from './usuario.interface';
 
 @Component({
     selector: 'registro',
-    templateUrl: 'app/registro.component.html',
-    providers: [UsuarioService]
+    templateUrl: 'app/registro.component.html'
 })
 
 export class RegistroComponent{
@@ -19,7 +18,7 @@ export class RegistroComponent{
 
     add(nombre:string,correo:string,genero:string, clave:string, clave2:string){
         if(clave === clave2){
-            this._usuarioService.addUsuario(nombre,correo,genero,clave); 
+            this._usuarioService.addUsuario(nombre,correo,genero,clave);
             this.exito = true;
             this.error = false;
         }else{

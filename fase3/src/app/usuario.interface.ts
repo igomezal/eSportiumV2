@@ -28,7 +28,7 @@ export class UsuarioService{
   private finalizados = [{"id":1,"karma":200},{"id":2,"karma":200},{"id":3,"karma":200}];
   private sesion:Usuario;
   private usuario:Usuario[] = [new Usuario (0,'yeah',new Date('December 25, 1995 23:15:30'),'Masculino', this.apuestas,this.finalizados,600,'icon-profile.png','1234','falso@falso.es',false),
-  new Usuario (0,'administrator',new Date('December 25, 1995 23:15:30'),'Masculino', this.apuestas,this.finalizados,600,'icon-profile.png','administrator','falso@falso.es',true)];
+  new Usuario (1,'administrator',new Date('December 25, 1995 23:15:30'),'Masculino', this.apuestas,this.finalizados,600,'icon-profile.png','administrator','falso@falso.es',true)];
   private admin:boolean = false;
 
   getUsuario(){
@@ -53,15 +53,14 @@ export class UsuarioService{
   }
 
   login(nombre:string, clave:string){
-      var user:Usuario;
-      for(var i=0; i < this.usuario.length; i++) {
-          if(this.usuario[i].name === nombre){
-            user = this.usuario[i];
-          }
-      }
-      if (user == undefined){
-        alert("Error, usuario o contraseña incorrecta");
-      } else{
+    var user:Usuario;
+    for(var i=0; i < this.usuario.length; i++) {
+        if(this.usuario[i].name === nombre){
+          user = this.usuario[i];
+        }
+    }if( user == undefined){
+      alert("Error, usuario o contraseña incorrectos");
+    }else{
       if(user.clave === clave){
         this.sesion = user;
         this.admin = user.admin;
@@ -71,8 +70,7 @@ export class UsuarioService{
 
       return withObserver(this.sesion);
     }
-  }
-
+}
 
   getAdmin(){
     return withObserver(this.admin);
@@ -110,5 +108,16 @@ export class UsuarioService{
           this.usuario[i] = sesion;
         }
     }
+  }
+
+  getUsuarioporId(id : number){
+    return withObserver(this.usuario[id]);
+  }
+
+  eliminarUsuario(id: number){
+    let u: Usuario;
+    u = this.usuario[id];
+    this.usuario.splice(id, 1);
+    return withObserver(u);
   }
 }

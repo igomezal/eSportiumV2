@@ -9,22 +9,22 @@ import {Usuario,UsuarioService} from './usuario.interface';
 })
 
 export class CabeceraComponent implements OnInit{
-
+   
   sesion:Usuario;
   admin:boolean;
-
-
-
+  
+  
+  
   constructor(private _router:Router,private _usuarioService: UsuarioService){
-
+    
   }
-
+  
   ngOnInit(){
     this._usuarioService.getSesion().subscribe(
       usuario => this.sesion = usuario,
       error => console.log(error)
     );
-
+    
     this._usuarioService.getAdmin().subscribe(
       admin => this.admin = admin,
       error => console.log(error)
@@ -46,17 +46,17 @@ export class CabeceraComponent implements OnInit{
   goToUsuario(){
     this._router.navigate(['Perfil']);
   }
-
+  
   goToAdmin(){
     this._router.navigate(['Admin']);
   }
-
+  
   login(nombre:string, clave:string){
     this._usuarioService.login(nombre,clave).subscribe(
       usuario => this.sesion = usuario,
-      error => console.log("error")
+      error => console.log(error)
     );
-
+    
     this._usuarioService.getAdmin().subscribe(
       admin => this.admin = admin,
       error => console.log(error)
@@ -68,20 +68,20 @@ export class CabeceraComponent implements OnInit{
     this._usuarioService.setAdmin(false);
     this.goToInicio();
   }
-
+  
   ngAfterContentInit() {
        var h = document.createElement("script");
        h.type = "text/javascript";
        h.src = "js/main.js";
        document.head.appendChild(h);
    }
-
+   
    actualizar(){
      this._usuarioService.getSesion().subscribe(
         usuario => this.sesion = usuario,
         error => console.log(error)
       );
-
+    
       this._usuarioService.getAdmin().subscribe(
         admin => this.admin = admin,
         error => console.log(error)

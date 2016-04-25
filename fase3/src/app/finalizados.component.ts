@@ -44,7 +44,7 @@ export class finalizadosComponent {
    this.arrayDirtemp = [];
    for(var i =0; i<this.partidos.length; i++){
      if(this.partidos[i].juego == s){
-       if(this.partidos[i].estado == 'finalizado'){
+       if(this.partidos[i].estado == 'Finalizado'){
          this.arrayDirtemp.push(this.partidos[i]);
        }
      }

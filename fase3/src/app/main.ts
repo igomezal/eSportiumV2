@@ -16,6 +16,17 @@ import {FaqComponent} from './faq.component';
 import {ContactoComponent} from './contacto.component';
 import {finalizadosComponent} from './finalizados.component';
 import {editarPerfil} from './editarpefil.component';
+//admin
+import {homeComponent} from './admin/home.component';
+import {addJuegoComponent} from './admin/add_juegos.component';
+import {addPartidoComponent} from './admin/add_partidos.component';
+import {ajustesComponent} from './admin/ajustes.component';
+import {editJuegoComponent} from './admin/edit_juego.component';
+import {editPartidoComponent} from './admin/edit_partido.component';
+import {gestionJuegosComponent} from './admin/gestion_juegos.component';
+import {gestionPartidosComponent} from './admin/gestion_partidos.component';
+import {gestionUsuariosComponent} from './admin/gestion_usuarios.component';
+import {editUsuarioComponent} from './admin/edit_usuario.component';
 
 @Component({
   selector: 'main-app',
@@ -47,8 +58,18 @@ import {editarPerfil} from './editarpefil.component';
   {path:'/contacto', name:'Contacto', component:ContactoComponent},
   {path:'/partido/:id', name:'Partido', component:PartidoComponent},
   {path:'/registro', name:'Registro', component:RegistroComponent},
-  {path:'/admin',name:'Admin',component:indexComponent},
-  {path: '/editar', name:'Editar',component:editarPerfil}
+  {path:'/admin',name:'Admin',component:homeComponent},
+  {path: '/editar', name:'Editar',component:editarPerfil},
+  {path: '/addJuego', name:'AddJuego',component:addJuegoComponent},
+  {path: '/addPartido', name:'AddPartido',component:addPartidoComponent},
+  {path: '/ajustes', name:'Ajustes',component:ajustesComponent},
+  {path: '/editJuego/:id', name:'EditarJuego',component:editJuegoComponent},
+  {path: '/editPartido/:id', name:'EditarPartido',component:editPartidoComponent},
+  {path: '/juegos', name:'GestionJuegos',component:gestionJuegosComponent},
+  {path: '/partidos', name:'GestionPartidos',component:gestionPartidosComponent},
+  {path: '/usuarios', name:'GestionUsuarios',component:gestionUsuariosComponent},
+  {path: '/editUsuario/:id', name:'EditUsuario',component:editUsuarioComponent},
+
 ])
 
 export class MainApp implements OnInit {
