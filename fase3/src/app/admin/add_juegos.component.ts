@@ -1,6 +1,7 @@
 import {Component} from 'angular2/core';
 import {Juego, JuegoService} from '../juego.interface';
 import {Router} from 'angular2/router';
+import {UsuarioService} from '../usuario.interface';
 
 @Component({
   selector: 'addjuegos',
@@ -9,7 +10,7 @@ import {Router} from 'angular2/router';
 
 export class addJuegoComponent {
 
-  constructor(private _JuegoService: JuegoService, private _Router: Router) {}
+  constructor(private _JuegoService: JuegoService, private _Router: Router, private _UsuarioService: UsuarioService) {}
 
   anadir(nombre: string, id: string){
     if( nombre == "" || id == ""){
@@ -19,6 +20,16 @@ export class addJuegoComponent {
       this._JuegoService.anadirJuego(j);
       alert("Juego "+j.nombre+ " creado correctamente");
     }
+  }
+
+  cerrarSesion(){
+    this._UsuarioService.setSesion(undefined);
+    this._UsuarioService.setAdmin(false);
+    this.gotoMain();
+  }
+
+  gotoMain(){
+    this._Router.navigate(['Inicio']);
   }
 
   gotoHome(){
@@ -34,7 +45,7 @@ export class addJuegoComponent {
   }
 
   gotoGestionUsuarios(){
-    this._Router.navigate(['gotoGestionUsuarios']);
+    this._Router.navigate(['GestionUsuarios']);
   }
 
   gotoAjustes(){

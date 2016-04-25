@@ -5,7 +5,7 @@
         <header class="main-header">
 
             <!-- Logo -->
-            <a href="home.html" class="logo">
+            <a (click)="gotoMain()" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini"><b>eSV2</b></span>
                 <!-- logo for regular state and mobile devices -->
@@ -42,7 +42,7 @@
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Cerrar Sesión</a>
+                                        <a (click)="cerrarSesion()" class="btn btn-default btn-flat">Cerrar Sesión</a>
                                     </div>
                                 </li>
                             </ul>
@@ -84,11 +84,11 @@
                 <ul class="sidebar-menu">
                     <li class="header">MENU</li>
                     <!-- Optionally, you can add icons to the links -->
-                    <li><a href="home.html"><i class="fa fa-home"></i> <span>Home</span></a></li>
-                    <li><a href="gestion_juegos.html"><i class="fa fa-gamepad"></i> <span>Juegos</span></a></li>
-                    <li><a href="gestion_partidos.html"><i class="fa fa-book"></i> <span>Partidos</span></a></li>
-                    <li class="active"><a href="gestion_usuarios.html"><i class="fa fa-users"></i> <span>Usuarios</span></a></li>
-                    <li><a href="ajustes.html"><i class="fa fa-cogs"></i> <span>Ajustes</span></a></li>
+                    <li><a (click)="gotoHome()"><i class="fa fa-home"></i> <span>Home</span></a></li>
+                    <li><a (click)="gotoGestionJuegos()"><i class="fa fa-gamepad"></i> <span>Juegos</span></a></li>
+                    <li><a (click)="gotoGestionPartidos()"><i class="fa fa-book"></i> <span>Partidos</span></a></li>
+                    <li class="active"><a (click)="gotoGestionUsuarios()"><i class="fa fa-users"></i> <span>Usuarios</span></a></li>
+                    <li><a (click)="gotoAjustes()"><i class="fa fa-cogs"></i> <span>Ajustes</span></a></li>
                 </ul>
                 <!-- /.sidebar-menu -->
             </section>
@@ -104,7 +104,7 @@
             <small>Edita o elimine usuarios.</small>
           </h1>
                 <ol class="breadcrumb">
-                    <li><a href="home.html"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li><a (click)="gotoHome()"><i class="fa fa-dashboard"></i> Home</a></li>
                     <li class="active">Gestionar Usuarios</li>
                 </ol>
             </section>
@@ -132,7 +132,7 @@
                         <td>{{usuario.correo}}</td>
                         <td>{{usuario.fecha}}</td>
                         <td>
-                            <a class="fa fa-pencil"></a>
+                            <a (click)="gotoEditUsuario(usuario)" class="fa fa-pencil">Editar</a>
                             &nbsp;&nbsp;
                         </td>
                       </tr>

@@ -3,6 +3,7 @@ import {ROUTER_DIRECTIVES,Router} from 'angular2/router';
 import {Partido, PartidoService} from '../partido.service';
 import {RouteParams} from 'angular2/router';
 import {Juego, JuegoService} from '../juego.interface';
+import {UsuarioService} from '../usuario.interface';
 
 @Component({
   selector:' editPartido',
@@ -11,7 +12,7 @@ import {Juego, JuegoService} from '../juego.interface';
 
 export class editPartidoComponent{
 
-  constructor( private _Partidoservice: PartidoService,private _JuegoService: JuegoService, private _routeParams: RouteParams){}
+  constructor(private _UsuarioService: UsuarioService ,private _Router: Router ,private _Partidoservice: PartidoService,private _JuegoService: JuegoService, private _routeParams: RouteParams){}
 
   private partido: Partido;
 
@@ -41,6 +42,36 @@ export class editPartidoComponent{
   eliminar(){
     let id = +this._routeParams.get('id');
     this._Partidoservice.eliminarPartido(id);
+  }
+
+  gotoHome(){
+    this._Router.navigate(['Admin']);
+  }
+
+  gotoGestionJuegos(){
+    this._Router.navigate(['GestionJuegos']);
+  }
+
+  gotoGestionPartidos(){
+    this._Router.navigate(['GestionPartidos']);
+  }
+
+  gotoGestionUsuarios(){
+    this._Router.navigate(['GestionUsuarios']);
+  }
+
+  gotoAjustes(){
+    this._Router.navigate(['Ajustes']);
+  }
+
+  gotoMain(){
+    this._Router.navigate(['Inicio']);
+  }
+
+  cerrarSesion(){
+    this._UsuarioService.setSesion(undefined);
+    this._UsuarioService.setAdmin(false);
+    this.gotoMain();
   }
 
 }

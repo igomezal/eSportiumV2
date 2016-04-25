@@ -1,6 +1,7 @@
 import {Component} from 'angular2/core';
 import {Juego, JuegoService} from '../juego.interface';
 import {ROUTER_DIRECTIVES,Router} from 'angular2/router';
+import {UsuarioService} from '../usuario.interface';
 
 @Component({
   selector: 'adminhome',
@@ -9,7 +10,7 @@ import {ROUTER_DIRECTIVES,Router} from 'angular2/router';
 
 export class homeComponent{
 
-  constructor(private _Router:Router){}
+  constructor(private _UsuarioService: UsuarioService, private _Router:Router){}
 
   gotoHome(){
     this._Router.navigate(['Admin']);
@@ -24,11 +25,21 @@ export class homeComponent{
   }
 
   gotoGestionUsuarios(){
-    this._Router.navigate(['gotoGestionUsuarios']);
+    this._Router.navigate(['GestionUsuarios']);
   }
 
   gotoAjustes(){
     this._Router.navigate(['Ajustes']);
+  }
+
+  gotoMain(){
+    this._Router.navigate(['Inicio']);
+  }
+
+  cerrarSesion(){
+    this._UsuarioService.setSesion(undefined);
+    this._UsuarioService.setAdmin(false);
+    this.gotoMain();
   }
 
 }

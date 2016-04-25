@@ -1,6 +1,7 @@
 import {Component} from 'angular2/core';
 import {Juego, JuegoService} from '../juego.interface';
 import {ROUTER_DIRECTIVES,Router} from 'angular2/router';
+import {UsuarioService} from '../usuario.interface';
 
 @Component({
   selector: 'gestionJuegos',
@@ -10,7 +11,7 @@ import {ROUTER_DIRECTIVES,Router} from 'angular2/router';
 
 export class gestionJuegosComponent {
 
-  constructor( private _JuegoService: JuegoService, private _Router: Router){}
+  constructor(private _UsuarioService: UsuarioService, private _JuegoService: JuegoService, private _Router: Router){}
 
   private juegos:Juego[];
 
@@ -34,7 +35,7 @@ export class gestionJuegosComponent {
   }
 
   gotoGestionUsuarios(){
-    this._Router.navigate(['gotoGestionUsuarios']);
+    this._Router.navigate(['GestionUsuarios']);
   }
 
   gotoAjustes(){
@@ -44,6 +45,20 @@ export class gestionJuegosComponent {
   gotoEditJuego(juego : Juego){
     let link = ['EditarJuego',{id:juego.id}]
     this._Router.navigate(link);
+  }
+
+  gotoMain(){
+    this._Router.navigate(['Inicio']);
+  }
+
+  cerrarSesion(){
+    this._UsuarioService.setSesion(undefined);
+    this._UsuarioService.setAdmin(false);
+    this.gotoMain();
+  }
+
+  gotoaddJuego(){
+    this._Router.navigate(['AddJuego']);
   }
 
 }

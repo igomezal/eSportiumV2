@@ -5,7 +5,7 @@
         <header class="main-header">
 
             <!-- Logo -->
-            <a href="home.html" class="logo">
+            <a (click)="gotoMain()" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini"><b>eSV2</b></span>
                 <!-- logo for regular state and mobile devices -->
@@ -42,7 +42,7 @@
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Cerrar Sesión</a>
+                                        <a (click)="cerrarSesion()" class="btn btn-default btn-flat">Cerrar Sesión</a>
                                     </div>
                                 </li>
                             </ul>
@@ -104,8 +104,8 @@
             <small>Agrega, edita o elimine juegos.</small>
           </h1>
                 <ol class="breadcrumb">
-                    <li><a href="home.html"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li><a href="gestion_usuarios.html">Gestionar Partidos</a></li>
+                    <li><a (click)="gotoHome()"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li><a (click)="gotoGestionJuegos()">Gestionar Juegos</a></li>
                     <li class="active">Juego</li>
                 </ol>
             </section>
@@ -129,7 +129,7 @@
                                     <br>
                                     <div class="pull-right">
                                         <button type="button" (click)="anadir(nombre.value,id.value)" class="btn btn-success">Publicar</button>
-                                        <button type="button" class="btn btn-danger">Eliminar</button>
+                                        <button type="button" (click)="gotoGestionJuegos()" class="btn btn-danger">Eliminar</button>
                                     </div>
                                 </div>
                             </div>
