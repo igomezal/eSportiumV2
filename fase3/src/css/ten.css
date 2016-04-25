@@ -291,7 +291,7 @@ a.link:hover {
         font-size: 0.875em
     }
     section,
-    footer.main-footer {
+    footer.main-footer-a-a {
         margin-top: 75px
     }
     .with-plus:before {
@@ -310,7 +310,7 @@ a.link:hover {
         font-size: 0.875em
     }
     section,
-    footer.main-footer {
+    footer.main-footer-a {
         margin-top: 75px
     }
     .with-plus:before {
@@ -326,7 +326,7 @@ a.link:hover {
         font-size: 1.5em
     }
     section,
-    footer.main-footer {
+    footer.main-footer-a {
         margin-top: 150px
     }
     .with-plus:before {
@@ -342,7 +342,7 @@ a.link:hover {
         font-size: 1.5em
     }
     section,
-    footer.main-footer {
+    footer.main-footer-a {
         margin-top: 150px
     }
     .with-plus:before {
@@ -1211,16 +1211,16 @@ ul.slides li .slide {
 
 /*FOOTER*/
 
-footer.main-footer {
+footer.main-footer-a {
     margin-bottom: 75px;
 }
 
-footer.main-footer nav ul li {
+footer.main-footer-a nav ul li {
     list-style: none;
     float: left;
 }
 
-footer.main-footer nav ul li a {
+footer.main-footer-a nav ul li a {
     display: inline-block;
     margin: 0 20px;
     color: #7f7f7f;
