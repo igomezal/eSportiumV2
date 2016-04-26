@@ -814,7 +814,7 @@ a:focus {
 }
 .control-sidebar-dark,
 .control-sidebar-dark + .control-sidebar-bg {
-  background: #222d32;
+
 }
 .control-sidebar-dark .nav-tabs.control-sidebar-tabs {
   border-bottom: #1c2529;
@@ -841,7 +841,7 @@ a:focus {
 .control-sidebar-dark .nav-tabs.control-sidebar-tabs > li.active > a:hover,
 .control-sidebar-dark .nav-tabs.control-sidebar-tabs > li.active > a:focus,
 .control-sidebar-dark .nav-tabs.control-sidebar-tabs > li.active > a:active {
-  background: #222d32;
+
   color: #fff;
 }
 .control-sidebar-dark .control-sidebar-heading,
