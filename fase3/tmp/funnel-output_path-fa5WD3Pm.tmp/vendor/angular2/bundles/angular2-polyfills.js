@@ -1,1 +1,0 @@
-/Users/sergiownd/Desktop/PracticaDaw/tmp/funnel-input_base_path-dsjLKkGl.tmp/0/angular2/bundles/angular2-polyfills.js

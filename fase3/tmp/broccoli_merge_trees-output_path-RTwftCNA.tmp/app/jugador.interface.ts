@@ -1,1 +1,0 @@
-/Users/sergiownd/Desktop/PracticaDaw/src/app/jugador.interface.ts

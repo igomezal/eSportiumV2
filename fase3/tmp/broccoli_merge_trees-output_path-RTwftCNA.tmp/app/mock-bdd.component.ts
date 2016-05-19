@@ -1,1 +1,0 @@
-/Users/sergiownd/Desktop/PracticaDaw/src/app/mock-bdd.component.ts

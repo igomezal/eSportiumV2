@@ -1,1 +1,0 @@
-/Users/sergiownd/Desktop/PracticaDaw/src/app/admin/add_partidos.component.ts

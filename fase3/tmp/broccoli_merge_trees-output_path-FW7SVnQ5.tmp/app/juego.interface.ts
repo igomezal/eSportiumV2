@@ -1,1 +1,0 @@
-/Users/sergiownd/Desktop/preactica daw/src/app/juego.interface.ts

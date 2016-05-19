@@ -1,1 +1,0 @@
-/Users/sergiownd/Desktop/PracticaDaw/tmp/funnel-input_base_path-33EPx5sz.tmp/0/js/script-responsive-faq.js

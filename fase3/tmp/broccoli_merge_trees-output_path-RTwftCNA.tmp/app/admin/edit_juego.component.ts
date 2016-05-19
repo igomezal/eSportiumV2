@@ -1,1 +1,0 @@
-/Users/sergiownd/Desktop/PracticaDaw/src/app/admin/edit_juego.component.ts
