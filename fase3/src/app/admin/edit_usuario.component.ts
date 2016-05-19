@@ -23,7 +23,7 @@ export class editUsuarioComponent {
   }
 
   eliminar(){
-    var r = confirm("¿Quierres borrar el partido?");
+    var r = confirm("¿Quierres borrar el usuario?");
     if (r == true){
       let id = +this._RouteParams.get('id');
       this._UsuarioService.eliminarUsuario(id);

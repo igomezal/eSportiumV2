@@ -1,116 +1,41 @@
-<div class="hold-transition skin-purple sidebar-mini">
-    <div class="wrapper">
-
-        <!-- Main Header -->
-        <header class="main-header">
-
-            <!-- Logo -->
-            <a (click)="gotoMain()" class="logo">
-                <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><b>eSV2</b></span>
-                <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>eSportiumV2</b></span>
-            </a>
-
-            <!-- Header Navbar -->
-            <nav class="navbar navbar-static-top" role="navigation">
-                <!-- Sidebar toggle button-->
-                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                    <span class="sr-only">Control Menu</span>
-                </a>
-                <!-- Navbar Right Menu -->
-                <div class="navbar-custom-menu">
-                    <ul class="nav navbar-nav">
-                        <!-- User Account Menu -->
-                        <li class="dropdown user user-menu">
-                            <!-- Menu Toggle Button -->
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <!-- The user image in the navbar-->
-                                <img src="img/icon-profile.png" class="user-image" alt="User Image">
-                                <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                                <span class="hidden-xs">Administrador</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <!-- The user image in the menu -->
-                                <li class="user-header">
-                                    <img src="img/icon-profile.png" class="img-circle" alt="User Image">
-                                    <p>
-                                        Administrador - Administrador de eSportiumV2
-                                        <small>Miembro desde Feb. 2016</small>
-                                    </p>
-                                </li>
-                                <!-- Menu Footer-->
-                                <li class="user-footer">
-                                    <div class="pull-right">
-                                        <a (click)="cerrarSesion()" class="btn btn-default btn-flat">Cerrar Sesión</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
+<br>
+<div class="container-fluid">
         <!-- Left side column. contains the logo and sidebar -->
-        <aside class="main-sidebar">
 
-            <!-- sidebar: style can be found in sidebar.less -->
-            <section class="sidebar">
-
-                <!-- Sidebar user panel (optional) -->
-                <div class="user-panel">
-                    <div class="pull-left image">
-                        <img src="img/icon-profile.png" class="img-circle" alt="User Image">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <div class="row">
+                    <div class="sidebar col-md-3">
+                        <h5 class="uppercase montserrat-text">Administración</h5>
+                        <!-- Sidebar Menu -->
+                        <nav class="link-list">
+                            <ul>
+                                <li><a (click)="gotoHome()"><i class="fa fa-home"></i> <span>Home</span></a></li>
+                                <li><a (click)="gotoGestionJuegos()"><i class="fa fa-gamepad"></i> <span>Juegos</span></a></li>
+                                <li><a (click)="gotoGestionPartidos()"><i class="fa fa-book"></i> <span>Partidos</span></a></li>
+                                <li><a (click)="gotoGestionUsuarios()"><i class="fa fa-users"></i> <span>Usuarios</span></a></li>
+                                <li><a (click)="gotoAjustes()"><i class="fa fa-cogs"></i> <span>Ajustes</span></a></li>
+                            </ul>
+                        </nav>
                     </div>
-                    <div class="pull-left info">
-                        <p>Administrador</p>
-                        <!-- Status -->
-                        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                    </div>
-                </div>
 
-                <!-- search form (Optional) -->
-                <form action="#" method="get" class="sidebar-form">
-                    <div class="input-group">
-                        <input type="text" name="q" class="form-control" placeholder="Buscar...">
-                        <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
-              </span>
-                    </div>
-                </form>
-                <!-- /.search form -->
-
-                <!-- Sidebar Menu -->
-                <ul class="sidebar-menu">
-                    <li class="header">MENU</li>
-                    <!-- Optionally, you can add icons to the links -->
-                    <li><a (click)="gotoHome()"><i class="fa fa-home"></i> <span>Home</span></a></li>
-                    <li><a (click)="gotoGestionJuegos()"><i class="fa fa-gamepad"></i> <span>Juegos</span></a></li>
-                    <li class="active"><a (click)="gotoGestionPartidos()"><i class="fa fa-book"></i> <span>Partidos</span></a></li>
-                    <li><a (click)="gotoGestionUsuarios()"><i class="fa fa-users"></i> <span>Usuarios</span></a></li>
-                    <li><a (click)="gotoAjustes()"><i class="fa fa-cogs"></i> <span>Ajustes</span></a></li>
-                </ul>
-                <!-- /.sidebar-menu -->
-            </section>
-            <!-- /.sidebar -->
-        </aside>
-
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <h1>
+                    <!-- /.sidebar -->
+                    <div class="col-md-8 col-md-offset-1">
+                        <div class="row">
+                                     
+           <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <h3 class="montserrat-text white-text uppercase no-margin-top">
             Gestión de partidos
             <small>Agrega, edita o elimine partidos.</small>
-          </h1>
+          </h3>
                 <ol class="breadcrumb">
                     <li><a (click)="gotoHome()"><i class="fa fa-dashboard"></i> Home</a></li>
                     <li class="active">Gestionar Partidos</li>
                 </ol>
-            </section>
+            </div>
 
             <!-- Main content -->
-            <section class="content">
+            <section class="content no-margin-top">
                 <div class="pull-right">
                     <a (click)="gotoAddPartido()">
                         <button type="button" class="btn btn-primary"><span class="fa fa-plus-circle"> </span> &nbsp; Nuevo Partido</button>
@@ -148,23 +73,10 @@
 
             </section>
             <!-- /.content -->
-        </div>
-        <!-- /.content-wrapper -->
 
-        <!-- Main Footer -->
-        <footer class="main-footer">
-            <!-- Default to the left -->
-            <strong>Copyright &copy; 2016 <a href="../index.html">eSportiumV2</a>.</strong> Todos los derechos reservados.
-        </footer>
-    </div>
-    <!-- ./wrapper -->
 
-    <!-- REQUIRED JS SCRIPTS -->
-
-    <!-- jQuery 2.1.4 -->
-    <script src="js/jQuery-2.1.4.min.js"></script>
-    <!-- Bootstrap 3.3.5 -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="js/app.min.js"></script>
+                            </div>
+                        </div>
+                    </div>       
+                    
 </div>
