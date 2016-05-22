@@ -1,0 +1,74 @@
+<br>
+<div class="container-fluid">
+        <!-- Left side column. contains the logo and sidebar -->
+
+                <!-- sidebar: style can be found in sidebar.less -->
+                <div class="row">
+                    <div class="sidebar col-md-3">
+                        <h5 class="uppercase montserrat-text">Administración</h5>
+                        <!-- Sidebar Menu -->
+                        <nav class="link-list">
+                            <ul>
+                                <li><a (click)="gotoHome()"><i class="fa fa-home"></i> <span>Home</span></a></li>
+                                <li><a (click)="gotoGestionJuegos()"><i class="fa fa-gamepad"></i> <span>Juegos</span></a></li>
+                                <li><a (click)="gotoGestionPartidos()"><i class="fa fa-book"></i> <span>Partidos</span></a></li>
+                                <li><a (click)="gotoGestionUsuarios()"><i class="fa fa-users"></i> <span>Usuarios</span></a></li>
+                                <li><a (click)="gotoAjustes()"><i class="fa fa-cogs"></i> <span>Ajustes</span></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <!-- /.sidebar -->
+                    <div class="col-md-8 col-md-offset-1">
+                        <div class="row">
+                                     <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <h3 class="montserrat-text white-text uppercase no-margin-top">
+            Gestión de juegos
+            <small>Agrega, edita o elimine juegos.</small>
+          </h3>
+                <ol class="breadcrumb">
+                    <li><a (click)="gotoHome()"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li><a (click)="gotoGestionJuegos()">Gestionar Juegos</a></li>
+                    <li class="active">Juego</li>
+                </ol>
+            </div>
+
+            <!-- Main content -->
+            <section class="content no-margin-top">
+                <!-- SELECT2 EXAMPLE -->
+                <div class="box box-default">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Nuevo Juego</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>Nombre del nuevo juego:</label>
+                                    <input type="text" class="form-control" #nombre placeholder="Introduce el nombre del juego">
+                                    <label>ID del juego</label>
+                                    <input type="text" class="form-control" #id placeholder="ID">
+                                    <br>
+                                    <div class="pull-right">
+                                        <button type="button" (click)="anadir(nombre.value,id.value)" class="btn btn-success">Publicar</button>
+                                        <button type="button" (click)="gotoGestionJuegos()" class="btn btn-danger">Eliminar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /.box-body -->
+
+                </div>
+                <!-- /.box -->
+            </section>
+            <!-- /.content -->
+
+                            </div>
+                        </div>
+                    </div>       
+                    
+</div>
