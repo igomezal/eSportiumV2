@@ -74,6 +74,5 @@ constructor(){}
         }
       }
     }
-    alert("No existe ese juego");
   }
 }

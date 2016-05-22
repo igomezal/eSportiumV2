@@ -60,4 +60,16 @@ export class gestionPartidosComponent {
     this._Router.navigate(['AddPartido']);
   }
 
+  finalizarPartido(partido: Partido){
+    this._Partidoservice.terminarPartido(partido);
+  }
+
+  aDirecto(partido:Partido){
+    this._Partidoservice.pasarADirecto(partido);
+  }
+
+  borrarPartido(partido: Partido){
+    this._Partidoservice.eliminarPartido(partido.id);
+  }
+
 }

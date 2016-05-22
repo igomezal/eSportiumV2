@@ -21,8 +21,8 @@
                     <!-- /.sidebar -->
                     <div class="col-md-8 col-md-offset-1">
                         <div class="row">
-                                     
-          
+
+
              <!-- Content Header (Page header) -->
             <div class="content-header">
                 <h3 class="montserrat-text white-text uppercase no-margin-top">
@@ -53,25 +53,25 @@
                                         <option *ngFor="#juego of juegos; #ind = index">{{juego.id}}</option>
                                     </select>
                                     <label>Equipo 1:</label>
-                                    <input type="text" class="form-control" #eq1 placeholder={{partido.eq1}}>
+                                    <input type="text" class="form-control" #eq1 value={{partido.eq1}}>
                                     <label>URL imagen equipo 1:</label>
-                                    <input type="url" class="form-control" #logo1 placeholder={{partido.logo1}}>
+                                    <input type="url" class="form-control" #logo1 value={{partido.logo1}}>
                                     <label>Porcentaje inicial equipo 1</label>
                                     <div class="input-group">
-                                        <input type="number" class="form-control" #porcen1 placeholder="Porcentaje">
+                                        <input type="number" class="form-control" #porcen1 value="Porcentaje">
                                         <span class="input-group-addon">%</span>
                                     </div>
                                     <label>Equipo 2:</label>
-                                    <input type="text" class="form-control" #eq2 placeholder={{partido.eq2}}>
+                                    <input type="text" class="form-control" #eq2 value={{partido.eq2}}>
                                     <label>URL imagen equipo 2:</label>
-                                    <input type="url" class="form-control" #logo2 placeholder={{partido.logo2}}>
+                                    <input type="url" class="form-control" #logo2 value={{partido.logo2}}>
                                     <label>Porcentaje inicial equipo 2</label>
                                     <div class="input-group">
-                                        <input type="number" class="form-control" #porcen2 placeholder="Porcentaje">
+                                        <input type="number" class="form-control" #porcen2 value="Porcentaje">
                                         <span class="input-group-addon">%</span>
                                     </div>
                                     <label>URL del directo:</label>
-                                    <input type="url" class="form-control" #url placeholder={{partido.url}}>
+                                    <input type="url" class="form-control" #url value={{partido.url}}>
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <label>Condición de victoria:</label>
@@ -120,6 +120,6 @@
 
                             </div>
                         </div>
-                    </div>       
-                    
+                    </div>
+
 </div>

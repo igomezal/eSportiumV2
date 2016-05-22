@@ -61,4 +61,8 @@ export class gestionJuegosComponent {
     this._Router.navigate(['AddJuego']);
   }
 
+  borrarJuego(juego: Juego){
+    this._JuegoService.eliminar(juego.nombre, juego.id);
+  }
+
 }

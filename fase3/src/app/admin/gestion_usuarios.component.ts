@@ -55,4 +55,8 @@ export class gestionUsuariosComponent {
     this._Router.navigate(link);
   }
 
+  borrarUsuario(usuario: Usuario){
+    this._UsuarioService.eliminarUsuario(usuario.id);
+  }
+
 }
