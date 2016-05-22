@@ -126,4 +126,8 @@ export class UsuarioService{
     }
 
   }
+
+  getKarma(usuario: Usuario){
+    return usuario.karma;
+  }
 }

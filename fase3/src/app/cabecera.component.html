@@ -24,6 +24,7 @@
                         <li *ngIf="!sesion" ><a (click)="actualizar()" href="#" data-toggle="modal" data-target="#login" id="usuarioMenu"><span class="glyphicon glyphicon-user"></span> Acceder</a></li>
                         <li *ngIf="admin"><a class="cerrar" (click)="goToAdmin()"><span class="glyphicon glyphicon glyphicon-eye-open" aria-hidden="true"></span> Administración</a></li>
                         <li *ngIf="sesion" class="cerrar" ><a class="cerrar" (click)="goToUsuario()"><span class="glyphicon  glyphicon-user" aria-hidden="true"></span> Ver Perfil</a></li>
+                        <li *ngIf="sesion" class="cerrar" ><a><span class="glyphicon glyphicon-star" aria-hidden="true"></span>Karma: {{sesion.karma}}</a></li>
                         <li *ngIf="sesion" class="cerrar" ><a class="cerrar" (click)="salir()"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Salir</a></li>
                     </ul>
                 </nav>
