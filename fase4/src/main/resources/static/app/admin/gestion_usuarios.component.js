@@ -58,6 +58,9 @@ System.register(['angular2/core', 'angular2/router', '../usuario.interface'], fu
                     var link = ['EditUsuario', { id: usuario.id }];
                     this._Router.navigate(link);
                 };
+                gestionUsuariosComponent.prototype.borrarUsuario = function (usuario) {
+                    this._UsuarioService.eliminarUsuario(usuario.id);
+                };
                 gestionUsuariosComponent = __decorate([
                     core_1.Component({
                         selector: 'gestionUsuarios',

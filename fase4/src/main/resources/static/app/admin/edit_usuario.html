@@ -39,10 +39,11 @@
                 <div class="row">
                   <div class="col-lg-12">
                     <div class="form-group">
-                      <h3>Edita los datos del usuario {{usuario.nombre}}</h3>
+                      <h3>Edita los datos del usuario {{usuario.name}}</h3>
 
-                        <label>Nombre : {{usuario.name}}</label><br>
-                        <label>ID : {{usuario.correo}}</label>
+                        <label>Nombre</label><br>
+                        <input type="text" class="form-control" value="{{usuario.name}}"><br>
+                        <label>Correo : {{usuario.correo}}</label>
                         <br>
                         <div class="pull-right">
                             <button type="button" (click)="gotoGestionUsuarios()" class="btn btn-success">Volver</button>
@@ -56,6 +57,6 @@
             <!-- /.content -->
                             </div>
                         </div>
-                    </div>       
-                    
+                    </div>
+
 </div>

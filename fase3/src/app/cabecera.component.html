@@ -1,15 +1,18 @@
 <header class="main-header">
     <div class="container">
         <a (click)="goToInicio()"><img src="img/logo.png" alt="Logo eSportiumV2"><span class="logo">eSportiumV2</span></a>
-        <div class="menu" (click)="actualizar()">
-            <div class="montserrat-text uppercase menu-text">Menu</div>
-            <div class="menu-icon">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
+        
+        <div class="pull-right">
+            <span *ngIf="sesion" class="montserrat-text white-text "><span class="glyphicon glyphicon-star" aria-hidden="true"></span>Bienvenido {{sesion.name}} Karma: {{sesion.karma}} &nbsp; &nbsp;</span>
+            <div class="menu" (click)="actualizar()">
+                <div class="montserrat-text uppercase menu-text">Menu</div>
+                <div class="menu-icon">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
             </div>
         </div>
-
         <div class="menu-content">
             <a href="#" class="close-button"><i class="icon ion-ios-close-empty"></i></a>
             <div class="menu-info">
@@ -24,7 +27,6 @@
                         <li *ngIf="!sesion" ><a (click)="actualizar()" href="#" data-toggle="modal" data-target="#login" id="usuarioMenu"><span class="glyphicon glyphicon-user"></span> Acceder</a></li>
                         <li *ngIf="admin"><a class="cerrar" (click)="goToAdmin()"><span class="glyphicon glyphicon glyphicon-eye-open" aria-hidden="true"></span> Administración</a></li>
                         <li *ngIf="sesion" class="cerrar" ><a class="cerrar" (click)="goToUsuario()"><span class="glyphicon  glyphicon-user" aria-hidden="true"></span> Ver Perfil</a></li>
-                        <li *ngIf="sesion" class="cerrar" ><a><span class="glyphicon glyphicon-star" aria-hidden="true"></span>Karma: {{sesion.karma}}</a></li>
                         <li *ngIf="sesion" class="cerrar" ><a class="cerrar" (click)="salir()"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Salir</a></li>
                     </ul>
                 </nav>

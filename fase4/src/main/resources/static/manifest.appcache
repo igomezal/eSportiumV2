@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: 06b9c297868c4a41d3db70a890738098feeb32a1
+# sw.version: 94a44d1cc295aa78fc161c72dc2c9652a5d49cc2
 # sw.file.hash: a854e502c61b4e5332ebb34ce15c79c75aeb8468
 /app.js
 # sw.file.hash: c4e106e2aa015bcd49a1a30716e438c8e54d27e5
@@ -109,7 +109,7 @@ CACHE MANIFEST
 /app\admin\edit_juego.component.js.map
 # sw.file.hash: c626e39424d2b101d6060d966c9519e46e4d7572
 /app\admin\edit_juego.component.ts
-# sw.file.hash: 626fdece4bf8e0a5b7dfc9b77cf6f688979c7ce1
+# sw.file.hash: befcb72b5155be81c4465f0b5550e18e756c2c2d
 /app\admin\edit_juego.html
 # sw.file.hash: 05c71ee17b928c50b80c5729b14afc38145cc081
 /app\admin\edit_partido.component.js
@@ -117,7 +117,7 @@ CACHE MANIFEST
 /app\admin\edit_partido.component.js.map
 # sw.file.hash: cf2d75e469df1d7b9a15f62b9bb888f1551c8a00
 /app\admin\edit_partido.component.ts
-# sw.file.hash: 0814615938ad365c561a7c42a76a498fdef5a57e
+# sw.file.hash: 5a54a56543a47ba5fdf760f9f0249ceee5dbb4b9
 /app\admin\edit_partido.html
 # sw.file.hash: 4f7d3464d16cc912588cb7b3a40ea29aeaf17d1a
 /app\admin\edit_usuario.component.js
@@ -125,7 +125,7 @@ CACHE MANIFEST
 /app\admin\edit_usuario.component.js.map
 # sw.file.hash: 52cc114156ea5dafc1d23a76684c363d258f51bd
 /app\admin\edit_usuario.component.ts
-# sw.file.hash: 54fcdcfbb0c65cf1a9a88e331ff233a98fa480f0
+# sw.file.hash: 16f508ce58eca48b229db9ac39cb92719738640d
 /app\admin\edit_usuario.html
 # sw.file.hash: 997d705f61a658b2fb728038a9d8795c2b1dfdc6
 /app\admin\editar_usuarios.html
@@ -139,29 +139,29 @@ CACHE MANIFEST
 /app\admin\fonts\glyphicons-halflings-regular.woff
 # sw.file.hash: ca35b697d99cae4d1b60f2d60fcd37771987eb07
 /app\admin\fonts\glyphicons-halflings-regular.woff2
-# sw.file.hash: 6d3de2e3adb386942a1964e4b5df30382a3f47d9
+# sw.file.hash: fd37009551e0fc1602df11912e904f75545b8963
 /app\admin\gestion_juegos.component.js
-# sw.file.hash: 72bf0ec8f200feb3b45cea4472545650cf761e75
+# sw.file.hash: 4cb06e6a35dd5727ceb952e1bc7402c1a25e79e2
 /app\admin\gestion_juegos.component.js.map
-# sw.file.hash: 58c02f553644e7b228ac309aff4dbc7eb9955b18
+# sw.file.hash: d0fac38460726d053a1be2812c7f9e6299a8aa1e
 /app\admin\gestion_juegos.component.ts
-# sw.file.hash: 0df3d6b42203c307ab14bf76aa0c06bf0231ea82
+# sw.file.hash: 85cc10eadd4d608976e54f325ae03f0d4a48a8e0
 /app\admin\gestion_juegos.html
-# sw.file.hash: 30a3b7c0733836f4a4508c1234855703850e115c
+# sw.file.hash: aa9cc62f6c1241755da5e6497f193bc274c95b0f
 /app\admin\gestion_partidos.component.js
-# sw.file.hash: 21012f215f8e74d2f5c5a9758da2e65bbb21015a
+# sw.file.hash: 2d6d8689756e7d7385068deb35fae13ba4f64e13
 /app\admin\gestion_partidos.component.js.map
-# sw.file.hash: 04defdb9fcbf95aa215041d8d4e65176652836ff
+# sw.file.hash: 659a00c7a46bf0df10ab2a6eff8b345732e78286
 /app\admin\gestion_partidos.component.ts
-# sw.file.hash: add6b0d37215877b444568d41d67ec05a9adb01a
+# sw.file.hash: 0e5db0731d210577b515c1b6f8d22ab9e28e7c80
 /app\admin\gestion_partidos.html
-# sw.file.hash: c324cdc7df316adb08ea43be6a225304067c9e1d
+# sw.file.hash: 5bf94f76e9d6de5c2ee2a999db0ebf9c46eb0f71
 /app\admin\gestion_usuarios.component.js
-# sw.file.hash: 9aea39aeb0f6ed1e6a00ae7b9249462fbad0764c
+# sw.file.hash: d782919dfbd7b656a4a8e22e1290b718394f3103
 /app\admin\gestion_usuarios.component.js.map
-# sw.file.hash: 722db0beee779d7219b401e70938f9542bbf0a76
+# sw.file.hash: 464c1d88e7921b3f980b515c7aca9492c001a7ac
 /app\admin\gestion_usuarios.component.ts
-# sw.file.hash: 4725038616f56a4aabefbff1f84b5eebf75a776b
+# sw.file.hash: f544834e7a6735c4935a78de90263ea58d880623
 /app\admin\gestion_usuarios.html
 # sw.file.hash: ac2ca1bddaa413a30c5c0f8681b74ec3cfd37a25
 /app\admin\home.component.js
@@ -201,13 +201,13 @@ CACHE MANIFEST
 /app\admin\js\pages\dashboard.js
 # sw.file.hash: d2b1fedc64676e3466aa95963961293c10043085
 /app\admin\js\pages\dashboard2.js
-# sw.file.hash: e6b9992ea96904c0f0d3942ccb20b671fdf2c9d7
+# sw.file.hash: 8ee9214365d082d9b2edf790805f29586e2a3a30
 /app\cabecera.component.html
-# sw.file.hash: a55a4177b276ff278960a49dbe20b760474cfc5b
+# sw.file.hash: 33da5a68aa7f8c0644d6fcb47fe21789f80cd617
 /app\cabecera.component.js
-# sw.file.hash: 1e7ed34775d0afe750bea0fbb3a2312b9123dfe5
+# sw.file.hash: bd3bd99e441fe964cd9a4dce72573a34a7eea13f
 /app\cabecera.component.js.map
-# sw.file.hash: 1282c98096a995642a399be7c47361bd3974e55f
+# sw.file.hash: 78a3831db748b80a253a5ba297590a863463d6fa
 /app\cabecera.component.ts
 # sw.file.hash: 1d88dfff052a44e779c0170ef0ac0eb3ed3a8362
 /app\contacto.component.html
@@ -249,11 +249,11 @@ CACHE MANIFEST
 /app\index.component.ts
 # sw.file.hash: eafb9101d6346d93f119255dbd092e475efb33f9
 /app\index.html
-# sw.file.hash: 18e1da85a56fe0f67fabbab2e483313f88021409
+# sw.file.hash: f9c6f72ec5af5f480bb90455feed2a1d8262e29e
 /app\juego.interface.js
-# sw.file.hash: fabb0996b4cd83dec4485d72bf9a4fbfb4cf5d34
+# sw.file.hash: dd48a5671453004419a5190502ffebcc1123ebec
 /app\juego.interface.js.map
-# sw.file.hash: 8f14b982237cc9fe5af40bc87a3b06656ac995bf
+# sw.file.hash: 591fb1cbdea8b477aba22eff870c1118d4f7744a
 /app\juego.interface.ts
 # sw.file.hash: e945b40f1bc98adb92e4a247e35635468a34e7e0
 /app\jugador.interface.js
@@ -283,11 +283,11 @@ CACHE MANIFEST
 /app\partido.component.js.map
 # sw.file.hash: 8bad67221d0738f929d6dbdf2d81cc6a513e68fd
 /app\partido.component.ts
-# sw.file.hash: d191793eb2ccf64a89a12a3d5030386b74f4f32d
+# sw.file.hash: 1880c424dcd16fb6b6a90a743bfd3d900ceb42ff
 /app\partido.service.js
-# sw.file.hash: 24146c38fcc206838b2682d6b8f678a221f1372e
+# sw.file.hash: 4c016b4eb9b2bd1a27fc3f465b16bed7b6b6f926
 /app\partido.service.js.map
-# sw.file.hash: d9e222492c42cffb6babb65f116d2521ba60b40b
+# sw.file.hash: 7689d9edb792a1ce523e7231210c35c85872ec4b
 /app\partido.service.ts
 # sw.file.hash: 34b85ad48b43c4e0b92d57ee90809b60ada969f1
 /app\pie.component.html
@@ -319,11 +319,11 @@ CACHE MANIFEST
 /app\route-config.js.map
 # sw.file.hash: d77c5a90dcb20c7952911ef4502a570f42cd5808
 /app\route-config.ts
-# sw.file.hash: 2e173cba6c2488f07967c9ad22f304023f6d504f
+# sw.file.hash: fed3adad7d365e5652ab0c6289b0259e7a1b9b4a
 /app\usuario.interface.js
-# sw.file.hash: 1762910d11146576e07c165cc069129ef7d8f7a7
+# sw.file.hash: 3744bd355b4ea320970784ecc8b9f77160c79899
 /app\usuario.interface.js.map
-# sw.file.hash: c19af486ec3ba1d063955a056724710e66cca5eb
+# sw.file.hash: c84a57e76a3f1669cee852f9abaf07f10606a402
 /app\usuario.interface.ts
 # sw.file.hash: ce736cbcb1d86342a2018f90a6deb9b3ece96bfc
 /app\utils.js

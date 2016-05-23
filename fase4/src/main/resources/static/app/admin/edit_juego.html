@@ -21,7 +21,7 @@
                     <!-- /.sidebar -->
                     <div class="col-md-8 col-md-offset-1">
                         <div class="row">
-                                     
+
             <!-- Content Header (Page header) -->
             <div class="content-header">
                 <h3 class="montserrat-text white-text uppercase no-margin-top">
@@ -43,9 +43,9 @@
                       <h3>Edita los datos del juego {{juego.nombre}}</h3>
 
                         <label>Nombre </label>
-                        <input type="text" class="form-control" #nombre placeholder={{juego.nombre}}>
+                        <input type="text" class="form-control" #nombre value={{juego.nombre}}>
                         <label>ID </label>
-                        <input type="text" class="form-control" #id placeholder={{juego.id}}>
+                        <input type="text" class="form-control" #id value={{juego.id}}>
                         <br>
                         <div class="pull-right">
                             <button type="button" (click)="editar(nombre.value, id.value)" class="btn btn-success">Publicar</button>
@@ -61,7 +61,6 @@
 
                             </div>
                         </div>
-                    </div>       
-                    
-</div>
+                    </div>
 
+</div>

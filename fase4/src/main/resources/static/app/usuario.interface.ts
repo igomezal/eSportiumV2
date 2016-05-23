@@ -117,7 +117,17 @@ export class UsuarioService{
   eliminarUsuario(id: number){
     let u: Usuario;
     u = this.usuario[id];
-    this.usuario.splice(id, 1);
-    return withObserver(u);
+    var r = confirm("¿Quieres borrar a este usuario?");
+    if(r == true){
+      this.usuario.splice(id, 1);
+      return withObserver(u);
+    }else{
+      alert("Casi la lías");
+    }
+
+  }
+
+  getKarma(usuario: Usuario){
+    return usuario.karma;
   }
 }

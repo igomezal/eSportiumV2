@@ -69,6 +69,10 @@ System.register(['angular2/core', 'angular2/router', './usuario.interface'], fun
                     this._usuarioService.getSesion().subscribe(function (usuario) { return _this.sesion = usuario; }, function (error) { return console.log(error); });
                     this._usuarioService.getAdmin().subscribe(function (admin) { return _this.admin = admin; }, function (error) { return console.log(error); });
                 };
+                CabeceraComponent.prototype.getKarmaFromSession = function (usuario) {
+                    var karm = this._usuarioService.getKarma(usuario);
+                    return karm;
+                };
                 CabeceraComponent = __decorate([
                     core_1.Component({
                         selector: 'cabecera',

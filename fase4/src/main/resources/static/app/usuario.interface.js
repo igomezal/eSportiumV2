@@ -122,8 +122,17 @@ System.register(['angular2/core', './utils'], function(exports_1) {
                 UsuarioService.prototype.eliminarUsuario = function (id) {
                     var u;
                     u = this.usuario[id];
-                    this.usuario.splice(id, 1);
-                    return utils_1.withObserver(u);
+                    var r = confirm("¿Quieres borrar a este usuario?");
+                    if (r == true) {
+                        this.usuario.splice(id, 1);
+                        return utils_1.withObserver(u);
+                    }
+                    else {
+                        alert("Casi la lías");
+                    }
+                };
+                UsuarioService.prototype.getKarma = function (usuario) {
+                    return usuario.karma;
                 };
                 UsuarioService = __decorate([
                     core_1.Injectable(), 

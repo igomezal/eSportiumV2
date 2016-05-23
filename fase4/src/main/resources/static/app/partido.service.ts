@@ -119,4 +119,12 @@ export class PartidoService {
 
   }
 
+  terminarPartido(part:Partido){
+    this.partidos[part.id].estado="Finalizado";
+  }
+
+  pasarADirecto(part:Partido){
+    this.partidos[part.id].estado="Directo";
+  }
+
 }
