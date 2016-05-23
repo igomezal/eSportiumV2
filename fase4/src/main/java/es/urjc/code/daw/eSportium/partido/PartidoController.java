@@ -14,6 +14,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
+import es.urjc.code.daw.eSportium.juego.Juego;
+
 @RestController
 @RequestMapping("/partidos")
 public class PartidoController {
@@ -22,7 +26,10 @@ public class PartidoController {
 
 	@Autowired
 	private PartidoRepository repository;
+	
+	interface PartidoListView extends Partido.BasicAtt, Partido.JuegoAtt, Juego.BasicAtt{}
 
+	@JsonView(PartidoListView.class)
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public Collection<Partido> getPartidos() {
 		return repository.findAll();

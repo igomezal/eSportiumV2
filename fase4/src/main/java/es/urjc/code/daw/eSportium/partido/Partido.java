@@ -1,30 +1,44 @@
 package es.urjc.code.daw.eSportium.partido;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonView;
 
 import es.urjc.code.daw.eSportium.juego.Juego;
 
 @Entity
-@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Partido{
 	
+	public interface BasicAtt{}
+	public interface JuegoAtt{}
+	
+	@JsonView(BasicAtt.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id = -1;
 	
+	@JsonView(BasicAtt.class)
 	private String estado;
+	
+	@JsonView(BasicAtt.class)
 	private String diferencia;
+	
+	@JsonView(BasicAtt.class)
 	private String ganando;
+	
+	@JsonView(BasicAtt.class)
 	private String url;
+	
+	@JsonView(BasicAtt.class)
 	private String rondas;
 	
-	@OneToOne
+	@JsonView(JuegoAtt.class)
+	@ManyToOne(cascade=CascadeType.PERSIST)
 	private Juego juego;
 	
 	public Partido() {}

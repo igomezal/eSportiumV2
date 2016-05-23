@@ -10,23 +10,24 @@ import es.urjc.code.daw.eSportium.juego.*;
 public class DatabaseInitializer implements CommandLineRunner {
 
 	@Autowired
-	private PartidoRepository partidoRepository;
+	private JuegoRepository juegoRepository;
 	
 	@Autowired
-	private JuegoRepository juegoRepository;
-
+	private PartidoRepository partidoRepository;
+	
 	@Override
 	public void run(String... args) throws Exception {
 
 		Juego j1 = new Juego("League of Legends","lol");
 		juegoRepository.save(j1);
 		
-		Partido p1 = new Partido("finalizado",
-				" 400","eq1","https://www.youtube.com/embed/3EwuH3-xmds","BO5");
-		//p1.setJuego(j1);
+		Partido p1 = new Partido("finalizado"," 400","eq1","https://www.youtube.com/embed/3EwuH3-xmds","BO5");
+		p1.setJuego(j1);
+		Partido p2 = new Partido("finalizado"," 400","eq1","https://www.youtube.com/embed/3EwuH3-xmds","BO5");
+		p2.setJuego(j1);
+		
 		partidoRepository.save(p1);
-		
-		
+		partidoRepository.save(p2);
 
 	}
 
