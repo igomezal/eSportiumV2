@@ -130,6 +130,12 @@ System.register(['angular2/core', './jugador.interface', './utils'], function(ex
                         alert("Casi la lias");
                     }
                 };
+                PartidoService.prototype.terminarPartido = function (part) {
+                    this.partidos[part.id].estado = "Finalizado";
+                };
+                PartidoService.prototype.pasarADirecto = function (part) {
+                    this.partidos[part.id].estado = "Directo";
+                };
                 PartidoService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [jugador_interface_1.JugadorService])

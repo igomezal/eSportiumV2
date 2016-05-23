@@ -65,6 +65,15 @@ System.register(['angular2/core', 'angular2/router', '../partido.service', '../u
                 gestionPartidosComponent.prototype.gotoAddPartido = function () {
                     this._Router.navigate(['AddPartido']);
                 };
+                gestionPartidosComponent.prototype.finalizarPartido = function (partido) {
+                    this._Partidoservice.terminarPartido(partido);
+                };
+                gestionPartidosComponent.prototype.aDirecto = function (partido) {
+                    this._Partidoservice.pasarADirecto(partido);
+                };
+                gestionPartidosComponent.prototype.borrarPartido = function (partido) {
+                    this._Partidoservice.eliminarPartido(partido.id);
+                };
                 gestionPartidosComponent = __decorate([
                     core_1.Component({
                         selector: 'gestionPartidos',

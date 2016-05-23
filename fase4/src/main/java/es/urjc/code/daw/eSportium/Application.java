@@ -1,4 +1,4 @@
-package es.urjc.code.daw.library;
+package es.urjc.code.daw.eSportium;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

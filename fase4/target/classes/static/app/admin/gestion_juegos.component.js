@@ -65,6 +65,9 @@ System.register(['angular2/core', '../juego.interface', 'angular2/router', '../u
                 gestionJuegosComponent.prototype.gotoaddJuego = function () {
                     this._Router.navigate(['AddJuego']);
                 };
+                gestionJuegosComponent.prototype.borrarJuego = function (juego) {
+                    this._JuegoService.eliminar(juego.nombre, juego.id);
+                };
                 gestionJuegosComponent = __decorate([
                     core_1.Component({
                         selector: 'gestionJuegos',

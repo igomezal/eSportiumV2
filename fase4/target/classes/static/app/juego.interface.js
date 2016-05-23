@@ -89,7 +89,6 @@ System.register(['angular2/core', './utils'], function(exports_1) {
                             }
                         }
                     }
-                    alert("No existe ese juego");
                 };
                 JuegoService = __decorate([
                     core_1.Injectable(), 

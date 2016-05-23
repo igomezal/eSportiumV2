@@ -21,7 +21,7 @@
                     <!-- /.sidebar -->
                     <div class="col-md-8 col-md-offset-1">
                         <div class="row">
-                                     
+
            <!-- Content Header (Page header) -->
             <div class="content-header">
                 <h3 class="montserrat-text white-text uppercase no-margin-top">
@@ -64,8 +64,10 @@
                           <td>{{partido.diferencia}}</td>
                           <td>{{partido.rondas}}</td>
                           <td>
-                                <a (click)="gotoEditPartido(partido)" class="fa fa-pencil">Editar</a>
-                                &nbsp;&nbsp;
+                                <a (click)="gotoEditPartido(partido)" class="fa fa-pencil">Editar</a><br>
+                                <a [class.hidden]="partido.estado != 'Directo'" (click)="finalizarPartido(partido)" class="glyphicon glyphicon-ok">Finalizar</a><br>
+                                <a [class.hidden]="partido.estado != 'Proximamente'" (click)="aDirecto(partido)" class="glyphicon glyphicon-record">Directo</a><br>
+                                <a (click)="borrarPartido(partido)" class="glyphicon glyphicon-remove">Eliminar</a>
                             </td>
                         </tr>
                     </tbody>
@@ -77,6 +79,6 @@
 
                             </div>
                         </div>
-                    </div>       
-                    
+                    </div>
+
 </div>
