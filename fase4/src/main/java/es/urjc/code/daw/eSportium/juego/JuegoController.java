@@ -1,4 +1,4 @@
-package es.urjc.code.daw.library.book;
+package es.urjc.code.daw.eSportium.juego;
 
 import java.util.Collection;
 
@@ -15,27 +15,27 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/books")
-public class BookController {
+@RequestMapping("/juegos")
+public class JuegoController {
 
-	private static final Logger log = LoggerFactory.getLogger(BookController.class);
+	private static final Logger log = LoggerFactory.getLogger(JuegoController.class);
 
 	@Autowired
-	private BookRepository repository;
+	private JuegoRepository repository;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public Collection<Book> getBooks() {
+	public Collection<Juego> getJuegos() {
 		return repository.findAll();
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public ResponseEntity<Book> getAnuncio(@PathVariable long id) {
+	public ResponseEntity<Juego> getJuego(@PathVariable long id) {
 
-		log.info("Get book {}", id);
+		log.info("Get juego {}", id);
 
-		Book anuncio = repository.findOne(id);
-		if (anuncio != null) {
-			return new ResponseEntity<>(anuncio, HttpStatus.OK);
+		Juego juego = repository.findOne(id);
+		if (juego != null) {
+			return new ResponseEntity<>(juego, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
@@ -43,30 +43,30 @@ public class BookController {
 
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
-	public Book nuevoAnuncio(@RequestBody Book anuncio) {
+	public Juego nuevoJuego(@RequestBody Juego juego) {
 
-		repository.save(anuncio);
+		repository.save(juego);
 
-		return anuncio;
+		return juego;
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Book> actulizaAnuncio(@PathVariable long id, @RequestBody Book updatedBook) {
+	public ResponseEntity<Juego> actulizaJuego(@PathVariable long id, @RequestBody Juego updatedJuego) {
 
-		Book anuncio = repository.findOne(id);
-		if (anuncio != null) {
+		Juego juego = repository.findOne(id);
+		if (juego != null) {
 
-			updatedBook.setId(id);
-			repository.save(updatedBook);
+			updatedJuego.setId(id);
+			repository.save(updatedJuego);
 
-			return new ResponseEntity<>(updatedBook, HttpStatus.OK);
+			return new ResponseEntity<>(updatedJuego, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Book> borraAnuncio(@PathVariable long id) {
+	public ResponseEntity<Juego> borraJuego(@PathVariable long id) {
 
 		if (repository.exists(id)) {
 			repository.delete(id);

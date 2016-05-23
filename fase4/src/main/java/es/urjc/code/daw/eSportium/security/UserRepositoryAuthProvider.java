@@ -1,4 +1,4 @@
-package es.urjc.code.daw.library.security;
+package es.urjc.code.daw.eSportium.security;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,9 +14,9 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import es.urjc.code.daw.library.user.User;
-import es.urjc.code.daw.library.user.UserComponent;
-import es.urjc.code.daw.library.user.UserRepository;
+import es.urjc.code.daw.eSportium.user.User;
+import es.urjc.code.daw.eSportium.user.UserComponent;
+import es.urjc.code.daw.eSportium.user.UserRepository;
 
 /**
  * This class is used to check http credentials against database data. Also it

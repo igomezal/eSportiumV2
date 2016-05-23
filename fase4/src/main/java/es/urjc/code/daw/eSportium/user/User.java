@@ -1,4 +1,4 @@
-package es.urjc.code.daw.library.user;
+package es.urjc.code.daw.eSportium.user;
 
 import java.util.ArrayList;
 import java.util.Arrays;

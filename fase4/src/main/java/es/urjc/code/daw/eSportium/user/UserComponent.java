@@ -1,4 +1,4 @@
-package es.urjc.code.daw.library.user;
+package es.urjc.code.daw.eSportium.user;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
