@@ -1,41 +1,63 @@
 package es.urjc.code.daw.eSportium.partido;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonView;
 
 import es.urjc.code.daw.eSportium.juego.Juego;
 
 @Entity
-@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Partido{
 	
+	public interface BasicAtt{}
+	public interface JuegoAtt{}
+	
+	@JsonView(BasicAtt.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id = -1;
 	
+	@JsonView(BasicAtt.class)
 	private String estado;
+	
+	@JsonView(BasicAtt.class)
 	private String diferencia;
+	
+	@JsonView(BasicAtt.class)
 	private String ganando;
+	
+	@JsonView(BasicAtt.class)
 	private String url;
+	
+	@JsonView(BasicAtt.class)
 	private String rondas;
 	
-	@OneToOne
+	@JsonView(BasicAtt.class)
+	private String porcEq1;
+	
+	@JsonView(BasicAtt.class)
+	private String porcEq2;
+	
+	@JsonView(JuegoAtt.class)
+	@ManyToOne
 	private Juego juego;
 	
 	public Partido() {}
 	
-	public Partido(String estado, String diferencia, String ganando, String url, String rondas) {
+	public Partido(String estado, String diferencia, String ganando, String url, String rondas, String porcEq1, String porcEq2) {
 		super();
 		this.estado = estado;
 		this.diferencia = diferencia;
 		this.ganando = ganando;
 		this.url = url;
 		this.rondas = rondas;
+		this.porcEq1 = porcEq1;
+		this.porcEq2 = porcEq2;
 	}
 	
 	public long getId() {
@@ -82,12 +104,32 @@ public class Partido{
 	public void setJuego(Juego juego) {
 		this.juego = juego;
 	}
+	
+	
+
+	public String getPorcEq1() {
+		return porcEq1;
+	}
+
+	public void setPorcEq1(String porcEq1) {
+		this.porcEq1 = porcEq1;
+	}
+
+	public String getPorcEq2() {
+		return porcEq2;
+	}
+
+	public void setPorcEq2(String porcEq2) {
+		this.porcEq2 = porcEq2;
+	}
 
 	@Override
 	public String toString() {
 		return "Partido [id=" + id + ", estado=" + estado + ", diferencia=" + diferencia + ", ganando=" + ganando
-				+ ", url=" + url + ", rondas=" + rondas + "]";
+				+ ", url=" + url + ", rondas=" + rondas + ", porcEq1=" + porcEq1 + ", porcEq2=" + porcEq2 + ", juego="
+				+ juego + "]";
 	}
+	
 	
 	
 }

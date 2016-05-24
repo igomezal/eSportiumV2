@@ -30,14 +30,21 @@ public class DatabaseInitializer implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		/*Juego j1 = new Juego("League of Legends","lol");
+Juego j1 = new Juego("League of Legends","lol");
+		
+		Partido p1 = new Partido("finalizado"," 400","eq1","https://www.youtube.com/embed/3EwuH3-xmds","BO5","30","70");
+		p1.setJuego(j1);
+		Partido p2 = new Partido("finalizado"," 400","eq1","https://www.youtube.com/embed/3EwuH3-xmds","BO5","30","70");
+		p2.setJuego(j1);
+		
+		List<Partido> listaPartidos = new ArrayList<Partido>();
+		listaPartidos.add(p1);
+		listaPartidos.add(p2);
+		
+		j1.setPartidos(listaPartidos);
+				
 		juegoRepository.save(j1);
 		
-		Partido p1 = new Partido("finalizado",
-				" 400","eq1","https://www.youtube.com/embed/3EwuH3-xmds","BO5");
-		//p1.setJuego(j1);
-		partidoRepository.save(p1);
-		*/
 		Equipo equipo = new Equipo("Fnatic","http://stuffled.com/vector/wp-content/uploads/sites/5/2014/04/Fnatic-Logo-vector-image.png");
 		
 		Jugador jug1 = new Jugador("Rekkles","ADC",9);
