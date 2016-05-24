@@ -37,19 +37,27 @@ public class Partido{
 	@JsonView(BasicAtt.class)
 	private String rondas;
 	
+	@JsonView(BasicAtt.class)
+	private String porcEq1;
+	
+	@JsonView(BasicAtt.class)
+	private String porcEq2;
+	
 	@JsonView(JuegoAtt.class)
 	@ManyToOne
 	private Juego juego;
 	
 	public Partido() {}
 	
-	public Partido(String estado, String diferencia, String ganando, String url, String rondas) {
+	public Partido(String estado, String diferencia, String ganando, String url, String rondas, String porcEq1, String porcEq2) {
 		super();
 		this.estado = estado;
 		this.diferencia = diferencia;
 		this.ganando = ganando;
 		this.url = url;
 		this.rondas = rondas;
+		this.porcEq1 = porcEq1;
+		this.porcEq2 = porcEq2;
 	}
 	
 	public long getId() {
@@ -96,12 +104,32 @@ public class Partido{
 	public void setJuego(Juego juego) {
 		this.juego = juego;
 	}
+	
+	
+
+	public String getPorcEq1() {
+		return porcEq1;
+	}
+
+	public void setPorcEq1(String porcEq1) {
+		this.porcEq1 = porcEq1;
+	}
+
+	public String getPorcEq2() {
+		return porcEq2;
+	}
+
+	public void setPorcEq2(String porcEq2) {
+		this.porcEq2 = porcEq2;
+	}
 
 	@Override
 	public String toString() {
 		return "Partido [id=" + id + ", estado=" + estado + ", diferencia=" + diferencia + ", ganando=" + ganando
-				+ ", url=" + url + ", rondas=" + rondas + "]";
+				+ ", url=" + url + ", rondas=" + rondas + ", porcEq1=" + porcEq1 + ", porcEq2=" + porcEq2 + ", juego="
+				+ juego + "]";
 	}
+	
 	
 	
 }
