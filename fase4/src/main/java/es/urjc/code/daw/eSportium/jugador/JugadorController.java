@@ -14,6 +14,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
+import es.urjc.code.daw.eSportium.equipo.Equipo;
+
 @RestController
 @RequestMapping("/jugadores")
 public class JugadorController {
@@ -22,7 +26,10 @@ public class JugadorController {
 
 	@Autowired
 	private JugadorRepository repository;
+	
+	interface JugadorListView extends Jugador.BasicAtt, Jugador.EquipoAtt, Equipo.BasicAtt{}
 
+	@JsonView(JugadorListView.class)
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public Collection<Jugador> getJuegadores() {
 		return repository.findAll();

@@ -1,32 +1,35 @@
 package es.urjc.code.daw.eSportium.equipo;
 
-import java.util.ArrayList;
-
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-
-import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonView;
 
 import java.util.*;
 import es.urjc.code.daw.eSportium.jugador.Jugador;
 
 @Entity
-@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Equipo{
+	public interface BasicAtt{}
+	public interface JugadoresAtt{}
 	
+	@JsonView(BasicAtt.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id = -1;
 	
+	@JsonView(BasicAtt.class)
 	private String nombre;
+	
+	@JsonView(BasicAtt.class)
 	private String logo;
 	
-	
-	@OneToMany
+	@JsonView(JugadoresAtt.class)
+	@OneToMany(cascade=CascadeType.ALL,mappedBy="equipo")
 	private List<Jugador> jugadores;
 	
 	public Equipo() {}
@@ -62,7 +65,7 @@ public class Equipo{
 		return this.jugadores;
 	}
 
-	public void setJuegadores(ArrayList<Jugador> jugadores) {
+	public void setJuegadores(List<Jugador> jugadores) {
 		this.jugadores = jugadores;
 	}
 

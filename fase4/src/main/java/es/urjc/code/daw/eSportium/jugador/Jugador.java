@@ -1,25 +1,36 @@
 package es.urjc.code.daw.eSportium.jugador;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import es.urjc.code.daw.eSportium.equipo.Equipo;
 
 @Entity
 public class Jugador{
 	
+	public interface BasicAtt{}
+	public interface EquipoAtt{}
+	
+	@JsonView(BasicAtt.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id = -1;
 	
+	@JsonView(BasicAtt.class)
 	private String nombre;
+	
+	@JsonView(BasicAtt.class)
 	private String posicion;
+	
+	@JsonView(BasicAtt.class)
 	private long media;
 	
+	@JsonView(EquipoAtt.class)
 	@ManyToOne
 	private Equipo equipo;
 
