@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import es.urjc.code.daw.eSportium.apuesta.Apuesta;
+
 /**
  * This is the entity to store in database user information. It contains the
  * following basic information:
@@ -52,6 +53,14 @@ public class User {
 	
 	@JsonView(BasicAtt.class)
 	private long karma;
+	@JsonView(BasicAtt.class)
+	private String fecha;
+	@JsonView(BasicAtt.class)
+	private String genero;
+	@JsonView(BasicAtt.class)
+	private String foto;
+	@JsonView(BasicAtt.class)
+	private String correo;
 
 	@JsonView(ApuestaAtt.class)
 	@OneToMany(mappedBy="usuario")
@@ -72,6 +81,14 @@ public class User {
 		this.roles = new ArrayList<>(Arrays.asList(roles));
 		this.karma = karma;
 		this.apuestas = new ArrayList<Apuesta>();
+	}
+
+	public List<Apuesta> getApuestas() {
+		return apuestas;
+	}
+
+	public void setApuestas(List<Apuesta> apuestas) {
+		this.apuestas = apuestas;
 	}
 
 	public String getName() {
@@ -106,12 +123,40 @@ public class User {
 		this.karma = karma;
 	}
 
-	public List<Apuesta> getApuestas() {
-		return apuestas;
+	public String getFecha() {
+		return fecha;
 	}
 
-	public void setApuestas(List<Apuesta> apuestas) {
-		this.apuestas = apuestas;
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+
+	public String getGenero() {
+		return genero;
+	}
+
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	public String getCorreo() {
+		return correo;
+	}
+
+	public void setCorreo(String correo) {
+		this.correo = correo;
+	}
+
+	public void setKarma(long karma) {
+		this.karma = karma;
 	}
 	
 

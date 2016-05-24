@@ -110,12 +110,12 @@
     </div>
 
    <!--Modal de apuesta-->
-    <div *ngIf="sesion"  class="modal fade" id="apostar" role="dialog" aria-labelledby="etiquetaModal">
+    <div *ngIf="loginService.isLogged"  class="modal fade" id="apostar" role="dialog" aria-labelledby="etiquetaModal">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-body">
                     <h3 class="etiquetaModal">Apostar por equipo</h3>
-                    <div class="karma btn-success no-pointer">{{sesion.karma}}</div>
+                    <div class="karma btn-success no-pointer">{{loginService.user.karma}}</div>
                     <br/>
                     <center><input class="input-lg" id="spin-apuessta" type="text" value="0" name="spin-apuesta" #apuesta></center>
                     <br>
@@ -135,7 +135,7 @@
     <!--Fin de modal de apuesta-->
 
     <!--Modal de Log In-->
-<div *ngIf="!sesion"  class="modal fade" id="apostar" role="dialog" aria-labelledby="etiquetaModal">
+<div *ngIf="!loginService.isLogged"  class="modal fade" id="apostar" role="dialog" aria-labelledby="etiquetaModal">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-body">
@@ -149,7 +149,7 @@
                     <br/>
                     <input type="password" name="Password" autocomplete="on" placeholder="Contraseña" class="form-control" #Clave>
                     <br/>
-                    <a class="cerrar" data-dismiss="modal" (click)="login(NombreUsuario.value,Clave.value)">
+                    <a class="cerrar" data-dismiss="modal" (click)="logInSpring($event,NombreUsuario.value,Clave.value)">
                         <button class="btn btn-primary">¡Acceder!</button>
                     </a>
                     <div class="checkbox checkDerecho">

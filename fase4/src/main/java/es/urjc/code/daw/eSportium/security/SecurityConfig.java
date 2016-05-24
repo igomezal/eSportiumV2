@@ -52,7 +52,28 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		// URLs that need authentication to access to it
 		http.authorizeRequests().antMatchers(HttpMethod.POST, "/books/**").hasRole("USER");
 		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/books/**").hasRole("USER");
-		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/books/**").hasRole("ADMIN");		
+		//Admin
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/admin").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/addJuego").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/addJuego").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/addPartido").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/addPartido").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/ajustes").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/editJuego/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/editJuego/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/editJuego/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/editPartido/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/editPartido/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/editPartido/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/juegos").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/juegos").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/partidos").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/partidos").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/usuarios").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/usuario").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.GET, "/editUsuario/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/editUsuario/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/editUsuario/**").hasRole("ADMIN");		
 
 		// Other URLs can be accessed without authentication
 		http.authorizeRequests().anyRequest().permitAll();

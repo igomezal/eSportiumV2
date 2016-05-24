@@ -3,6 +3,7 @@ package es.urjc.code.daw.eSportium.partido;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Controller;
@@ -12,8 +13,8 @@ import es.urjc.code.daw.eSportium.juego.*;
 import es.urjc.code.daw.eSportium.jugador.*;
 import es.urjc.code.daw.eSportium.user.User;
 import es.urjc.code.daw.eSportium.user.UserRepository;
-import es.urjc.code.daw.eSportium.apuesta.*;
 import es.urjc.code.daw.eSportium.equipo.*;
+import es.urjc.code.daw.eSportium.apuesta.*;
 
 @Controller
 public class DatabaseInitializer implements CommandLineRunner {
@@ -84,27 +85,28 @@ public class DatabaseInitializer implements CommandLineRunner {
 				
 		juegoRepository.save(j1);
 		
-		User user1 = new User("user", "pass",600,  "ROLE_USER");
+		User user1 = new User("user", "pass",7400,  "ROLE_USER");
 		User user2 = new User("admin", "pass",10000, "ROLE_USER", "ROLE_ADMIN");
 		
 		// Sample users
 
-		userRepository.save(user1);
-		userRepository.save(user2);
-		
+
 		//Apuestas
 		Apuesta a1 = new Apuesta(300);
 		
+		List<Apuesta> apuestas = new ArrayList<Apuesta>();
 		a1.setUsuario(user1);
 		a1.setPartido(p1);
 		a1.setEquipo(p1.getEquipo1());
+		apuestas.add(a1);
 		
-		apuestaRepository.save(a1); 
-		
-		
-		
+		user1.setApuestas(apuestas);
 		
 		
+		userRepository.save(user1);
+		userRepository.save(user2);
+			
+	apuestaRepository.save(a1); 
 	}
 
 }

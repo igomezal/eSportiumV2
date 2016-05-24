@@ -1,4 +1,4 @@
-System.register(['angular2/core', './usuario.interface', './partido.service', 'angular2/router'], function(exports_1, context_1) {
+System.register(['angular2/core', './usuario.interface', './partido.service', 'angular2/router', './login.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './usuario.interface', './partido.service', 'a
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, usuario_interface_1, partido_service_1, router_1;
+    var core_1, usuario_interface_1, partido_service_1, router_1, login_service_1;
     var Perfil;
     return {
         setters:[
@@ -25,19 +25,25 @@ System.register(['angular2/core', './usuario.interface', './partido.service', 'a
             },
             function (router_1_1) {
                 router_1 = router_1_1;
+            },
+            function (login_service_1_1) {
+                login_service_1 = login_service_1_1;
             }],
         execute: function() {
             Perfil = (function () {
-                function Perfil(_usuarioService, _partidoService, _router) {
+                function Perfil(_usuarioService, _partidoService, _router, loginService) {
                     this._usuarioService = _usuarioService;
                     this._partidoService = _partidoService;
                     this._router = _router;
+                    this.loginService = loginService;
                 }
-                Perfil.prototype.ngOnInit = function () {
-                    var _this = this;
-                    this._usuarioService.getSesion().subscribe(function (usuario) { return _this.sesion = usuario; }, function (error) { return console.log(error); });
-                    this.getPartido();
-                };
+                /*ngOnInit(){
+                  this._usuarioService.getSesion().subscribe(
+                    usuario =>this.sesion = usuario,
+                    error => console.log(error)
+                  );
+                  this.getPartido();
+                }*/
                 Perfil.prototype.getApuesta = function (id) {
                     for (var i = 0; i < this.sesion.apuestas.length; i++) {
                         if (this.sesion.apuestas[i].id === id) {
@@ -69,7 +75,7 @@ System.register(['angular2/core', './usuario.interface', './partido.service', 'a
                         selector: 'profile',
                         templateUrl: 'app/profile.component.html'
                     }), 
-                    __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, partido_service_1.PartidoService, router_1.Router])
+                    __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, partido_service_1.PartidoService, router_1.Router, login_service_1.LoginService])
                 ], Perfil);
                 return Perfil;
             }());

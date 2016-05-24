@@ -18,7 +18,6 @@ import com.fasterxml.jackson.annotation.JsonView;
 
 import es.urjc.code.daw.eSportium.equipo.Equipo;
 import es.urjc.code.daw.eSportium.juego.Juego;
-import es.urjc.code.daw.eSportium.jugador.Jugador;
 import es.urjc.code.daw.eSportium.partido.Partido;
 import es.urjc.code.daw.eSportium.user.User;
 
