@@ -35,7 +35,8 @@ public class EquipoController {
 	public Collection<Equipo> getEquipos() {
 		return repository.findAll();
 	}
-
+	
+	@JsonView(PartidoListView.class)
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Equipo> getEquipo(@PathVariable long id) {
 
