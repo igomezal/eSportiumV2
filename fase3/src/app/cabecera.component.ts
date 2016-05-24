@@ -1,10 +1,12 @@
 import {Component, AfterContentInit ,OnInit} from 'angular2/core';
 import {Router} from 'angular2/router';
 import {Usuario,UsuarioService} from './usuario.interface';
+import {LoginService} from './login.service';
 
 
 @Component({
   selector: 'cabecera',
+  providers: [LoginService],
   templateUrl: 'app/cabecera.component.html' //Por qué tengo que poner app/header.. ??? header.ts y header.html están a la misma altura
 })
 
@@ -15,7 +17,7 @@ export class CabeceraComponent implements OnInit{
 
 
 
-  constructor(private _router:Router,private _usuarioService: UsuarioService){
+  constructor(private _router:Router,private _usuarioService: UsuarioService, private loginService: LoginService){
 
   }
 
@@ -92,5 +94,22 @@ export class CabeceraComponent implements OnInit{
      var karm = this._usuarioService.getKarma(usuario);
      return karm;
    }
+
+   logInSpring(event: any, user: string, pass: string){
+
+	  event.preventDefault();
+
+	  this.loginService.logIn(user, pass).subscribe(
+	      user => console.log(user),
+	      error => alert("Invalid user or password")
+      );
+  }
+
+  logOutSpring(){
+	this.loginService.logOut().subscribe(
+		response => {},
+		error => console.log("Error when trying to log out: "+error)
+	);
+  }
 
 }

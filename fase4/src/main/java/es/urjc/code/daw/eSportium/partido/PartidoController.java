@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
+import es.urjc.code.daw.eSportium.equipo.Equipo;
 import es.urjc.code.daw.eSportium.juego.Juego;
 
 @RestController
@@ -27,7 +28,7 @@ public class PartidoController {
 	@Autowired
 	private PartidoRepository repository;
 	
-	interface PartidoListView extends Partido.BasicAtt, Partido.JuegoAtt, Juego.BasicAtt{}
+	interface PartidoListView extends Partido.BasicAtt, Partido.JuegoAtt, Juego.BasicAtt, Equipo.BasicAtt{}
 
 	@JsonView(PartidoListView.class)
 	@RequestMapping(value = "/", method = RequestMethod.GET)

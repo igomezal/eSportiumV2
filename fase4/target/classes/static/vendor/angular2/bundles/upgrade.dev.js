@@ -649,7 +649,7 @@ System.register("angular2/src/upgrade/upgrade_adapter", ["angular2/core", "angul
         }]);
       }]).run(['$injector', '$rootScope', function(injector, rootScope) {
         ng1Injector = injector;
-        async_1.ObservableWrapper.subscribe(ngZone.onTurnDone, function(_) {
+        async_1.ObservableWrapper.subscribe(ngZone.onMicrotaskEmpty, function(_) {
           return ngZone.runOutsideAngular(function() {
             return rootScope.$apply();
           });

@@ -28,9 +28,12 @@ import {gestionPartidosComponent} from './admin/gestion_partidos.component';
 import {gestionUsuariosComponent} from './admin/gestion_usuarios.component';
 import {editUsuarioComponent} from './admin/edit_usuario.component';
 
+import {Http, HTTP_PROVIDERS} from 'angular2/http';
+import {LoginService} from './login.service';
+
 @Component({
   selector: 'main-app',
-  providers: [ROUTER_PROVIDERS,PartidoService,JugadorService,JuegoService,/* pruebaUsuario */UsuarioService],
+  providers: [ROUTER_PROVIDERS,PartidoService,JugadorService,JuegoService,/* pruebaUsuario */UsuarioService, HTTP_PROVIDERS, LoginService],
   templateUrl: 'app/main.html', //Esto antes era index.html  de fuera de app
   directives: [CabeceraComponent,PieComponent,ROUTER_DIRECTIVES],
   pipes: []

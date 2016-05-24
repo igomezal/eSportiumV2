@@ -1,4 +1,6 @@
-System.register(['angular2/core', 'angular2/router', './usuario.interface'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', './usuario.interface', './login.service'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './usuario.interface'], fun
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, usuario_interface_1;
+    var core_1, router_1, usuario_interface_1, login_service_1;
     var CabeceraComponent;
     return {
         setters:[
@@ -20,12 +22,16 @@ System.register(['angular2/core', 'angular2/router', './usuario.interface'], fun
             },
             function (usuario_interface_1_1) {
                 usuario_interface_1 = usuario_interface_1_1;
+            },
+            function (login_service_1_1) {
+                login_service_1 = login_service_1_1;
             }],
         execute: function() {
             CabeceraComponent = (function () {
-                function CabeceraComponent(_router, _usuarioService) {
+                function CabeceraComponent(_router, _usuarioService, loginService) {
                     this._router = _router;
                     this._usuarioService = _usuarioService;
+                    this.loginService = loginService;
                 }
                 CabeceraComponent.prototype.ngOnInit = function () {
                     var _this = this;
@@ -73,17 +79,25 @@ System.register(['angular2/core', 'angular2/router', './usuario.interface'], fun
                     var karm = this._usuarioService.getKarma(usuario);
                     return karm;
                 };
+                CabeceraComponent.prototype.logInSpring = function (event, user, pass) {
+                    event.preventDefault();
+                    this.loginService.logIn(user, pass).subscribe(function (user) { return console.log(user); }, function (error) { return alert("Invalid user or password"); });
+                };
+                CabeceraComponent.prototype.logOutSpring = function () {
+                    this.loginService.logOut().subscribe(function (response) { }, function (error) { return console.log("Error when trying to log out: " + error); });
+                };
                 CabeceraComponent = __decorate([
                     core_1.Component({
                         selector: 'cabecera',
+                        providers: [login_service_1.LoginService],
                         templateUrl: 'app/cabecera.component.html' //Por qué tengo que poner app/header.. ??? header.ts y header.html están a la misma altura
                     }), 
-                    __metadata('design:paramtypes', [router_1.Router, usuario_interface_1.UsuarioService])
+                    __metadata('design:paramtypes', [router_1.Router, usuario_interface_1.UsuarioService, login_service_1.LoginService])
                 ], CabeceraComponent);
                 return CabeceraComponent;
-            })();
+            }());
             exports_1("CabeceraComponent", CabeceraComponent);
         }
     }
 });
-//# sourceMappingURL=../../../app/cabecera.component.js.map
+//# sourceMappingURL=cabecera.component.js.map

@@ -40,6 +40,7 @@
     "app/index.component.ts",
     "app/juego.interface.ts",
     "app/jugador.interface.ts",
+    "app/login.service.ts",
     "app/main.ts",
     "app/mock-bdd.component.ts",
     "app/partido.component.ts",

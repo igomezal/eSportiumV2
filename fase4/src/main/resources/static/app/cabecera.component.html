@@ -1,9 +1,9 @@
 <header class="main-header">
     <div class="container">
         <a (click)="goToInicio()"><img src="img/logo.png" alt="Logo eSportiumV2"><span class="logo">eSportiumV2</span></a>
-        
+
         <div class="pull-right">
-            <span *ngIf="sesion" class="montserrat-text white-text "><span class="glyphicon glyphicon-star" aria-hidden="true"></span>Bienvenido {{sesion.name}} Karma: {{sesion.karma}} &nbsp; &nbsp;</span>
+            <span *ngIf="loginService.isLogged" class="montserrat-text white-text ">Bienvenido {{loginService.user.name}} Karma: {{loginService.user.karma}} &nbsp;<span class="glyphicon glyphicon-star" aria-hidden="true"></span> &nbsp;</span>
             <div class="menu" (click)="actualizar()">
                 <div class="montserrat-text uppercase menu-text">Menu</div>
                 <div class="menu-icon">
@@ -24,10 +24,10 @@
                     <ul class="first-level_menu">
                         <li><a class="cerrar" (click)="goToInicio()"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Inicio</a></li>
                         <li><a class="cerrar" (click)="goToFinalizados()"><span class="glyphicon glyphicon-hourglass" aria-hidden="true"></span> Finalizados</a></li>
-                        <li *ngIf="!sesion" ><a (click)="actualizar()" href="#" data-toggle="modal" data-target="#login" id="usuarioMenu"><span class="glyphicon glyphicon-user"></span> Acceder</a></li>
-                        <li *ngIf="admin"><a class="cerrar" (click)="goToAdmin()"><span class="glyphicon glyphicon glyphicon-eye-open" aria-hidden="true"></span> Administración</a></li>
-                        <li *ngIf="sesion" class="cerrar" ><a class="cerrar" (click)="goToUsuario()"><span class="glyphicon  glyphicon-user" aria-hidden="true"></span> Ver Perfil</a></li>
-                        <li *ngIf="sesion" class="cerrar" ><a class="cerrar" (click)="salir()"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Salir</a></li>
+                        <li *ngIf="!loginService.isLogged" ><a (click)="actualizar()" href="#" data-toggle="modal" data-target="#login" id="usuarioMenu"><span class="glyphicon glyphicon-user"></span> Acceder</a></li>
+                        <li *ngIf="loginService.isAdmin && loginService.isLogged"><a class="cerrar" (click)="goToAdmin()"><span class="glyphicon glyphicon glyphicon-eye-open" aria-hidden="true"></span> Administración</a></li>
+                        <li *ngIf="loginService.isLogged" class="cerrar" ><a class="cerrar" (click)="goToUsuario()"><span class="glyphicon  glyphicon-user" aria-hidden="true"></span> Ver Perfil</a></li>
+                        <li *ngIf="loginService.isLogged" class="cerrar" ><a class="cerrar" (click)="salir()"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Salir</a></li>
                     </ul>
                 </nav>
             </div>
@@ -51,7 +51,8 @@
                     <br/>
                     <input type="password" name="Password" autocomplete="on" placeholder="Contraseña" class="form-control" #Clave>
                     <br/>
-                    <a class="cerrar" data-dismiss="modal" (click)="login(NombreUsuario.value,Clave.value)">
+                    <!--(click)="login(NombreUsuario.value,Clave.value)" -->
+                    <a class="cerrar" data-dismiss="modal" (click)="logInSpring($event,NombreUsuario.value,Clave.value)">
                         <button class="btn btn-primary">¡Acceder!</button>
                     </a>
                     <div class="checkbox checkDerecho">

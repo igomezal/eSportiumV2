@@ -19,7 +19,7 @@ public class Jugador{
 	@JsonView(BasicAtt.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id = -1;
+	private long id;
 	
 	@JsonView(BasicAtt.class)
 	private String nombre;

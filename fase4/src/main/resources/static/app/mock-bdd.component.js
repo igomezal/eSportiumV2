@@ -1,4 +1,6 @@
-System.register([], function(exports_1) {
+System.register([], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var JUEGOS, JUGADORES, PARTIDOS, USUARIO;
     return {
         setters:[],
@@ -27,4 +29,4 @@ System.register([], function(exports_1) {
         }
     }
 });
-//# sourceMappingURL=../../../app/mock-bdd.component.js.map
+//# sourceMappingURL=mock-bdd.component.js.map

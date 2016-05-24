@@ -42,6 +42,8 @@ public class User {
 	private Long id;
 
 	private String name;
+	
+	private long karma;
 
 	@JsonIgnore
 	private String passwordHash;
@@ -52,10 +54,11 @@ public class User {
 	public User() {
 	}
 
-	public User(String name, String password, String... roles) {
+	public User(String name, String password,long karma, String... roles) {
 		this.name = name;
 		this.passwordHash = new BCryptPasswordEncoder().encode(password);
 		this.roles = new ArrayList<>(Arrays.asList(roles));
+		this.karma = karma;
 	}
 
 	public String getName() {
@@ -80,6 +83,14 @@ public class User {
 
 	public void setRoles(List<String> roles) {
 		this.roles = roles;
+	}
+	
+	public long getKarma() {
+		return karma;
+	}
+
+	public void setKarma(int karma) {
+		this.karma = karma;
 	}
 
 }
