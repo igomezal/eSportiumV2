@@ -44,6 +44,10 @@ public class User {
 	private String name;
 	
 	private long karma;
+	private String fecha;
+	private String genero;
+	private String foto;
+	private String correo;
 
 	@JsonIgnore
 	private String passwordHash;
@@ -92,5 +96,42 @@ public class User {
 	public void setKarma(int karma) {
 		this.karma = karma;
 	}
+
+	public String getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(String fecha) {
+		this.fecha = fecha;
+	}
+
+	public String getGenero() {
+		return genero;
+	}
+
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	public String getCorreo() {
+		return correo;
+	}
+
+	public void setCorreo(String correo) {
+		this.correo = correo;
+	}
+
+	public void setKarma(long karma) {
+		this.karma = karma;
+	}
+	
 
 }

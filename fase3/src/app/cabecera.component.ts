@@ -6,7 +6,6 @@ import {LoginService} from './login.service';
 
 @Component({
   selector: 'cabecera',
-  providers: [LoginService],
   templateUrl: 'app/cabecera.component.html' //Por qué tengo que poner app/header.. ??? header.ts y header.html están a la misma altura
 })
 

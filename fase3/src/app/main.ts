@@ -29,7 +29,9 @@ import {gestionUsuariosComponent} from './admin/gestion_usuarios.component';
 import {editUsuarioComponent} from './admin/edit_usuario.component';
 
 import {Http, HTTP_PROVIDERS} from 'angular2/http';
+
 import {LoginService} from './login.service';
+
 
 @Component({
   selector: 'main-app',

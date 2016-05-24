@@ -89,7 +89,6 @@ System.register(['angular2/core', 'angular2/router', './usuario.interface', './l
                 CabeceraComponent = __decorate([
                     core_1.Component({
                         selector: 'cabecera',
-                        providers: [login_service_1.LoginService],
                         templateUrl: 'app/cabecera.component.html' //Por qué tengo que poner app/header.. ??? header.ts y header.html están a la misma altura
                     }), 
                     __metadata('design:paramtypes', [router_1.Router, usuario_interface_1.UsuarioService, login_service_1.LoginService])

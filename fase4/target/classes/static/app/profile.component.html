@@ -4,19 +4,19 @@
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-5 col-sm-offset-0 col-xs-offset-4">
                 <div class="panel panel-default">
-                    <div class="panel-body"><img class="img-responsive" src="../img/{{sesion.foto}}"></div>
+                    <div class="panel-body"><img class="img-responsive" src="../img/sesion.foto"></div>
                 </div>
             </div>
             <div class="col-md-9 col-sm-9 col-xs-12">
                 <div class="left-title">
-                    <h2 class="big-title montserrat-text white-text">{{sesion.name}} <span class="glyphicon glyphicon-edit
+                    <h2 class="big-title montserrat-text white-text">{{loginService.user.name}} <span class="glyphicon glyphicon-edit
 " aria-hidden="true" (click)="goToEditar()"></span></h2>
                 </div>
 
                 <ul class="list-group">
-                    <li class="list-group-item">Miembro desde {{sesion.fecha | date:'d'}}/{{sesion.fecha | date:'M'}}/{{sesion.fecha | date:'y'}}</li>
-                    <li class="list-group-item">Número de apuestas realizadas: {{sesion.apuestas.length + sesion.finalizados.length}}</li>
-                    <li class="list-group-item">Género: {{sesion.genero}}</li>
+                    <li class="list-group-item">Miembro desde {{loginService.user.fecha}}</li>
+                    <li class="list-group-item">Número de apuestas realizadas: {{loginService.user.name}} FALTA</li>
+                    <li class="list-group-item">Género: {{loginService.user.genero}}</li>
                 </ul>
 
             </div>
@@ -36,7 +36,8 @@
                         </ul>
                         <div class="tab-content panel responsive">
                             <div class="tab-pane fade in active darker-text" id="actuales">
-                                <h3 *ngIf="sesion.apuestas.length === 0"  class="alert alert-warning"><center>No hay apuestas activas.</center></h3>
+                              <!--<h3 *ngIf="sesion.apuestas.length === 0"  class="alert alert-warning"><center>No hay apuestas activas.</center></h3>-->
+                                <h3 class="alert alert-warning"><center>No hay apuestas activas.</center></h3>
                                 <div class="row">
                                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" *ngFor="#partido of partidoAc" (click)="goToPartido(partido)">
                                         <div>
@@ -49,7 +50,7 @@
                                                         <img class="img-responsive" alt="{{partido.eq2}}" src="img/{{partido.logo2}}.png">
                                                     </div>
                                                 </div>
-                                                <p class="blue-text">Apostado: {{getApuesta(partido.id)}}</p>
+                                                <p class="blue-text">Apostado: </p>
                                             </a>
                                         </div>
                                     </div>
@@ -57,7 +58,8 @@
 
                             </div>
                             <div class="tab-pane fade darker-text" id="terminadas">
-                                <h3 *ngIf="sesion.finalizados.length === 0"  class="alert alert-warning"><center>No hay apuestas activas.</center></h3>
+                              <!--<h3 *ngIf="sesion.finalizados.length === 0"  class="alert alert-warning"><center>No hay apuestas activas.</center></h3>-->
+                                <h3 class="alert alert-warning"><center>No hay apuestas activas.</center></h3>
                                 <div class="row">
                                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" *ngFor="#partido of partidoFin" (click)="goToPartido(partido)">
                                         <div>
@@ -85,7 +87,7 @@
                 <div class="left-title no-margin-bottom">
                     <h3 class="montserrat-text white-text uppercase">Karma</h3>
                 </div>
-                <div class="karma btn-success no-pointer">{{sesion.karma}} puntos</div>
+                <div class="karma btn-success no-pointer">{{loginService.user.karma}} puntos</div>
                 <div class="left-title no-margin-bottom">
                     <h3 class="montserrat-text white-text uppercase">Comentarios</h3>
                 </div>

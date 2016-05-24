@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './partido.service', './usuario.interface', './cabecera.component'], function(exports_1, context_1) {
+System.register(['angular2/core', 'angular2/router', './partido.service', './usuario.interface', './cabecera.component', './login.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', './partido.service', './usu
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, partido_service_1, usuario_interface_1, cabecera_component_1;
+    var core_1, router_1, partido_service_1, usuario_interface_1, cabecera_component_1, login_service_1;
     var PartidoComponent;
     return {
         setters:[
@@ -28,14 +28,18 @@ System.register(['angular2/core', 'angular2/router', './partido.service', './usu
             },
             function (cabecera_component_1_1) {
                 cabecera_component_1 = cabecera_component_1_1;
+            },
+            function (login_service_1_1) {
+                login_service_1 = login_service_1_1;
             }],
         execute: function() {
             PartidoComponent = (function () {
-                function PartidoComponent(_router, _usuarioService, _partidoService, _routeParams) {
+                function PartidoComponent(_router, _usuarioService, _partidoService, _routeParams, loginService) {
                     this._router = _router;
                     this._usuarioService = _usuarioService;
                     this._partidoService = _partidoService;
                     this._routeParams = _routeParams;
+                    this.loginService = loginService;
                 }
                 PartidoComponent.prototype.ngOnInit = function () {
                     var _this = this;
@@ -66,13 +70,20 @@ System.register(['angular2/core', 'angular2/router', './partido.service', './usu
                         alert("Karma insuficiente");
                     }
                 };
+                PartidoComponent.prototype.logInSpring = function (event, user, pass) {
+                    event.preventDefault();
+                    this.loginService.logIn(user, pass).subscribe(function (user) { return console.log(user); }, function (error) { return alert("Invalid user or password"); });
+                };
+                PartidoComponent.prototype.logOutSpring = function () {
+                    this.loginService.logOut().subscribe(function (response) { }, function (error) { return console.log("Error when trying to log out: " + error); });
+                };
                 PartidoComponent = __decorate([
                     core_1.Component({
                         selector: 'partido-concreto',
                         templateUrl: 'app/partido.component.html',
                         directives: [cabecera_component_1.CabeceraComponent]
                     }), 
-                    __metadata('design:paramtypes', [router_1.Router, usuario_interface_1.UsuarioService, partido_service_1.PartidoService, router_1.RouteParams])
+                    __metadata('design:paramtypes', [router_1.Router, usuario_interface_1.UsuarioService, partido_service_1.PartidoService, router_1.RouteParams, login_service_1.LoginService])
                 ], PartidoComponent);
                 return PartidoComponent;
             }());
