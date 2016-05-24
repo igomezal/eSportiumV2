@@ -30,7 +30,7 @@ public class DatabaseInitializer implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-Juego j1 = new Juego("League of Legends","lol");
+		Juego j1 = new Juego("League of Legends","lol");
 		
 		Partido p1 = new Partido("finalizado"," 400","eq1","https://www.youtube.com/embed/3EwuH3-xmds","BO5","30","70");
 		p1.setJuego(j1);
