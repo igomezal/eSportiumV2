@@ -12,6 +12,7 @@ import es.urjc.code.daw.eSportium.juego.*;
 import es.urjc.code.daw.eSportium.jugador.*;
 import es.urjc.code.daw.eSportium.user.User;
 import es.urjc.code.daw.eSportium.user.UserRepository;
+import es.urjc.code.daw.eSportium.apuesta.*;
 import es.urjc.code.daw.eSportium.equipo.*;
 
 @Controller
@@ -29,9 +30,11 @@ public class DatabaseInitializer implements CommandLineRunner {
 	@Autowired
 	private UserRepository userRepository;
 
-	
 	@Autowired
 	private JugadorRepository jugadorRepository;
+	
+	@Autowired
+	private ApuestaRepository apuestaRepository;
 	
 	@Override
 	public void run(String... args) throws Exception {
@@ -81,12 +84,27 @@ public class DatabaseInitializer implements CommandLineRunner {
 				
 		juegoRepository.save(j1);
 		
-		
+		User user1 = new User("user", "pass",600,  "ROLE_USER");
+		User user2 = new User("admin", "pass",10000, "ROLE_USER", "ROLE_ADMIN");
 		
 		// Sample users
 
-		userRepository.save(new User("user", "pass",600,  "ROLE_USER"));
-		userRepository.save(new User("admin", "pass",10000, "ROLE_USER", "ROLE_ADMIN"));
+		userRepository.save(user1);
+		userRepository.save(user2);
+		
+		//Apuestas
+		Apuesta a1 = new Apuesta(300);
+		
+		a1.setUsuario(user1);
+		a1.setPartido(p1);
+		a1.setEquipo(p1.getEquipo1());
+		
+		apuestaRepository.save(a1); 
+		
+		
+		
+		
+		
 	}
 
 }

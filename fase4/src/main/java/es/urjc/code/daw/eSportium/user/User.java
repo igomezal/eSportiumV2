@@ -10,11 +10,14 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
 
+import es.urjc.code.daw.eSportium.apuesta.Apuesta;
 /**
  * This is the entity to store in database user information. It contains the
  * following basic information:
@@ -37,14 +40,23 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class User {
 
+	public interface BasicAtt{}
+	public interface ApuestaAtt{}
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
+	@JsonView(BasicAtt.class)
 	private String name;
 	
+	@JsonView(BasicAtt.class)
 	private long karma;
 
+	@JsonView(ApuestaAtt.class)
+	@OneToMany(mappedBy="usuario")
+	private List<Apuesta> apuestas;
+	
 	@JsonIgnore
 	private String passwordHash;
 
@@ -59,6 +71,7 @@ public class User {
 		this.passwordHash = new BCryptPasswordEncoder().encode(password);
 		this.roles = new ArrayList<>(Arrays.asList(roles));
 		this.karma = karma;
+		this.apuestas = new ArrayList<Apuesta>();
 	}
 
 	public String getName() {
@@ -92,5 +105,14 @@ public class User {
 	public void setKarma(int karma) {
 		this.karma = karma;
 	}
+
+	public List<Apuesta> getApuestas() {
+		return apuestas;
+	}
+
+	public void setApuestas(List<Apuesta> apuestas) {
+		this.apuestas = apuestas;
+	}
+	
 
 }

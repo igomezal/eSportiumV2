@@ -1,4 +1,4 @@
-package es.urjc.code.daw.eSportium.partido;
+package es.urjc.code.daw.eSportium.apuesta;
 
 import java.util.Collection;
 
@@ -16,36 +16,38 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
-import es.urjc.code.daw.eSportium.apuesta.Apuesta;
 import es.urjc.code.daw.eSportium.equipo.Equipo;
 import es.urjc.code.daw.eSportium.juego.Juego;
+import es.urjc.code.daw.eSportium.jugador.Jugador;
+import es.urjc.code.daw.eSportium.partido.Partido;
+import es.urjc.code.daw.eSportium.user.User;
 
 @RestController
-@RequestMapping("/partidos")
-public class PartidoController {
+@RequestMapping("/apuestas")
+public class ApuestaController {
 
-	private static final Logger log = LoggerFactory.getLogger(PartidoController.class);
+	private static final Logger log = LoggerFactory.getLogger(ApuestaController.class);
 
 	@Autowired
-	private PartidoRepository repository;
+	private ApuestaRepository repository;
 	
-	interface PartidoListView extends Partido.BasicAtt, Partido.JuegoAtt, Juego.BasicAtt, Equipo.BasicAtt, Apuesta.BasicAtt{}
+	interface ApuestaListView extends Apuesta.BasicAtt, Apuesta.UserAtt, Juego.BasicAtt, Equipo.BasicAtt, Apuesta.PartidoAtt, Partido.BasicAtt, User.BasicAtt, Apuesta.EquipoAtt{}
 
-	@JsonView(PartidoListView.class)
+	@JsonView(ApuestaListView.class)
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public Collection<Partido> getPartidos() {
+	public Collection<Apuesta> getApuestas() {
 		return repository.findAll();
 	}
 
-	@JsonView(PartidoListView.class)
+	@JsonView(ApuestaListView.class)
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public ResponseEntity<Partido> getPartido(@PathVariable long id) {
+	public ResponseEntity<Apuesta> getApuesta(@PathVariable long id) {
 
-		log.info("Get partido {}", id);
+		log.info("Get apuesta {}", id);
 
-		Partido partido = repository.findOne(id);
-		if (partido != null) {
-			return new ResponseEntity<>(partido, HttpStatus.OK);
+		Apuesta apuesta = repository.findOne(id);
+		if (apuesta != null) {
+			return new ResponseEntity<>(apuesta, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
@@ -53,30 +55,30 @@ public class PartidoController {
 
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
-	public Partido nuevoPartido(@RequestBody Partido partido) {
+	public Apuesta nuevaApuesta(@RequestBody Apuesta apuesta) {
 
-		repository.save(partido);
+		repository.save(apuesta);
 
-		return partido;
+		return apuesta;
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Partido> actulizaPartido(@PathVariable long id, @RequestBody Partido updatedPartido) {
+	public ResponseEntity<Apuesta> actulizaApuesta(@PathVariable long id, @RequestBody Apuesta updatedApuesta) {
 
-		Partido partido = repository.findOne(id);
-		if (partido != null) {
+		Apuesta apuesta = repository.findOne(id);
+		if (apuesta != null) {
 
-			updatedPartido.setId(id);
-			repository.save(updatedPartido);
+			updatedApuesta.setId(id);
+			repository.save(updatedApuesta);
 
-			return new ResponseEntity<>(updatedPartido, HttpStatus.OK);
+			return new ResponseEntity<>(updatedApuesta, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Partido> borraPartido(@PathVariable long id) {
+	public ResponseEntity<Apuesta> borraPartido(@PathVariable long id) {
 
 		if (repository.exists(id)) {
 			repository.delete(id);
