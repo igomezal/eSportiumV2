@@ -35,6 +35,7 @@ public class JugadorController {
 		return repository.findAll();
 	}
 
+	@JsonView(JugadorListView.class)
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Jugador> getJugador(@PathVariable long id) {
 

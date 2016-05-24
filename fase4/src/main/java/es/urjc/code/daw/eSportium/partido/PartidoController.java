@@ -35,6 +35,7 @@ public class PartidoController {
 		return repository.findAll();
 	}
 
+	@JsonView(PartidoListView.class)
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Partido> getPartido(@PathVariable long id) {
 
