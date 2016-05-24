@@ -31,7 +31,7 @@ public class Juego{
 	private String siglas;
 	
 	@JsonView(PartidosAtt.class)
-	@OneToMany(mappedBy="juego",cascade=CascadeType.ALL)
+	@OneToMany(cascade=CascadeType.ALL,mappedBy="juego")
 	private List<Partido> partidos;
 	
 	public Juego() {}

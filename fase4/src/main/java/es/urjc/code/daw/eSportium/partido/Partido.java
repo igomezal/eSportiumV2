@@ -38,7 +38,7 @@ public class Partido{
 	private String rondas;
 	
 	@JsonView(JuegoAtt.class)
-	@ManyToOne(cascade=CascadeType.PERSIST)
+	@ManyToOne
 	private Juego juego;
 	
 	public Partido() {}
