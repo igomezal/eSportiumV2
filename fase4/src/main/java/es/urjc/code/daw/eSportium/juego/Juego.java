@@ -1,20 +1,38 @@
 package es.urjc.code.daw.eSportium.juego;
 
-import javax.persistence.Column;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonView;
+
+import es.urjc.code.daw.eSportium.partido.Partido;
 
 @Entity
 public class Juego{
 	
+	public interface BasicAtt{}
+	public interface PartidosAtt{}
+	
+	@JsonView(BasicAtt.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id = -1;
 	
+	@JsonView(BasicAtt.class)
 	private String nombre;
+	
+	@JsonView(BasicAtt.class)
 	private String siglas;
+	
+	@JsonView(PartidosAtt.class)
+	@OneToMany(cascade=CascadeType.ALL,mappedBy="juego")
+	private List<Partido> partidos;
 	
 	public Juego() {}
 	
@@ -41,13 +59,21 @@ public class Juego{
 	}
 	
 	
-
 	public String getSiglas() {
 		return siglas;
 	}
 
 	public void setSiglas(String siglas) {
 		this.siglas = siglas;
+	}
+
+	
+	public List<Partido> getPartidos() {
+		return partidos;
+	}
+
+	public void setPartidos(List<Partido> partidos) {
+		this.partidos = partidos;
 	}
 
 	@Override
