@@ -31,7 +31,6 @@ public class Equipo{
 	private String logo;
 	
 	@JsonView(JugadoresAtt.class)
-	@JsonBackReference
 	@OneToMany(cascade=CascadeType.ALL,mappedBy="equipo",fetch = FetchType.EAGER)
 	private List<Jugador> jugadores;
 	

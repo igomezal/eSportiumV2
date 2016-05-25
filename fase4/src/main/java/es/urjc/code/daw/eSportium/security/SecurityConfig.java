@@ -65,12 +65,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers(HttpMethod.GET, "/editPartido/**").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/editPartido/**").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/editPartido/**").hasRole("ADMIN");
-		http.authorizeRequests().antMatchers(HttpMethod.GET, "/juegos").hasRole("ADMIN");
+		//http.authorizeRequests().antMatchers(HttpMethod.GET, "/juegos").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/juegos").hasRole("ADMIN");
-		http.authorizeRequests().antMatchers(HttpMethod.GET, "/partidos").hasRole("ADMIN");
+		//http.authorizeRequests().antMatchers(HttpMethod.GET, "/partidos").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/partidos").hasRole("ADMIN");
-		http.authorizeRequests().antMatchers(HttpMethod.GET, "/usuarios").hasRole("ADMIN");
-		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/usuario").hasRole("ADMIN");
+		//http.authorizeRequests().antMatchers(HttpMethod.GET, "/usuarios").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/usuarios").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.GET, "/editUsuario/**").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/editUsuario/**").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/editUsuario/**").hasRole("ADMIN");		

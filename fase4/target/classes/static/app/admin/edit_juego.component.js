@@ -37,24 +37,25 @@ System.register(['angular2/core', '../juego.interface', 'angular2/router', '../u
                 }
                 editJuegoComponent.prototype.ngOnInit = function () {
                     var _this = this;
-                    var id = this._routeParams.get('id');
-                    this._JuegoService.getJuego(id).subscribe(function (juego) { return _this.juego = juego; }, function (error) { return console.log(error); });
+                    var id = +this._routeParams.get('id');
+                    console.log(id);
+                    this._JuegoService.getJuego(id).subscribe(function (juego) { return _this.juego = juego; }, function (error) { return console.log(Error); });
                 };
-                editJuegoComponent.prototype.editar = function (nombre, id) {
-                    if (nombre == "" || id == "") {
+                editJuegoComponent.prototype.editar = function (nombre, siglas) {
+                    if (nombre == "" || siglas == "") {
                         alert("Datos incorrectos");
                     }
                     else {
-                        this._JuegoService.editar(this.juego.id, nombre, id);
+                        this._JuegoService.editar(this.juego.id, nombre, siglas);
                         this.goToJuegos();
                     }
                 };
-                editJuegoComponent.prototype.eliminar = function (nombre, id) {
-                    if (nombre == "" || id == "") {
+                editJuegoComponent.prototype.eliminar = function (id, nombre, siglas) {
+                    if (nombre == "" || siglas == "") {
                         alert("Datos incorrectos");
                     }
                     else {
-                        this._JuegoService.eliminar(nombre, id);
+                        this._JuegoService.eliminar(id, nombre, siglas);
                         this.goToJuegos();
                     }
                 };

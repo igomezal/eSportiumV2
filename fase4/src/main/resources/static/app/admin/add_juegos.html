@@ -48,11 +48,11 @@
                                 <div class="form-group">
                                     <label>Nombre del nuevo juego:</label>
                                     <input type="text" class="form-control" #nombre placeholder="Introduce el nombre del juego">
-                                    <label>ID del juego</label>
-                                    <input type="text" class="form-control" #id placeholder="ID">
+                                    <label>Siglas del juego</label>
+                                    <input type="text" class="form-control" #siglas placeholder="Siglas">
                                     <br>
                                     <div class="pull-right">
-                                        <button type="button" (click)="anadir(nombre.value,id.value)" class="btn btn-success">Publicar</button>
+                                        <button type="button" (click)="anadir(nombre.value,siglas.value)" class="btn btn-success">Publicar</button>
                                         <button type="button" (click)="gotoGestionJuegos()" class="btn btn-danger">Eliminar</button>
                                     </div>
                                 </div>

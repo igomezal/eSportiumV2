@@ -36,7 +36,7 @@ System.register(['angular2/core', 'angular2/router', './partido.service', './jue
                 finalizadosComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     this._Partidoservice.getPartidos().subscribe(function (partidos) { return _this.partidos = partidos; }, function (error) { return console.log(error); });
-                    this._JuegoService.getJuegos().subscribe(function (juegos) { return _this.juegos = juegos; }, function (error) { return console.log(error); });
+                    this._JuegoService.getJuegos().subscribe(function (juegos) { return _this.juegos = juegos; });
                     this._Partidoservice.getPartidos().subscribe(function (partidos) { return _this.arrayDirtemp = partidos; }, function (error) { return console.log(error); });
                     this._Partidoservice.getPartidos().subscribe(function (partidos) { return _this.arrayFintemp = partidos; }, function (error) { return console.log(error); });
                 };

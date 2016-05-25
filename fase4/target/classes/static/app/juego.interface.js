@@ -1,4 +1,4 @@
-System.register(['angular2/core', './utils'], function(exports_1, context_1) {
+System.register(['angular2/core', 'rxjs/Observable', 'angular2/http', 'rxjs/Rx'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './utils'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, utils_1, core_2;
+    var core_1, Observable_1, core_2, http_1;
     var Juego, JuegoService;
     return {
         setters:[
@@ -18,83 +18,87 @@ System.register(['angular2/core', './utils'], function(exports_1, context_1) {
                 core_1 = core_1_1;
                 core_2 = core_1_1;
             },
-            function (utils_1_1) {
-                utils_1 = utils_1_1;
-            }],
+            function (Observable_1_1) {
+                Observable_1 = Observable_1_1;
+            },
+            function (http_1_1) {
+                http_1 = http_1_1;
+            },
+            function (_1) {}],
         execute: function() {
             // import {JUEGOS} from './mock-bdd.component/
             Juego = (function () {
-                function Juego(nombre, id) {
-                    this.nombre = nombre;
+                function Juego(id, nombre, siglas) {
                     this.id = id;
+                    this.nombre = nombre;
+                    this.siglas = siglas;
                 }
                 Juego = __decorate([
                     core_2.Component({
                         selector: 'juegointerface'
                     }), 
-                    __metadata('design:paramtypes', [String, String])
+                    __metadata('design:paramtypes', [Number, String, String])
                 ], Juego);
                 return Juego;
             }());
             exports_1("Juego", Juego);
             JuegoService = (function () {
-                function JuegoService() {
-                    this.juegos = [
-                        new Juego('League of Legends', 'lol'),
-                        new Juego('Counter Strike: GO', 'cs'),
-                        new Juego('Call of Duty: BO3', 'cod'),
-                    ];
+                function JuegoService(http) {
+                    this.http = http;
+                    this.juegos = [];
                 }
                 JuegoService.prototype.getJuegos = function () {
-                    return utils_1.withObserver(this.juegos);
+                    var _this = this;
+                    var url = "https://localhost:8443/juegos/";
+                    return this.http.get(url)
+                        .map(function (response) { return response.json(); })
+                        .catch(function (error) { return _this.manejarError(error); });
                 };
                 JuegoService.prototype.getJuego = function (id) {
-                    var j;
-                    for (var i = 0; i < this.juegos.length; i++) {
-                        if (this.juegos[i].id == id) {
-                            j = this.juegos[i];
-                        }
-                    }
-                    if (j.id == "") {
-                        alert("No existe el juego con id: " + id);
-                    }
-                    else {
-                        return utils_1.withObserver(j);
-                    }
+                    var _this = this;
+                    var url = "https://localhost:8443/juegos/" + id;
+                    return this.http.get(url).map(function (response) { return response.json(); }).catch(function (error) { return _this.manejarError(error); });
                 };
-                JuegoService.prototype.anadirJuego = function (j) {
-                    this.juegos.push(j);
-                    return utils_1.withObserver(this.juegos);
-                    //console.log(this.juegos);
+                JuegoService.prototype.anadirJuego = function (nombre, siglas) {
+                    var _this = this;
+                    var url = "https://localhost:8443/juegos/";
+                    var item = { id: null, nombre: nombre, siglas: siglas, partidos: [] };
+                    var body = JSON.stringify(item);
+                    var headers = new http_1.Headers({
+                        'Content-Type': 'application/json'
+                    });
+                    var options = new http_1.RequestOptions({ headers: headers });
+                    return this.http.post(url, body, options)
+                        .map(function (response) { return response.json(); })
+                        .catch(function (error) { return _this.manejarError(error); });
                 };
-                JuegoService.prototype.editar = function (oldId, nombre, id) {
-                    for (var i = 0; i < this.juegos.length; i++) {
-                        if (this.juegos[i].id == oldId) {
-                            this.juegos[i].nombre = nombre;
-                            this.juegos[i].id = id;
-                            alert("Juego editado");
-                            return utils_1.withObserver(this.juegos[i]);
-                        }
-                    }
+                JuegoService.prototype.editar = function (id, nombre, siglas) {
+                    var _this = this;
+                    var item = { id: id, nombre: nombre, siglas: siglas };
+                    var url = "https://localhost:8443/juegos/" + id;
+                    var body = JSON.stringify(item);
+                    var headers = new http_1.Headers({
+                        'Content-Type': 'application/json'
+                    });
+                    var options = new http_1.RequestOptions({ headers: headers });
+                    return this.http.put(url, body, options)
+                        .map(function (response) { return response.json(); })
+                        .catch(function (error) { return _this.manejarError(error); });
                 };
-                JuegoService.prototype.eliminar = function (nombre, id) {
-                    for (var i = 0; i < this.juegos.length; i++) {
-                        if (this.juegos[i].id == id) {
-                            var r = confirm("¿Quieres borrar el juego " + this.juegos[i].nombre + "?");
-                            if (r == true) {
-                                this.juegos.splice(i, 1);
-                                alert("Juego eliminado");
-                                return utils_1.withObserver(new Juego(nombre, id));
-                            }
-                            else {
-                                alert("Casi la lias");
-                            }
-                        }
-                    }
+                JuegoService.prototype.eliminar = function (id, nombre, siglas) {
+                    var _this = this;
+                    var url = "https://localhost:8443/juegos/" + id;
+                    return this.http.delete(url)
+                        .map(function (response) { return undefined; })
+                        .catch(function (error) { return _this.manejarError(error); });
+                };
+                JuegoService.prototype.manejarError = function (error) {
+                    console.log(error);
+                    return Observable_1.Observable.throw("Server error (" + error.status + "): " + error.text);
                 };
                 JuegoService = __decorate([
                     core_1.Injectable(), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [http_1.Http])
                 ], JuegoService);
                 return JuegoService;
             }());

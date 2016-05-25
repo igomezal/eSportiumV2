@@ -37,6 +37,10 @@ System.register(['angular2/core', '../juego.interface', 'angular2/router', '../u
                     var _this = this;
                     this._JuegoService.getJuegos().subscribe(function (juegos) { return _this.juegos = juegos; }, function (error) { return console.log(error); });
                 };
+                gestionJuegosComponent.prototype.refresh = function () {
+                    var _this = this;
+                    this._JuegoService.getJuegos().subscribe(function (juegos) { return _this.juegos = juegos; }, function (error) { return console.log(error); });
+                };
                 gestionJuegosComponent.prototype.gotoHome = function () {
                     this._Router.navigate(['Admin']);
                 };
@@ -68,7 +72,8 @@ System.register(['angular2/core', '../juego.interface', 'angular2/router', '../u
                     this._Router.navigate(['AddJuego']);
                 };
                 gestionJuegosComponent.prototype.borrarJuego = function (juego) {
-                    this._JuegoService.eliminar(juego.nombre, juego.id);
+                    var _this = this;
+                    this._JuegoService.eliminar(juego.id, juego.nombre, juego.siglas).subscribe(function (respuesta) { return _this.refresh(); }, function (error) { return console.log(error); });
                 };
                 gestionJuegosComponent = __decorate([
                     core_1.Component({

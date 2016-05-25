@@ -68,7 +68,7 @@ public class Partido{
 	
 	@JsonView(ApuestaAtt.class)
 	@JsonBackReference
-	@OneToMany(mappedBy="partido",fetch = FetchType.EAGER)
+	@OneToMany(mappedBy="partido",fetch = FetchType.EAGER,cascade=CascadeType.PERSIST)
 	private List<Apuesta> apuestas;
 	
 	public Partido() {}

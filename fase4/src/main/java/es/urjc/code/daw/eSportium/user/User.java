@@ -122,10 +122,6 @@ public class User {
 		return karma;
 	}
 
-	public void setKarma(int karma) {
-		this.karma = karma;
-	}
-
 	public String getFecha() {
 		return fecha;
 	}
@@ -160,6 +156,14 @@ public class User {
 
 	public void setKarma(long karma) {
 		this.karma = karma;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 

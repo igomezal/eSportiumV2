@@ -31,7 +31,7 @@ public class Apuesta{
 	
 	@JsonView(PartidoAtt.class)
 	@JsonBackReference
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.REMOVE)
 	private Partido partido;
 	
 	@JsonView(EquipoAtt.class)

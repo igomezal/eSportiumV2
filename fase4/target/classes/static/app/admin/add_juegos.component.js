@@ -33,14 +33,12 @@ System.register(['angular2/core', '../juego.interface', 'angular2/router', '../u
                     this._Router = _Router;
                     this._UsuarioService = _UsuarioService;
                 }
-                addJuegoComponent.prototype.anadir = function (nombre, id) {
-                    if (nombre == "" || id == "") {
+                addJuegoComponent.prototype.anadir = function (nombre, siglas) {
+                    if (nombre == "" || siglas == "") {
                         alert("Datos incorrectos");
                     }
                     else {
-                        var j = new juego_interface_1.Juego(nombre, id);
-                        this._JuegoService.anadirJuego(j);
-                        alert("Juego " + j.nombre + " creado correctamente");
+                        this._JuegoService.anadirJuego(nombre, siglas).subscribe(function (respuesta) { return alert("Juego " + respuesta.nombre + " creado correctamente"); });
                     }
                 };
                 addJuegoComponent.prototype.cerrarSesion = function () {
