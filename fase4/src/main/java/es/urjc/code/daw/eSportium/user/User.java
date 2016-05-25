@@ -4,16 +4,22 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonView;
+
+import es.urjc.code.daw.eSportium.apuesta.Apuesta;
 
 /**
  * This is the entity to store in database user information. It contains the
@@ -37,18 +43,32 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class User {
 
+	public interface BasicAtt{}
+	public interface ApuestaAtt{}
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
+	@JsonView(BasicAtt.class)
 	private String name;
 	
+	@JsonView(BasicAtt.class)
 	private long karma;
+	@JsonView(BasicAtt.class)
 	private String fecha;
+	@JsonView(BasicAtt.class)
 	private String genero;
+	@JsonView(BasicAtt.class)
 	private String foto;
+	@JsonView(BasicAtt.class)
 	private String correo;
-
+	
+	@JsonView(ApuestaAtt.class)
+	@OneToMany(fetch = FetchType.EAGER)
+	private List<Apuesta> apuestas;
+	
+	
 	@JsonIgnore
 	private String passwordHash;
 
@@ -63,6 +83,15 @@ public class User {
 		this.passwordHash = new BCryptPasswordEncoder().encode(password);
 		this.roles = new ArrayList<>(Arrays.asList(roles));
 		this.karma = karma;
+		this.apuestas = new ArrayList<Apuesta>();
+	}
+
+	public List<Apuesta> getApuestas() {
+		return apuestas;
+	}
+
+	public void setApuestas(List<Apuesta> apuestas) {
+		this.apuestas = apuestas;
 	}
 
 	public String getName() {

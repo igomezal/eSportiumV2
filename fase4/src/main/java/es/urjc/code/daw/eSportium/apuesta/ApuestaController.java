@@ -1,4 +1,4 @@
-package es.urjc.code.daw.eSportium.juego;
+package es.urjc.code.daw.eSportium.apuesta;
 
 import java.util.Collection;
 
@@ -17,34 +17,36 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import es.urjc.code.daw.eSportium.equipo.Equipo;
+import es.urjc.code.daw.eSportium.juego.Juego;
 import es.urjc.code.daw.eSportium.partido.Partido;
+import es.urjc.code.daw.eSportium.user.User;
 
 @RestController
-@RequestMapping("/juegos")
-public class JuegoController {
+@RequestMapping("/apuestas")
+public class ApuestaController {
 
-	private static final Logger log = LoggerFactory.getLogger(JuegoController.class);
+	private static final Logger log = LoggerFactory.getLogger(ApuestaController.class);
 
 	@Autowired
-	private JuegoRepository repository;
+	private ApuestaRepository repository;
 	
-	interface JuegoListView extends Juego.BasicAtt{}
+	interface ApuestaListView extends Apuesta.BasicAtt, Apuesta.UserAtt, Juego.BasicAtt, Equipo.BasicAtt, Apuesta.PartidoAtt, Partido.BasicAtt, User.BasicAtt, Apuesta.EquipoAtt{}
 
-	@JsonView(JuegoListView.class)
+	@JsonView(ApuestaListView.class)
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public Collection<Juego> getJuegos() {
+	public Collection<Apuesta> getApuestas() {
 		return repository.findAll();
 	}
 
-	@JsonView(JuegoListView.class)
+	@JsonView(ApuestaListView.class)
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public ResponseEntity<Juego> getJuego(@PathVariable long id) {
+	public ResponseEntity<Apuesta> getApuesta(@PathVariable long id) {
 
-		log.info("Get juego {}", id);
+		log.info("Get apuesta {}", id);
 
-		Juego juego = repository.findOne(id);
-		if (juego != null) {
-			return new ResponseEntity<>(juego, HttpStatus.OK);
+		Apuesta apuesta = repository.findOne(id);
+		if (apuesta != null) {
+			return new ResponseEntity<>(apuesta, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
@@ -52,30 +54,30 @@ public class JuegoController {
 
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
-	public Juego nuevoJuego(@RequestBody Juego juego) {
+	public Apuesta nuevaApuesta(@RequestBody Apuesta apuesta) {
 
-		repository.save(juego);
+		repository.save(apuesta);
 
-		return juego;
+		return apuesta;
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<Juego> actulizaJuego(@PathVariable long id, @RequestBody Juego updatedJuego) {
+	public ResponseEntity<Apuesta> actulizaApuesta(@PathVariable long id, @RequestBody Apuesta updatedApuesta) {
 
-		Juego juego = repository.findOne(id);
-		if (juego != null) {
+		Apuesta apuesta = repository.findOne(id);
+		if (apuesta != null) {
 
-			updatedJuego.setId(id);
-			repository.save(updatedJuego);
+			updatedApuesta.setId(id);
+			repository.save(updatedApuesta);
 
-			return new ResponseEntity<>(updatedJuego, HttpStatus.OK);
+			return new ResponseEntity<>(updatedApuesta, HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	public ResponseEntity<Juego> borraJuego(@PathVariable long id) {
+	public ResponseEntity<Apuesta> borraPartido(@PathVariable long id) {
 
 		if (repository.exists(id)) {
 			repository.delete(id);

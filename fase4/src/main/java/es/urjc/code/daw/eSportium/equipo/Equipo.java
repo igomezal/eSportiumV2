@@ -2,11 +2,13 @@ package es.urjc.code.daw.eSportium.equipo;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import java.util.*;
@@ -29,7 +31,8 @@ public class Equipo{
 	private String logo;
 	
 	@JsonView(JugadoresAtt.class)
-	@OneToMany(cascade=CascadeType.ALL,mappedBy="equipo")
+	@JsonBackReference
+	@OneToMany(cascade=CascadeType.ALL,mappedBy="equipo",fetch = FetchType.EAGER)
 	private List<Jugador> jugadores;
 	
 	public Equipo() {}

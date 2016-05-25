@@ -1,23 +1,31 @@
 package es.urjc.code.daw.eSportium.partido;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import es.urjc.code.daw.eSportium.equipo.Equipo;
 import es.urjc.code.daw.eSportium.juego.Juego;
+import es.urjc.code.daw.eSportium.apuesta.Apuesta;
 
 @Entity
 public class Partido{
 	
 	public interface BasicAtt{}
 	public interface JuegoAtt{}
+	public interface ApuestaAtt{}
 	
 	@JsonView(BasicAtt.class)
 	@Id
@@ -46,7 +54,8 @@ public class Partido{
 	private String porcEq2;
 	
 	@JsonView(JuegoAtt.class)
-	@ManyToOne
+	@JsonBackReference
+	@ManyToOne(fetch = FetchType.EAGER)
 	private Juego juego;
 	
 	@JsonView(BasicAtt.class)
@@ -56,6 +65,11 @@ public class Partido{
 	@JsonView(BasicAtt.class)
 	@OneToOne
 	private Equipo equipo2;
+	
+	@JsonView(ApuestaAtt.class)
+	@JsonBackReference
+	@OneToMany(mappedBy="partido",fetch = FetchType.EAGER)
+	private List<Apuesta> apuestas;
 	
 	public Partido() {}
 	
@@ -68,6 +82,7 @@ public class Partido{
 		this.rondas = rondas;
 		this.porcEq1 = porcEq1;
 		this.porcEq2 = porcEq2;
+		this.apuestas = new ArrayList<Apuesta>();
 	}
 	
 	public Equipo getEquipo1() {
@@ -76,6 +91,14 @@ public class Partido{
 
 	public void setEquipo1(Equipo equipo1) {
 		this.equipo1 = equipo1;
+	}
+
+	public List<Apuesta> getApuestas() {
+		return apuestas;
+	}
+
+	public void setApuestas(List<Apuesta> apuestas) {
+		this.apuestas = apuestas;
 	}
 
 	public long getId() {

@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import es.urjc.code.daw.eSportium.equipo.Equipo;
@@ -31,6 +32,7 @@ public class Jugador{
 	private long media;
 	
 	@JsonView(EquipoAtt.class)
+	@JsonBackReference
 	@ManyToOne
 	private Equipo equipo;
 
