@@ -22,41 +22,41 @@
                     <div class="col-md-8 col-md-offset-1">
                         <div class="row">
 
-            <!-- Content Header (Page header) -->
-            <div class="content-header">
-                <h3 class="montserrat-text white-text uppercase no-margin-top">
-            Gestión de juegos.
-            <small>Agrega, edita o elimine partidos.</small>
-          </h3>
-                <ol class="breadcrumb">
-                    <li><a (click)="gotoHome()"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li class="active">Gestionar Juegos</li>
-                </ol>
-            </div>
+                                <!-- Content Header (Page header) -->
+                                <div class="content-header">
+                                    <h3 class="montserrat-text white-text uppercase no-margin-top">
+                                    Gestión de juegos.
+                                    <small>Agrega, edita o elimine partidos.</small>
+                                    </h3>
+                                    <ol class="breadcrumb">
+                                        <li><a (click)="gotoHome()"><i class="fa fa-dashboard"></i> Home</a></li>
+                                        <li class="active">Gestionar Juegos</li>
+                                    </ol>
+                                </div>
 
-            <!-- Main content -->
-            <section class="content no-margin-top">
-              <div class="box-body">
-                <div class="row">
-                  <div class="col-lg-12">
-                    <div class="form-group">
-                      <h3>Edita los datos del juego {{juego.nombre}}</h3>
+                                <!-- Main content -->
+                                <section class="content no-margin-top">
+                                  <div class="box-body">
+                                    <div class="row">
+                                      <div class="col-lg-12">
+                                        <div class="form-group">
+                                          <h3>Edita los datos del juego {{juego.nombre}}</h3>
 
-                        <label>Nombre </label>
-                        <input type="text" class="form-control" #nombre value={{juego.nombre}}>
-                        <label>ID </label>
-                        <input type="text" class="form-control" #id value={{juego.id}}>
-                        <br>
-                        <div class="pull-right">
-                            <button type="button" (click)="editar(nombre.value, id.value)" class="btn btn-success">Publicar</button>
-                            <button type="button" (click)="eliminar(juego.nombre, juego.id)" class="btn btn-danger">Eliminar</button>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <!-- /.content -->
+                                            <label>Nombre </label>
+                                            <input type="text" class="form-control" #nombre value="{{juego.nombre}}">
+                                            <label>Siglas </label>
+                                            <input type="text" class="form-control" #siglas value="{{juego.siglas}}">
+                                            <br>
+                                            <div class="pull-right">
+                                                <button type="button" (click)="editar(nombre.value, siglas.value)" class="btn btn-success">Publicar</button>
+                                                <button type="button" (click)="eliminar(juego.nombre, juego.id)" class="btn btn-danger">Eliminar</button>
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </section>
+                                <!-- /.content -->
 
 
                             </div>

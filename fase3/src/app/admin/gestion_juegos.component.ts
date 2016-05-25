@@ -19,6 +19,13 @@ export class gestionJuegosComponent {
     this._JuegoService.getJuegos().subscribe(
       juegos => this.juegos = juegos,
       error => console.log(error)
+    );
+  }
+
+  private refresh(){
+    this._JuegoService.getJuegos().subscribe(
+      juegos => this.juegos = juegos,
+      error => console.log(error)
     )
   }
 
@@ -62,7 +69,10 @@ export class gestionJuegosComponent {
   }
 
   borrarJuego(juego: Juego){
-    this._JuegoService.eliminar(juego.nombre, juego.id);
+    this._JuegoService.eliminar(juego.id, juego.nombre, juego.siglas).subscribe(
+      respuesta => this.refresh(),
+      error => console.log(error)
+    );
   }
 
 }

@@ -10,13 +10,13 @@
         <div class="container">
           <div class="tabs-x tabs-above tab-bordered row">
             <ul class="nav nav-tabs responsive">
-              <li *ngFor="#juego of juegos; #i = index" (click)="setPruebasDir(juego.id)" [class.active]="i == 0"><a data-toggle="tab" href="#{{juego.id}}">{{juego.nombre}}</a><li>
+              <li *ngFor="#juego of juegos; #i = index" (click)="setPruebasDir(juego.siglas)" [class.active]="i == 0"><a data-toggle="tab" href="#{{juego.siglas}}">{{juego.nombre}}</a><li>
             </ul>
             <div class="tab-content panel responsive">
-              <div *ngFor="#juego of juegos;#ind = index" id="{{juego.id}}" class="tab-pane fade" [class.in]="ind == 0" [class.active]="ind == 0">
+              <div *ngFor="#juego of juegos;#ind = index" id="{{juego.siglas}}" class="tab-pane fade" [class.in]="ind == 0" [class.active]="ind == 0">
                 <div class="container">
                   <div class="row">
-                    <div *ngFor="#partido of arrayDirtemp; #indpart = index" (click)="goToPartido(partido)" class="col-lg-4 col-md-6 col-sm-6" [class.hidden]="partido.juego != juego.id || partido.estado != 'Directo'">
+                    <div *ngFor="#partido of arrayDirtemp; #indpart = index" (click)="goToPartido(partido)" class="col-lg-4 col-md-6 col-sm-6" [class.hidden]="partido.juego != juego.siglas || partido.estado != 'Directo'">
                       <h2 *ngIf="isVacio(arrayDirtemp)">No hay partidos </h2>
                         <div id="partido{{partido.id}}">
                         <a>
@@ -52,13 +52,13 @@
         <div class="container">
           <div class="tabs-x tabs-above tab-bordered row">
             <ul class="nav nav-tabs responsive">
-              <li *ngFor="#juego of juegos; #i = index" (click)="setPruebasProx(juego.id)" [class.active]="i == 0"><a data-toggle="tab" href="#{{juego.id}}prox">{{juego.nombre}}</a><li>
+              <li *ngFor="#juego of juegos; #i = index" (click)="setPruebasProx(juego.siglas)" [class.active]="i == 0"><a data-toggle="tab" href="#{{juego.siglas}}prox">{{juego.nombre}}</a><li>
             </ul>
             <div class="tab-content panel responsive">
-              <div *ngFor="#juego of juegos;#ind = index" id="{{juego.id}}prox" class="tab-pane fade" [class.in]="ind == 0" [class.active]="ind == 0">
+              <div *ngFor="#juego of juegos;#ind = index" id="{{juego.siglas}}prox" class="tab-pane fade" [class.in]="ind == 0" [class.active]="ind == 0">
                 <div class="container">
                   <div class="row">
-                    <div *ngFor="#partido of arrayFintemp; #indpart = index" (click)="goToPartido(partido)" class="col-lg-4 col-md-6 col-sm-6" [class.hidden]="partido.juego != juego.id || partido.estado != 'Proximamente'">
+                    <div *ngFor="#partido of arrayFintemp; #indpart = index" (click)="goToPartido(partido)" class="col-lg-4 col-md-6 col-sm-6" [class.hidden]="partido.juego != juego.siglas || partido.estado != 'Proximamente'">
                       <h2 *ngIf="isVacio(arrayFintemp)" >No hay partidos</h2>
                       <div id="partido{{partido.id}}">
                         <a>
