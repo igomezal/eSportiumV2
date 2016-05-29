@@ -30,8 +30,7 @@ public class Apuesta{
 	private long id;
 	
 	@JsonView(PartidoAtt.class)
-	@JsonBackReference
-	@ManyToOne(cascade=CascadeType.REMOVE)
+	@ManyToOne
 	private Partido partido;
 	
 	@JsonView(EquipoAtt.class)
@@ -40,6 +39,9 @@ public class Apuesta{
 	
 	@JsonView(BasicAtt.class)
 	private int karma;
+	
+	@ManyToOne
+	private User usuario;
 	
 	public Apuesta() {}
 	
@@ -80,6 +82,14 @@ public class Apuesta{
 		this.karma = karma;
 	}
 
+	public User getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(User usuario) {
+		this.usuario = usuario;
+	}
+	
 	@Override
 	public String toString() {
 		return "Apuesta [id=" + id + ", karma=" + karma + ", partido=" + partido  + "]";

@@ -34,7 +34,7 @@ public class Juego{
 	
 	@JsonView(PartidosAtt.class)
 	@JsonManagedReference
-	@OneToMany(cascade=CascadeType.ALL,mappedBy="juego", fetch = FetchType.EAGER)
+	@OneToMany(cascade=CascadeType.ALL,mappedBy="juego")
 	private List<Partido> partidos;
 	
 	public Juego() {}

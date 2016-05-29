@@ -65,9 +65,8 @@ public class User {
 	private String correo;
 	
 	@JsonView(ApuestaAtt.class)
-	@OneToMany(fetch = FetchType.EAGER)
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="usuario")
 	private List<Apuesta> apuestas;
-	
 	
 	@JsonIgnore
 	private String passwordHash;

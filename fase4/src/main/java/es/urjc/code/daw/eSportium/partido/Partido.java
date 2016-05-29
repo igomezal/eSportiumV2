@@ -54,8 +54,7 @@ public class Partido{
 	private String porcEq2;
 	
 	@JsonView(JuegoAtt.class)
-	@JsonBackReference
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne
 	private Juego juego;
 	
 	@JsonView(BasicAtt.class)
@@ -67,8 +66,7 @@ public class Partido{
 	private Equipo equipo2;
 	
 	@JsonView(ApuestaAtt.class)
-	@JsonBackReference
-	@OneToMany(mappedBy="partido",fetch = FetchType.EAGER,cascade=CascadeType.PERSIST)
+	@OneToMany(mappedBy="partido",cascade=CascadeType.ALL)
 	private List<Apuesta> apuestas;
 	
 	public Partido() {}

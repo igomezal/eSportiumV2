@@ -1,5 +1,6 @@
 package es.urjc.code.daw.eSportium.jugador;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -32,7 +33,6 @@ public class Jugador{
 	private long media;
 	
 	@JsonView(EquipoAtt.class)
-	@JsonBackReference
 	@ManyToOne
 	private Equipo equipo;
 

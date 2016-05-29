@@ -31,7 +31,7 @@ public class Equipo{
 	private String logo;
 	
 	@JsonView(JugadoresAtt.class)
-	@OneToMany(cascade=CascadeType.ALL,mappedBy="equipo",fetch = FetchType.EAGER)
+	@OneToMany(cascade=CascadeType.ALL,mappedBy="equipo")
 	private List<Jugador> jugadores;
 	
 	public Equipo() {}
@@ -63,11 +63,11 @@ public class Equipo{
 		this.logo = logo;
 	}
 	
-	public List<Jugador> getJuegadores() {
+	public List<Jugador> getJugadores() {
 		return this.jugadores;
 	}
 
-	public void setJuegadores(List<Jugador> jugadores) {
+	public void setJugadores(List<Jugador> jugadores) {
 		this.jugadores = jugadores;
 	}
 

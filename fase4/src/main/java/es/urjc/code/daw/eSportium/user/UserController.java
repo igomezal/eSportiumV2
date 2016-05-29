@@ -30,7 +30,7 @@ public class UserController {
 	@Autowired
 	private UserRepository repository;
 	
-	interface UserListView extends Apuesta.BasicAtt, Partido.BasicAtt, Juego.BasicAtt, User.BasicAtt{}
+	interface UserListView extends Apuesta.BasicAtt, Partido.BasicAtt, Juego.BasicAtt, User.BasicAtt, User.ApuestaAtt{}
 	
 	@JsonView(UserListView.class)
 	@RequestMapping(value = "/", method = RequestMethod.GET)

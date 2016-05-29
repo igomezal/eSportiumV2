@@ -31,7 +31,7 @@ public class JugadorController {
 
 	@JsonView(JugadorListView.class)
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public Collection<Jugador> getJuegadores() {
+	public Collection<Jugador> getJugadores() {
 		return repository.findAll();
 	}
 
@@ -75,8 +75,10 @@ public class JugadorController {
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Jugador> borraJugador(@PathVariable long id) {
-
+		log.info("Delete jugador {}", id);
 		if (repository.exists(id)) {
+
+			//repository.delete(jugador);
 			repository.delete(id);
 			return new ResponseEntity<>(null, HttpStatus.OK);
 		} else {
