@@ -20,7 +20,6 @@ import es.urjc.code.daw.eSportium.equipo.Equipo;
 public class Apuesta{
 	
 	public interface BasicAtt{}
-	public interface UserAtt{}
 	public interface PartidoAtt{}
 	public interface EquipoAtt{}
 	
@@ -39,10 +38,7 @@ public class Apuesta{
 	
 	@JsonView(BasicAtt.class)
 	private int karma;
-	
-	@ManyToOne
-	private User usuario;
-	
+		
 	public Apuesta() {}
 	
 	public Apuesta(int karma){
@@ -82,14 +78,6 @@ public class Apuesta{
 		this.karma = karma;
 	}
 
-	public User getUsuario() {
-		return usuario;
-	}
-
-	public void setUsuario(User usuario) {
-		this.usuario = usuario;
-	}
-	
 	@Override
 	public String toString() {
 		return "Apuesta [id=" + id + ", karma=" + karma + ", partido=" + partido  + "]";

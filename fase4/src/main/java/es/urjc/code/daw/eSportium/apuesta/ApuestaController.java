@@ -30,7 +30,7 @@ public class ApuestaController {
 	@Autowired
 	private ApuestaRepository repository;
 	
-	interface ApuestaListView extends Apuesta.BasicAtt, Apuesta.UserAtt, Juego.BasicAtt, Equipo.BasicAtt, Apuesta.PartidoAtt, Partido.BasicAtt, User.BasicAtt, Apuesta.EquipoAtt{}
+	interface ApuestaListView extends Apuesta.BasicAtt, Equipo.BasicAtt, Apuesta.PartidoAtt, Partido.BasicAtt, Apuesta.EquipoAtt{}
 
 	@JsonView(ApuestaListView.class)
 	@RequestMapping(value = "/", method = RequestMethod.GET)

@@ -64,10 +64,6 @@ public class User {
 	@JsonView(BasicAtt.class)
 	private String correo;
 	
-	@JsonView(ApuestaAtt.class)
-	@OneToMany(cascade=CascadeType.ALL, mappedBy="usuario")
-	private List<Apuesta> apuestas;
-	
 	@JsonIgnore
 	private String passwordHash;
 
@@ -82,15 +78,6 @@ public class User {
 		this.passwordHash = new BCryptPasswordEncoder().encode(password);
 		this.roles = new ArrayList<>(Arrays.asList(roles));
 		this.karma = karma;
-		this.apuestas = new ArrayList<Apuesta>();
-	}
-
-	public List<Apuesta> getApuestas() {
-		return apuestas;
-	}
-
-	public void setApuestas(List<Apuesta> apuestas) {
-		this.apuestas = apuestas;
 	}
 
 	public String getName() {

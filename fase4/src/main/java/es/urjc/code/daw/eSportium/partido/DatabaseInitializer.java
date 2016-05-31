@@ -27,6 +27,9 @@ public class DatabaseInitializer implements CommandLineRunner {
 	
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private ApuestaRepository apuestaRepository;
 		
 	@Override
 	public void run(String... args) throws Exception {
@@ -89,13 +92,8 @@ public class DatabaseInitializer implements CommandLineRunner {
 		User user1 = new User("user", "pass",7400,  "ROLE_USER");
 		User user2 = new User("admin", "pass",10000, "ROLE_USER", "ROLE_ADMIN");
 		
-		a1.setUsuario(user1);
-		
-		List<Apuesta> apuestas = new ArrayList<Apuesta>();
-		apuestas.add(a1);
-		
-		user1.setApuestas(apuestas);
-		
+		apuestaRepository.save(a1);
+			
 		userRepository.save(user1);
 		userRepository.save(user2);
 			
