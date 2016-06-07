@@ -13,7 +13,7 @@ export class gestionJuegosComponent {
 
   constructor(private _UsuarioService: UsuarioService, private _JuegoService: JuegoService, private _Router: Router){}
 
-  private juegos:Juego[];
+  private juegos:Juego[] = [];
 
   ngOnInit(){
     this._JuegoService.getJuegos().subscribe(
@@ -52,6 +52,10 @@ export class gestionJuegosComponent {
   gotoEditJuego(juego : Juego){
     let link = ['EditarJuego',{id:juego.id}]
     this._Router.navigate(link);
+  }
+
+  gotoGestionEquipos() {
+    this._Router.navigate(['GestionEquipos']);
   }
 
   gotoMain(){

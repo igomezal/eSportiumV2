@@ -1,6 +1,4 @@
-System.register(['angular2/core', '../juego.interface', 'angular2/router', '../usuario.interface'], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
+System.register(['angular2/core', '../juego.interface', 'angular2/router', '../usuario.interface'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -50,14 +48,10 @@ System.register(['angular2/core', '../juego.interface', 'angular2/router', '../u
                         this.goToJuegos();
                     }
                 };
-                editJuegoComponent.prototype.eliminar = function (id, nombre, siglas) {
-                    if (nombre == "" || siglas == "") {
-                        alert("Datos incorrectos");
-                    }
-                    else {
-                        this._JuegoService.eliminar(id, nombre, siglas);
-                        this.goToJuegos();
-                    }
+                editJuegoComponent.prototype.eliminar = function (juego) {
+                    var _this = this;
+                    this._JuegoService.eliminar(juego.id, juego.nombre, juego.siglas).subscribe(function (respuesta) { return _this.goToJuegos(); }, function (error) { return console.log(error); });
+                    ;
                 };
                 editJuegoComponent.prototype.goToJuegos = function () {
                     this._Router.navigate(['GestionJuegos']);
@@ -70,6 +64,9 @@ System.register(['angular2/core', '../juego.interface', 'angular2/router', '../u
                 };
                 editJuegoComponent.prototype.gotoGestionPartidos = function () {
                     this._Router.navigate(['GestionPartidos']);
+                };
+                editJuegoComponent.prototype.gotoGestionEquipos = function () {
+                    this._Router.navigate(['GestionEquipos']);
                 };
                 editJuegoComponent.prototype.gotoGestionUsuarios = function () {
                     this._Router.navigate(['GestionUsuarios']);
@@ -93,9 +90,9 @@ System.register(['angular2/core', '../juego.interface', 'angular2/router', '../u
                     __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, juego_interface_1.JuegoService, router_1.RouteParams, router_2.Router])
                 ], editJuegoComponent);
                 return editJuegoComponent;
-            }());
+            })();
             exports_1("editJuegoComponent", editJuegoComponent);
         }
     }
 });
-//# sourceMappingURL=edit_juego.component.js.map
+//# sourceMappingURL=../../../../app/admin/edit_juego.component.js.map

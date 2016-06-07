@@ -1,6 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './partido.service', './juego.interface'], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
+System.register(['angular2/core', 'angular2/router', './partido.service', './juego.interface'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -94,9 +92,9 @@ System.register(['angular2/core', 'angular2/router', './partido.service', './jue
                     __metadata('design:paramtypes', [partido_service_1.PartidoService, juego_interface_1.JuegoService, router_1.Router])
                 ], indexComponent);
                 return indexComponent;
-            }());
+            })();
             exports_1("indexComponent", indexComponent);
         }
     }
 });
-//# sourceMappingURL=index.component.js.map
+//# sourceMappingURL=../../../app/index.component.js.map

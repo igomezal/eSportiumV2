@@ -18,29 +18,28 @@ export class editJuegoComponent {
   private juego:Juego;
 
   ngOnInit(){
-    let id = this._routeParams.get('id');
+    let id = +this._routeParams.get('id');
+    console.log(id);
     this._JuegoService.getJuego(id).subscribe(
       juego => this.juego = juego,
-      error => console.log(error)
+      error => console.log(Error)
     );
   }
 
-  editar(nombre: string, id: string){
-    if(nombre == "" || id == ""){
+  editar(nombre: string, siglas: string){
+    if(nombre == "" || siglas == ""){
       alert("Datos incorrectos");
     }else{
-      this._JuegoService.editar(this.juego.id, nombre, id);
+      this._JuegoService.editar(this.juego.id,nombre, siglas);
       this.goToJuegos();
-      }
     }
+  }
 
-  eliminar(nombre: string, id: string){
-    if(nombre == "" || id == ""){
-      alert("Datos incorrectos");
-    }else{
-      this._JuegoService.eliminar(nombre, id);
-      this.goToJuegos();
-    }
+  eliminar(juego:Juego){
+    this._JuegoService.eliminar(juego.id, juego.nombre, juego.siglas).subscribe(
+        respuesta => this.goToJuegos(),
+        error => console.log(error)
+    );;
   }
 
   goToJuegos(){
@@ -57,6 +56,10 @@ export class editJuegoComponent {
 
   gotoGestionPartidos(){
     this._Router.navigate(['GestionPartidos']);
+  }
+
+  gotoGestionEquipos() {
+    this._Router.navigate(['GestionEquipos']);
   }
 
   gotoGestionUsuarios(){

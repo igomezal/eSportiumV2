@@ -1,6 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../usuario.interface'], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
+System.register(['angular2/core', 'angular2/router', '../usuario.interface'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -35,6 +33,9 @@ System.register(['angular2/core', 'angular2/router', '../usuario.interface'], fu
                 homeComponent.prototype.gotoGestionJuegos = function () {
                     this._Router.navigate(['GestionJuegos']);
                 };
+                homeComponent.prototype.gotoGestionEquipos = function () {
+                    this._Router.navigate(['GestionEquipos']);
+                };
                 homeComponent.prototype.gotoGestionPartidos = function () {
                     this._Router.navigate(['GestionPartidos']);
                 };
@@ -60,9 +61,9 @@ System.register(['angular2/core', 'angular2/router', '../usuario.interface'], fu
                     __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, router_1.Router])
                 ], homeComponent);
                 return homeComponent;
-            }());
+            })();
             exports_1("homeComponent", homeComponent);
         }
     }
 });
-//# sourceMappingURL=home.component.js.map
+//# sourceMappingURL=../../../../app/admin/home.component.js.map

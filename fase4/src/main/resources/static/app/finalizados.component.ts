@@ -27,8 +27,7 @@ export class finalizadosComponent {
      error => console.log(error)
    );
    this._JuegoService.getJuegos().subscribe(
-     juegos => this.juegos = juegos,
-     error => console.log(error)
+     juegos => this.juegos = juegos
    );
    this._Partidoservice.getPartidos().subscribe(
      partidos => this.arrayDirtemp = partidos,

@@ -1,7 +1,6 @@
 import {Component, AfterContentInit } from 'angular2/core';
 import {ROUTER_DIRECTIVES,Router} from 'angular2/router';
 import {Partido, PartidoService} from './partido.service';
-import {JugadorService} from './jugador.interface';
 import {Juego,JuegoService} from './juego.interface';
 
 @Component({
@@ -12,7 +11,7 @@ import {Juego,JuegoService} from './juego.interface';
 
 export class indexComponent {
 
-  juegos: Juego[];
+  juegos: Juego[] = [];
 
   arrayDirtemp: Partido[];
   arrayFintemp: Partido[];
@@ -27,8 +26,7 @@ export class indexComponent {
      error => console.log(error)
    );
    this._JuegoService.getJuegos().subscribe(
-     juegos => this.juegos = juegos,
-     error => console.log(error)
+     juegos => this.juegos = juegos
    );
    this._Partidoservice.getPartidos().subscribe(
      partidos => this.arrayDirtemp = partidos,
@@ -38,6 +36,12 @@ export class indexComponent {
      partidos => this.arrayFintemp = partidos,
      error => console.log(error)
    );
+  }
+
+  private refresh(){
+    this._JuegoService.getJuegos().subscribe(
+      items => this.juegos = items
+    );
   }
 
   setPruebasDir(s: String){

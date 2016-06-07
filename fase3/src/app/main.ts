@@ -5,6 +5,7 @@ import {Partido, PartidoService} from './partido.service';
 import {JugadorService} from './jugador.interface';
 import {CabeceraComponent} from './cabecera.component';
 import {Juego,JuegoService} from './juego.interface';
+import {Equipo, EquipoService} from './equipo.interface';
 import {indexComponent} from './index.component';
 import {Perfil} from './profile.component';
 /* pruebaUsuario */import {Usuario,UsuarioService} from './usuario.interface';
@@ -28,6 +29,9 @@ import {gestionPartidosComponent} from './admin/gestion_partidos.component';
 import {gestionUsuariosComponent} from './admin/gestion_usuarios.component';
 import {editUsuarioComponent} from './admin/edit_usuario.component';
 
+import {gestionEquiposComponent} from './admin/gestion_equipos.component';
+import {editEquipoComponent} from './admin/edit_equipo.component';
+
 import {Http, HTTP_PROVIDERS} from 'angular2/http';
 
 import {LoginService} from './login.service';
@@ -35,7 +39,7 @@ import {LoginService} from './login.service';
 
 @Component({
   selector: 'main-app',
-  providers: [ROUTER_PROVIDERS,PartidoService,JugadorService,JuegoService,/* pruebaUsuario */UsuarioService, HTTP_PROVIDERS, LoginService],
+  providers: [ROUTER_PROVIDERS,PartidoService,JugadorService,JuegoService,/* pruebaUsuario */UsuarioService, HTTP_PROVIDERS, LoginService, EquipoService],
   templateUrl: 'app/main.html', //Esto antes era index.html  de fuera de app
   directives: [CabeceraComponent,PieComponent,ROUTER_DIRECTIVES],
   pipes: []
@@ -60,7 +64,8 @@ import {LoginService} from './login.service';
   {path: '/partidos', name:'GestionPartidos',component:gestionPartidosComponent},
   {path: '/usuarios', name:'GestionUsuarios',component:gestionUsuariosComponent},
   {path: '/editUsuario/:id', name:'EditUsuario',component:editUsuarioComponent},
-
+  {path: '/admin/equipos', name:'GestionEquipos', component:gestionEquiposComponent},
+  {path: '/admin/editEquipo/:id', name:'EditarEquipo', component:editEquipoComponent}
 ])
 
 export class MainApp implements OnInit {

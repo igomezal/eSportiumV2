@@ -1,6 +1,4 @@
-System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http', 'rxjs/Rx'], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
+System.register(['angular2/core', './utils'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10,23 +8,16 @@ System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http',
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, Observable_1, utils_1, http_1;
+    var core_1, utils_1;
     var Usuario, UsuarioService;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             },
-            function (Observable_1_1) {
-                Observable_1 = Observable_1_1;
-            },
             function (utils_1_1) {
                 utils_1 = utils_1_1;
-            },
-            function (http_1_1) {
-                http_1 = http_1_1;
-            },
-            function (_1) {}],
+            }],
         execute: function() {
             Usuario = (function () {
                 function Usuario(id, name, fecha, genero, apuestas, //esto se obtendra de los ids de los partdos de la BDD
@@ -45,11 +36,10 @@ System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http',
                     this.admin = admin;
                 }
                 return Usuario;
-            }());
+            })();
             exports_1("Usuario", Usuario);
             UsuarioService = (function () {
-                function UsuarioService(http) {
-                    this.http = http;
+                function UsuarioService() {
                     this.apuestas = [{ "id": 1, "karma": 200 }, { "id": 2, "karma": 200 }, { "id": 3, "karma": 200 }];
                     this.finalizados = [{ "id": 1, "karma": 200 }, { "id": 2, "karma": 200 }, { "id": 3, "karma": 200 }];
                     this.usuario = [new Usuario(0, 'yeah', new Date('December 25, 1995 23:15:30'), 'Masculino', this.apuestas, this.finalizados, 600, 'icon-profile.png', '1234', 'falso@falso.es', false),
@@ -60,24 +50,14 @@ System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http',
                     return utils_1.withObserver(this.usuario[0]);
                 };
                 UsuarioService.prototype.addUsuario = function (nombre, correo, genero, clave) {
-                    var _this = this;
-                    var url = "https://localhost:8443/usuarios/";
-                    var item = { id: null, nombre: nombre, fecha: "25/05/2016", genero: genero, apuestas: [], karma: 3000, foto: "foto", clave: clave, correo: correo, admin: false };
-                    var body = JSON.stringify(item);
-                    var headers = new http_1.Headers({
-                        'Content-Type': 'application/json'
-                    });
-                    var options = new http_1.RequestOptions({ headers: headers });
-                    return this.http.post(url, body, options)
-                        .map(function (response) { return response.json(); })
-                        .catch(function (error) { return _this.manejarError(error); });
+                    var id = this.usuario.length;
+                    var today = Date.now();
+                    var user = new Usuario(id, nombre, today, genero, [], [], 6000, 'icon-profile.png', clave, correo, false);
+                    this.usuario.push(user);
+                    return utils_1.withObserver(user);
                 };
                 UsuarioService.prototype.getUsuarios = function () {
-                    var _this = this;
-                    var url = "https://localhost:8443/usuarios/";
-                    return this.http.get(url)
-                        .map(function (response) { return response.json(); })
-                        .catch(function (error) { return _this.manejarError(error); });
+                    return utils_1.withObserver(this.usuario);
                 };
                 UsuarioService.prototype.getSesion = function () {
                     console.log(this.sesion);
@@ -137,11 +117,7 @@ System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http',
                     }
                 };
                 UsuarioService.prototype.getUsuarioporId = function (id) {
-                    var _this = this;
-                    var url = "https://localhost:8443/usuarios/" + id;
-                    return this.http.get(url)
-                        .map(function (response) { return response.json(); })
-                        .catch(function (error) { return _this.manejarError(error); });
+                    return utils_1.withObserver(this.usuario[id]);
                 };
                 UsuarioService.prototype.eliminarUsuario = function (id) {
                     var u;
@@ -158,18 +134,14 @@ System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http',
                 UsuarioService.prototype.getKarma = function (usuario) {
                     return usuario.karma;
                 };
-                UsuarioService.prototype.manejarError = function (error) {
-                    console.log(error);
-                    return Observable_1.Observable.throw("Server error (" + error.status + "): " + error.text);
-                };
                 UsuarioService = __decorate([
                     core_1.Injectable(), 
-                    __metadata('design:paramtypes', [http_1.Http])
+                    __metadata('design:paramtypes', [])
                 ], UsuarioService);
                 return UsuarioService;
-            }());
+            })();
             exports_1("UsuarioService", UsuarioService);
         }
     }
 });
-//# sourceMappingURL=usuario.interface.js.map
+//# sourceMappingURL=../../../app/usuario.interface.js.map

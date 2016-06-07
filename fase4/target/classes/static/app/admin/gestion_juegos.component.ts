@@ -13,9 +13,16 @@ export class gestionJuegosComponent {
 
   constructor(private _UsuarioService: UsuarioService, private _JuegoService: JuegoService, private _Router: Router){}
 
-  private juegos:Juego[];
+  private juegos:Juego[] = [];
 
   ngOnInit(){
+    this._JuegoService.getJuegos().subscribe(
+      juegos => this.juegos = juegos,
+      error => console.log(error)
+    );
+  }
+
+  private refresh(){
     this._JuegoService.getJuegos().subscribe(
       juegos => this.juegos = juegos,
       error => console.log(error)
@@ -47,6 +54,10 @@ export class gestionJuegosComponent {
     this._Router.navigate(link);
   }
 
+  gotoGestionEquipos() {
+    this._Router.navigate(['GestionEquipos']);
+  }
+
   gotoMain(){
     this._Router.navigate(['Inicio']);
   }
@@ -62,7 +73,10 @@ export class gestionJuegosComponent {
   }
 
   borrarJuego(juego: Juego){
-    this._JuegoService.eliminar(juego.nombre, juego.id);
+    this._JuegoService.eliminar(juego.id, juego.nombre, juego.siglas).subscribe(
+      respuesta => this.refresh(),
+      error => console.log(error)
+    );
   }
 
 }

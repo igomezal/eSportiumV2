@@ -1,6 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './partido.service', './jugador.interface', './cabecera.component', './juego.interface', './index.component', './profile.component', './usuario.interface', './pie.component', './partido.component', './registro.component', './aboutus.component', './faq.component', './contacto.component', './finalizados.component', './editarpefil.component', './admin/home.component', './admin/add_juegos.component', './admin/add_partidos.component', './admin/ajustes.component', './admin/edit_juego.component', './admin/edit_partido.component', './admin/gestion_juegos.component', './admin/gestion_partidos.component', './admin/gestion_usuarios.component', './admin/edit_usuario.component', 'angular2/http', './login.service'], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
+System.register(['angular2/core', 'angular2/router', './partido.service', './jugador.interface', './cabecera.component', './juego.interface', './equipo.interface', './index.component', './profile.component', './usuario.interface', './pie.component', './partido.component', './registro.component', './aboutus.component', './faq.component', './contacto.component', './finalizados.component', './editarpefil.component', './admin/home.component', './admin/add_juegos.component', './admin/add_partidos.component', './admin/ajustes.component', './admin/edit_juego.component', './admin/edit_partido.component', './admin/gestion_juegos.component', './admin/gestion_partidos.component', './admin/gestion_usuarios.component', './admin/edit_usuario.component', './admin/gestion_equipos.component', './admin/edit_equipo.component', 'angular2/http', './login.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10,7 +8,7 @@ System.register(['angular2/core', 'angular2/router', './partido.service', './jug
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, partido_service_1, jugador_interface_1, cabecera_component_1, juego_interface_1, index_component_1, profile_component_1, usuario_interface_1, pie_component_1, partido_component_1, registro_component_1, aboutus_component_1, faq_component_1, contacto_component_1, finalizados_component_1, editarpefil_component_1, home_component_1, add_juegos_component_1, add_partidos_component_1, ajustes_component_1, edit_juego_component_1, edit_partido_component_1, gestion_juegos_component_1, gestion_partidos_component_1, gestion_usuarios_component_1, edit_usuario_component_1, http_1, login_service_1;
+    var core_1, router_1, partido_service_1, jugador_interface_1, cabecera_component_1, juego_interface_1, equipo_interface_1, index_component_1, profile_component_1, usuario_interface_1, pie_component_1, partido_component_1, registro_component_1, aboutus_component_1, faq_component_1, contacto_component_1, finalizados_component_1, editarpefil_component_1, home_component_1, add_juegos_component_1, add_partidos_component_1, ajustes_component_1, edit_juego_component_1, edit_partido_component_1, gestion_juegos_component_1, gestion_partidos_component_1, gestion_usuarios_component_1, edit_usuario_component_1, gestion_equipos_component_1, edit_equipo_component_1, http_1, login_service_1;
     var MainApp;
     return {
         setters:[
@@ -31,6 +29,9 @@ System.register(['angular2/core', 'angular2/router', './partido.service', './jug
             },
             function (juego_interface_1_1) {
                 juego_interface_1 = juego_interface_1_1;
+            },
+            function (equipo_interface_1_1) {
+                equipo_interface_1 = equipo_interface_1_1;
             },
             function (index_component_1_1) {
                 index_component_1 = index_component_1_1;
@@ -95,6 +96,12 @@ System.register(['angular2/core', 'angular2/router', './partido.service', './jug
             function (edit_usuario_component_1_1) {
                 edit_usuario_component_1 = edit_usuario_component_1_1;
             },
+            function (gestion_equipos_component_1_1) {
+                gestion_equipos_component_1 = gestion_equipos_component_1_1;
+            },
+            function (edit_equipo_component_1_1) {
+                edit_equipo_component_1 = edit_equipo_component_1_1;
+            },
             function (http_1_1) {
                 http_1 = http_1_1;
             },
@@ -130,7 +137,7 @@ System.register(['angular2/core', 'angular2/router', './partido.service', './jug
                 MainApp = __decorate([
                     core_1.Component({
                         selector: 'main-app',
-                        providers: [router_1.ROUTER_PROVIDERS, partido_service_1.PartidoService, jugador_interface_1.JugadorService, juego_interface_1.JuegoService, usuario_interface_1.UsuarioService, http_1.HTTP_PROVIDERS, login_service_1.LoginService],
+                        providers: [router_1.ROUTER_PROVIDERS, partido_service_1.PartidoService, jugador_interface_1.JugadorService, juego_interface_1.JuegoService, usuario_interface_1.UsuarioService, http_1.HTTP_PROVIDERS, login_service_1.LoginService, equipo_interface_1.EquipoService],
                         templateUrl: 'app/main.html',
                         directives: [cabecera_component_1.CabeceraComponent, pie_component_1.PieComponent, router_1.ROUTER_DIRECTIVES],
                         pipes: []
@@ -155,13 +162,15 @@ System.register(['angular2/core', 'angular2/router', './partido.service', './jug
                         { path: '/partidos', name: 'GestionPartidos', component: gestion_partidos_component_1.gestionPartidosComponent },
                         { path: '/usuarios', name: 'GestionUsuarios', component: gestion_usuarios_component_1.gestionUsuariosComponent },
                         { path: '/editUsuario/:id', name: 'EditUsuario', component: edit_usuario_component_1.editUsuarioComponent },
+                        { path: '/admin/equipos', name: 'GestionEquipos', component: gestion_equipos_component_1.gestionEquiposComponent },
+                        { path: '/admin/editEquipo/:id', name: 'EditarEquipo', component: edit_equipo_component_1.editEquipoComponent }
                     ]), 
                     __metadata('design:paramtypes', [usuario_interface_1.UsuarioService])
                 ], MainApp);
                 return MainApp;
-            }());
+            })();
             exports_1("MainApp", MainApp);
         }
     }
 });
-//# sourceMappingURL=main.js.map
+//# sourceMappingURL=../../../app/main.js.map

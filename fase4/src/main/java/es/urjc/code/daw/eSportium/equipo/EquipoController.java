@@ -25,7 +25,7 @@ public class EquipoController {
 
 	private static final Logger log = LoggerFactory.getLogger(EquipoController.class);
 	
-	interface EquipoListView extends Equipo.BasicAtt, Equipo.JugadoresAtt, Jugador.BasicAtt{}
+	interface EquipoListView extends Equipo.BasicAtt{}
 
 	@Autowired
 	private EquipoRepository repository;

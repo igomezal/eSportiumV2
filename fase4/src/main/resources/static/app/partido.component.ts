@@ -5,6 +5,8 @@ import {PartidoService} from './partido.service';
 import {Partido} from './partido.service';
 import {Usuario, UsuarioService} from './usuario.interface';
 import {CabeceraComponent} from './cabecera.component';
+import {LoginService} from './login.service';
+
 @Component({
     selector: 'partido-concreto',
     templateUrl : 'app/partido.component.html',
@@ -13,38 +15,40 @@ import {CabeceraComponent} from './cabecera.component';
 
 export class PartidoComponent implements OnInit {
     partido:Partido;
-        
+
     sesion:Usuario;
     admin:boolean;
-    
-    constructor(private _router: Router,private _usuarioService:UsuarioService, private _partidoService: PartidoService, private _routeParams: RouteParams) {
-        
+
+    constructor(private _router: Router,private _usuarioService:UsuarioService,
+       private _partidoService: PartidoService, private _routeParams: RouteParams,
+      private loginService: LoginService) {
+
     }
-    
+
     ngOnInit(){
         let id = +this._routeParams.get('id');
         this._partidoService.getPartido(id).subscribe(
             partido => this.partido = partido,
             error => console.log(error)
         );
-        
+
         this._usuarioService.getSesion().subscribe(
             usuario => this.sesion = usuario,
             error => console.log(error)
         );
-            
+
         this._usuarioService.getAdmin().subscribe(
         admin => this.admin = admin,
         error => console.log(error)
         );
-    }  
-    
+    }
+
     login(nombre:string, clave:string){
         this._usuarioService.login(nombre,clave).subscribe(
             usuario => this.sesion = usuario,
             error => console.log(error)
         );
-        
+
         this._usuarioService.getAdmin().subscribe(
             admin => this.admin = admin,
             error => console.log(error)
@@ -55,19 +59,19 @@ export class PartidoComponent implements OnInit {
     goToRegistro() {
         this._router.navigate(['Registro']);
     }
-    
+
     actualizar(){
         this._usuarioService.getSesion().subscribe(
             usuario => this.sesion = usuario,
             error => console.log(error)
         );
-        
+
         this._usuarioService.getAdmin().subscribe(
             admin => this.admin = admin,
             error => console.log(error)
         );
     }
-    
+
     apostar(apuesta:number){
         if(this.sesion.karma>=apuesta){
             this._usuarioService.apostar(this.partido,apuesta);
@@ -75,4 +79,21 @@ export class PartidoComponent implements OnInit {
             alert("Karma insuficiente");
         }
     }
+
+    logInSpring(event: any, user: string, pass: string){
+
+ 	  event.preventDefault();
+
+ 	  this.loginService.logIn(user, pass).subscribe(
+ 	      user => console.log(user),
+ 	      error => alert("Invalid user or password")
+       );
+   }
+
+   logOutSpring(){
+ 	this.loginService.logOut().subscribe(
+ 		response => {},
+ 		error => console.log("Error when trying to log out: "+error)
+ 	);
+   }
 }
