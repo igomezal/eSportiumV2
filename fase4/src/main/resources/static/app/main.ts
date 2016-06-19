@@ -31,6 +31,7 @@ import {editUsuarioComponent} from './admin/edit_usuario.component';
 
 import {gestionEquiposComponent} from './admin/gestion_equipos.component';
 import {editEquipoComponent} from './admin/edit_equipo.component';
+import {addEquipoComponent} from './admin/add_equipo.component';
 
 import {Http, HTTP_PROVIDERS} from 'angular2/http';
 
@@ -65,7 +66,8 @@ import {LoginService} from './login.service';
   {path: '/usuarios', name:'GestionUsuarios',component:gestionUsuariosComponent},
   {path: '/editUsuario/:id', name:'EditUsuario',component:editUsuarioComponent},
   {path: '/admin/equipos', name:'GestionEquipos', component:gestionEquiposComponent},
-  {path: '/admin/editEquipo/:id', name:'EditarEquipo', component:editEquipoComponent}
+  {path: '/admin/editEquipo/:id', name:'EditarEquipo', component:editEquipoComponent},
+  {path: 'admin/addEquipo', name:'AddEquipo', component:addEquipoComponent}
 ])
 
 export class MainApp implements OnInit {

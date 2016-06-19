@@ -44,7 +44,8 @@ System.register(['angular2/core', '../juego.interface', 'angular2/router', '../u
                         alert("Datos incorrectos");
                     }
                     else {
-                        this._JuegoService.editar(this.juego.id, nombre, siglas);
+                        console.log(this.juego.id + " " + nombre + " " + siglas);
+                        this._JuegoService.editar(this.juego.id, nombre, siglas).subscribe(function (respuesta) { return alert("Juego editado correctamente"); });
                         this.goToJuegos();
                     }
                 };

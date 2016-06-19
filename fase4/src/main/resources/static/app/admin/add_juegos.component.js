@@ -37,6 +37,7 @@ System.register(['angular2/core', '../juego.interface', 'angular2/router', '../u
                     }
                     else {
                         this._JuegoService.anadirJuego(nombre, siglas).subscribe(function (respuesta) { return alert("Juego " + respuesta.nombre + " creado correctamente"); });
+                        this.gotoGestionJuegos();
                     }
                 };
                 addJuegoComponent.prototype.cerrarSesion = function () {

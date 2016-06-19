@@ -42,7 +42,6 @@ System.register(['angular2/core', 'rxjs/Observable', 'angular2/http', 'rxjs/Rx']
             EquipoService = (function () {
                 function EquipoService(http) {
                     this.http = http;
-                    this.equipos = [];
                 }
                 EquipoService.prototype.getEquipos = function () {
                     var _this = this;
@@ -58,10 +57,10 @@ System.register(['angular2/core', 'rxjs/Observable', 'angular2/http', 'rxjs/Rx']
                         .map(function (response) { return response.json(); })
                         .catch(function (error) { return _this.manejarError(error); });
                 };
-                EquipoService.prototype.anadirEquipo = function (nombre, siglas) {
+                EquipoService.prototype.anadirEquipo = function (nombre, logo) {
                     var _this = this;
                     var url = "https://localhost:8443/equipos/";
-                    var item = { id: null, nombre: nombre, siglas: siglas };
+                    var item = { nombre: nombre, logo: logo };
                     var body = JSON.stringify(item);
                     var headers = new http_1.Headers({
                         'Content-Type': 'application/json'

@@ -1,5 +1,6 @@
 package es.urjc.code.daw.eSportium.juego;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -33,7 +34,6 @@ public class Juego{
 	private String siglas;
 	
 	@JsonView(PartidosAtt.class)
-	@JsonManagedReference
 	@OneToMany(cascade=CascadeType.ALL,mappedBy="juego")
 	private List<Partido> partidos;
 	
@@ -43,8 +43,9 @@ public class Juego{
 		super();
 		this.nombre = nombre;
 		this.siglas = siglas;
+		this.partidos = new ArrayList<Partido>();
 	}
-
+	
 	public long getId() {
 		return id;
 	}
@@ -60,8 +61,7 @@ public class Juego{
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
-	
+
 	public String getSiglas() {
 		return siglas;
 	}
@@ -70,7 +70,6 @@ public class Juego{
 		this.siglas = siglas;
 	}
 
-	
 	public List<Partido> getPartidos() {
 		return partidos;
 	}

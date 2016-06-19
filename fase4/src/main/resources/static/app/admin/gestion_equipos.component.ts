@@ -69,12 +69,12 @@ export class gestionEquiposComponent {
   }
 
   gotoaddEquipo() {
-    //this._Router.navigate(['AddJuego']);
+    this._Router.navigate(['AddEquipo']);
   }
 
   borrarEquipo(equipo: Equipo) {
     this._EquipoService.eliminar(equipo.id).subscribe(
-      respuesta => { alert('Eliminado equipo: ' + equipo.nombre); this.refresh() },
+      respuesta =>  this.refresh(),
       error => console.log(error)
     );
   }

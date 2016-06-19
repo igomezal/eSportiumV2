@@ -72,7 +72,7 @@ System.register(['angular2/core', 'rxjs/Observable', 'angular2/http', 'rxjs/Rx']
                 };
                 JuegoService.prototype.editar = function (id, nombre, siglas) {
                     var _this = this;
-                    var item = { id: id, nombre: nombre, siglas: siglas };
+                    var item = { nombre: nombre, siglas: siglas };
                     var url = "https://localhost:8443/juegos/" + id;
                     var body = JSON.stringify(item);
                     var headers = new http_1.Headers({

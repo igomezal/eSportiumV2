@@ -12,13 +12,14 @@ export class addJuegoComponent {
 
   constructor(private _JuegoService: JuegoService, private _Router: Router, private _UsuarioService: UsuarioService) {}
 
-  anadir(nombre: string, id: string){
-    if( nombre == "" || id == ""){
+  anadir(nombre: string, siglas: string) {
+    if( nombre == "" || siglas == ""){
       alert("Datos incorrectos");
     }else{
-      let j = new Juego(nombre, id);
-      this._JuegoService.anadirJuego(j);
-      alert("Juego "+j.nombre+ " creado correctamente");
+      this._JuegoService.anadirJuego(nombre, siglas).subscribe(
+        respuesta => alert("Juego " + respuesta.nombre + " creado correctamente")
+      );
+      this.gotoGestionJuegos();
     }
   }
 

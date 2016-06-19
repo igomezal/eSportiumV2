@@ -42,7 +42,9 @@ System.register(['angular2/core', '../equipo.interface', 'angular2/router', '../
                         alert("Datos incorrectos");
                     }
                     else {
-                        this._EquipoService.editar(this.equipo.id, nombre, logo);
+                        this._EquipoService.editar(this.equipo.id, nombre, logo).subscribe(function (respuesta) { return alert("Equipo editado correctamente"); });
+                        this.gotoGestionEquipos();
+                        ;
                         this.gotoGestionEquipos();
                     }
                 };

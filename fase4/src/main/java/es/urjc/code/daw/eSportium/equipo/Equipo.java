@@ -41,7 +41,6 @@ public class Equipo{
 		this.nombre = nombre;
 		this.logo = logo;
 		this.jugadores = new ArrayList<Jugador>();
-		
 	}
 	
 	public long getId() {

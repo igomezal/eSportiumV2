@@ -52,7 +52,7 @@ constructor(private http: Http){}
   }
 
   editar(id:number, nombre: string, siglas: string){
-    let item:Juego = {id,nombre,siglas}
+    let item = {nombre,siglas}
     let url = "https://localhost:8443/juegos/" + id;
     let body = JSON.stringify(item);
     let headers = new Headers({

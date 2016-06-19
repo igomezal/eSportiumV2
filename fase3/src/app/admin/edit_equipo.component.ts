@@ -26,7 +26,10 @@ export class editEquipoComponent {
     if (nombre == "" || logo == "") {
       alert("Datos incorrectos");
     } else {
-      this._EquipoService.editar(this.equipo.id, nombre, logo);
+      this._EquipoService.editar(this.equipo.id, nombre, logo).subscribe(
+        respuesta => alert("Equipo editado correctamente")
+      );
+      this.gotoGestionEquipos();;
       this.gotoGestionEquipos();
     }
   }

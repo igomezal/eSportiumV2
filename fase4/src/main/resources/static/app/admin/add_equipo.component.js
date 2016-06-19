@@ -9,7 +9,7 @@ System.register(['angular2/core', '../equipo.interface', 'angular2/router', '../
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, equipo_interface_1, router_1, usuario_interface_1;
-    var gestionEquiposComponent;
+    var addEquipoComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -25,70 +25,54 @@ System.register(['angular2/core', '../equipo.interface', 'angular2/router', '../
                 usuario_interface_1 = usuario_interface_1_1;
             }],
         execute: function() {
-            gestionEquiposComponent = (function () {
-                function gestionEquiposComponent(_UsuarioService, _EquipoService, _Router) {
+            addEquipoComponent = (function () {
+                function addEquipoComponent(_UsuarioService, _EquipoService, _Router) {
                     this._UsuarioService = _UsuarioService;
                     this._EquipoService = _EquipoService;
                     this._Router = _Router;
-                    this.equipos = [];
                 }
-                gestionEquiposComponent.prototype.ngOnInit = function () {
-                    var _this = this;
-                    this._EquipoService.getEquipos().subscribe(function (equipos) { return _this.equipos = equipos; }, function (error) { return console.log(error); });
-                };
-                gestionEquiposComponent.prototype.refresh = function () {
-                    var _this = this;
-                    this._EquipoService.getEquipos().subscribe(function (equipos) { return _this.equipos = equipos; }, function (error) { return console.log(error); });
-                };
-                gestionEquiposComponent.prototype.gotoHome = function () {
+                addEquipoComponent.prototype.gotoHome = function () {
                     this._Router.navigate(['Admin']);
                 };
-                gestionEquiposComponent.prototype.gotoGestionEquipos = function () {
+                addEquipoComponent.prototype.gotoGestionEquipos = function () {
                     this._Router.navigate(['GestionEquipos']);
                 };
-                gestionEquiposComponent.prototype.gotoGestionJuegos = function () {
+                addEquipoComponent.prototype.gotoGestionJuegos = function () {
                     this._Router.navigate(['GestionJuegos']);
                 };
-                gestionEquiposComponent.prototype.gotoGestionPartidos = function () {
+                addEquipoComponent.prototype.gotoGestionPartidos = function () {
                     this._Router.navigate(['GestionPartidos']);
                 };
-                gestionEquiposComponent.prototype.gotoGestionUsuarios = function () {
+                addEquipoComponent.prototype.gotoGestionUsuarios = function () {
                     this._Router.navigate(['GestionUsuarios']);
                 };
-                gestionEquiposComponent.prototype.gotoAjustes = function () {
+                addEquipoComponent.prototype.gotoAjustes = function () {
                     this._Router.navigate(['Ajustes']);
                 };
-                gestionEquiposComponent.prototype.gotoEditEquipo = function (equipo) {
-                    var link = ['EditarEquipo', { id: equipo.id }];
-                    this._Router.navigate(link);
-                };
-                gestionEquiposComponent.prototype.gotoMain = function () {
+                addEquipoComponent.prototype.gotoMain = function () {
                     this._Router.navigate(['Inicio']);
                 };
-                gestionEquiposComponent.prototype.cerrarSesion = function () {
+                addEquipoComponent.prototype.cerrarSesion = function () {
                     this._UsuarioService.setSesion(undefined);
                     this._UsuarioService.setAdmin(false);
                     this.gotoMain();
                 };
-                gestionEquiposComponent.prototype.gotoaddEquipo = function () {
-                    this._Router.navigate(['AddEquipo']);
-                };
-                gestionEquiposComponent.prototype.borrarEquipo = function (equipo) {
+                addEquipoComponent.prototype.anadir = function (nombre, logo) {
                     var _this = this;
-                    this._EquipoService.eliminar(equipo.id).subscribe(function (respuesta) { return _this.refresh(); }, function (error) { return console.log(error); });
+                    this._EquipoService.anadirEquipo(nombre, logo).subscribe(function (response) { alert("Añadido equipo " + nombre); _this.gotoGestionEquipos(); });
                 };
-                gestionEquiposComponent = __decorate([
+                addEquipoComponent = __decorate([
                     core_1.Component({
-                        selector: 'gestionEquipos',
-                        templateUrl: 'app/admin/gestion_equipos.html',
+                        selector: 'anadirEquipos',
+                        templateUrl: 'app/admin/add_equipo.html',
                         directives: [router_1.ROUTER_DIRECTIVES]
                     }), 
                     __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, equipo_interface_1.EquipoService, router_1.Router])
-                ], gestionEquiposComponent);
-                return gestionEquiposComponent;
+                ], addEquipoComponent);
+                return addEquipoComponent;
             })();
-            exports_1("gestionEquiposComponent", gestionEquiposComponent);
+            exports_1("addEquipoComponent", addEquipoComponent);
         }
     }
 });
-//# sourceMappingURL=../../../../app/admin/gestion_equipos.component.js.map
+//# sourceMappingURL=../../../../app/admin/add_equipo.component.js.map

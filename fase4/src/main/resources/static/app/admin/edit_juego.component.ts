@@ -30,7 +30,10 @@ export class editJuegoComponent {
     if(nombre == "" || siglas == ""){
       alert("Datos incorrectos");
     }else{
-      this._JuegoService.editar(this.juego.id,nombre, siglas);
+      console.log(this.juego.id + " " + nombre + " " + siglas);
+      this._JuegoService.editar(this.juego.id, nombre, siglas).subscribe(
+        respuesta => alert("Juego editado correctamente")
+       );
       this.goToJuegos();
     }
   }

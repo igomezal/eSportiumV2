@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: 84a5162afd8c7d7db391a29f690751bfcc910dcc
+# sw.version: e802e02b82d8da935d4345a42e6fec6a96b0db2c
 # sw.file.hash: a854e502c61b4e5332ebb34ce15c79c75aeb8468
 /app.js
 # sw.file.hash: c4e106e2aa015bcd49a1a30716e438c8e54d27e5
@@ -15,13 +15,21 @@ CACHE MANIFEST
 /app\aboutus.component.js.map
 # sw.file.hash: bf15a966f0bbf2b63e4b68ae24e106e708086e62
 /app\aboutus.component.ts
-# sw.file.hash: 960045dba02d67f78aa0039c002e4b3ffabc98cb
+# sw.file.hash: 61efcbad665406d371d9fd664199a96a66c33e4d
+/app\admin\add_equipo.component.js
+# sw.file.hash: 09aad9e85d7626bc40a64c4a0f51ee2aa686b5ff
+/app\admin\add_equipo.component.js.map
+# sw.file.hash: 5181e55673b9d7fe0490d616f0ca6632e15d485c
+/app\admin\add_equipo.component.ts
+# sw.file.hash: 392c01ff7de09e6013cd85186811bba4835f3232
+/app\admin\add_equipo.html
+# sw.file.hash: 172935441489e993e7ecbf47a8c05a41dcbd575e
 /app\admin\add_juegos.component.js
-# sw.file.hash: 6988206332b4e946dd0af0741a875bd774520114
+# sw.file.hash: 265e52f0d5219038a9305fda3ff41e267138ed4b
 /app\admin\add_juegos.component.js.map
-# sw.file.hash: 075143dba184354d456c49f2d881d9510e282535
+# sw.file.hash: 9e34132273d340435f5d88928a960dcf147d12ab
 /app\admin\add_juegos.component.ts
-# sw.file.hash: 01220803cae9c8f9f1ef2b9ad76909caeca64609
+# sw.file.hash: fd1804309caf9919880f29ff4bfbd7bc442340ae
 /app\admin\add_juegos.html
 # sw.file.hash: 518ddae6500dafa0e0fa79217b01ef7e6dc09ba3
 /app\admin\add_partidos.component.js
@@ -103,21 +111,21 @@ CACHE MANIFEST
 /app\admin\css\skins\skin-yellow.css
 # sw.file.hash: 8613cc5bd98f4559d1fd51b02608dec76f21582f
 /app\admin\css\skins\skin-yellow.min.css
-# sw.file.hash: 27c25c948b0bac1ce24706b18405f50ad377730d
+# sw.file.hash: 485877aabc57adf9ab11e49e9137156e747433b7
 /app\admin\edit_equipo.component.js
-# sw.file.hash: 98d3957e55dc1a5210e20ac0cd6419b507836c5b
+# sw.file.hash: bdbec1cca4b67333569aba20dda47ce6e3e83549
 /app\admin\edit_equipo.component.js.map
-# sw.file.hash: e3ba789a7e15583d4a6849dea13b745e942201fe
+# sw.file.hash: a3b060f5e0e38d8c3271c9f21b8c3fc300d043af
 /app\admin\edit_equipo.component.ts
-# sw.file.hash: 3f38d1879da4327b91c2bd9f6ea9e1634f910c27
+# sw.file.hash: 94ba50589535cd0a28b54f3235f8942b9b994ba2
 /app\admin\edit_equipo.html
-# sw.file.hash: effcf923645588387773f281e94afdda9d89cff1
+# sw.file.hash: 66fe4875ab6d39ea9da83b98977a94b16fead125
 /app\admin\edit_juego.component.js
-# sw.file.hash: c9f41136d9e9d8aa7ed59a24604e0fd2dcb8c3b1
+# sw.file.hash: 77cfd033a020a17078a8b603ec2cb80ca8c1e5eb
 /app\admin\edit_juego.component.js.map
-# sw.file.hash: 9e32a28351c0ffb349e99ac4fecc2ebeba143490
+# sw.file.hash: c2db698c7e4025336802829743b421440a0ea22f
 /app\admin\edit_juego.component.ts
-# sw.file.hash: 45e50e0afc01e792a6d1d977f8f7490f7193309f
+# sw.file.hash: 1a188011c7641edaed91cb4a2dc5011058aaef08
 /app\admin\edit_juego.html
 # sw.file.hash: 05c71ee17b928c50b80c5729b14afc38145cc081
 /app\admin\edit_partido.component.js
@@ -147,13 +155,13 @@ CACHE MANIFEST
 /app\admin\fonts\glyphicons-halflings-regular.woff
 # sw.file.hash: ca35b697d99cae4d1b60f2d60fcd37771987eb07
 /app\admin\fonts\glyphicons-halflings-regular.woff2
-# sw.file.hash: 4df0b0c22411f590f0740ba573a1a310d699b3f2
+# sw.file.hash: 677d7bf5f00a650cd1d62e87a5ad8bad98abfdf7
 /app\admin\gestion_equipos.component.js
-# sw.file.hash: ccad0dd0706e3491a501426b840a0b6d68215869
+# sw.file.hash: 91a1f0688f1416e6a4250998414f5cdaa1f85db0
 /app\admin\gestion_equipos.component.js.map
-# sw.file.hash: aea05e327958a1f3fb1cf84b32b565c253fc4a6b
+# sw.file.hash: 933ddeed6f3c6bc2d647a8437af3bc7c66228a41
 /app\admin\gestion_equipos.component.ts
-# sw.file.hash: 8f5e749c3b1caebcccb37cb3699eefd36fe27c7b
+# sw.file.hash: 3452e91c2daf193918d25af2b4933d134a40ae34
 /app\admin\gestion_equipos.html
 # sw.file.hash: 5d2f1f52a017cd4d23303a93d1edccd714057754
 /app\admin\gestion_juegos.component.js
@@ -241,11 +249,11 @@ CACHE MANIFEST
 /app\editarpefil.component.ts
 # sw.file.hash: 8e2b1f3336bf438ae4dd50414ec131db1d0560dd
 /app\editarperfil.component.html
-# sw.file.hash: b08f50f0ed9ed3a2c5b1f52a1c4f9bdbe31d7344
+# sw.file.hash: d26773e670927dc41d4506c68916fc3dc5eb00d8
 /app\equipo.interface.js
-# sw.file.hash: 048e1dd58073f1d589997a1a05d942e2f7f17f74
+# sw.file.hash: 9e4111b7df2681518d7a59d770a11439b8c8b80e
 /app\equipo.interface.js.map
-# sw.file.hash: bf02eb6287404138cadec0bf9a657d739b9d4fa2
+# sw.file.hash: ed1f41e3d15f1ce0f6d43cef74efc630df97f632
 /app\equipo.interface.ts
 # sw.file.hash: d4327fa0ccd9d46d896fccf8e98f35442028a3f1
 /app\faq.component.html
@@ -271,11 +279,11 @@ CACHE MANIFEST
 /app\index.component.ts
 # sw.file.hash: 92b0c7f0d874f4eecbcfcdeb93f2a7e641cb22d8
 /app\index.html
-# sw.file.hash: 6e32237950dba6f7b2d4cd628f09dbd4c3bf59a8
+# sw.file.hash: ef328c8b6f8457306787701156d10253c10722a7
 /app\juego.interface.js
-# sw.file.hash: 939d4e0c8172e5e8cb2c818bcd469d7ce8a0f318
+# sw.file.hash: a31a6d535d15267b46d9f106f171c58fedc1e3f5
 /app\juego.interface.js.map
-# sw.file.hash: cc4d537ab97d925c07a641b28f7ed7bcc9ab037d
+# sw.file.hash: 8f9602eeeb993e9b1305b50e7cbd15e42e8c7df4
 /app\juego.interface.ts
 # sw.file.hash: e945b40f1bc98adb92e4a247e35635468a34e7e0
 /app\jugador.interface.js
@@ -291,11 +299,11 @@ CACHE MANIFEST
 /app\login.service.ts
 # sw.file.hash: b43cba2c9bd2f47f211335686d657fd90a7911d4
 /app\main.html
-# sw.file.hash: a0a9779a3d0f0a717e625693ad259af22b64498d
+# sw.file.hash: b6692797aa36e4eb8a347bd1c00735a30c7f7411
 /app\main.js
-# sw.file.hash: 063303e9ebe4800264ddf80747b5dea45fe6259f
+# sw.file.hash: 65d3b814a67f3382c0a34e34664c5ba815919d12
 /app\main.js.map
-# sw.file.hash: 9850047186f7ebf823173130da60ea0296f9a471
+# sw.file.hash: ab9335b7f68f0d78306b89eeb683dabffad96a89
 /app\main.ts
 # sw.file.hash: 4194f955182fa911137e9026801eff28e8ab86e4
 /app\partido.component.html

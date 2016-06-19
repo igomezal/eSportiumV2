@@ -22,8 +22,6 @@ export class EquipoService{
 
   constructor(private http: Http){}
 
-  private equipos =[];
-
   getEquipos(){
     let url = "https://localhost:8443/equipos/";
     return this.http.get(url)
@@ -38,9 +36,9 @@ export class EquipoService{
       .catch(error => this.manejarError(error));
   }
 
-  anadirEquipo(nombre: string, siglas: string){
+  anadirEquipo(nombre: string, logo: string){
     let url = "https://localhost:8443/equipos/"
-    let item = { id: null, nombre, siglas};
+    let item = {nombre, logo};
     let body = JSON.stringify(item);
     let headers = new Headers({
     'Content-Type': 'application/json'
