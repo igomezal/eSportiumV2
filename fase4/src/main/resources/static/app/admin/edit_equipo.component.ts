@@ -36,10 +36,9 @@ export class editEquipoComponent {
 
   eliminar(id: number) {
       this._EquipoService.eliminar(id).subscribe(
-        response => alert('Se ha eliminado el equipo seleccionado.'),
+      response => { alert('Se ha eliminado el equipo seleccionado.'); this.gotoGestionEquipos()},
         error => console.log(error)
       );
-      this.gotoGestionEquipos();
   }
 
   goToJuegos() {

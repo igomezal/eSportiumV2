@@ -21,6 +21,10 @@ export class addEquipoComponent {
     this._Router.navigate(['GestionEquipos']);
   }
 
+  gotoGestionJugadores() {
+    this._Router.navigate(['GestionJugadores']);
+  }
+
   gotoGestionJuegos() {
     this._Router.navigate(['GestionJuegos']);
   }

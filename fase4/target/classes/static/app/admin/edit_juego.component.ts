@@ -32,15 +32,14 @@ export class editJuegoComponent {
     }else{
       console.log(this.juego.id + " " + nombre + " " + siglas);
       this._JuegoService.editar(this.juego.id, nombre, siglas).subscribe(
-        respuesta => alert("Juego editado correctamente")
-       );
-      this.goToJuegos();
+        respuesta => { alert("Juego editado correctamente"); this.goToJuegos();}
+      );
     }
   }
 
   eliminar(juego:Juego){
     this._JuegoService.eliminar(juego.id, juego.nombre, juego.siglas).subscribe(
-        respuesta => this.goToJuegos(),
+        respuesta => { alert("Juego eliminado correctamente"); this.goToJuegos() },
         error => console.log(error)
     );;
   }

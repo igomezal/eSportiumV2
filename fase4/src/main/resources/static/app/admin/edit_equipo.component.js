@@ -49,8 +49,8 @@ System.register(['angular2/core', '../equipo.interface', 'angular2/router', '../
                     }
                 };
                 editEquipoComponent.prototype.eliminar = function (id) {
-                    this._EquipoService.eliminar(id).subscribe(function (response) { return alert('Se ha eliminado el equipo seleccionado.'); }, function (error) { return console.log(error); });
-                    this.gotoGestionEquipos();
+                    var _this = this;
+                    this._EquipoService.eliminar(id).subscribe(function (response) { alert('Se ha eliminado el equipo seleccionado.'); _this.gotoGestionEquipos(); }, function (error) { return console.log(error); });
                 };
                 editEquipoComponent.prototype.goToJuegos = function () {
                     this._Router.navigate(['GestionJuegos']);

@@ -54,12 +54,7 @@ System.register(['angular2/core', './jugador.interface', './utils'], function(ex
             PartidoService = (function () {
                 function PartidoService(service) {
                     this.service = service;
-                    this.jugs = [
-                        new jugador_interface_1.Jugador('Jug1', 'mid', 1.5),
-                        new jugador_interface_1.Jugador('Jug2', 'top', 2.5),
-                        new jugador_interface_1.Jugador('Jug3', 'noidea', 3.5),
-                        new jugador_interface_1.Jugador('Jug4', 'feed', 0.0)
-                    ];
+                    this.jugs = [];
                     this.partidos = [
                         new Partido(0, 'eq11', 'c9Logo', 'eq21', 'fnaticLogo', this.jugs, this.jugs, 'lol', 'Directo', '800', 'eq2', 'https://www.youtube.com/embed/3EwuH3-xmds', 'BO5'),
                         new Partido(1, 'eq12', 'fnaticLogo', 'eq22', 'UOLLogo', this.jugs, this.jugs, 'cs', 'Directo', '500', 'eq2', 'https://www.youtube.com/embed/3EwuH3-xmds', 'BO3'),
@@ -69,7 +64,6 @@ System.register(['angular2/core', './jugador.interface', './utils'], function(ex
                         new Partido(5, 'eq16', 'c9Logo', 'eq26', 'fnaticLogo', this.jugs, this.jugs, 'cs', 'Proximamente', '300', 'eq1', 'https://www.youtube.com/embed/3EwuH3-xmds', 'BO3')
                     ];
                 }
-                ;
                 PartidoService.prototype.ngOnInit = function () {
                     var _this = this;
                     this.service.getJugadores().subscribe(function (jugs) { return _this.jugs = jugs; }, function (error) { return console.log(error); });

@@ -37,6 +37,9 @@ System.register(['angular2/core', '../equipo.interface', 'angular2/router', '../
                 addEquipoComponent.prototype.gotoGestionEquipos = function () {
                     this._Router.navigate(['GestionEquipos']);
                 };
+                addEquipoComponent.prototype.gotoGestionJugadores = function () {
+                    this._Router.navigate(['GestionJugadores']);
+                };
                 addEquipoComponent.prototype.gotoGestionJuegos = function () {
                     this._Router.navigate(['GestionJuegos']);
                 };

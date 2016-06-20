@@ -24,6 +24,10 @@ export class homeComponent{
     this._Router.navigate(['GestionEquipos']);
   }
 
+  gotoGestionJugadores() {
+    this._Router.navigate(['GestionJugadores']);
+  }
+
   gotoGestionPartidos(){
     this._Router.navigate(['GestionPartidos']);
   }

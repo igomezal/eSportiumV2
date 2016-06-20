@@ -33,6 +33,10 @@ import {gestionEquiposComponent} from './admin/gestion_equipos.component';
 import {editEquipoComponent} from './admin/edit_equipo.component';
 import {addEquipoComponent} from './admin/add_equipo.component';
 
+import {gestionJugadoresComponent} from './admin/gestion_jugadores.component';
+import {addJugadorComponent} from './admin/add_jugador.component';
+import {editJugadorComponent} from './admin/edit_jugador.component';
+
 import {Http, HTTP_PROVIDERS} from 'angular2/http';
 
 import {LoginService} from './login.service';
@@ -67,7 +71,11 @@ import {LoginService} from './login.service';
   {path: '/editUsuario/:id', name:'EditUsuario',component:editUsuarioComponent},
   {path: '/admin/equipos', name:'GestionEquipos', component:gestionEquiposComponent},
   {path: '/admin/editEquipo/:id', name:'EditarEquipo', component:editEquipoComponent},
-  {path: 'admin/addEquipo', name:'AddEquipo', component:addEquipoComponent}
+  {path: 'admin/addEquipo', name:'AddEquipo', component:addEquipoComponent},
+  {path: 'admin/jugadores', name: 'GestionJugadores', component:gestionJugadoresComponent},
+  {path: 'admin/addJugador', name: 'AddJugador', component:addJugadorComponent},
+  {path: 'admin/editJugador/:id', name: 'EditarJugador', component:editJugadorComponent}
+
 ])
 
 export class MainApp implements OnInit {

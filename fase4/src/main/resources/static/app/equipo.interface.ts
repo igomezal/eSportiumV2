@@ -37,7 +37,7 @@ export class EquipoService{
   }
 
   anadirEquipo(nombre: string, logo: string){
-    let url = "https://localhost:8443/equipos/"
+    let url = "https://localhost:8443/equipos/";
     let item = {nombre, logo};
     let body = JSON.stringify(item);
     let headers = new Headers({
@@ -68,7 +68,8 @@ export class EquipoService{
     let url = "https://localhost:8443/equipos/" + id;
     return this.http.delete(url)
       .map(response => undefined)
-      .catch(error => this.manejarError(error))
+      .catch(error => this.manejarError(error)
+    );
   }
 
   private manejarError(error:any){

@@ -30,7 +30,7 @@ public class Jugador{
 	private String posicion;
 	
 	@JsonView(BasicAtt.class)
-	private long media;
+	private float media;
 	
 	@JsonView(EquipoAtt.class)
 	@ManyToOne
@@ -63,11 +63,11 @@ public class Jugador{
 		this.posicion = posicion;
 	}
 
-	public long getMedia() {
+	public float getMedia() {
 		return media;
 	}
 
-	public void setMedia(long media) {
+	public void setMedia(float media) {
 		this.media = media;
 	}
 

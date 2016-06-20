@@ -16,6 +16,7 @@ $(document).ready(function () {
         $('#comentado').append('<li class="list-group-item"><p>Usuario: ' + mensaje + '</p><span class="small-text">' + fecha.getDate() + '/0' + mes + '/' + fecha.getFullYear() % 100 + '</span></li>');
     });
 
+    //$('select').select2();
 });
 
 var checkPassword = function () {
