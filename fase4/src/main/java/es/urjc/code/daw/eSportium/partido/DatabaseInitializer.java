@@ -14,10 +14,15 @@ import es.urjc.code.daw.eSportium.jugador.*;
 import es.urjc.code.daw.eSportium.user.User;
 import es.urjc.code.daw.eSportium.user.UserRepository;
 import es.urjc.code.daw.eSportium.equipo.*;
+import es.urjc.code.daw.eSportium.ApuestaUser.ApuestaUser;
+import es.urjc.code.daw.eSportium.ApuestaUser.ApuestaUserRepository;
 import es.urjc.code.daw.eSportium.apuesta.*;
 
 @Controller
 public class DatabaseInitializer implements CommandLineRunner {
+	
+	@Autowired
+	private ApuestaUserRepository apuestauserRepository;
 	
 	@Autowired
 	private JuegoRepository juegoRepository;
@@ -96,6 +101,10 @@ public class DatabaseInitializer implements CommandLineRunner {
 			
 		userRepository.save(user1);
 		userRepository.save(user2);
+		
+		ApuestaUser au1 = new ApuestaUser(a1, user1);
+		
+		apuestauserRepository.save(au1);
 			
 	
 	}
