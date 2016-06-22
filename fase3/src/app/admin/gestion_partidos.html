@@ -59,8 +59,8 @@
 
                         <tr *ngFor="#partido of partidos">
                           <td>{{partido.estado}}</td>
-                          <td>{{partido.eq1}} vs {{partido.eq2}}</td>
-                          <td>{{partido.juego}}</td>
+                          <td>{{partido.equipo1.nombre}} vs {{partido.equipo2.nombre}}</td>
+                          <td>{{partido.juego.nombre}}</td>
                           <td>{{partido.diferencia}}</td>
                           <td>{{partido.rondas}}</td>
                           <td>

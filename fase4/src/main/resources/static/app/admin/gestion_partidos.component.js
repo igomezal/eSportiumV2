@@ -1,4 +1,6 @@
-System.register(['angular2/core', 'angular2/router', '../partido.service', '../usuario.interface'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', '../partido.service', '../usuario.interface'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -66,13 +68,20 @@ System.register(['angular2/core', 'angular2/router', '../partido.service', '../u
                     this._Router.navigate(['AddPartido']);
                 };
                 gestionPartidosComponent.prototype.finalizarPartido = function (partido) {
-                    this._Partidoservice.terminarPartido(partido);
+                    var _this = this;
+                    this._Partidoservice.terminarPartido(partido).subscribe(function (response) { return _this.refresh(); }, function (error) { return console.log(error); });
                 };
                 gestionPartidosComponent.prototype.aDirecto = function (partido) {
-                    this._Partidoservice.pasarADirecto(partido);
+                    var _this = this;
+                    this._Partidoservice.pasarADirecto(partido).subscribe(function (response) { return _this.refresh(); }, function (error) { return console.log(error); });
                 };
                 gestionPartidosComponent.prototype.borrarPartido = function (partido) {
-                    this._Partidoservice.eliminarPartido(partido.id);
+                    var _this = this;
+                    this._Partidoservice.eliminarPartido(partido.id).subscribe(function (response) { return _this.refresh(); }, function (error) { return console.log(error); });
+                };
+                gestionPartidosComponent.prototype.refresh = function () {
+                    var _this = this;
+                    this._Partidoservice.getPartidos().subscribe(function (partidos) { return _this.partidos = partidos; }, function (error) { return console.log(error); });
                 };
                 gestionPartidosComponent = __decorate([
                     core_1.Component({
@@ -82,9 +91,9 @@ System.register(['angular2/core', 'angular2/router', '../partido.service', '../u
                     __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, partido_service_1.PartidoService, router_1.Router])
                 ], gestionPartidosComponent);
                 return gestionPartidosComponent;
-            })();
+            }());
             exports_1("gestionPartidosComponent", gestionPartidosComponent);
         }
     }
 });
-//# sourceMappingURL=../../../../app/admin/gestion_partidos.component.js.map
+//# sourceMappingURL=gestion_partidos.component.js.map

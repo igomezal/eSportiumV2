@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -54,7 +55,9 @@ public class UserController {
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	public User nuevoUser(@RequestBody User user){
-		repository.save(user);
+		User nUser = user;
+		nUser.setPasswordHash(new BCryptPasswordEncoder().encode(user.getPasswordHash()));
+		repository.save(nUser);
 		
 		return user;
 	}

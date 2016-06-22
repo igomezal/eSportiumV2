@@ -1,4 +1,6 @@
-System.register(['angular2/core', 'angular2/router', './partido.service', './juego.interface'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', './partido.service', './juego.interface'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -31,6 +33,7 @@ System.register(['angular2/core', 'angular2/router', './partido.service', './jue
                     this._JuegoService = _JuegoService;
                     this._router = _router;
                     this.juegos = [];
+                    this.partidos = [];
                 }
                 indexComponent.prototype.ngOnInit = function () {
                     var _this = this;
@@ -46,7 +49,8 @@ System.register(['angular2/core', 'angular2/router', './partido.service', './jue
                 indexComponent.prototype.setPruebasDir = function (s) {
                     this.arrayDirtemp = [];
                     for (var i = 0; i < this.partidos.length; i++) {
-                        if (this.partidos[i].juego == s) {
+                        if (this.partidos[i].juego.siglas == s) {
+                            console.log("DEBUGG");
                             if (this.partidos[i].estado == 'Directo') {
                                 this.arrayDirtemp.push(this.partidos[i]);
                             }
@@ -56,7 +60,7 @@ System.register(['angular2/core', 'angular2/router', './partido.service', './jue
                 indexComponent.prototype.setPruebasProx = function (s) {
                     this.arrayFintemp = [];
                     for (var i = 0; i < this.partidos.length; i++) {
-                        if (this.partidos[i].juego == s) {
+                        if (this.partidos[i].juego.siglas == s) {
                             if (this.partidos[i].estado == 'Proximamente') {
                                 this.arrayFintemp.push(this.partidos[i]);
                             }
@@ -92,9 +96,9 @@ System.register(['angular2/core', 'angular2/router', './partido.service', './jue
                     __metadata('design:paramtypes', [partido_service_1.PartidoService, juego_interface_1.JuegoService, router_1.Router])
                 ], indexComponent);
                 return indexComponent;
-            })();
+            }());
             exports_1("indexComponent", indexComponent);
         }
     }
 });
-//# sourceMappingURL=../../../app/index.component.js.map
+//# sourceMappingURL=index.component.js.map

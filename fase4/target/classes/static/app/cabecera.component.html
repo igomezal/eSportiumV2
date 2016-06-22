@@ -52,7 +52,7 @@
                     <input type="password" name="Password" autocomplete="on" placeholder="Contraseña" class="form-control" #Clave>
                     <br/>
                     <!--(click)="login(NombreUsuario.value,Clave.value)" -->
-                    <a class="cerrar" data-dismiss="modal" (click)="logInSpring($event,NombreUsuario.value,Clave.value)">
+                    <a class="cerrar" data-dismiss="modal" (click)="logInSpring($event,NombreUsuario.value,Clave.value); NombreUsuario.value ='' ; Clave.value=''; ">
                         <button class="btn btn-primary">¡Acceder!</button>
                     </a>
                     <div class="checkbox checkDerecho">

@@ -41,8 +41,8 @@ public class DatabaseInitializer implements CommandLineRunner {
 
 		Juego j1 = new Juego("League of Legends","lol");
 		
-		Equipo equipo = new Equipo("Fnatic","http://stuffled.com/vector/wp-content/uploads/sites/5/2014/04/Fnatic-Logo-vector-image.png");
-		Equipo equipo2 = new Equipo("X6","http://blog.socialnat.com/wp-content/uploads/2015/06/escudox6tence.png");
+		Equipo equipo = new Equipo("Fnatic","fnaticLogo");
+		Equipo equipo2 = new Equipo("X6","x6tenceLogo");
 		
 		Jugador jug1 = new Jugador("Rekkles","ADC",9);
 		jug1.setEquipo(equipo);
@@ -67,11 +67,11 @@ public class DatabaseInitializer implements CommandLineRunner {
 		equipoRepository.save(equipo);
 		equipoRepository.save(equipo2);
 		
-		Partido p1 = new Partido("finalizado"," 400","eq1","https://www.youtube.com/embed/3EwuH3-xmds","BO5","30","70");
+		Partido p1 = new Partido("Directo"," 100","eq1","https://www.youtube.com/embed/3EwuH3-xmds","BO5","30","70");
 		p1.setEquipo1(equipo);
 		p1.setEquipo2(equipo2);
 		p1.setJuego(j1);
-		Partido p2 = new Partido("finalizado"," 400","eq1","https://www.youtube.com/embed/3EwuH3-xmds","BO5","30","70");
+		Partido p2 = new Partido("Proximamente"," 200","eq1","https://www.youtube.com/embed/3EwuH3-xmds","BO5","30","70");
 		p2.setEquipo1(equipo);
 		p2.setEquipo2(equipo2);
 		p2.setJuego(j1);

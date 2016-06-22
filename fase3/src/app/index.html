@@ -16,15 +16,15 @@
               <div *ngFor="#juego of juegos;#ind = index" id="{{juego.siglas}}" class="tab-pane fade" [class.in]="ind == 0" [class.active]="ind == 0">
                 <div class="container">
                   <div class="row">
-                    <div *ngFor="#partido of arrayDirtemp; #indpart = index" (click)="goToPartido(partido)" class="col-lg-4 col-md-6 col-sm-6" [class.hidden]="partido.juego != juego.siglas || partido.estado != 'Directo'">
+                    <div *ngFor="#partido of arrayDirtemp; #indpart = index" (click)="goToPartido(partido)" class="col-lg-4 col-md-6 col-sm-6" [class.hidden]="partido.juego.siglas != juego.siglas || partido.estado != 'Directo'">
                       <h2 *ngIf="isVacio(arrayDirtemp)">No hay partidos </h2>
                         <div id="partido{{partido.id}}">
                         <a>
                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <img class="img-responsive" alt="{{partido.eq1}}" src="img/{{partido.logo1}}.png">
+                            <img class="img-responsive" alt="{{partido.equipo1.nombre}}" src="img/{{partido.equipo1.logo}}.png">
                           </div>
                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <img class="img-responsive" alt="{{partido.eq2}}" src="img/{{partido.logo2}}.png">
+                            <img class="img-responsive" alt="{{partido.equipo2.nombre}}" src="img/{{partido.equipo2.logo}}.png">
                           </div>
                           <center>
                             <h1><span *ngIf="partido.ganando == 'eq1'" class="glyphicon glyphicon-triangle-top" style="top:3px"></span>
@@ -58,15 +58,15 @@
               <div *ngFor="#juego of juegos;#ind = index" id="{{juego.siglas}}prox" class="tab-pane fade" [class.in]="ind == 0" [class.active]="ind == 0">
                 <div class="container">
                   <div class="row">
-                    <div *ngFor="#partido of arrayFintemp; #indpart = index" (click)="goToPartido(partido)" class="col-lg-4 col-md-6 col-sm-6" [class.hidden]="partido.juego != juego.siglas || partido.estado != 'Proximamente'">
+                    <div *ngFor="#partido of arrayFintemp; #indpart = index" (click)="goToPartido(partido)" class="col-lg-4 col-md-6 col-sm-6" [class.hidden]="partido.juego.siglas != juego.siglas || partido.estado != 'Proximamente'">
                       <h2 *ngIf="isVacio(arrayFintemp)" >No hay partidos</h2>
                       <div id="partido{{partido.id}}">
                         <a>
                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <img class="img-responsive" alt="{{partido.eq1}}" src="img/{{partido.logo1}}.png">
+                            <img class="img-responsive" alt="{{partido.equipo1.nombre}}" src="img/{{partido.equipo1.logo}}.png">
                           </div>
                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                            <img class="img-responsive" alt="{{partido.eq2}}" src="img/{{partido.logo2}}.png">
+                            <img class="img-responsive" alt="{{partido.equipo2.nombre}}" src="img/{{partido.equipo2.logo}}.png">
                           </div>
                           <center>
                             <h1><span *ngIf="partido.ganando == 'eq1'" class="glyphicon glyphicon-triangle-top" style="top:3px"></span>

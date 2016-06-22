@@ -90,7 +90,7 @@ export class MainApp implements OnInit {
 
  ngOnInit(){
    /* pruebaUsuario */
-   this._Usuarioservice.getUsuario().subscribe(
+   this._Usuarioservice.getUsuarios().subscribe(
      usuario => this.usuario = usuario,
      error => console.log(error)
    )

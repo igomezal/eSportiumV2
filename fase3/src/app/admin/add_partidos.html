@@ -21,8 +21,8 @@
                     <!-- /.sidebar -->
                     <div class="col-md-8 col-md-offset-1">
                         <div class="row">
-                                     
-          
+
+
             <!-- Content Header (Page header) -->
             <div class="content-header">
                 <h3 class="montserrat-text white-text uppercase no-margin-top">
@@ -49,11 +49,13 @@
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label>Juego:</label>
-                                    <select class="form-control" #jue style="width: 100%;">
-                                        <option *ngFor="#juego of juegos; #ind = index">{{juego.id}}</option>
+                                    <select class="form-control" [(ngModel)]="juegoN" (change)="seleccionj($event.target.value)" style="width: 100%;">
+                                        <option *ngFor="#juego of juegos; #ind = index" [value]=juego.id>{{juego.nombre}}</option>
                                     </select>
                                     <label>Equipo 1:</label>
-                                    <input type="text" class="form-control" #eq1 placeholder="Introduce el nombre del equipo">
+                                    <select class="form-control" [(ngModel)]="equipo1N" (change)="seleccion1N($event.target.value)" style="width: 100%;">
+                                        <option *ngFor="#equipo of equipos; #ind = index" [value]=equipo.id>{{equipo.nombre}}</option>
+                                    </select>
                                     <label>URL imagen equipo 1:</label>
                                     <input type="url" class="form-control" #logo1 placeholder="Introduce la url al logo del equipo">
                                     <label>Porcentaje inicial equipo 1</label>
@@ -62,7 +64,9 @@
                                         <span class="input-group-addon">%</span>
                                     </div>
                                     <label>Equipo 2:</label>
-                                    <input type="text" class="form-control" #eq2 placeholder="Introduce el nombre del equipo">
+                                    <select class="form-control" [(ngModel)]="equipo2N" (change)="seleccion2N($event.target.value)" style="width: 100%;">
+                                        <option *ngFor="#equipo of equipos; #ind = index" [value]=equipo.id>{{equipo.nombre}}</option>
+                                    </select>
                                     <label>URL imagen equipo 2:</label>
                                     <input type="url" class="form-control" #logo2 placeholder="Introduce la url al logo del equipo">
                                     <label>Porcentaje inicial equipo 2</label>
@@ -103,7 +107,7 @@
                                     </form>
                                     <br>
                                     <div class="pull-right">
-                                        <button type="button" (click)="anadirP(jue.value, eq1.value, logo1.value, porcen1.value, eq2.value, logo2.value, porcen2.value, url.value, condicion.value, estado.value)" class="btn btn-success">Publicar</button>
+                                        <button type="button" (click)="anadirP(logo1.value, porcen1.value, logo2.value, porcen2.value, url.value, condicion.value, estado.value)" class="btn btn-success">Publicar</button>
                                         <button type="button" (click)="gotoGestionPartidos()" class="btn btn-danger">Eliminar</button>
                                     </div>
                                 </div>
@@ -121,6 +125,6 @@
 
                             </div>
                         </div>
-                    </div>       
-                    
+                    </div>
+
 </div>

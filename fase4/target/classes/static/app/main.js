@@ -1,4 +1,6 @@
-System.register(['angular2/core', 'angular2/router', './partido.service', './jugador.interface', './cabecera.component', './juego.interface', './equipo.interface', './index.component', './profile.component', './usuario.interface', './pie.component', './partido.component', './registro.component', './aboutus.component', './faq.component', './contacto.component', './finalizados.component', './editarpefil.component', './admin/home.component', './admin/add_juegos.component', './admin/add_partidos.component', './admin/ajustes.component', './admin/edit_juego.component', './admin/edit_partido.component', './admin/gestion_juegos.component', './admin/gestion_partidos.component', './admin/gestion_usuarios.component', './admin/edit_usuario.component', './admin/gestion_equipos.component', './admin/edit_equipo.component', './admin/add_equipo.component', './admin/gestion_jugadores.component', './admin/add_jugador.component', './admin/edit_jugador.component', 'angular2/http', './login.service'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', './partido.service', './jugador.interface', './cabecera.component', './juego.interface', './equipo.interface', './index.component', './profile.component', './usuario.interface', './pie.component', './partido.component', './registro.component', './aboutus.component', './faq.component', './contacto.component', './finalizados.component', './editarpefil.component', './admin/home.component', './admin/add_juegos.component', './admin/add_partidos.component', './admin/ajustes.component', './admin/edit_juego.component', './admin/edit_partido.component', './admin/gestion_juegos.component', './admin/gestion_partidos.component', './admin/gestion_usuarios.component', './admin/edit_usuario.component', './admin/gestion_equipos.component', './admin/edit_equipo.component', './admin/add_equipo.component', './admin/gestion_jugadores.component', './admin/add_jugador.component', './admin/edit_jugador.component', 'angular2/http', './login.service'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -130,7 +132,7 @@ System.register(['angular2/core', 'angular2/router', './partido.service', './jug
                 MainApp.prototype.ngOnInit = function () {
                     var _this = this;
                     /* pruebaUsuario */
-                    this._Usuarioservice.getUsuario().subscribe(function (usuario) { return _this.usuario = usuario; }, function (error) { return console.log(error); });
+                    this._Usuarioservice.getUsuarios().subscribe(function (usuario) { return _this.usuario = usuario; }, function (error) { return console.log(error); });
                 };
                 MainApp.prototype.ngAfterContentInit = function () {
                     var e = document.createElement("script");
@@ -184,9 +186,9 @@ System.register(['angular2/core', 'angular2/router', './partido.service', './jug
                     __metadata('design:paramtypes', [usuario_interface_1.UsuarioService])
                 ], MainApp);
                 return MainApp;
-            })();
+            }());
             exports_1("MainApp", MainApp);
         }
     }
 });
-//# sourceMappingURL=../../../app/main.js.map
+//# sourceMappingURL=main.js.map

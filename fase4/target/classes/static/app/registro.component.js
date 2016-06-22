@@ -1,4 +1,6 @@
-System.register(['angular2/core', './usuario.interface'], function(exports_1) {
+System.register(['angular2/core', './usuario.interface'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -27,7 +29,7 @@ System.register(['angular2/core', './usuario.interface'], function(exports_1) {
                 }
                 RegistroComponent.prototype.add = function (nombre, correo, genero, clave, clave2) {
                     if (clave === clave2) {
-                        this._usuarioService.addUsuario(nombre, correo, genero, clave);
+                        this._usuarioService.addUsuario(nombre, correo, genero, clave).subscribe(function (respuesta) { return alert("Usuario creado correctamente"); });
                         this.exito = true;
                         this.error = false;
                     }
@@ -50,9 +52,9 @@ System.register(['angular2/core', './usuario.interface'], function(exports_1) {
                     __metadata('design:paramtypes', [usuario_interface_1.UsuarioService])
                 ], RegistroComponent);
                 return RegistroComponent;
-            })();
+            }());
             exports_1("RegistroComponent", RegistroComponent);
         }
     }
 });
-//# sourceMappingURL=../../../app/registro.component.js.map
+//# sourceMappingURL=registro.component.js.map

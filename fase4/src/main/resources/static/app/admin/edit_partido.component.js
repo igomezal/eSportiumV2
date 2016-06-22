@@ -1,4 +1,6 @@
-System.register(['angular2/core', 'angular2/router', '../partido.service', '../juego.interface', '../usuario.interface'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', '../partido.service', '../juego.interface', '../usuario.interface'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -44,7 +46,7 @@ System.register(['angular2/core', 'angular2/router', '../partido.service', '../j
                     this._JuegoService.getJuegos().subscribe(function (juegos) { return _this.juegos = juegos; }, function (error) { return console.log(error); });
                 };
                 editPartidoComponent.prototype.editar = function (juego, eq1, logo1, porcen1, eq2, logo2, porcen2, url, rondas, estado) {
-                    if (juego == "" || eq1 == "" || logo1 == "" || porcen1 == "" || eq2 == "" || logo2 == "" || porcen2 == "" || url == "" || rondas == "" || estado == "") {
+                    if (juego == null || eq1 == null || logo1 == "" || porcen1 == "" || eq2 == null || logo2 == "" || porcen2 == "" || url == "" || rondas == "" || estado == "") {
                         alert("Datos incorrectos");
                     }
                     else {
@@ -87,9 +89,9 @@ System.register(['angular2/core', 'angular2/router', '../partido.service', '../j
                     __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, router_1.Router, partido_service_1.PartidoService, juego_interface_1.JuegoService, router_2.RouteParams])
                 ], editPartidoComponent);
                 return editPartidoComponent;
-            })();
+            }());
             exports_1("editPartidoComponent", editPartidoComponent);
         }
     }
 });
-//# sourceMappingURL=../../../../app/admin/edit_partido.component.js.map
+//# sourceMappingURL=edit_partido.component.js.map

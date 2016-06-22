@@ -2,6 +2,8 @@ import {Injectable} from 'angular2/core';
 import {Observable} from 'rxjs/Observable';
 import {withObserver} from './utils';
 import {Partido} from './partido.service';
+import {Http, Headers, RequestOptions, Response} from 'angular2/http';
+import 'rxjs/Rx';
 
 export class Usuario {
 
@@ -27,24 +29,38 @@ export class UsuarioService{
   private apuestas = [{"id":1,"karma":200},{"id":2,"karma":200},{"id":3,"karma":200}];
   private finalizados = [{"id":1,"karma":200},{"id":2,"karma":200},{"id":3,"karma":200}];
   private sesion:Usuario;
-  private usuario:Usuario[] = [new Usuario (0,'yeah',new Date('December 25, 1995 23:15:30'),'Masculino', this.apuestas,this.finalizados,600,'icon-profile.png','1234','falso@falso.es',false),
+  private usuario : Usuario[];
+  /*private usuario:Usuario[] = [new Usuario (0,'yeah',new Date('December 25, 1995 23:15:30'),'Masculino', this.apuestas,this.finalizados,600,'icon-profile.png','1234','falso@falso.es',false),
   new Usuario (1,'administrator',new Date('December 25, 1995 23:15:30'),'Masculino', this.apuestas,this.finalizados,600,'icon-profile.png','administrator','falso@falso.es',true)];
-  private admin:boolean = false;
+  */private admin:boolean = false;
 
-  getUsuario(){
-    return withObserver(this.usuario[0]);
-  }
-
-  addUsuario(nombre:string,correo:string, genero:string , clave: string){
-    let id = this.usuario.length
-    let today = Date.now();
-    let user = new Usuario(id,nombre,today,genero,[],[],6000,'icon-profile.png',clave,correo,false);
-    this.usuario.push(user);
-    return withObserver(user);
-  }
+  constructor( private http: Http){}
 
   getUsuarios(){
-    return withObserver(this.usuario);
+    let url ="https://localhost:8443/usuarios/";
+    return this.http.get(url)
+      .map(response => response.json())
+      .catch(error => this.manejarError(error));
+  }
+
+  getUsuario(id: number){
+    let url ="https://localhost:8443/usuarios/"+id;
+    return this.http.get(url)
+      .map(response => response.json())
+      .catch(error => this.manejarError(error));
+    }
+
+  addUsuario(name:string,correo:string, genero:string , password: string){
+    let url = "https://localhost:8443/usuarios/"
+    let item = {id: null, name, correo, genero, passwordHash: password, karma:5000, roles:["ROLE_USER"]};
+    let body = JSON.stringify(item);
+    let headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+    let options = new RequestOptions({headers});
+    return this.http.post(url, body, options)
+      .map(response => response.json())
+      .catch(error => this.manejarError(error));
   }
 
   getSesion(){
@@ -87,10 +103,21 @@ export class UsuarioService{
   }
 
   apostar(partido:Partido,apuesta:number){
-    this.sesion.apuestas.push({"id":partido.id,"karma":apuesta});
-    this.sesion.karma -= apuesta;
-    this.almacenarSesion(this.sesion);
-    return withObserver(this.sesion);
+    let url ="https://localhost:8443/apuestas/";
+    let item = {id: null, partido, karma: apuesta}; // Como pongo el equipo????
+    let body = JSON.stringify(item);
+    let headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+    let options = new RequestOptions({headers});
+    this.http.post(url, body, options)
+      .map(response => response.json())
+      .catch(error => this.manejarError(error));
+
+    //Ahora se hace la petición a la tabla de Relación ApuestaUser
+
+    let url2 = "https://localhost:8443/apuestaUser/";
+    let item2 = {id: null, partido, } // Cómo paso el usuario?? importo el loginService y loginService.user
   }
 
   editarDatos(constraseña:string,foto:string,correo:string,genero:string){
@@ -129,5 +156,10 @@ export class UsuarioService{
 
   getKarma(usuario: Usuario){
     return usuario.karma;
+  }
+
+  private manejarError(error:any){
+    console.log(error);
+    return Observable.throw("Server error (" + error.status + "): " + error.text);
   }
 }

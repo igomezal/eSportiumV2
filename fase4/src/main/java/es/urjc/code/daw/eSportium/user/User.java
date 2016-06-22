@@ -65,6 +65,7 @@ public class User {
 	private String correo;
 	
 	@JsonIgnore
+	//@JsonView(BasicAtt.class)
 	private String passwordHash;
 
 	@ElementCollection(fetch = FetchType.EAGER)
