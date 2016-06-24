@@ -73,8 +73,8 @@
                                 <th>KDA</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr *ngFor="#jug of partido.jug1">
+                        <tbody *ngIf="equipo1">
+                            <tr *ngFor="#jug of equipo1.jugadores">
                                 <th>{{jug.nombre}}</th>
                                 <th>{{jug.posicion}}</th>
                                 <th>{{jug.kda}}</th>
@@ -96,8 +96,8 @@
                                 <th>KDA</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr *ngFor="#jug of partido.jug2">
+                        <tbody *ngIf="equipo2">
+                            <tr *ngFor="#jug of equipo2.jugadores">
                                 <th>{{jug.nombre}}</th>
                                 <th>{{jug.posicion}}</th>
                                 <th>{{jug.kda}}</th>

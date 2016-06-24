@@ -27,16 +27,17 @@ System.register(['angular2/core', 'rxjs/Observable', 'angular2/http', 'rxjs/Rx']
             function (_1) {}],
         execute: function() {
             Equipo = (function () {
-                function Equipo(id, nombre, logo) {
+                function Equipo(id, nombre, logo, jugadores) {
                     this.id = id;
                     this.nombre = nombre;
                     this.logo = logo;
+                    this.jugadores = jugadores;
                 }
                 Equipo = __decorate([
                     core_2.Component({
                         selector: 'equipointerface'
                     }), 
-                    __metadata('design:paramtypes', [Number, String, String])
+                    __metadata('design:paramtypes', [Number, String, String, Array])
                 ], Equipo);
                 return Equipo;
             }());
@@ -74,7 +75,7 @@ System.register(['angular2/core', 'rxjs/Observable', 'angular2/http', 'rxjs/Rx']
                 };
                 EquipoService.prototype.editar = function (id, nombre, logo) {
                     var _this = this;
-                    var item = { id: id, nombre: nombre, logo: logo };
+                    var item = { id: null, nombre: nombre, logo: logo };
                     var url = "https://localhost:8443/equipos/" + id;
                     var body = JSON.stringify(item);
                     var headers = new http_1.Headers({

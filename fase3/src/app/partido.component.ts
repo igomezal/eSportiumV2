@@ -5,6 +5,7 @@ import {PartidoService} from './partido.service';
 import {Partido} from './partido.service';
 import {Usuario, UsuarioService} from './usuario.interface';
 import {CabeceraComponent} from './cabecera.component';
+import {Equipo, EquipoService} from './equipo.interface';
 import {LoginService} from './login.service';
 
 @Component({
@@ -15,13 +16,15 @@ import {LoginService} from './login.service';
 
 export class PartidoComponent implements OnInit {
     partido:Partido;
+    equipo1: Equipo;
+    equipo2: Equipo;
 
     sesion:Usuario;
     admin:boolean;
 
     constructor(private _router: Router,private _usuarioService:UsuarioService,
        private _partidoService: PartidoService, private _routeParams: RouteParams,
-      private loginService: LoginService) {
+      private loginService: LoginService, private _equipoService: EquipoService) {
 
     }
 
@@ -58,6 +61,21 @@ export class PartidoComponent implements OnInit {
 
     goToRegistro() {
         this._router.navigate(['Registro']);
+    }
+
+    getEquipo1(id: number){
+      console.log("Get Equipo1");
+      this._equipoService.getEquipo(id).subscribe(
+        equipo => this.equipo1 = equipo,
+        error => console.log(error)
+      );
+    }
+
+    getEquipo2(id: number){
+      this._equipoService.getEquipo(id).subscribe(
+        equipo => this.equipo2 = equipo,
+        error => console.log(error)
+      );
     }
 
     actualizar(){
