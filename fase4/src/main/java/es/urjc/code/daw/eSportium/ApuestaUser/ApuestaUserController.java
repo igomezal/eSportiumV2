@@ -57,7 +57,7 @@ public class ApuestaUserController {
 		User u = new User();
 		u.setId(id);
 		
-		return repository.findByUser(id);
+		return repository.findByUser(u);
 	}
 	
 	@JsonView(ApuestaUserBasicAtt.class)
