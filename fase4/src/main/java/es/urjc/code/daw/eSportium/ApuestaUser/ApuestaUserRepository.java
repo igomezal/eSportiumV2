@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import es.urjc.code.daw.eSportium.apuesta.Apuesta;
+import es.urjc.code.daw.eSportium.user.User;
 
 public interface ApuestaUserRepository extends JpaRepository<ApuestaUser, Long> {
 
