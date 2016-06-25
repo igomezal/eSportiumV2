@@ -28,7 +28,7 @@ public class ApuestaUserController {
 	@Autowired
 	private ApuestaUserRepository repository;
 	
-	interface ApuestaUserBasicAtt extends ApuestaUser.BasicAtt{}
+	interface ApuestaUserBasicAtt extends ApuestaUser.BasicAtt, User.BasicAtt{}
 	
 	@JsonView(ApuestaUserBasicAtt.class)
 	@RequestMapping(value = "/", method = RequestMethod.GET)
