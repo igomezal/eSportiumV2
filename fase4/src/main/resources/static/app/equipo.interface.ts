@@ -2,6 +2,7 @@ import {Injectable} from 'angular2/core';
 import {Observable} from 'rxjs/Observable';
 import {withObserver} from './utils';
 import {Component} from 'angular2/core';
+import {Jugador} from './jugador.interface';
 import {Http, Headers, RequestOptions, Response} from 'angular2/http';
 import 'rxjs/Rx';
 
@@ -13,7 +14,8 @@ export class Equipo {
   constructor (
     public id: number,
     public nombre: string,
-    public logo: string
+    public logo: string,
+    public jugadores: Jugador[]
   ){}
 }
 
@@ -50,7 +52,7 @@ export class EquipoService{
   }
 
   editar(id:number, nombre: string, logo: string){
-    let item:Equipo = {id,nombre,logo}
+    let item = {id : null,nombre,logo}
     let url = "https://localhost:8443/equipos/" + id;
     let body = JSON.stringify(item);
     let headers = new Headers({

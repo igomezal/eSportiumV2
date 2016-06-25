@@ -17,6 +17,8 @@ import {FaqComponent} from './faq.component';
 import {ContactoComponent} from './contacto.component';
 import {finalizadosComponent} from './finalizados.component';
 import {editarPerfil} from './editarpefil.component';
+import {ApuestaService} from './apuesta.interface';
+import {ApuestaUserService} from './apuestaUser.interface';
 //admin
 import {homeComponent} from './admin/home.component';
 import {addJuegoComponent} from './admin/add_juegos.component';
@@ -44,7 +46,7 @@ import {LoginService} from './login.service';
 
 @Component({
   selector: 'main-app',
-  providers: [ROUTER_PROVIDERS,PartidoService,JugadorService,JuegoService,/* pruebaUsuario */UsuarioService, HTTP_PROVIDERS, LoginService, EquipoService],
+  providers: [ROUTER_PROVIDERS,PartidoService,JugadorService,JuegoService,/* pruebaUsuario */UsuarioService, HTTP_PROVIDERS, LoginService, EquipoService,ApuestaService,ApuestaUserService],
   templateUrl: 'app/main.html', //Esto antes era index.html  de fuera de app
   directives: [CabeceraComponent,PieComponent,ROUTER_DIRECTIVES],
   pipes: []
@@ -90,7 +92,7 @@ export class MainApp implements OnInit {
 
  ngOnInit(){
    /* pruebaUsuario */
-   this._Usuarioservice.getUsuario().subscribe(
+   this._Usuarioservice.getUsuarios().subscribe(
      usuario => this.usuario = usuario,
      error => console.log(error)
    )

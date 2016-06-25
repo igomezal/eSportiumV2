@@ -1,6 +1,4 @@
-System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http', 'rxjs/Rx'], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
+System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http', 'rxjs/Rx'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -31,7 +29,7 @@ System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http',
             Usuario = (function () {
                 function Usuario(id, name, fecha, genero, apuestas, //esto se obtendra de los ids de los partdos de la BDD
                     finalizados, //esto se obtendra de los ids de los partdos de la BDD
-                    karma, foto, clave, correo, admin) {
+                    karma, foto, clave, correo, admin, roles) {
                     this.id = id;
                     this.name = name;
                     this.fecha = fecha;
@@ -43,9 +41,10 @@ System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http',
                     this.clave = clave;
                     this.correo = correo;
                     this.admin = admin;
+                    this.roles = roles;
                 }
                 return Usuario;
-            }());
+            })();
             exports_1("Usuario", Usuario);
             UsuarioService = (function () {
                 function UsuarioService(http) {
@@ -177,9 +176,9 @@ System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http',
                     __metadata('design:paramtypes', [http_1.Http])
                 ], UsuarioService);
                 return UsuarioService;
-            }());
+            })();
             exports_1("UsuarioService", UsuarioService);
         }
     }
 });
-//# sourceMappingURL=usuario.interface.js.map
+//# sourceMappingURL=../../../app/usuario.interface.js.map

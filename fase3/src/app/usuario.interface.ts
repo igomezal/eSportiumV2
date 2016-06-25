@@ -18,7 +18,8 @@ export class Usuario {
     public foto: string,
     public clave: string,
     public correo: string,
-    public admin: boolean
+    public admin: boolean,
+    public roles: string[]
   ){}
 
 }

@@ -22,6 +22,7 @@
   "files": [
     "app.ts",
     "app/aboutus.component.ts",
+    "app/admin/add_apuesta.component.ts",
     "app/admin/add_equipo.component.ts",
     "app/admin/add_juegos.component.ts",
     "app/admin/add_jugador.component.ts",
@@ -38,6 +39,8 @@
     "app/admin/gestion_partidos.component.ts",
     "app/admin/gestion_usuarios.component.ts",
     "app/admin/home.component.ts",
+    "app/apuesta.interface.ts",
+    "app/apuestaUser.interface.ts",
     "app/cabecera.component.ts",
     "app/contacto.component.ts",
     "app/editarpefil.component.ts",

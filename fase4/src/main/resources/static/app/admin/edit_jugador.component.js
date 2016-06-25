@@ -1,6 +1,4 @@
-System.register(['angular2/core', '../equipo.interface', '../jugador.interface', 'angular2/router', '../usuario.interface'], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
+System.register(['angular2/core', '../equipo.interface', '../jugador.interface', 'angular2/router', '../usuario.interface'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -112,9 +110,9 @@ System.register(['angular2/core', '../equipo.interface', '../jugador.interface',
                     __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, equipo_interface_1.EquipoService, jugador_interface_1.JugadorService, router_1.Router, router_1.RouteParams])
                 ], editJugadorComponent);
                 return editJugadorComponent;
-            }());
+            })();
             exports_1("editJugadorComponent", editJugadorComponent);
         }
     }
 });
-//# sourceMappingURL=edit_jugador.component.js.map
+//# sourceMappingURL=../../../../app/admin/edit_jugador.component.js.map

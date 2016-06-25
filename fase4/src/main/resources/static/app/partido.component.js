@@ -1,6 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './partido.service', './usuario.interface', './cabecera.component', './equipo.interface', './login.service'], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
+System.register(['angular2/core', 'angular2/router', './partido.service', './usuario.interface', './cabecera.component', './equipo.interface', './login.service', './apuestaUser.interface', './apuesta.interface'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10,7 +8,7 @@ System.register(['angular2/core', 'angular2/router', './partido.service', './usu
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, partido_service_1, usuario_interface_1, cabecera_component_1, equipo_interface_1, login_service_1;
+    var core_1, router_1, partido_service_1, usuario_interface_1, cabecera_component_1, equipo_interface_1, login_service_1, apuestaUser_interface_1, apuesta_interface_1;
     var PartidoComponent;
     return {
         setters:[
@@ -34,16 +32,24 @@ System.register(['angular2/core', 'angular2/router', './partido.service', './usu
             },
             function (login_service_1_1) {
                 login_service_1 = login_service_1_1;
+            },
+            function (apuestaUser_interface_1_1) {
+                apuestaUser_interface_1 = apuestaUser_interface_1_1;
+            },
+            function (apuesta_interface_1_1) {
+                apuesta_interface_1 = apuesta_interface_1_1;
             }],
         execute: function() {
             PartidoComponent = (function () {
-                function PartidoComponent(_router, _usuarioService, _partidoService, _routeParams, loginService, _equipoService) {
+                function PartidoComponent(_router, _usuarioService, _partidoService, _routeParams, loginService, _equipoService, _ApuestaUserService, _ApuestaService) {
                     this._router = _router;
                     this._usuarioService = _usuarioService;
                     this._partidoService = _partidoService;
                     this._routeParams = _routeParams;
                     this.loginService = loginService;
                     this._equipoService = _equipoService;
+                    this._ApuestaUserService = _ApuestaUserService;
+                    this._ApuestaService = _ApuestaService;
                 }
                 PartidoComponent.prototype.ngOnInit = function () {
                     var _this = this;
@@ -75,14 +81,13 @@ System.register(['angular2/core', 'angular2/router', './partido.service', './usu
                     this._usuarioService.getSesion().subscribe(function (usuario) { return _this.sesion = usuario; }, function (error) { return console.log(error); });
                     this._usuarioService.getAdmin().subscribe(function (admin) { return _this.admin = admin; }, function (error) { return console.log(error); });
                 };
-                PartidoComponent.prototype.apostar = function (apuesta) {
-                    if (this.sesion.karma >= apuesta) {
-                        this._usuarioService.apostar(this.partido, apuesta);
-                    }
-                    else {
+                /*apostar(apuesta:number){
+                    if(this.sesion.karma>=apuesta){
+                        this._usuarioService.apostar(this.partido,apuesta);
+                    }else{
                         alert("Karma insuficiente");
                     }
-                };
+                }*/
                 PartidoComponent.prototype.logInSpring = function (event, user, pass) {
                     event.preventDefault();
                     this.loginService.logIn(user, pass).subscribe(function (user) { return console.log(user); }, function (error) { return alert("Invalid user or password"); });
@@ -90,18 +95,31 @@ System.register(['angular2/core', 'angular2/router', './partido.service', './usu
                 PartidoComponent.prototype.logOutSpring = function () {
                     this.loginService.logOut().subscribe(function (response) { }, function (error) { return console.log("Error when trying to log out: " + error); });
                 };
+                PartidoComponent.prototype.anadirAp = function (partido, equipo, karma) {
+                    var _this = this;
+                    console.log(partido, equipo, karma);
+                    if (karma == "" || karma == "0") {
+                        alert("Es necesario apostar una cantidad minima de karma");
+                    }
+                    else {
+                        this._ApuestaService.anadirApuesta(partido, equipo, karma).subscribe(function (response) {
+                            alert("Apostado " + karma + " karma al equipo " + equipo.nombre);
+                            _this._ApuestaUserService.anadirApuestaUser(response, _this.loginService.user).subscribe(function (response) { console.log("usuario con apuesta añadido"); });
+                        });
+                    }
+                };
                 PartidoComponent = __decorate([
                     core_1.Component({
                         selector: 'partido-concreto',
                         templateUrl: 'app/partido.component.html',
                         directives: [cabecera_component_1.CabeceraComponent]
                     }), 
-                    __metadata('design:paramtypes', [router_1.Router, usuario_interface_1.UsuarioService, partido_service_1.PartidoService, router_1.RouteParams, login_service_1.LoginService, equipo_interface_1.EquipoService])
+                    __metadata('design:paramtypes', [router_1.Router, usuario_interface_1.UsuarioService, partido_service_1.PartidoService, router_1.RouteParams, login_service_1.LoginService, equipo_interface_1.EquipoService, apuestaUser_interface_1.ApuestaUserService, apuesta_interface_1.ApuestaService])
                 ], PartidoComponent);
                 return PartidoComponent;
-            }());
+            })();
             exports_1("PartidoComponent", PartidoComponent);
         }
     }
 });
-//# sourceMappingURL=partido.component.js.map
+//# sourceMappingURL=../../../app/partido.component.js.map

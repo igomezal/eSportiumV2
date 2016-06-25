@@ -16,7 +16,7 @@ export class indexComponent {
   arrayDirtemp: Partido[];
   arrayFintemp: Partido[];
 
-  partidos: Partido[];
+  partidos : Partido[] = [];
 
   constructor (private _Partidoservice: PartidoService, private _JuegoService: JuegoService, private _router:Router){}
 
@@ -47,7 +47,8 @@ export class indexComponent {
   setPruebasDir(s: String){
    this.arrayDirtemp = [];
    for(var i =0; i<this.partidos.length; i++){
-     if(this.partidos[i].juego == s){
+     if(this.partidos[i].juego.siglas == s){
+       console.log("DEBUGG");
        if(this.partidos[i].estado == 'Directo'){
          this.arrayDirtemp.push(this.partidos[i]);
        }
@@ -58,7 +59,7 @@ export class indexComponent {
   setPruebasProx(s: String){
    this.arrayFintemp = [];
    for(var i =0; i<this.partidos.length; i++){
-     if(this.partidos[i].juego == s){
+     if(this.partidos[i].juego.siglas == s){
        if(this.partidos[i].estado == 'Proximamente'){
          this.arrayFintemp.push(this.partidos[i]);
        }

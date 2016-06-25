@@ -29,6 +29,7 @@ export class finalizadosComponent {
    this._JuegoService.getJuegos().subscribe(
      juegos => this.juegos = juegos
    );
+
    this._Partidoservice.getPartidos().subscribe(
      partidos => this.arrayDirtemp = partidos,
      error => console.log(error)
@@ -42,7 +43,7 @@ export class finalizadosComponent {
   setPruebasDir(s: String){
    this.arrayDirtemp = [];
    for(var i =0; i<this.partidos.length; i++){
-     if(this.partidos[i].juego == s){
+     if(this.partidos[i].juego.siglas == s){
        if(this.partidos[i].estado == 'Finalizado'){
          this.arrayDirtemp.push(this.partidos[i]);
        }
