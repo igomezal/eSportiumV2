@@ -53,7 +53,7 @@ export class UsuarioService{
 
   addUsuario(name:string,correo:string, genero:string , password: string){
     let url = "https://localhost:8443/usuarios/"
-    let item = {id: null, name, correo, genero, passwordHash: password, karma:5000, roles:["ROLE_USER"]};
+    let item = {id: null, name, correo, genero, estaeslacont: password, karma:5000, roles:["ROLE_USER"]};
     let body = JSON.stringify(item);
     let headers = new Headers({
       'Content-Type': 'application/json'
@@ -118,16 +118,39 @@ export class UsuarioService{
     //Ahora se hace la petición a la tabla de Relación ApuestaUser
 
     let url2 = "https://localhost:8443/apuestaUser/";
-    let item2 = {id: null, partido, } // Cómo paso el usuario?? importo el loginService y loginService.user
+    let item2 = {id: null, partido, }; // Cómo paso el usuario?? importo el loginService y loginService.user
   }
 
-  editarDatos(constraseña:string,foto:string,correo:string,genero:string){
-    this.sesion.clave = constraseña;
-    this.sesion.foto = foto;
-    this.sesion.correo = correo;
-    this.sesion.genero = genero;
-    this.almacenarSesion(this.sesion);
-    return withObserver(this.sesion);
+  quitarKarma(user : Usuario, karma: number){
+    let url ="https://localhost:8443/usuarios/"+user.id;
+    let item = {id: user.id, name: user.name, karma: (user.karma-karma), fecha: user.fecha, foto: user.foto, genero:user.genero, correo: user.correo };
+    let body = JSON.stringify(item);
+    let headers = new Headers({
+      'Content-Type':'application/json'
+    });
+    let options = new RequestOptions({headers});
+     return this.http.put(url, body, options)
+      .map(response => response.json())
+      .catch(error => this.manejarError(error));
+  }
+
+  editarDatos(user: Usuario, nombre: string, contraseña:string,foto:string,correo:string,genero:string){
+      let url ="https://localhost:8443/usuarios/"+user.id;
+      let contra;
+      if (contraseña == "") {
+        contra = null;
+      }else{
+        contra = contraseña;
+      }
+      let item = {id: user.id, name: nombre, karma: user.karma, fecha: user.fecha, foto: foto, genero:genero, correo: correo, estaeslacont: contra};
+      let body = JSON.stringify(item);
+      let headers = new Headers({
+        'Content-Type':'application/json'
+      });
+      let options = new RequestOptions({headers});
+       return this.http.put(url, body, options)
+        .map(response => response.json())
+        .catch(error => this.manejarError(error));
   }
 
   almacenarSesion(sesion:Usuario){ //Almacenamos los cambios realizados en la sesion
@@ -152,7 +175,6 @@ export class UsuarioService{
     }else{
       alert("Casi la lías");
     }
-
   }
 
   getKarma(usuario: Usuario){

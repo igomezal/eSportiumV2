@@ -1,6 +1,8 @@
 package es.urjc.code.daw.eSportium.user;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -56,23 +58,38 @@ public class UserController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public User nuevoUser(@RequestBody User user){
 		User nUser = user;
-		nUser.setPasswordHash(new BCryptPasswordEncoder().encode(user.getPasswordHash()));
+		nUser.setPasswordHash(new BCryptPasswordEncoder().encode(user.getEstaeslacont()));
+		nUser.setEstaeslacont(null);
+		List<String> l = new ArrayList<String>();
+		l.add("ROLE_USER");
+		nUser.setRoles(l);
 		repository.save(nUser);
 		
 		return user;
 	}
 	
-	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<User> actualizaUser(@PathVariable long id, @RequestBody User updatedUser){
+	@RequestMapping(value ="/{id}", method = RequestMethod.PUT)
+	public ResponseEntity<User> editarUser(@PathVariable long id, @RequestBody User updatedUser){
 		User user = repository.findOne(id);
-		if(user != null){
-			updatedUser.setId(id);
+		if (user != null){
+			if(updatedUser.getEstaeslacont() == (null)){
+				//El usuario quiere editar pero sin cambiar la contraseña
+				updatedUser.setId(id);
+				updatedUser.setRoles(user.getRoles());
+				updatedUser.setPasswordHash(user.getPasswordHash());
+			}else{
+				//El usuario quiere editar además cambiando la contraseña
+				updatedUser.setId(id);
+				updatedUser.setPasswordHash(new BCryptPasswordEncoder().encode(updatedUser.getEstaeslacont()));
+				updatedUser.setRoles(user.getRoles());
+				updatedUser.setEstaeslacont(null);
+				
+			}
 			repository.save(updatedUser);
 			return new ResponseEntity<>(updatedUser, HttpStatus.OK);
 		}else{
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
-	
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)

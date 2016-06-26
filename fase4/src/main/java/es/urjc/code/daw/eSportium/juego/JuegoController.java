@@ -66,6 +66,7 @@ public class JuegoController {
 		if (juego != null) {
 
 			updatedJuego.setId(id);
+			updatedJuego.setPartidos(juego.getPartidos());
 			repository.save(updatedJuego);
 
 			return new ResponseEntity<>(updatedJuego, HttpStatus.OK);

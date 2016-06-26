@@ -14,26 +14,31 @@
                         </div>
                         <form>
                           <div class="form-group">
+                              <label for="Nombre">Nueva Nombre</label>
+                              <input type="text" class="form-control" id="Nombre" placeholder={{_LoginService.user.name}} #Nombre>
+                          </div>
+                          <div class="form-group">
                               <label for="Foto">Nueva Fotografía</label>
-                              <input type="text" class="form-control" id="Foto" placeholder={{sesion.foto}} #Foto>
+                              <input type="text" class="form-control" id="Foto" placeholder={{_LoginService.user.foto}} #Foto>
                           </div>
                             <div class="form-group">
                                 <label for="InputEmail1">Género</label>
-                                <input type="text" class="form-control" id="InputGenero" placeholder={{sesion.genero}} #Genero>
+                                <input type="text" class="form-control" id="InputGenero" placeholder={{_LoginService.user.genero}} #Genero>
                             </div>
                             <div class="form-group">
                                 <label for="InputEmail1">Correo</label>
-                                <input type="email" class="form-control" id="InputEmail1" placeholder={{sesion.correo}} #Correo>
+                                <input type="email" class="form-control" id="InputEmail1" placeholder={{_LoginService.user.correo}} #Correo>
                             </div>
                             <div id="divPassword" class="form-group">
+                                <label for="InputPassword1">*Si no quieres cambiar tu contraseña deja estos campos en blanco*</label>
                                 <label for="InputPassword1">Contraseña</label>
-                                <input type="password" class="form-control" id="InputPassword1" placeholder={{sesion.clave}} #Clave1>
+                                <input type="password" class="form-control" id="InputPassword1" #Clave1>
                             </div>
                             <div id="divConfirm" class="form-group">
                                 <label for="InputPasswordConfirm1">Confirma tu contraseña</label>
                                 <input type="password" class="form-control" id="InputPasswordConfirm1" placeholder="Repita la nueva Contraseña" #Clave2>
                             </div>
-                            <button type="button" class="btn btn-primary" id="btnEnviar" (click)="actualizar(Foto.value,Correo.value,Genero.value,Clave1.value,Clave2.value); Foto.value = ''; Correo.value = ''; Genero.value = ''; Clave1.value = ''; Clave2.value = ''; ">Enviar</button>
+                            <button type="button" class="btn btn-primary" id="btnEnviar" (click)="editar(_LoginService.user,Nombre.value,Clave1.value, Clave2.value, Foto.value,Correo.value,Genero.value); Nombre.value = ''; Foto.value = ''; Correo.value = ''; Genero.value = ''; Clave1.value = ''; Clave2.value = ''; ">Enviar</button>
                         </form>
 
                     </div>

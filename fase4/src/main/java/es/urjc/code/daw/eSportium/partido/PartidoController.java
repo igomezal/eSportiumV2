@@ -67,6 +67,7 @@ public class PartidoController {
 		if (partido != null) {
 
 			updatedPartido.setId(id);
+			updatedPartido.setApuestas(partido.getApuestas());
 			repository.save(updatedPartido);
 
 			return new ResponseEntity<>(updatedPartido, HttpStatus.OK);

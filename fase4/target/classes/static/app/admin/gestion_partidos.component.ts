@@ -61,15 +61,31 @@ export class gestionPartidosComponent {
   }
 
   finalizarPartido(partido: Partido){
-    this._Partidoservice.terminarPartido(partido);
+    this._Partidoservice.terminarPartido(partido).subscribe(
+      response => this.refresh(),
+      error => console.log(error)
+    );
   }
 
   aDirecto(partido:Partido){
-    this._Partidoservice.pasarADirecto(partido);
+    this._Partidoservice.pasarADirecto(partido).subscribe(
+      response => this.refresh(),
+      error => console.log(error)
+    );
   }
 
   borrarPartido(partido: Partido){
-    this._Partidoservice.eliminarPartido(partido.id);
+    this._Partidoservice.eliminarPartido(partido.id).subscribe(
+      response => this.refresh(),
+      error => console.log(error)
+    );
+  }
+
+  private refresh(){
+    this._Partidoservice.getPartidos().subscribe(
+      partidos => this.partidos = partidos,
+      error => console.log(error)
+    );
   }
 
 }

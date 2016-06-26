@@ -64,6 +64,8 @@ public class User {
 	@JsonView(BasicAtt.class)
 	private String correo;
 	
+	private String estaeslacont;
+	
 	@JsonIgnore
 	//@JsonView(BasicAtt.class)
 	private String passwordHash;
@@ -79,6 +81,14 @@ public class User {
 		this.passwordHash = new BCryptPasswordEncoder().encode(password);
 		this.roles = new ArrayList<>(Arrays.asList(roles));
 		this.karma = karma;
+	}
+
+	public String getEstaeslacont() {
+		return estaeslacont;
+	}
+
+	public void setEstaeslacont(String estaeslacont) {
+		this.estaeslacont = estaeslacont;
 	}
 
 	public String getName() {

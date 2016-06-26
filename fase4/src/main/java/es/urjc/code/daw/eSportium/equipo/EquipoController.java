@@ -66,6 +66,7 @@ public class EquipoController {
 		if (equipo != null) {
 
 			updatedEquipo.setId(id);
+			updatedEquipo.setJugadores(equipo.getJugadores());
 			repository.save(updatedEquipo);
 
 			return new ResponseEntity<>(updatedEquipo, HttpStatus.OK);

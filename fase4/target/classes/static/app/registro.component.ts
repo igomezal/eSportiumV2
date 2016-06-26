@@ -18,7 +18,9 @@ export class RegistroComponent{
 
     add(nombre:string,correo:string,genero:string, clave:string, clave2:string){
         if(clave === clave2){
-            this._usuarioService.addUsuario(nombre,correo,genero,clave);
+            this._usuarioService.addUsuario(nombre,correo,genero,clave).subscribe(
+              respuesta => alert("Usuario creado correctamente")
+            );
             this.exito = true;
             this.error = false;
         }else{

@@ -1,4 +1,6 @@
-System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http', 'rxjs/Rx'], function(exports_1) {
+System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http', 'rxjs/Rx'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -44,7 +46,7 @@ System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http',
                     this.roles = roles;
                 }
                 return Usuario;
-            })();
+            }());
             exports_1("Usuario", Usuario);
             UsuarioService = (function () {
                 function UsuarioService(http) {
@@ -72,7 +74,7 @@ System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http',
                 UsuarioService.prototype.addUsuario = function (name, correo, genero, password) {
                     var _this = this;
                     var url = "https://localhost:8443/usuarios/";
-                    var item = { id: null, name: name, correo: correo, genero: genero, passwordHash: password, karma: 5000, roles: ["ROLE_USER"] };
+                    var item = { id: null, name: name, correo: correo, genero: genero, estaeslacont: password, karma: 5000, roles: ["ROLE_USER"] };
                     var body = JSON.stringify(item);
                     var headers = new http_1.Headers({
                         'Content-Type': 'application/json'
@@ -134,13 +136,38 @@ System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http',
                     var url2 = "https://localhost:8443/apuestaUser/";
                     var item2 = { id: null, partido: partido, }; // Cómo paso el usuario?? importo el loginService y loginService.user
                 };
-                UsuarioService.prototype.editarDatos = function (constraseña, foto, correo, genero) {
-                    this.sesion.clave = constraseña;
-                    this.sesion.foto = foto;
-                    this.sesion.correo = correo;
-                    this.sesion.genero = genero;
-                    this.almacenarSesion(this.sesion);
-                    return utils_1.withObserver(this.sesion);
+                UsuarioService.prototype.quitarKarma = function (user, karma) {
+                    var _this = this;
+                    var url = "https://localhost:8443/usuarios/" + user.id;
+                    var item = { id: user.id, name: user.name, karma: (user.karma - karma), fecha: user.fecha, foto: user.foto, genero: user.genero, correo: user.correo };
+                    var body = JSON.stringify(item);
+                    var headers = new http_1.Headers({
+                        'Content-Type': 'application/json'
+                    });
+                    var options = new http_1.RequestOptions({ headers: headers });
+                    return this.http.put(url, body, options)
+                        .map(function (response) { return response.json(); })
+                        .catch(function (error) { return _this.manejarError(error); });
+                };
+                UsuarioService.prototype.editarDatos = function (user, nombre, contraseña, foto, correo, genero) {
+                    var _this = this;
+                    var url = "https://localhost:8443/usuarios/" + user.id;
+                    var contra;
+                    if (contraseña == "") {
+                        contra = null;
+                    }
+                    else {
+                        contra = contraseña;
+                    }
+                    var item = { id: user.id, name: nombre, karma: user.karma, fecha: user.fecha, foto: foto, genero: genero, correo: correo, estaeslacont: contra };
+                    var body = JSON.stringify(item);
+                    var headers = new http_1.Headers({
+                        'Content-Type': 'application/json'
+                    });
+                    var options = new http_1.RequestOptions({ headers: headers });
+                    return this.http.put(url, body, options)
+                        .map(function (response) { return response.json(); })
+                        .catch(function (error) { return _this.manejarError(error); });
                 };
                 UsuarioService.prototype.almacenarSesion = function (sesion) {
                     for (var i = 0; i < this.usuario.length; i++) {
@@ -176,9 +203,9 @@ System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http',
                     __metadata('design:paramtypes', [http_1.Http])
                 ], UsuarioService);
                 return UsuarioService;
-            })();
+            }());
             exports_1("UsuarioService", UsuarioService);
         }
     }
 });
-//# sourceMappingURL=../../../app/usuario.interface.js.map
+//# sourceMappingURL=usuario.interface.js.map

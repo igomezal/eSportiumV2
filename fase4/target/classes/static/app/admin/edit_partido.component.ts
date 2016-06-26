@@ -3,6 +3,7 @@ import {ROUTER_DIRECTIVES,Router} from 'angular2/router';
 import {Partido, PartidoService} from '../partido.service';
 import {RouteParams} from 'angular2/router';
 import {Juego, JuegoService} from '../juego.interface';
+import {Equipo} from '../equipo.interface';
 import {UsuarioService} from '../usuario.interface';
 
 @Component({
@@ -30,8 +31,8 @@ export class editPartidoComponent{
     );
   }
 
-  editar(juego:string, eq1: string, logo1:string, porcen1:string, eq2: string, logo2:string, porcen2:string, url: string, rondas: string, estado: string){
-    if( juego == "" || eq1 == "" || logo1 == "" || porcen1 == "" ||eq2 == "" || logo2 == "" || porcen2 =="" || url == "" || rondas == "" || estado ==""){
+  editar(juego:Juego, eq1: Equipo, logo1:string, porcen1:string, eq2: Equipo, logo2:string, porcen2:string, url: string, rondas: string, estado: string){
+    if( juego == null || eq1 == null || logo1 == "" || porcen1 == "" ||eq2 == null || logo2 == "" || porcen2 =="" || url == "" || rondas == "" || estado ==""){
       alert("Datos incorrectos");
     }else{
       let id = +this._routeParams.get('id');

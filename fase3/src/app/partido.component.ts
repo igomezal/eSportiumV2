@@ -34,7 +34,9 @@ export class PartidoComponent implements OnInit {
     ngOnInit(){
         let id = +this._routeParams.get('id');
         this._partidoService.getPartido(id).subscribe(
-            partido => this.partido = partido,
+            partido => {this.partido = partido;
+              this.getEquipo1(this.partido.equipo1.id);
+              this.getEquipo2(this.partido.equipo2.id)},
             error => console.log(error)
         );
 
@@ -120,14 +122,17 @@ export class PartidoComponent implements OnInit {
 
    anadirAp(partido: Partido, equipo: Equipo, karma: string) {
      console.log(partido,equipo,karma);
-     if (karma == "" || karma == "0") {
+     if (karma == "" || karma == "0" || this.loginService.user.karma < parseInt(karma)) {
        alert("Es necesario apostar una cantidad minima de karma")
      }else{
        this._ApuestaService.anadirApuesta(partido,equipo,karma).subscribe(
          response => {
            alert("Apostado "+ karma +" karma al equipo "+equipo.nombre);
            this._ApuestaUserService.anadirApuestaUser(response,this.loginService.user).subscribe(
-             response => { console.log("usuario con apuesta añadido");}
+             response => { console.log("usuario con apuesta añadido");
+             this._usuarioService.quitarKarma(this.loginService.user, parseInt(karma)).subscribe(
+               response => { console.log("Karma quitado");}
+             );}
          );}
        );
      }
