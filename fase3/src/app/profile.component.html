@@ -15,7 +15,7 @@
 
                 <ul class="list-group">
                     <li class="list-group-item">Miembro desde {{loginService.user.fecha}}</li>
-                    <li class="list-group-item">Número de apuestas realizadas: {{loginService.user.name}} FALTA</li>
+                    <li class="list-group-item">Número de apuestas realizadas: {{apuestas.length}}</li>
                     <li class="list-group-item">Género: {{loginService.user.genero}}</li>
                 </ul>
 
@@ -50,7 +50,7 @@
                                                         <img class="img-responsive" alt="{{bet.apuesta.partido.equipo2.nombre}}" src="img/{{bet.apuesta.partido.equipo2.logo}}.png">
                                                     </div>
                                                 </div>
-                                                <p class="blue-text">Apostado: {{bet.apuesta.partido.estado}} </p>
+                                                <p class="blue-text">Apostado: {{bet.apuesta.equipo.nombre}} </p>
                                             </a>
                                         </div>
                                     </div>
@@ -59,7 +59,7 @@
                             </div>
                             <div class="tab-pane fade darker-text" id="terminadas">
                               <!--<h3 *ngIf="sesion.finalizados.length === 0"  class="alert alert-warning"><center>No hay apuestas activas.</center></h3>-->
-                                <h3 class="alert alert-warning"><center>No hay apuestas activas.</center></h3>
+                                <!--<h3 class="alert alert-warning"><center>No hay apuestas activas.</center></h3>-->
                                 <div class="row">
                                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" *ngFor="#bet of apuestas" (click)="goToPartido(bet.apuesta.partido)">
                                         <div *ngIf="bet.apuesta.partido.estado == 'Finalizado'">
@@ -72,7 +72,7 @@
                                                         <img class="img-responsive" alt="{{bet.apuesta.partido.equipo2.nombre}}" src="img/{{bet.apuesta.partido.equipo2.logo}}.png">
                                                     </div>
                                                 </div>
-                                                <p class="blue-text">Apostado : {{bet.apuesta.partido.estado}}</p>
+                                                <p class="blue-text">Apostado : {{bet.apuesta.equipo.nombre}}</p>
                                             </a>
                                         </div>
                                     </div>
