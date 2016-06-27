@@ -3,6 +3,7 @@ import {Usuario,UsuarioService} from './usuario.interface';
 import {PartidoService,Partido} from './partido.service';
 import {ROUTER_DIRECTIVES,Router} from 'angular2/router';
 import {LoginService} from './login.service';
+import {ApuestaUserService, ApuestaUser} from './apuestaUser.interface';
 
 @Component({
   selector: 'profile',
@@ -14,16 +15,25 @@ export class Perfil {
   sesion:Usuario;
   partidoAc:Partido[];
   partidoFin:Partido[];
+  apuestas : ApuestaUser[];
   constructor (private _usuarioService: UsuarioService, private _partidoService: PartidoService,
-    private _router:Router, private loginService: LoginService){}
+    private _router:Router, private loginService: LoginService, private _ApuestaUserService: ApuestaUserService){}
 
-  /*ngOnInit(){
+  ngOnInit(){
+    /*
     this._usuarioService.getSesion().subscribe(
       usuario =>this.sesion = usuario,
       error => console.log(error)
     );
     this.getPartido();
-  }*/
+  */
+  this.apuestas = [];
+  this._ApuestaUserService.obtenerApuestasUser(this.loginService.user.id).subscribe(
+    apuesta => this.apuestas = apuesta,
+    error => console.log(error)
+  )
+  console.log(this.apuestas);   
+  }
 
   getApuesta(id:number){
     for(var i = 0; i<this.sesion.apuestas.length; i++){

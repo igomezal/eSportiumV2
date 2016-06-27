@@ -29,7 +29,7 @@ public class PartidoController {
 	@Autowired
 	private PartidoRepository repository;
 	
-	interface PartidoListView extends Partido.BasicAtt, Partido.JuegoAtt, Juego.BasicAtt, Equipo.BasicAtt, Apuesta.BasicAtt{}
+	interface PartidoListView extends Partido.BasicAtt, Partido.JuegoAtt, Juego.BasicAtt, Equipo.BasicAtt, Apuesta.EquipoAtt, Apuesta.PartidoAtt, Apuesta.BasicAtt{}
 
 	@JsonView(PartidoListView.class)
 	@RequestMapping(value = "/", method = RequestMethod.GET)

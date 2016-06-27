@@ -60,6 +60,4 @@ public class ApuestaUser {
 		this.user = user;
 	}
 
-	
-
 }

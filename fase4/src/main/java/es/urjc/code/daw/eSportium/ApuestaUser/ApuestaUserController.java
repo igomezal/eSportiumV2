@@ -18,6 +18,9 @@ import com.fasterxml.jackson.annotation.JsonView;
 
 import es.urjc.code.daw.eSportium.apuesta.Apuesta;
 import es.urjc.code.daw.eSportium.user.User;
+import es.urjc.code.daw.eSportium.equipo.Equipo;
+import es.urjc.code.daw.eSportium.partido.Partido;
+
 
 @RestController
 @RequestMapping("/apuestaUser")
@@ -28,7 +31,7 @@ public class ApuestaUserController {
 	@Autowired
 	private ApuestaUserRepository repository;
 	
-	interface ApuestaUserBasicAtt extends ApuestaUser.BasicAtt, User.BasicAtt{}
+	interface ApuestaUserBasicAtt extends ApuestaUser.BasicAtt, Apuesta.BasicAtt, Apuesta.EquipoAtt, Apuesta.PartidoAtt, Equipo.BasicAtt, Equipo.JugadoresAtt, Partido.BasicAtt, Partido.JuegoAtt, User.BasicAtt{}
 	
 	@JsonView(ApuestaUserBasicAtt.class)
 	@RequestMapping(value = "/", method = RequestMethod.GET)

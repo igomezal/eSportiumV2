@@ -1,6 +1,7 @@
 import {Component,Injectable,AfterContentInit} from 'angular2/core';
 import {Usuario,UsuarioService} from './usuario.interface';
 import {ROUTER_DIRECTIVES,Router} from 'angular2/router';
+import {LoginService} from './login.service';
 
 @Component({
   selector: 'editarperfil',
@@ -12,13 +13,28 @@ export class editarPerfil {
   sesion:Usuario;
   private exito:boolean = false;
   private error:boolean = false;
-  constructor (private _usuarioService: UsuarioService, private _router:Router){}
+  constructor (private _usuarioService: UsuarioService, private _router:Router, private _LoginService: LoginService){}
 
   ngOnInit(){
     this._usuarioService.getSesion().subscribe(
       usuario =>this.sesion = usuario,
       error => console.log(error)
     );
+  }
+
+  editar(user: Usuario, nombre: string, Clave1:string, Clave2: string, foto:string,correo:string,genero:string){
+    let contra = Clave1;
+    if (Clave1 == "" && Clave2 == ""){
+      //Sin cambiar la contraseña
+      contra = null;
+    }
+    if( Clave1 != Clave2) {
+      alert("Las contraseñas no coinciden");
+    }else{
+      this._usuarioService.editarDatos(user, nombre, contra, foto, correo, genero).subscribe(
+        response => alert("Usuario editado correctamente")
+      )
+    }
   }
 
   actualizar(foto:string,correo:string,genero:string,clave1:string, clave2:string){
@@ -43,11 +59,11 @@ export class editarPerfil {
             generov = genero;
           }
           if(clave1==""){
-            clavev = this.sesion.clave; 
+            clavev = this.sesion.clave;
           }else{
             clavev = clave1;
           }
-          this._usuarioService.editarDatos(clavev,fotov,correov,generov);
+          this._usuarioService.editarDatos(this._LoginService.user, "cosas", clavev,fotov,correov,generov);
           this.exito = true;
           this.error = false;
       }else{

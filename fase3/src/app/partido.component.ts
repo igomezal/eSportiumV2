@@ -123,7 +123,7 @@ export class PartidoComponent implements OnInit {
    anadirAp(partido: Partido, equipo: Equipo, karma: string) {
      console.log(partido,equipo,karma);
      if (karma == "" || karma == "0" || this.loginService.user.karma < parseInt(karma)) {
-       alert("Es necesario apostar una cantidad minima de karma")
+       alert("Es necesario apostar una cantidad de karma entre 0 y "+ this.loginService.user.karma )
      }else{
        this._ApuestaService.anadirApuesta(partido,equipo,karma).subscribe(
          response => {

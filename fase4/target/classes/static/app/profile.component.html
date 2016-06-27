@@ -39,18 +39,18 @@
                               <!--<h3 *ngIf="sesion.apuestas.length === 0"  class="alert alert-warning"><center>No hay apuestas activas.</center></h3>-->
                                 <h3 class="alert alert-warning"><center>No hay apuestas activas.</center></h3>
                                 <div class="row">
-                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" *ngFor="#partido of partidoAc" (click)="goToPartido(partido)">
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" *ngFor="#bet of apuestas" (click)="goToApuesta(partido)">
                                         <div>
                                             <a>
                                                 <div class="row">
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                                        <img class="img-responsive" alt="{{partido.eq1}}" src="img/{{partido.logo1}}.png">
+                                                        <img class="img-responsive" alt="{{bet.apuesta.partido.equipo1.nombre}}" src="img/{{bet.apuesta.partido.equipo1.logo}}.png">
                                                     </div>
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                                        <img class="img-responsive" alt="{{partido.eq2}}" src="img/{{partido.logo2}}.png">
+                                                        <img class="img-responsive" alt="{{bet.apuesta.partido.equipo2.nombre}}" src="img/{{bet.apuesta.partido.equipo2.logo}}.png">
                                                     </div>
                                                 </div>
-                                                <p class="blue-text">Apostado: </p>
+                                                <p class="blue-text">Apostado: {{bet.apuesta.equipo.nombre}} </p>
                                             </a>
                                         </div>
                                     </div>
