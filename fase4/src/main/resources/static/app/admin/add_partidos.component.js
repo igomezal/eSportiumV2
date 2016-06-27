@@ -1,4 +1,6 @@
-System.register(['angular2/core', '../partido.service', '../juego.interface', 'angular2/router', '../equipo.interface', '../usuario.interface', 'rxjs/Observable', 'rxjs/Rx'], function(exports_1) {
+System.register(['angular2/core', '../partido.service', '../juego.interface', 'angular2/router', '../equipo.interface', '../usuario.interface', 'rxjs/Observable', 'rxjs/Rx'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -51,9 +53,9 @@ System.register(['angular2/core', '../partido.service', '../juego.interface', 'a
                     this._JuegoService.getJuegos().subscribe(function (juegos) { return _this.juegos = juegos; }, function (error) { return console.log(error); });
                     this._EquipoService.getEquipos().subscribe(function (equipos) { return _this.equipos = equipos; }, function (error) { return console.log(error); });
                 };
-                addPartidoComponent.prototype.anadirP = function (logo1, porcen1, logo2, porcen2, url, condicion, estado) {
+                addPartidoComponent.prototype.anadirP = function (porcen1, porcen2, url, condicion, estado) {
                     var _this = this;
-                    if (this.juegoN == 0 || this.equipo1N == 0 || logo1 == "" || porcen1 == "" || this.equipo2N == 0 || logo2 == "" || porcen2 == "" || url == "" || condicion == "" || estado == "") {
+                    if (this.juegoN == 0 || this.equipo1N == 0 || porcen1 == "" || this.equipo2N == 0 || porcen2 == "" || url == "" || condicion == "" || estado == "") {
                         alert("Datos incorrectos");
                     }
                     else {
@@ -107,9 +109,9 @@ System.register(['angular2/core', '../partido.service', '../juego.interface', 'a
                     __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, partido_service_1.PartidoService, juego_interface_1.JuegoService, router_1.Router, equipo_interface_1.EquipoService])
                 ], addPartidoComponent);
                 return addPartidoComponent;
-            })();
+            }());
             exports_1("addPartidoComponent", addPartidoComponent);
         }
     }
 });
-//# sourceMappingURL=../../../../app/admin/add_partidos.component.js.map
+//# sourceMappingURL=add_partidos.component.js.map

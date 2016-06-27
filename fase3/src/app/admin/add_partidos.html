@@ -56,8 +56,6 @@
                                     <select class="form-control" [(ngModel)]="equipo1N" (change)="seleccion1N($event.target.value)" style="width: 100%;">
                                         <option *ngFor="#equipo of equipos; #ind = index" [value]=equipo.id>{{equipo.nombre}}</option>
                                     </select>
-                                    <label>URL imagen equipo 1:</label>
-                                    <input type="url" class="form-control" #logo1 placeholder="Introduce la url al logo del equipo">
                                     <label>Porcentaje inicial equipo 1</label>
                                     <div class="input-group">
                                         <input type="number" class="form-control" #porcen1 placeholder="Porcentaje">
@@ -67,8 +65,6 @@
                                     <select class="form-control" [(ngModel)]="equipo2N" (change)="seleccion2N($event.target.value)" style="width: 100%;">
                                         <option *ngFor="#equipo of equipos; #ind = index" [value]=equipo.id>{{equipo.nombre}}</option>
                                     </select>
-                                    <label>URL imagen equipo 2:</label>
-                                    <input type="url" class="form-control" #logo2 placeholder="Introduce la url al logo del equipo">
                                     <label>Porcentaje inicial equipo 2</label>
                                     <div class="input-group">
                                         <input type="number" class="form-control" #porcen2 placeholder="Porcentaje">
@@ -94,20 +90,9 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <label>Datos adicionales equipo 1:</label>
-
-                                    <form>
-                                        <textarea class="textarea" placeholder="Añade información adicional sobre los equipos" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-                                    </form>
-
-                                    <label>Datos adicionales equipo 2:</label>
-
-                                    <form>
-                                        <textarea class="textarea" placeholder="Añade información adicional sobre los equipos" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-                                    </form>
                                     <br>
                                     <div class="pull-right">
-                                        <button type="button" (click)="anadirP(logo1.value, porcen1.value, logo2.value, porcen2.value, url.value, condicion.value, estado.value)" class="btn btn-success">Publicar</button>
+                                        <button type="button" (click)="anadirP(porcen1.value, porcen2.value, url.value, condicion.value, estado.value)" class="btn btn-success">Publicar</button>
                                         <button type="button" (click)="gotoGestionPartidos()" class="btn btn-danger">Eliminar</button>
                                     </div>
                                 </div>

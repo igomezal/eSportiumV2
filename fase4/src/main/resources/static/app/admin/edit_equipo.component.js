@@ -1,4 +1,6 @@
-System.register(['angular2/core', '../equipo.interface', 'angular2/router', '../usuario.interface'], function(exports_1) {
+System.register(['angular2/core', '../equipo.interface', 'angular2/router', '../usuario.interface', '../login.service', "../multipart-upload/multipart-item", "../multipart-upload/multipart-uploader"], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +10,7 @@ System.register(['angular2/core', '../equipo.interface', 'angular2/router', '../
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, equipo_interface_1, router_1, usuario_interface_1;
+    var core_1, equipo_interface_1, router_1, usuario_interface_1, login_service_1, multipart_item_1, multipart_uploader_1;
     var editEquipoComponent;
     return {
         setters:[
@@ -23,29 +25,72 @@ System.register(['angular2/core', '../equipo.interface', 'angular2/router', '../
             },
             function (usuario_interface_1_1) {
                 usuario_interface_1 = usuario_interface_1_1;
+            },
+            function (login_service_1_1) {
+                login_service_1 = login_service_1_1;
+            },
+            function (multipart_item_1_1) {
+                multipart_item_1 = multipart_item_1_1;
+            },
+            function (multipart_uploader_1_1) {
+                multipart_uploader_1 = multipart_uploader_1_1;
             }],
         execute: function() {
             editEquipoComponent = (function () {
-                function editEquipoComponent(_UsuarioService, _EquipoService, _routeParams, _Router) {
+                function editEquipoComponent(_UsuarioService, _EquipoService, _routeParams, _Router, _LoginService) {
                     this._UsuarioService = _UsuarioService;
                     this._EquipoService = _EquipoService;
                     this._routeParams = _routeParams;
                     this._Router = _Router;
+                    this._LoginService = _LoginService;
+                    //Subir imágenes
+                    this.description = this._LoginService.user.name;
+                    this.images = [];
                 }
                 editEquipoComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     var id = +this._routeParams.get('id');
                     this._EquipoService.getEquipo(id).subscribe(function (equipo) { return _this.equipo = equipo; }, function (error) { return console.log(Error); });
                 };
-                editEquipoComponent.prototype.editar = function (nombre, logo) {
-                    if (nombre == "" || logo == "") {
+                //Imagenes
+                editEquipoComponent.prototype.selectFile = function ($event) {
+                    this.file = $event.target.files[0];
+                    console.debug("Selected file: " + this.file.name + " type:" + this.file.size + " size:" + this.file.size);
+                };
+                editEquipoComponent.prototype.upload = function () {
+                    console.debug("Uploading file...");
+                    if (this.file == null || this.description == null) {
+                        console.error("You have to select a file and set a description.");
+                        return;
+                    }
+                    var formData = new FormData();
+                    formData.append("description", this.description);
+                    formData.append("file", this.file);
+                    var multipartItem = new multipart_item_1.MultipartItem(new multipart_uploader_1.MultipartUploader({ url: '/equipos/image/upload/' + (this.equipo.id) }));
+                    multipartItem.formData = formData;
+                    multipartItem.callback = function (data, status, headers) {
+                        if (status == 200) {
+                            console.debug("File has been uploaded");
+                        }
+                        else {
+                            console.error("Error uploading file");
+                        }
+                    };
+                    multipartItem.upload();
+                    //return this.images;
+                };
+                //Fin imágenes
+                editEquipoComponent.prototype.editar = function (nombre) {
+                    var _this = this;
+                    if (nombre == "") {
                         alert("Datos incorrectos");
                     }
                     else {
-                        this._EquipoService.editar(this.equipo.id, nombre, logo).subscribe(function (respuesta) { return alert("Equipo editado correctamente"); });
-                        this.gotoGestionEquipos();
-                        ;
-                        this.gotoGestionEquipos();
+                        this._EquipoService.editar(this.equipo.id, nombre, "logotemp").subscribe(function (respuesta) {
+                            alert("Equipo editado correctamente");
+                            console.log(respuesta);
+                            _this.upload();
+                        });
                     }
                 };
                 editEquipoComponent.prototype.eliminar = function (id) {
@@ -86,12 +131,12 @@ System.register(['angular2/core', '../equipo.interface', 'angular2/router', '../
                         selector: 'editEquipo',
                         templateUrl: 'app/admin/edit_equipo.html'
                     }), 
-                    __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, equipo_interface_1.EquipoService, router_1.RouteParams, router_1.Router])
+                    __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, equipo_interface_1.EquipoService, router_1.RouteParams, router_1.Router, login_service_1.LoginService])
                 ], editEquipoComponent);
                 return editEquipoComponent;
-            })();
+            }());
             exports_1("editEquipoComponent", editEquipoComponent);
         }
     }
 });
-//# sourceMappingURL=../../../../app/admin/edit_equipo.component.js.map
+//# sourceMappingURL=edit_equipo.component.js.map

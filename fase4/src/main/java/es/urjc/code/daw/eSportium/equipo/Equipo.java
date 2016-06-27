@@ -52,16 +52,18 @@ public class Equipo{
 	public String getNombre() {
 		return nombre;
 	}
-	public void setEstado(String nombre) {
+	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
 	public String getLogo() {
 		return logo;
 	}
+
 	public void setLogo(String logo) {
 		this.logo = logo;
 	}
-	
+
 	public List<Jugador> getJugadores() {
 		return this.jugadores;
 	}

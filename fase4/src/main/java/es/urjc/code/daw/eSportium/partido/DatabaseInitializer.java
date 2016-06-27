@@ -41,8 +41,8 @@ public class DatabaseInitializer implements CommandLineRunner {
 
 		Juego j1 = new Juego("League of Legends","lol");
 		
-		Equipo equipo = new Equipo("Fnatic","fnaticLogo");
-		Equipo equipo2 = new Equipo("X6","x6tenceLogo");
+		Equipo equipo = new Equipo("Fnatic","fnaticlogo");
+		Equipo equipo2 = new Equipo("X6","x6tencelogo");
 		
 		Jugador jug1 = new Jugador("Rekkles","ADC",9);
 		jug1.setEquipo(equipo);

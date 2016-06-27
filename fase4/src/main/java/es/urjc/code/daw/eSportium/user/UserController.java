@@ -1,8 +1,16 @@
 package es.urjc.code.daw.eSportium.user;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,16 +18,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.annotation.JsonView;
 
 import es.urjc.code.daw.eSportium.apuesta.Apuesta;
+import es.urjc.code.daw.eSportium.equipo.Image;
 import es.urjc.code.daw.eSportium.juego.Juego;
 import es.urjc.code.daw.eSportium.partido.Partido;
 import es.urjc.code.daw.eSportium.partido.PartidoController;
@@ -27,6 +39,8 @@ import es.urjc.code.daw.eSportium.partido.PartidoController;
 @RestController
 @RequestMapping("/usuarios")
 public class UserController {
+	
+	private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "files");
 
 	private static final Logger log = LoggerFactory.getLogger(PartidoController.class);
 
@@ -43,14 +57,51 @@ public class UserController {
 	
 	@JsonView(UserListView.class)
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public ResponseEntity<User> getUser(@PathVariable long id){
+	public ResponseEntity<User> getUser(@PathVariable long id/*, HttpServletResponse res*/) throws FileNotFoundException, IOException {
 		log.info("Get User {}", id);
 		
 		User user = repository.findOne(id);
 		if(user != null){
+		
+		
+		/*NOTE: The url format "/images/{fileName:.+}" avoid Spring MVC remove file extension.
+		
+		//@RequestMapping("/images/{fileName:.+}")
+		//public void handleFileDownload(@PathVariable String fileName, HttpServletResponse res)
+				//throws FileNotFoundException, IOException {
+			
+			Path image = FILES_FOLDER.resolve(user.getFoto());
+
+			if (Files.exists(image)) {
+				res.setContentType("image/jpeg");
+				res.setContentLength((int) image.toFile().length());
+				FileCopyUtils.copy(Files.newInputStream(image), res.getOutputStream());
+				
+			} else {
+				res.sendError(404, "File" + user.getFoto() + "(" + image.toAbsolutePath() + ") does not exist");
+			}
+		//}*/
+		
 			return new ResponseEntity<>(user, HttpStatus.OK);
 		}else{
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+	}
+	
+	//Get de imagen
+	@RequestMapping("/images/{fileName:.+}")
+	public void handleFileDownload(@PathVariable String fileName, HttpServletResponse res)
+			throws FileNotFoundException, IOException {
+		
+		Path image = FILES_FOLDER.resolve(fileName);
+
+		if (Files.exists(image)) {
+			res.setContentType("image/jpeg");
+			res.setContentLength((int) image.toFile().length());
+			FileCopyUtils.copy(Files.newInputStream(image), res.getOutputStream());
+			
+		} else {
+			res.sendError(404, "File" + fileName + "(" + image.toAbsolutePath() + ") does not exist");
 		}
 	}
 	
@@ -68,20 +119,76 @@ public class UserController {
 		return user;
 	}
 	
-	@RequestMapping(value ="/{id}", method = RequestMethod.PUT)
-	public ResponseEntity<User> editarUser(@PathVariable long id, @RequestBody User updatedUser){
+	//Subimos la imagen
+	@RequestMapping(value = "/image/upload/{id}", method = RequestMethod.POST)
+	public User handleFileUpload(@PathVariable long id, @RequestParam MultipartFile file) throws IOException {
 		User user = repository.findOne(id);
 		if (user != null){
+			if (file.isEmpty()) {
+				throw new RuntimeException("The file is empty");
+			}
+
+			if (!Files.exists(FILES_FOLDER)) {
+				Files.createDirectories(FILES_FOLDER);
+			}
+
+			String fileName = "image-" + user.getName() + ".jpg";
+			File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
+			file.transferTo(uploadedFile);
+			user.setFoto(fileName);
+			
+			repository.save(user);
+
+			Image image = new Image("hello", fileName);
+
+			
+
+			return user;
+		}else{
+			return null;
+		}
+	}
+	
+	@RequestMapping(value ="/{id}", method = RequestMethod.PUT)
+	public ResponseEntity<User> editarUser(@PathVariable long id, @RequestBody User updatedUser)throws IOException{
+		User user = repository.findOne(id);
+		if (user != null){
+			updatedUser.setId(id);
+			updatedUser.setRoles(user.getRoles());
+			updatedUser.setFoto(user.getFoto());
+			
+			
+				/*@RequestMapping(value = "/image/upload", method = RequestMethod.POST)
+				//public String handleFileUpload(@RequestParam String description, @RequestParam MultipartFile file) throws IOException {
+
+				if (file.isEmpty()) {
+					throw new RuntimeException("The file is empty");
+				}
+
+				if (!Files.exists(FILES_FOLDER)) {
+					Files.createDirectories(FILES_FOLDER);
+				}
+
+				String fileName = "image-" + user.getName() + ".png";
+				File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
+				file.transferTo(uploadedFile);
+				
+				updatedUser.setFoto(fileName);
+
+				//Image image = new Image(description, fileName);
+
+				//images.add(image);
+
+				//return fileName;
+				//}*/
+			
+			
 			if(updatedUser.getEstaeslacont() == (null)){
 				//El usuario quiere editar pero sin cambiar la contraseña
-				updatedUser.setId(id);
-				updatedUser.setRoles(user.getRoles());
 				updatedUser.setPasswordHash(user.getPasswordHash());
 			}else{
 				//El usuario quiere editar además cambiando la contraseña
-				updatedUser.setId(id);
 				updatedUser.setPasswordHash(new BCryptPasswordEncoder().encode(updatedUser.getEstaeslacont()));
-				updatedUser.setRoles(user.getRoles());
 				updatedUser.setEstaeslacont(null);
 				
 			}

@@ -1,4 +1,6 @@
-System.register(['angular2/core', './usuario.interface', 'angular2/router', './login.service'], function(exports_1) {
+System.register(['angular2/core', './usuario.interface', 'angular2/router', './login.service', "./multipart-upload/multipart-item", "./multipart-upload/multipart-uploader", './Image.service'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +10,7 @@ System.register(['angular2/core', './usuario.interface', 'angular2/router', './l
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, usuario_interface_1, router_1, login_service_1;
+    var core_1, usuario_interface_1, router_1, login_service_1, multipart_item_1, multipart_uploader_1, Image_service_1;
     var editarPerfil;
     return {
         setters:[
@@ -23,22 +25,70 @@ System.register(['angular2/core', './usuario.interface', 'angular2/router', './l
             },
             function (login_service_1_1) {
                 login_service_1 = login_service_1_1;
+            },
+            function (multipart_item_1_1) {
+                multipart_item_1 = multipart_item_1_1;
+            },
+            function (multipart_uploader_1_1) {
+                multipart_uploader_1 = multipart_uploader_1_1;
+            },
+            function (Image_service_1_1) {
+                Image_service_1 = Image_service_1_1;
             }],
         execute: function() {
             editarPerfil = (function () {
-                function editarPerfil(_usuarioService, _router, _LoginService) {
+                function editarPerfil(_usuarioService, _router, _LoginService, _ImageService) {
                     this._usuarioService = _usuarioService;
                     this._router = _router;
                     this._LoginService = _LoginService;
+                    this._ImageService = _ImageService;
+                    //Subir imágenes
+                    this.description = this._LoginService.user.name;
+                    this.images = [];
                     this.exito = false;
                     this.error = false;
                 }
                 editarPerfil.prototype.ngOnInit = function () {
-                    var _this = this;
-                    this._usuarioService.getSesion().subscribe(function (usuario) { return _this.sesion = usuario; }, function (error) { return console.log(error); });
+                    /*this._usuarioService.getSesion().subscribe(
+                      usuario =>this.sesion = usuario,
+                      error => console.log(error)
+                    );*/
+                    /*this._ImageService.loadImages().subscribe(
+                      images => this.images = images,
+                      error => console.log(error)
+                    );*/
                 };
+                //Imagenes
+                editarPerfil.prototype.selectFile = function ($event) {
+                    this.file = $event.target.files[0];
+                    console.debug("Selected file: " + this.file.name + " type:" + this.file.size + " size:" + this.file.size);
+                };
+                editarPerfil.prototype.upload = function () {
+                    console.debug("Uploading file...");
+                    if (this.file == null || this.description == null) {
+                        console.error("You have to select a file and set a description.");
+                        return;
+                    }
+                    var formData = new FormData();
+                    formData.append("description", this.description);
+                    formData.append("file", this.file);
+                    var multipartItem = new multipart_item_1.MultipartItem(new multipart_uploader_1.MultipartUploader({ url: '/usuarios/image/upload/' + this._LoginService.user.id }));
+                    multipartItem.formData = formData;
+                    multipartItem.callback = function (data, status, headers) {
+                        if (status == 200) {
+                            console.debug("File has been uploaded");
+                        }
+                        else {
+                            console.error("Error uploading file");
+                        }
+                    };
+                    multipartItem.upload();
+                    return this.images;
+                };
+                //Fin imágenes
                 editarPerfil.prototype.editar = function (user, nombre, Clave1, Clave2, foto, correo, genero) {
                     var contra = Clave1;
+                    this.upload();
                     if (Clave1 == "" && Clave2 == "") {
                         //Sin cambiar la contraseña
                         contra = null;
@@ -47,7 +97,9 @@ System.register(['angular2/core', './usuario.interface', 'angular2/router', './l
                         alert("Las contraseñas no coinciden");
                     }
                     else {
-                        this._usuarioService.editarDatos(user, nombre, contra, foto, correo, genero).subscribe(function (response) { return alert("Usuario editado correctamente"); });
+                        this._usuarioService.editarDatos(user, nombre, contra, foto, correo, genero).subscribe(function (response) {
+                            alert("Usuario editado correctamente");
+                        });
                     }
                 };
                 editarPerfil.prototype.actualizar = function (foto, correo, genero, clave1, clave2) {
@@ -100,12 +152,12 @@ System.register(['angular2/core', './usuario.interface', 'angular2/router', './l
                         selector: 'editarperfil',
                         templateUrl: 'app/editarperfil.component.html'
                     }), 
-                    __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, router_1.Router, login_service_1.LoginService])
+                    __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, router_1.Router, login_service_1.LoginService, Image_service_1.ImageService])
                 ], editarPerfil);
                 return editarPerfil;
-            })();
+            }());
             exports_1("editarPerfil", editarPerfil);
         }
     }
 });
-//# sourceMappingURL=../../../app/editarpefil.component.js.map
+//# sourceMappingURL=editarpefil.component.js.map

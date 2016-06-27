@@ -13,21 +13,28 @@
                             <strong>¡Cuidado!</strong> Las contraseñas no coinciden.
                         </div>
                         <form>
+                      		<div class="form-group">
+                      			<label for="exampleInputFile">Selecciona tu imagen</label> <input type="file"
+                      				(change)="selectFile($event)">
+                      		</div>
+                      		<!-- <button type="submit" class="btn btn-default" (click)="upload()">Submit</button> -->
+                      	</form>
+                        <form>
                           <div class="form-group">
                               <label for="Nombre">Nueva Nombre</label>
-                              <input type="text" class="form-control" id="Nombre" placeholder={{_LoginService.user.name}} #Nombre>
+                              <input type="text" class="form-control" id="Nombre" value={{_LoginService.user.name}} #Nombre>
                           </div>
                           <div class="form-group">
                               <label for="Foto">Nueva Fotografía</label>
-                              <input type="text" class="form-control" id="Foto" placeholder={{_LoginService.user.foto}} #Foto>
+                              <input type="text" class="form-control" id="Foto" value={{_LoginService.user.foto}} #Foto>
                           </div>
                             <div class="form-group">
                                 <label for="InputEmail1">Género</label>
-                                <input type="text" class="form-control" id="InputGenero" placeholder={{_LoginService.user.genero}} #Genero>
+                                <input type="text" class="form-control" id="InputGenero" value={{_LoginService.user.genero}} #Genero>
                             </div>
                             <div class="form-group">
                                 <label for="InputEmail1">Correo</label>
-                                <input type="email" class="form-control" id="InputEmail1" placeholder={{_LoginService.user.correo}} #Correo>
+                                <input type="email" class="form-control" id="InputEmail1" value={{_LoginService.user.correo}} #Correo>
                             </div>
                             <div id="divPassword" class="form-group">
                                 <label for="InputPassword1">*Si no quieres cambiar tu contraseña deja estos campos en blanco*</label>

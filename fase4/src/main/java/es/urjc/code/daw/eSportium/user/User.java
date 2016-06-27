@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import es.urjc.code.daw.eSportium.apuesta.Apuesta;
+import es.urjc.code.daw.eSportium.equipo.Image;
 
 /**
  * This is the entity to store in database user information. It contains the

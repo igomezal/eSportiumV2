@@ -1,22 +1,24 @@
 
   <br>
-  <div class="container-fluid">
+  <div class="container-fluid" *ngIf="usuario">
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-5 col-sm-offset-0 col-xs-offset-4">
                 <div class="panel panel-default">
-                    <div class="panel-body"><img class="img-responsive" src="../img/loginService.user.foto"></div>
+                    <div class="panel-body">
+                      <img *ngIf="usuario.foto != null" class="img-responsive" src="usuarios/images/{{usuario.foto}}">
+                      <img *ngIf="usuario.foto == null" class="img-responsive" src="../img/icon-profile.png">
+                    </div>
                 </div>
             </div>
             <div class="col-md-9 col-sm-9 col-xs-12">
                 <div class="left-title">
-                    <h2 class="big-title montserrat-text white-text">{{loginService.user.name}} <span class="glyphicon glyphicon-edit
-" aria-hidden="true" (click)="goToEditar()"></span></h2>
+                    <h2 class="big-title montserrat-text white-text">{{usuario.name}} <span class="glyphicon glyphicon-edit" aria-hidden="true" (click)="goToEditar()"></span></h2>
                 </div>
 
                 <ul class="list-group">
-                    <li class="list-group-item">Miembro desde {{loginService.user.fecha}}</li>
+                    <li class="list-group-item">Miembro desde {{usuario.fecha}}</li>
                     <li class="list-group-item">Número de apuestas realizadas: {{apuestas.length}}</li>
-                    <li class="list-group-item">Género: {{loginService.user.genero}}</li>
+                    <li class="list-group-item">Género: {{usuario.genero}}</li>
                 </ul>
 
             </div>
@@ -87,7 +89,7 @@
                 <div class="left-title no-margin-bottom">
                     <h3 class="montserrat-text white-text uppercase">Karma</h3>
                 </div>
-                <div class="karma btn-success no-pointer">{{loginService.user.karma}} puntos</div>
+                <div class="karma btn-success no-pointer">{{usuario.karma}} puntos</div>
                 <div class="left-title no-margin-bottom">
                     <h3 class="montserrat-text white-text uppercase">Comentarios</h3>
                 </div>

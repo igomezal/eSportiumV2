@@ -44,11 +44,11 @@
                                           <h3>Edita los datos del equipo {{equipo.nombre}}</h3>
                                             <label>Nombre </label>
                                             <input type="text" class="form-control" #nombre value="{{equipo.nombre}}">
-                                            <label>Siglas </label>
-                                            <input type="text" class="form-control" #logo value="{{equipo.logo}}">
+                                            <label for="exampleInputFile">Selecciona el logo del equipo</label> <input type="file"
+                                      				(change)="selectFile($event)">
                                             <br>
                                             <div class="pull-right">
-                                                <button type="button" (click)="editar(nombre.value, logo.value)" class="btn btn-success">Editar</button>
+                                                <button type="button" (click)="editar(nombre.value)" class="btn btn-success">Editar</button>
                                                 <button type="button" (click)="eliminar(equipo.id)" class="btn btn-danger">Eliminar</button>
                                             </div>
                                         </div>

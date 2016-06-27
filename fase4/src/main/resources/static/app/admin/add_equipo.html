@@ -52,6 +52,8 @@
                                     <input type="text" class="form-control" #nombre placeholder="Introduce el nombre del equipo">
                                     <label>Logo del equipo:</label>
                                     <input type="text" class="form-control" #logo placeholder="Logo">
+                                    <label for="exampleInputFile">Selecciona el logo del equipo</label> <input type="file"
+                              				(change)="selectFile($event)">
                                     <br>
                                     <div class="pull-right">
                                         <button type="button" (click)="anadir(nombre.value,logo.value)" class="btn btn-success">Publicar</button>
@@ -71,6 +73,6 @@
 
                             </div>
                         </div>
-                    </div>       
-                    
+                    </div>
+
 </div>

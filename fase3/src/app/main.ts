@@ -38,6 +38,7 @@ import {addEquipoComponent} from './admin/add_equipo.component';
 import {gestionJugadoresComponent} from './admin/gestion_jugadores.component';
 import {addJugadorComponent} from './admin/add_jugador.component';
 import {editJugadorComponent} from './admin/edit_jugador.component';
+import {ImageService} from './Image.service';
 
 import {Http, HTTP_PROVIDERS} from 'angular2/http';
 
@@ -46,7 +47,7 @@ import {LoginService} from './login.service';
 
 @Component({
   selector: 'main-app',
-  providers: [ROUTER_PROVIDERS,PartidoService,JugadorService,JuegoService,/* pruebaUsuario */UsuarioService, HTTP_PROVIDERS, LoginService, EquipoService,ApuestaService,ApuestaUserService],
+  providers: [ROUTER_PROVIDERS,PartidoService,JugadorService,JuegoService,/* pruebaUsuario */UsuarioService, HTTP_PROVIDERS, LoginService, EquipoService,ApuestaService,ApuestaUserService, ImageService],
   templateUrl: 'app/main.html', //Esto antes era index.html  de fuera de app
   directives: [CabeceraComponent,PieComponent,ROUTER_DIRECTIVES],
   pipes: []

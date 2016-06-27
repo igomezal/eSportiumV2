@@ -1,4 +1,6 @@
-System.register(['angular2/core', 'rxjs/Observable', './apuesta.interface', './usuario.interface', 'angular2/http', 'rxjs/Rx'], function(exports_1) {
+System.register(['angular2/core', 'rxjs/Observable', './apuesta.interface', './usuario.interface', 'angular2/http', 'rxjs/Rx'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -43,7 +45,7 @@ System.register(['angular2/core', 'rxjs/Observable', './apuesta.interface', './u
                     __metadata('design:paramtypes', [Number, apuesta_interface_1.Apuesta, usuario_interface_1.Usuario])
                 ], ApuestaUser);
                 return ApuestaUser;
-            })();
+            }());
             exports_1("ApuestaUser", ApuestaUser);
             ApuestaUserService = (function () {
                 function ApuestaUserService(http) {
@@ -109,9 +111,9 @@ System.register(['angular2/core', 'rxjs/Observable', './apuesta.interface', './u
                     __metadata('design:paramtypes', [http_1.Http])
                 ], ApuestaUserService);
                 return ApuestaUserService;
-            })();
+            }());
             exports_1("ApuestaUserService", ApuestaUserService);
         }
     }
 });
-//# sourceMappingURL=../../../app/apuestaUser.interface.js.map
+//# sourceMappingURL=apuestaUser.interface.js.map
