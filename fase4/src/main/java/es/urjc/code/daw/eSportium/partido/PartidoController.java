@@ -29,9 +29,8 @@ public class PartidoController {
 	@Autowired
 	private PartidoRepository repository;
 	
-	interface PartidoListView extends Partido.BasicAtt, Partido.JuegoAtt, Juego.BasicAtt, Equipo.BasicAtt, Apuesta.BasicAtt{}
-	interface ApuestaPartidoListView extends Partido.ApuestaAtt, Apuesta.EquipoAtt, Apuesta.BasicAtt, Equipo.BasicAtt{}
-	
+	interface PartidoListView extends Partido.BasicAtt, Partido.JuegoAtt, Juego.BasicAtt, Equipo.BasicAtt, Apuesta.EquipoAtt, Apuesta.PartidoAtt, Apuesta.BasicAtt{}
+
 	@JsonView(PartidoListView.class)
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public Collection<Partido> getPartidos() {
@@ -43,20 +42,6 @@ public class PartidoController {
 	public ResponseEntity<Partido> getPartido(@PathVariable long id) {
 
 		log.info("Get partido {}", id);
-
-		Partido partido = repository.findOne(id);
-		if (partido != null) {
-			return new ResponseEntity<>(partido, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-		}
-	}
-	
-	@JsonView(ApuestaPartidoListView.class)
-	@RequestMapping(value = "apuestas/{id}", method = RequestMethod.GET)
-	public ResponseEntity<Partido> getApuestaPartido(@PathVariable long id) {
-
-		log.info("Get apuestas del partido {}", id);
 
 		Partido partido = repository.findOne(id);
 		if (partido != null) {
