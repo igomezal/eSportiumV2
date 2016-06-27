@@ -50,7 +50,6 @@ System.register(['angular2/core', './usuario.interface', './partido.service', 'a
                   */
                     this.apuestas = [];
                     this._ApuestaUserService.obtenerApuestasUser(this.loginService.user.id).subscribe(function (apuesta) { return _this.apuestas = apuesta; }, function (error) { return console.log(error); });
-                    console.log(this.apuestas);
                 };
                 Perfil.prototype.getApuesta = function (id) {
                     for (var i = 0; i < this.sesion.apuestas.length; i++) {
