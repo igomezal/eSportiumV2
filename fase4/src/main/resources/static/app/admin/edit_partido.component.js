@@ -1,4 +1,6 @@
-System.register(['angular2/core', 'angular2/router', '../partido.service', '../juego.interface', '../usuario.interface'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', '../partido.service', '../juego.interface', '../equipo.interface', '../usuario.interface'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', '../partido.service', '../j
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, partido_service_1, router_2, juego_interface_1, usuario_interface_1;
+    var core_1, router_1, partido_service_1, router_2, juego_interface_1, equipo_interface_1, usuario_interface_1;
     var editPartidoComponent;
     return {
         setters:[
@@ -25,31 +27,51 @@ System.register(['angular2/core', 'angular2/router', '../partido.service', '../j
             function (juego_interface_1_1) {
                 juego_interface_1 = juego_interface_1_1;
             },
+            function (equipo_interface_1_1) {
+                equipo_interface_1 = equipo_interface_1_1;
+            },
             function (usuario_interface_1_1) {
                 usuario_interface_1 = usuario_interface_1_1;
             }],
         execute: function() {
             editPartidoComponent = (function () {
-                function editPartidoComponent(_UsuarioService, _Router, _Partidoservice, _JuegoService, _routeParams) {
+                function editPartidoComponent(_UsuarioService, _Router, _Partidoservice, _JuegoService, _routeParams, _EquipoService) {
                     this._UsuarioService = _UsuarioService;
                     this._Router = _Router;
                     this._Partidoservice = _Partidoservice;
                     this._JuegoService = _JuegoService;
                     this._routeParams = _routeParams;
+                    this._EquipoService = _EquipoService;
+                    this.equipo1N = 0;
+                    this.juegoN = 0;
+                    this.equipo2N = 0;
                 }
                 editPartidoComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     var id = +this._routeParams.get('id');
                     this._Partidoservice.getPartido(id).subscribe(function (partido) { return _this.partido = partido; }, function (error) { return console.log(error); });
                     this._JuegoService.getJuegos().subscribe(function (juegos) { return _this.juegos = juegos; }, function (error) { return console.log(error); });
+                    this._EquipoService.getEquipos().subscribe(function (equipos) { return _this.equipos = equipos; }, function (error) { return console.log(error); });
                 };
-                editPartidoComponent.prototype.editar = function (juego, eq1, logo1, porcen1, eq2, logo2, porcen2, url, rondas, estado) {
-                    if (juego == null || eq1 == null || logo1 == "" || porcen1 == "" || eq2 == null || logo2 == "" || porcen2 == "" || url == "" || rondas == "" || estado == "") {
+                editPartidoComponent.prototype.seleccion1N = function (equipo1N) {
+                    this.equipo1N = equipo1N;
+                    console.log(equipo1N);
+                };
+                editPartidoComponent.prototype.seleccion2N = function (equipo2N) {
+                    this.equipo2N = equipo2N;
+                    console.log(equipo2N);
+                };
+                editPartidoComponent.prototype.seleccionj = function (juegoN) {
+                    this.juegoN = juegoN;
+                    console.log(juegoN);
+                };
+                editPartidoComponent.prototype.editar = function (porcen1, porcen2, url, rondas, estado) {
+                    if (this.juegoN == 0 || this.equipo1N == 0 || this.equipo2N == 0 || porcen1 == "" || porcen2 == "" || url == "" || rondas == "" || estado == "") {
                         alert("Datos incorrectos");
                     }
                     else {
                         var id = +this._routeParams.get('id');
-                        this._Partidoservice.editarPartido(id, juego, eq1, logo1, porcen1, eq2, logo2, porcen2, url, rondas, estado);
+                        this._Partidoservice.editarPartido(id, this.juegoN, this.equipo1N, porcen1, this.equipo2N, porcen2, url, rondas, estado).subscribe(function (response) { return alert("Partido editado"); });
                     }
                 };
                 editPartidoComponent.prototype.eliminar = function () {
@@ -90,12 +112,12 @@ System.register(['angular2/core', 'angular2/router', '../partido.service', '../j
                         selector: ' editPartido',
                         templateUrl: 'app/admin/edit_partido.html'
                     }), 
-                    __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, router_1.Router, partido_service_1.PartidoService, juego_interface_1.JuegoService, router_2.RouteParams])
+                    __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, router_1.Router, partido_service_1.PartidoService, juego_interface_1.JuegoService, router_2.RouteParams, equipo_interface_1.EquipoService])
                 ], editPartidoComponent);
                 return editPartidoComponent;
-            })();
+            }());
             exports_1("editPartidoComponent", editPartidoComponent);
         }
     }
 });
-//# sourceMappingURL=../../../../app/admin/edit_partido.component.js.map
+//# sourceMappingURL=edit_partido.component.js.map

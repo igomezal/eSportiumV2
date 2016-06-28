@@ -55,6 +55,7 @@ public class UserController {
 		return repository.findAll();
 	}
 	
+	
 	@JsonView(UserListView.class)
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<User> getUser(@PathVariable long id/*, HttpServletResponse res*/) throws FileNotFoundException, IOException {
@@ -89,6 +90,7 @@ public class UserController {
 	}
 	
 	//Get de imagen
+	@JsonView(UserListView.class)
 	@RequestMapping("/images/{fileName:.+}")
 	public void handleFileDownload(@PathVariable String fileName, HttpServletResponse res)
 			throws FileNotFoundException, IOException {
@@ -105,6 +107,7 @@ public class UserController {
 		}
 	}
 	
+	@JsonView(UserListView.class)
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	public User nuevoUser(@RequestBody User user){
@@ -120,6 +123,7 @@ public class UserController {
 	}
 	
 	//Subimos la imagen
+	@JsonView(UserListView.class)
 	@RequestMapping(value = "/image/upload/{id}", method = RequestMethod.POST)
 	public User handleFileUpload(@PathVariable long id, @RequestParam MultipartFile file) throws IOException {
 		User user = repository.findOne(id);
@@ -149,6 +153,7 @@ public class UserController {
 		}
 	}
 	
+	@JsonView(UserListView.class)
 	@RequestMapping(value ="/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<User> editarUser(@PathVariable long id, @RequestBody User updatedUser)throws IOException{
 		User user = repository.findOne(id);
@@ -199,6 +204,7 @@ public class UserController {
 		}
 	}
 	
+	@JsonView(UserListView.class)
 	@RequestMapping(value = "/doAdmin/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<User> hacerAdmin(@PathVariable long id){
 		User user = repository.findOne(id);
@@ -219,6 +225,7 @@ public class UserController {
 		}
 	}
 	
+	@JsonView(UserListView.class)
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<User> borraUser(@PathVariable long id){
 		if(repository.exists(id)){

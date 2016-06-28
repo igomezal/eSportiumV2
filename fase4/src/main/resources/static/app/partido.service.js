@@ -1,4 +1,6 @@
-System.register(['angular2/core', './jugador.interface', 'rxjs/Observable', './equipo.interface', './juego.interface', 'angular2/http', 'rxjs/Rx'], function(exports_1) {
+System.register(['angular2/core', './jugador.interface', 'rxjs/Observable', './equipo.interface', './juego.interface', 'angular2/http', 'rxjs/Rx'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -58,7 +60,7 @@ System.register(['angular2/core', './jugador.interface', 'rxjs/Observable', './e
                     __metadata('design:paramtypes', [Number, equipo_interface_1.Equipo, equipo_interface_1.Equipo, juego_interface_1.Juego, String, String, String, String, String])
                 ], Partido);
                 return Partido;
-            })();
+            }());
             exports_1("Partido", Partido);
             PartidoService = (function () {
                 function PartidoService(service, http) {
@@ -101,6 +103,7 @@ System.register(['angular2/core', './jugador.interface', 'rxjs/Observable', './e
                 PartidoService.prototype.anadirPartido = function (juego, eq1, porcen1, eq2, porcen2, url, rondas, estado) {
                     var _this = this;
                     var ganan;
+                    var dif = Math.floor(Math.random() * (450 - 90 + 1)) + 90;
                     if (porcen1 > porcen2) {
                         ganan = 'eq1';
                     }
@@ -108,7 +111,7 @@ System.register(['angular2/core', './jugador.interface', 'rxjs/Observable', './e
                         ganan = 'eq2';
                     }
                     var url1 = "https://localhost:8443/partidos/";
-                    var item = { id: null, juego: { id: juego }, equipo1: { id: eq1 }, equipo2: { id: eq2 }, url: url, rondas: rondas, estado: estado };
+                    var item = { id: null, juego: { id: juego }, equipo1: { id: eq1 }, equipo2: { id: eq2 }, url: url, rondas: rondas, estado: estado, diferencia: dif };
                     var body = JSON.stringify(item);
                     var headers = new http_1.Headers({
                         'Content-Type': 'application/json'
@@ -118,7 +121,7 @@ System.register(['angular2/core', './jugador.interface', 'rxjs/Observable', './e
                         .map(function (response) { return response.json(); })
                         .catch(function (error) { return _this.manejarError(error); });
                 };
-                PartidoService.prototype.editarPartido = function (id, juego, eq1, logo1, porcen1, eq2, logo2, porcen2, url, rondas, estado) {
+                PartidoService.prototype.editarPartido = function (id, juego, eq1, porcen1, eq2, porcen2, url, rondas, estado) {
                     var _this = this;
                     var url1 = "https://localhost:8443/partidos/" + id;
                     var ganan;
@@ -128,7 +131,7 @@ System.register(['angular2/core', './jugador.interface', 'rxjs/Observable', './e
                     else {
                         ganan = 'eq2';
                     }
-                    var item = { id: id, estado: estado, ganando: ganan, diferencia: "100", url: url, rondas: rondas, juego: juego, equipo1: eq1, equipo2: eq2 };
+                    var item = { id: id, estado: estado, ganando: ganan, diferencia: "100", url: url, rondas: rondas, juego: { id: juego }, equipo1: { id: eq1 }, equipo2: { id: eq2 } };
                     var body = JSON.stringify(item);
                     var headers = new http_1.Headers({
                         'Content-Type': 'application/json'
@@ -194,9 +197,9 @@ System.register(['angular2/core', './jugador.interface', 'rxjs/Observable', './e
                     __metadata('design:paramtypes', [jugador_interface_1.JugadorService, http_1.Http])
                 ], PartidoService);
                 return PartidoService;
-            })();
+            }());
             exports_1("PartidoService", PartidoService);
         }
     }
 });
-//# sourceMappingURL=../../../app/partido.service.js.map
+//# sourceMappingURL=partido.service.js.map

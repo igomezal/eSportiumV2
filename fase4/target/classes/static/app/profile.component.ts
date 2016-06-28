@@ -12,6 +12,7 @@ import {ApuestaUserService, ApuestaUser} from './apuestaUser.interface';
 
 export class Perfil {
 
+  usuario:Usuario;
   sesion:Usuario;
   partidoAc:Partido[];
   partidoFin:Partido[];
@@ -27,11 +28,15 @@ export class Perfil {
     );
     this.getPartido();
   */
+  this._usuarioService.getUsuario(this.loginService.user.id).subscribe(
+    user => this.usuario = user,
+    error => console.log(error)
+  );
   this.apuestas = [];
   this._ApuestaUserService.obtenerApuestasUser(this.loginService.user.id).subscribe(
     apuesta => this.apuestas = apuesta,
     error => console.log(error)
-  )  
+  )
   }
 
   getApuesta(id:number){

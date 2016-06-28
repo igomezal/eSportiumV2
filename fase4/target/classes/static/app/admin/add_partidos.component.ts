@@ -34,8 +34,8 @@ export class addPartidoComponent{
     );
   }
 
-  anadirP(logo1:string, porcen1:string, logo2:string, porcen2:string, url: string, condicion: string, estado: string){ //Faltaría lo de jugadores de cada equipo)
-    if( this.juegoN == 0 || this.equipo1N == 0 || logo1 == "" || porcen1 == "" || this.equipo2N == 0 || logo2 == "" || porcen2 =="" || url == "" || condicion == "" || estado ==""){
+  anadirP(porcen1:string, porcen2:string, url: string, condicion: string, estado: string){ //Faltaría lo de jugadores de cada equipo)
+    if( this.juegoN == 0 || this.equipo1N == 0 || porcen1 == "" || this.equipo2N == 0 || porcen2 =="" || url == "" || condicion == "" || estado ==""){
       alert("Datos incorrectos");
     }else{
       this._PartidoService.anadirPartido(this.juegoN, this.equipo1N, porcen1, this.equipo2N, porcen2, url, condicion, estado).subscribe(

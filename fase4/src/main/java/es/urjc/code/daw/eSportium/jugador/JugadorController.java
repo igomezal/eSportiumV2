@@ -49,6 +49,7 @@ public class JugadorController {
 		}
 	}
 
+	@JsonView(JugadorListView.class)
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	public Jugador nuevoJugador(@RequestBody Jugador jugador) {
@@ -57,7 +58,8 @@ public class JugadorController {
 
 		return jugador;
 	}
-
+	
+	@JsonView(JugadorListView.class)
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<Jugador> actulizaJugador(@PathVariable long id, @RequestBody Jugador updatedJugador) {
 
@@ -72,7 +74,8 @@ public class JugadorController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-
+	
+	@JsonView(JugadorListView.class)
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Jugador> borraJugador(@PathVariable long id) {
 		log.info("Delete jugador {}", id);
