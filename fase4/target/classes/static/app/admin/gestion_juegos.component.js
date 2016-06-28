@@ -1,6 +1,4 @@
-System.register(['angular2/core', '../juego.interface', 'angular2/router', '../usuario.interface'], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
+System.register(['angular2/core', '../juego.interface', 'angular2/router', '../usuario.interface'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -88,9 +86,9 @@ System.register(['angular2/core', '../juego.interface', 'angular2/router', '../u
                     __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, juego_interface_1.JuegoService, router_1.Router])
                 ], gestionJuegosComponent);
                 return gestionJuegosComponent;
-            }());
+            })();
             exports_1("gestionJuegosComponent", gestionJuegosComponent);
         }
     }
 });
-//# sourceMappingURL=gestion_juegos.component.js.map
+//# sourceMappingURL=../../../../app/admin/gestion_juegos.component.js.map

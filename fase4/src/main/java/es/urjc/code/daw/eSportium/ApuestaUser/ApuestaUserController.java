@@ -33,6 +33,7 @@ public class ApuestaUserController {
 	
 	interface ApuestaUserBasicAtt extends ApuestaUser.BasicAtt, Apuesta.BasicAtt, Apuesta.EquipoAtt, Apuesta.PartidoAtt, Equipo.BasicAtt, Equipo.JugadoresAtt, Partido.BasicAtt, Partido.JuegoAtt, User.BasicAtt{}
 	
+	
 	@JsonView(ApuestaUserBasicAtt.class)
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public Collection<ApuestaUser> getApuestaUserAll(){

@@ -1,6 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../usuario.interface'], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
+System.register(['angular2/core', 'angular2/router', '../usuario.interface'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -71,9 +69,9 @@ System.register(['angular2/core', 'angular2/router', '../usuario.interface'], fu
                     __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, router_1.Router])
                 ], gestionUsuariosComponent);
                 return gestionUsuariosComponent;
-            }());
+            })();
             exports_1("gestionUsuariosComponent", gestionUsuariosComponent);
         }
     }
 });
-//# sourceMappingURL=gestion_usuarios.component.js.map
+//# sourceMappingURL=../../../../app/admin/gestion_usuarios.component.js.map

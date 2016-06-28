@@ -13,6 +13,7 @@ export class gestionPartidosComponent {
   constructor(private _UsuarioService: UsuarioService, private _Partidoservice:PartidoService, private _Router: Router){}
 
   private partidos: Partido[];
+  private ganadorN = "";
 
   ngOnInit(){
     this._Partidoservice.getPartidos().subscribe(
@@ -61,10 +62,11 @@ export class gestionPartidosComponent {
   }
 
   finalizarPartido(partido: Partido){
-    this._Partidoservice.terminarPartido(partido).subscribe(
+    this._Partidoservice.terminarPartido(partido, this.ganadorN).subscribe(
       response => this.refresh(),
-      error => console.log(error)
+      error => {this.refresh(),console.log(error)}
     );
+    this.refresh()
   }
 
   aDirecto(partido:Partido){
@@ -80,6 +82,11 @@ export class gestionPartidosComponent {
       error => console.log(error)
     );
   }
+
+  ganadorAdd(ganadorN){
+     this.ganadorN = ganadorN;
+     console.log(ganadorN);
+ }
 
   private refresh(){
     this._Partidoservice.getPartidos().subscribe(

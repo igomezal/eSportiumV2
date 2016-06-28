@@ -65,10 +65,41 @@
                           <td>{{partido.rondas}}</td>
                           <td>
                                 <a (click)="gotoEditPartido(partido)" class="fa fa-pencil">Editar</a><br>
-                                <a [class.hidden]="partido.estado != 'Directo'" (click)="finalizarPartido(partido)" class="glyphicon glyphicon-ok">Finalizar</a><br>
+                                 <a [class.hidden]="partido.estado != 'Directo'" (click)="finalizarPartido(partido)" class="glyphicon glyphicon-ok">Finalizar</a><br>
                                 <a [class.hidden]="partido.estado != 'Proximamente'" (click)="aDirecto(partido)" class="glyphicon glyphicon-record">Directo</a><br>
-                                <a (click)="borrarPartido(partido)" class="glyphicon glyphicon-remove">Eliminar</a>
+                                <a (click)="borrarPartido(partido)" class="glyphicon glyphicon-remove">Eliminar</a><br>
+                                <input [class.hidden]="partido.estado != 'Directo'" name="ganador{{partido.id}}" type="radio"
+                                     ng-model="ganadorN"
+                                     (click)="ganadorN = 'eq1'"
+                                     [checked]="ganadorN == 'eq1'"/><span [class.hidden]="partido.estado != 'Directo'">{{partido.equipo1.nombre}}</span>
+                                <input [class.hidden]="partido.estado != 'Directo'" name="ganado{{partido.id}}" type="radio"
+                                   ng-model="ganadorN"
+                                   (click)="ganadorN = 'eq2'"
+                                   [checked]="ganadorN == 'eq2'"/> <span [class.hidden]="partido.estado != 'Directo'">{{partido.equipo2.nombre}}</span>
                             </td>
+
+                            <!--<div class="modal fade" id="elegirGanador{{partido.equipo1.nombre}}{{partido.equipo2.nombre}}" role="dialog" aria-labelledby="etiquetaModal">
+                              <div class="modal-dialog modal-sm">
+                                  <div class="modal-content">
+                                      <div class="modal-body">
+                                        <select class="form-control" [(ngModel)]="ganadorN" (change)="ganadorAdd($event.target.value)" style="width: 100%;" #ganador>
+                                            <option value="eq1">{{partido.equipo1.nombre}}</option>
+                                            <option value="eq2">{{partido.equipo2.nombre}}</option>
+                                        </select>
+                                          <br>
+                                          <br>
+                                          <div class="row">
+                                              <div class="col-md-7 col-sm-7 col-xs-7">
+                                                  <button class="btn btn-primary btn-sp" data-dismiss="modal" (click)="finalizarPartido(partido)">Seleccionar</button>
+                                              </div>
+                                              <div class="col-md-4 col-sm-4 col-xs-4">
+                                                  <button class="btn btn-danger btn-sp" data-dismiss="modal">Cancelar</button>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>-->
                         </tr>
                     </tbody>
                 </table>

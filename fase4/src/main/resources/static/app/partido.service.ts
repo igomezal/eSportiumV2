@@ -98,7 +98,6 @@ export class PartidoService {
       .catch(error => this.manejarError(error));
     }
 
-
   editarPartido(id: number, juego:Juego, eq1: Equipo, logo1:string, porcen1:string, eq2: Equipo, logo2:string, porcen2:string, url: string, rondas: string, estado: string){
     let url1 = "https://localhost:8443/partidos/"+id;
     let ganan;
@@ -133,9 +132,9 @@ export class PartidoService {
 
   }
 
-  terminarPartido(part:Partido){
+  terminarPartido(part:Partido, equipo: string){
     let url = "https://localhost:8443/partidos/"+part.id;
-    let item = {id: part.id, estado: "Finalizado", ganando: part.ganando, diferencia:part.diferencia, url: part.url, rondas: part.rondas, juego: part.juego, equipo1: part.equipo1, equipo2:part.equipo2}
+    let item = {id: part.id, estado: "Finalizado", ganando: equipo, diferencia:part.diferencia, url: part.url, rondas: part.rondas, juego: part.juego, equipo1: part.equipo1, equipo2:part.equipo2}
     let body = JSON.stringify(item);
     let headers = new Headers({
       'Content-Type': 'application/json'
@@ -165,6 +164,13 @@ export class PartidoService {
       .map(response => response.json())
       .catch(error => this.manejarError(error)
     );
+  }
+
+  obetenerPuestas(part: Partido){
+    let url ="https://localhost:8443/partidos/apuestas/"+part.id;
+    return this.http.get(url)
+      .map(response => response.json())
+      .catch(error => this.manejarError(error));
   }
 
   private manejarError(error:any){

@@ -1,6 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../partido.service', '../usuario.interface'], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
+System.register(['angular2/core', 'angular2/router', '../partido.service', '../usuario.interface'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -32,6 +30,7 @@ System.register(['angular2/core', 'angular2/router', '../partido.service', '../u
                     this._UsuarioService = _UsuarioService;
                     this._Partidoservice = _Partidoservice;
                     this._Router = _Router;
+                    this.ganadorN = "";
                 }
                 gestionPartidosComponent.prototype.ngOnInit = function () {
                     var _this = this;
@@ -69,7 +68,8 @@ System.register(['angular2/core', 'angular2/router', '../partido.service', '../u
                 };
                 gestionPartidosComponent.prototype.finalizarPartido = function (partido) {
                     var _this = this;
-                    this._Partidoservice.terminarPartido(partido).subscribe(function (response) { return _this.refresh(); }, function (error) { return console.log(error); });
+                    this._Partidoservice.terminarPartido(partido, this.ganadorN).subscribe(function (response) { return _this.refresh(); }, function (error) { _this.refresh(), console.log(error); });
+                    this.refresh();
                 };
                 gestionPartidosComponent.prototype.aDirecto = function (partido) {
                     var _this = this;
@@ -78,6 +78,10 @@ System.register(['angular2/core', 'angular2/router', '../partido.service', '../u
                 gestionPartidosComponent.prototype.borrarPartido = function (partido) {
                     var _this = this;
                     this._Partidoservice.eliminarPartido(partido.id).subscribe(function (response) { return _this.refresh(); }, function (error) { return console.log(error); });
+                };
+                gestionPartidosComponent.prototype.ganadorAdd = function (ganadorN) {
+                    this.ganadorN = ganadorN;
+                    console.log(ganadorN);
                 };
                 gestionPartidosComponent.prototype.refresh = function () {
                     var _this = this;
@@ -91,9 +95,9 @@ System.register(['angular2/core', 'angular2/router', '../partido.service', '../u
                     __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, partido_service_1.PartidoService, router_1.Router])
                 ], gestionPartidosComponent);
                 return gestionPartidosComponent;
-            }());
+            })();
             exports_1("gestionPartidosComponent", gestionPartidosComponent);
         }
     }
 });
-//# sourceMappingURL=gestion_partidos.component.js.map
+//# sourceMappingURL=../../../../app/admin/gestion_partidos.component.js.map
