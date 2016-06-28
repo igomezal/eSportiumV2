@@ -81,6 +81,7 @@ public class EquipoController {
 	}
 	
 	//Subimos la imagen
+	@JsonView(EquipoListView.class)
 	@RequestMapping(value = "/image/upload/{id}", method = RequestMethod.POST)
 	public Equipo handleFileUpload(@PathVariable long id, @RequestParam MultipartFile file) throws IOException {
 		Equipo eq = repository.findOne(id);
@@ -97,7 +98,7 @@ public class EquipoController {
 			File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
 			file.transferTo(uploadedFile);
 			eq.setLogo(fileName);
-			
+			log.info("Subida imagen :"+eq.getLogo());
 			repository.save(eq);
 
 			Image image = new Image("hello", fileName);
@@ -110,6 +111,7 @@ public class EquipoController {
 		}
 	}
 
+	@JsonView(EquipoListView.class)
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	public Equipo nuevoEquipo(@RequestBody Equipo equipo) {
@@ -119,6 +121,7 @@ public class EquipoController {
 		return equipo;
 	}
 
+	@JsonView(EquipoListView.class)
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<Equipo> actulizaEquipo(@PathVariable long id, @RequestBody Equipo updatedEquipo) {
 
@@ -126,6 +129,7 @@ public class EquipoController {
 		if (equipo != null) {
 
 			updatedEquipo.setId(id);
+			updatedEquipo.setLogo(equipo.getLogo());
 			updatedEquipo.setJugadores(equipo.getJugadores());
 			repository.save(updatedEquipo);
 

@@ -43,11 +43,14 @@ System.register(['angular2/core', '../equipo.interface', 'angular2/router', '../
                 gestionEquiposComponent.prototype.gotoHome = function () {
                     this._Router.navigate(['Admin']);
                 };
+                gestionEquiposComponent.prototype.gotoGestionJuegos = function () {
+                    this._Router.navigate(['GestionJuegos']);
+                };
                 gestionEquiposComponent.prototype.gotoGestionEquipos = function () {
                     this._Router.navigate(['GestionEquipos']);
                 };
-                gestionEquiposComponent.prototype.gotoGestionJuegos = function () {
-                    this._Router.navigate(['GestionJuegos']);
+                gestionEquiposComponent.prototype.gotoGestionJugadores = function () {
+                    this._Router.navigate(['GestionJugadores']);
                 };
                 gestionEquiposComponent.prototype.gotoGestionPartidos = function () {
                     this._Router.navigate(['GestionPartidos']);

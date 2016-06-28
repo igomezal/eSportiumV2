@@ -45,14 +45,17 @@ System.register(['angular2/core', '../juego.interface', 'angular2/router', '../u
                     this._UsuarioService.setAdmin(false);
                     this.gotoMain();
                 };
-                addJuegoComponent.prototype.gotoMain = function () {
-                    this._Router.navigate(['Inicio']);
-                };
                 addJuegoComponent.prototype.gotoHome = function () {
                     this._Router.navigate(['Admin']);
                 };
                 addJuegoComponent.prototype.gotoGestionJuegos = function () {
                     this._Router.navigate(['GestionJuegos']);
+                };
+                addJuegoComponent.prototype.gotoGestionEquipos = function () {
+                    this._Router.navigate(['GestionEquipos']);
+                };
+                addJuegoComponent.prototype.gotoGestionJugadores = function () {
+                    this._Router.navigate(['GestionJugadores']);
                 };
                 addJuegoComponent.prototype.gotoGestionPartidos = function () {
                     this._Router.navigate(['GestionPartidos']);
@@ -62,6 +65,9 @@ System.register(['angular2/core', '../juego.interface', 'angular2/router', '../u
                 };
                 addJuegoComponent.prototype.gotoAjustes = function () {
                     this._Router.navigate(['Ajustes']);
+                };
+                addJuegoComponent.prototype.gotoMain = function () {
+                    this._Router.navigate(['Inicio']);
                 };
                 addJuegoComponent = __decorate([
                     core_1.Component({

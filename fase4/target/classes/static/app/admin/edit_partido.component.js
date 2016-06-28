@@ -62,6 +62,12 @@ System.register(['angular2/core', 'angular2/router', '../partido.service', '../j
                 editPartidoComponent.prototype.gotoGestionJuegos = function () {
                     this._Router.navigate(['GestionJuegos']);
                 };
+                editPartidoComponent.prototype.gotoGestionEquipos = function () {
+                    this._Router.navigate(['GestionEquipos']);
+                };
+                editPartidoComponent.prototype.gotoGestionJugadores = function () {
+                    this._Router.navigate(['GestionJugadores']);
+                };
                 editPartidoComponent.prototype.gotoGestionPartidos = function () {
                     this._Router.navigate(['GestionPartidos']);
                 };

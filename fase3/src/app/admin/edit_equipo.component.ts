@@ -77,13 +77,13 @@ export class editEquipoComponent {
 
   editar(nombre: string) {
     let logo ="temp";
+    this.upload();
     if (nombre == "") {
       alert("Datos incorrectos");
     } else {
       this._EquipoService.editar(this.equipo.id, nombre, logo).subscribe(
         respuesta => {alert("Equipo editado correctamente");
-        console.log(respuesta);
-        this.upload();}
+        }
       );
     }
   }
@@ -95,35 +95,35 @@ export class editEquipoComponent {
       );
   }
 
-  goToJuegos() {
-    this._Router.navigate(['GestionJuegos']);
-  }
-
-  gotoHome() {
+  gotoHome(){
     this._Router.navigate(['Admin']);
   }
 
-  gotoGestionJuegos() {
+  gotoGestionJuegos(){
     this._Router.navigate(['GestionJuegos']);
   }
 
-  gotoGestionPartidos() {
-    this._Router.navigate(['GestionPartidos']);
-  }
-
-  gotoGestionEquipos() {
+  gotoGestionEquipos(){
     this._Router.navigate(['GestionEquipos']);
   }
 
-  gotoGestionUsuarios() {
+  gotoGestionJugadores() {
+    this._Router.navigate(['GestionJugadores']);
+  }
+
+  gotoGestionPartidos(){
+    this._Router.navigate(['GestionPartidos']);
+  }
+
+  gotoGestionUsuarios(){
     this._Router.navigate(['GestionUsuarios']);
   }
 
-  gotoAjustes() {
+  gotoAjustes(){
     this._Router.navigate(['Ajustes']);
   }
 
-  gotoMain() {
+  gotoMain(){
     this._Router.navigate(['Inicio']);
   }
 

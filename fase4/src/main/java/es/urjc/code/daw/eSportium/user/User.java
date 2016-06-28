@@ -47,6 +47,7 @@ public class User {
 	public interface BasicAtt{}
 	public interface ApuestaAtt{}
 	
+	@JsonView(BasicAtt.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;

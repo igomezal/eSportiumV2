@@ -167,6 +167,19 @@ System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http',
                         .map(function (response) { return response.json(); })
                         .catch(function (error) { return _this.manejarError(error); });
                 };
+                UsuarioService.prototype.doAdmin = function (user) {
+                    var _this = this;
+                    var url = "https://localhost:8443/usuarios/doAdmin/" + user.id;
+                    var item = { id: null };
+                    var body = JSON.stringify(item);
+                    var headers = new http_1.Headers({
+                        'Content-Type': 'application/json'
+                    });
+                    var options = new http_1.RequestOptions({ headers: headers });
+                    return this.http.put(url, body, options)
+                        .map(function (response) { return response.json; })
+                        .catch(function (error) { return _this.manejarError(error); });
+                };
                 UsuarioService.prototype.almacenarSesion = function (sesion) {
                     for (var i = 0; i < this.usuario.length; i++) {
                         if (this.usuario[i].name === this.sesion.name) {

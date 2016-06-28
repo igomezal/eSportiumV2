@@ -39,20 +39,23 @@ System.register(['angular2/core', '../usuario.interface', 'angular2/router'], fu
                     if (r == true) {
                         var id = +this._RouteParams.get('id');
                         this._UsuarioService.eliminarUsuario(id);
-                        this.gotoUsuarios();
+                        this.gotoGestionUsuarios();
                     }
                     else {
                         alert("Casi la lias");
                     }
-                };
-                editUsuarioComponent.prototype.gotoUsuarios = function () {
-                    this._Router.navigate(['GestionUsuarios']);
                 };
                 editUsuarioComponent.prototype.gotoHome = function () {
                     this._Router.navigate(['Admin']);
                 };
                 editUsuarioComponent.prototype.gotoGestionJuegos = function () {
                     this._Router.navigate(['GestionJuegos']);
+                };
+                editUsuarioComponent.prototype.gotoGestionEquipos = function () {
+                    this._Router.navigate(['GestionEquipos']);
+                };
+                editUsuarioComponent.prototype.gotoGestionJugadores = function () {
+                    this._Router.navigate(['GestionJugadores']);
                 };
                 editUsuarioComponent.prototype.gotoGestionPartidos = function () {
                     this._Router.navigate(['GestionPartidos']);

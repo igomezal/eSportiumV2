@@ -1,5 +1,6 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
+<<<<<<< HEAD
 # sw.version: e71f4d4b2e1bd5e4b3ea67b1fa398823f59e4e9c
 # sw.file.hash: a854e502c61b4e5332ebb34ce15c79c75aeb8468
 /app.js
@@ -657,3 +658,574 @@ CACHE MANIFEST
 /vendor/systemjs/dist/system-polyfills.js
 # sw.file.hash: 83128f4a4209eb7b16ad0bb729fda6939bc450fc
 /vendor/systemjs/dist/system.src.js
+=======
+# sw.version: 8fd6fba03114812e350c1d030c6a3cdad12e9f5e
+# sw.file.hash: da39a3ee5e6b4b0d3255bfef95601890afd80709
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/.npmignore
+# sw.file.hash: 3c5b044a6a4a9e1b268ee65cc8cc4fab6565f46e
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app.js
+# sw.file.hash: eb00aaaa303e41a4b12ad6be12b9ee5213671278
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app.js.map
+# sw.file.hash: 100d14ff994da242c1247b18436da609ba946063
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/Image.service.js
+# sw.file.hash: 3979ffd5fbe16144c2c2082b85a43f73a731cd2a
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/Image.service.js.map
+# sw.file.hash: 6aeb58ddcbd446c70b431d22567a613842e29888
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/aboutus.component.html
+# sw.file.hash: 112a7773f5f7f788b67db56c6547fad7217c21e0
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/aboutus.component.js
+# sw.file.hash: 5596fc6db94e07b606b696a32cb349b08f84bf17
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/aboutus.component.js.map
+# sw.file.hash: c4200b723dbb0f127c8aeaf0d9ae5e0fcbcbcbcf
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/add_apuesta.component.js
+# sw.file.hash: 5580dbf632ea7b698e16ce671627f384e6e2082b
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/add_apuesta.component.js.map
+# sw.file.hash: e452d0f3ba836d6e034128d4b1098b3b200d5073
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/add_equipo.component.js
+# sw.file.hash: 3aa30455fb5422291f462313b25889386ab4c938
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/add_equipo.component.js.map
+# sw.file.hash: bc8fdf21510ec5637873a611f2c5eee18ae99e6e
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/add_equipo.html
+# sw.file.hash: bdfaec14f7bce252b3b1df91d4c7b93a161caf32
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/add_juegos.component.js
+# sw.file.hash: 2fb94a4cf5678bbf02a6678e4c3b9a0dccacd24f
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/add_juegos.component.js.map
+# sw.file.hash: 353db82bc8f5dfe65da75360b94b2cc6ab900383
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/add_juegos.html
+# sw.file.hash: 3253a3878d8f6da6d6998ebaa1d1806cfe89c720
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/add_jugador.component.js
+# sw.file.hash: b680f13b3699899c6a35b30cda9e8c10baa1a183
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/add_jugador.component.js.map
+# sw.file.hash: 3a3b392883ca8d613fe8f78fd32ffe81522ea8f3
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/add_jugador.html
+# sw.file.hash: 984d551c865d1bca4a4fc30dd43eddb6e53124b8
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/add_partidos.component.js
+# sw.file.hash: b145be62d700be48863628c2fb64e24f29a14ed6
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/add_partidos.component.js.map
+# sw.file.hash: 4c776d2bb3e7a8cd23b1309488e8cc75fa366d68
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/add_partidos.html
+# sw.file.hash: ec3aff58f2a6c580625d8e4858d4d1eb680af94d
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/ajustes.component.js
+# sw.file.hash: 66e6d6fc57f3fef2689f95e3dcb7fa88ad873738
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/ajustes.component.js.map
+# sw.file.hash: f565584e0bbb1bd47276a28156445f443cf3848c
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/ajustes.html
+# sw.file.hash: 4d377fa0729b0f03cb605b7d8c62c9ec39b88828
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/AdminLTE.css
+# sw.file.hash: 1a324555be8d8b974423ec34429f86a0642de3c1
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/AdminLTE.min.css
+# sw.file.hash: 5d44842f9d17404a1071757d31349a055b2241bc
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/bootstrap.css
+# sw.file.hash: 16506513c5f3d95982e73fb6820cf3c4c58d6897
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/bootstrap.css.map
+# sw.file.hash: f2cd0488a33734345987059e7c183ba88dd4c213
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/bootstrap.min.css
+# sw.file.hash: 664e80686658f39e308909ba642d080365f4c5e1
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/bootstrap3-wysihtml5.min.css
+# sw.file.hash: 4a02328073964bb7a19db8ef703b06464c3790d2
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/skins/_all-skins.css
+# sw.file.hash: fe8767fd149a076ed298c2b71c21a3d44f4e542e
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/skins/_all-skins.min.css
+# sw.file.hash: 1e18daf1e87390ca240fcc3213ea87a263852640
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/skins/skin-black-light.css
+# sw.file.hash: 4297fd0af0cb186d2a30592be2b2e5c45dfcea16
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/skins/skin-black-light.min.css
+# sw.file.hash: 2853c1c6ba48d9c8eafede6b961d4d3574f4decf
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/skins/skin-black.css
+# sw.file.hash: 99db585a8b19e3e7fd99ddef84f61335fdfe714a
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/skins/skin-black.min.css
+# sw.file.hash: f8d72deb02fdeca37d058fd87d0228c5ead9021b
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/skins/skin-blue-light.css
+# sw.file.hash: d017a864fa1ea086978cfcb71ecddc1d77a824d6
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/skins/skin-blue-light.min.css
+# sw.file.hash: 32e1da48b46e3352898287da19e87f9162149a51
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/skins/skin-blue.css
+# sw.file.hash: 00945edeecebf440e3dcdd4d509935fc4ef64763
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/skins/skin-blue.min.css
+# sw.file.hash: 21e68d5190c006335a5f36f3ad7be5d7c10d6fe5
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/skins/skin-green-light.css
+# sw.file.hash: 1a0bdb6bd73b03e013446ffe2d57bbf2ef30e4d9
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/skins/skin-green-light.min.css
+# sw.file.hash: 2934c28a13911ae4844074f5e087f1875633894c
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/skins/skin-green.css
+# sw.file.hash: dfdab796857dddd1baaee9d8f28a8a6238e8107f
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/skins/skin-green.min.css
+# sw.file.hash: a224e2fbc7e7066ab1b976d0f7b8afbb476e5947
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/skins/skin-purple-light.css
+# sw.file.hash: 27c717134d29a24d9342a433d64cc5aca122c2e1
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/skins/skin-purple-light.min.css
+# sw.file.hash: 0b5f274a4ac192b34f41c23aa91c313b51277aec
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/skins/skin-purple.css
+# sw.file.hash: 9eb9b4b550b8670728fffae0867fab137df3145b
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/skins/skin-purple.min.css
+# sw.file.hash: 5eb96c637ca83400aea70d75d3fa00f2a4213e4f
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/skins/skin-red-light.css
+# sw.file.hash: 5be6cabed3bc2090230b60c3475aedc081bb04a2
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/skins/skin-red-light.min.css
+# sw.file.hash: 61f70bf4da575eb6345fbe05a46044009988c49d
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/skins/skin-red.css
+# sw.file.hash: e5e2c2310056efb3047a96f411265d1ce8009eae
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/skins/skin-red.min.css
+# sw.file.hash: ebf6c441c0295967bba1163f4782d10d64b8030a
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/skins/skin-yellow-light.css
+# sw.file.hash: 53e239451fc6ac94ad8ba998ad68923d50909978
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/skins/skin-yellow-light.min.css
+# sw.file.hash: 547f2d52c65bd9bfd504fd6b4262f0093fd5005e
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/skins/skin-yellow.css
+# sw.file.hash: 8613cc5bd98f4559d1fd51b02608dec76f21582f
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/css/skins/skin-yellow.min.css
+# sw.file.hash: 6077264d78dd7f3cc9626277551dde845858fcf2
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/edit_equipo.component.js
+# sw.file.hash: 0b8a78a2f3a480290c52690ec647bfc6f5a122a3
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/edit_equipo.component.js.map
+# sw.file.hash: c055ea3b236cf20a40eada215c469bbd0648b670
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/edit_equipo.html
+# sw.file.hash: a7e0e64a6fead858bd5e517c27c255c05b626179
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/edit_juego.component.js
+# sw.file.hash: 191168239ffcf1e47e5476127d19b8bc66914c20
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/edit_juego.component.js.map
+# sw.file.hash: 5d9166c31d6727b982d30f30333e3254ae01736c
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/edit_juego.html
+# sw.file.hash: 32725fd74fe09af6cb349b4e8e36d56ce6362a66
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/edit_jugador.component.js
+# sw.file.hash: 5c25cdca69dbcb3ec7d8ffc4691cf4b1a2de2091
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/edit_jugador.component.js.map
+# sw.file.hash: b0e80f24ba6d8ab1bccb30645725d855deb28158
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/edit_jugador.html
+# sw.file.hash: 44a4e4e5dc22a3ee4dba8bf2100c637e8706936b
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/edit_partido.component.js
+# sw.file.hash: 4fcc81aa655a3f9d5920acb3e731471d5e79e95e
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/edit_partido.component.js.map
+# sw.file.hash: aa5607aeab01844cf8e86e0b4735317ef0c7a076
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/edit_partido.html
+# sw.file.hash: d4c4a6d8fab67e6bb0e7478c906223725790bc97
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/edit_usuario.component.js
+# sw.file.hash: 60c57f9a6fd078ee5631c77390de815c6a6077f9
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/edit_usuario.component.js.map
+# sw.file.hash: ab4ffeb8c8fd84e68bdf9a04aa88f652632fde00
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/edit_usuario.html
+# sw.file.hash: 4962c1482f89efb9a730641f72e01ca62b72fa56
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/editar_usuarios.html
+# sw.file.hash: 86b6f62b7853e67d3e635f6512a5a5efc58ea3c3
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/fonts/glyphicons-halflings-regular.eot
+# sw.file.hash: 4dcf0ab896f5417047f881de91bad10dcbda48c6
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/fonts/glyphicons-halflings-regular.svg
+# sw.file.hash: 44bc1850f570972267b169ae18f1cb06b611ffa2
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/fonts/glyphicons-halflings-regular.ttf
+# sw.file.hash: 278e49a86e634da6f2a02f3b47dd9d2a8f26210f
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/fonts/glyphicons-halflings-regular.woff
+# sw.file.hash: ca35b697d99cae4d1b60f2d60fcd37771987eb07
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/fonts/glyphicons-halflings-regular.woff2
+# sw.file.hash: 8911ed71e1dbbe4c3ccecdcd6cbeb918e478605c
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/gestion_equipos.component.js
+# sw.file.hash: 2eeaf3f6f327ce6bb8f2e9308479945b6b50870f
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/gestion_equipos.component.js.map
+# sw.file.hash: b10f2ccce54374ff750fd66ae4c1cdd1107e9f3a
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/gestion_equipos.html
+# sw.file.hash: 528d08a8280d79ffaf0caf1c5b825d08a84e82c2
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/gestion_juegos.component.js
+# sw.file.hash: d0e810a1d14631d3dedc6d5fe178134a7a00472f
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/gestion_juegos.component.js.map
+# sw.file.hash: 59b71ab98123fed6f8e81ecb0f3ad85366ec3bff
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/gestion_juegos.html
+# sw.file.hash: 8d18fa31197efd10c9b7fd888bb4b07093c6d229
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/gestion_jugadores.component.js
+# sw.file.hash: 0156ae34de71efd3389ecc04c9d39e57e55c6eef
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/gestion_jugadores.component.js.map
+# sw.file.hash: 33df87d8a26e7f1b99d71c8c2c6e144c481660c6
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/gestion_jugadores.html
+# sw.file.hash: 61b72e22c3182a8f331062b83713ae98dbb53ebb
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/gestion_partidos.component.js
+# sw.file.hash: 6b17363476b5f455c8b6bbd6f5b2fb1c3f393a11
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/gestion_partidos.component.js.map
+# sw.file.hash: 9c21ef17ece68cc1f9fcd049926a7fd14e42913e
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/gestion_partidos.html
+# sw.file.hash: 019fbf26126f573c552d306bc890899dc9eb7684
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/gestion_usuarios.component.js
+# sw.file.hash: 8930590f1bee3d5750b142c227b9cf501db06cc6
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/gestion_usuarios.component.js.map
+# sw.file.hash: 8e0ae19d56f494bde857052d8c0426b8b0df09fb
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/gestion_usuarios.html
+# sw.file.hash: 4cf37a5835ee92fe8b9170e212642c8c1879580b
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/home.component.js
+# sw.file.hash: f975549957bf0b035fe61e1ae141167300e1c8a8
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/home.component.js.map
+# sw.file.hash: 5170316940308f0b01f7f32854b069f940b5e349
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/home.html
+# sw.file.hash: 3035a22cec8e49613fc2b5b58880067960688e79
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/img/boxed-bg.jpg
+# sw.file.hash: 84bc265bc6c53141f9656878b371ca93543090c0
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/img/boxed-bg.png
+# sw.file.hash: c3779e4aeb123953c7decb12949abdd17b1d3f27
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/img/default-50x50.gif
+# sw.file.hash: 93f7eae1af950a0efbee7057be8122a87731f3ce
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/img/icon-profile.png
+# sw.file.hash: f77bb2850260232232d62f73977c1b394db5626c
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/img/icons.png
+# sw.file.hash: 9f3105cb2aee2f6d78826a2e39a36cf8b9726959
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/js/app.js
+# sw.file.hash: 4816389322ee0a794314ca2884758259b8cbd9f7
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/js/app.min.js
+# sw.file.hash: 1c487299aa2424c961f16673e5da49ec058a6c4b
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/js/bootstrap.js
+# sw.file.hash: c04efd97a3df4630ab9fe225d5e263af5e4162f2
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/js/bootstrap.min.js
+# sw.file.hash: 2c7ea64f15fb7a3af08b7ba59d27ca0b7200eae4
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/js/bootstrap3-wysihtml5.all.min.js
+# sw.file.hash: 34603e5d05db6f4e9f5dbc12014a0ecbd2b5f361
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/js/demo.js
+# sw.file.hash: 1327f754ff87d26bced46568543207e9df190aaa
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/js/jQuery-2.1.4.min.js
+# sw.file.hash: 0b9e83aa318b2b281c163a21246f576fb29e640f
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/js/npm.js
+# sw.file.hash: 7a8473b65778560d234f9aa06521f626599fa211
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/js/pages/dashboard.js
+# sw.file.hash: d2b1fedc64676e3466aa95963961293c10043085
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/admin/js/pages/dashboard2.js
+# sw.file.hash: e013b14273bb6b8178c62ef808a29cc07f2cb307
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/apuesta.interface.js
+# sw.file.hash: e762297285753bdd688904f3e09b2ec25086bdb3
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/apuesta.interface.js.map
+# sw.file.hash: 09d705831447a4c491366fa39899cf17c9ddd9c7
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/apuestaUser.interface.js
+# sw.file.hash: ac319dc8c78836d846850355f1a51a2267128e00
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/apuestaUser.interface.js.map
+# sw.file.hash: 6b2d5a20e5bb8f67fb840337e9a8b7b6bd0760fd
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/cabecera.component.html
+# sw.file.hash: f5fb55152c94f87b43e3789040332fa0b812fafb
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/cabecera.component.js
+# sw.file.hash: 328e918010c3a5da9057b7c17f8b55b0dad720c1
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/cabecera.component.js.map
+# sw.file.hash: 4d5125487111cc5b8d6c68f2b4712f76f4c35df5
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/contacto.component.html
+# sw.file.hash: daf10120ffa586a2e6f28188db773daeac1472a3
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/contacto.component.js
+# sw.file.hash: 9d851ba0e2042e1b4fa4785e2d1deabb89817f60
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/contacto.component.js.map
+# sw.file.hash: 0b2e70757575113fb0136404de15b93091bdf2f6
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/editarpefil.component.js
+# sw.file.hash: 29a7b1344b2279f6cfe52c2a153e2c3ac79b7543
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/editarpefil.component.js.map
+# sw.file.hash: 8a2531d6ad7f0a7f5488ae30705d49ab5d4783fd
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/editarperfil.component.html
+# sw.file.hash: a02a8011dc2014e79e1a42b9e8fa875fc42144d5
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/equipo.interface.js
+# sw.file.hash: 54c0480db4538a65efef0dd30a6ddfddc44829c1
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/equipo.interface.js.map
+# sw.file.hash: d4327fa0ccd9d46d896fccf8e98f35442028a3f1
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/faq.component.html
+# sw.file.hash: 6ffd2d98abe313d23ac5a5133733dde1165469f4
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/faq.component.js
+# sw.file.hash: 7069031d360c2b4298002fab46839e9833af930c
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/faq.component.js.map
+# sw.file.hash: 3e1a356d38d4f0136e517dce2caeac7bd9f88e4c
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/finalizados.component.html
+# sw.file.hash: 74bfc768819745a609038d7832e7ae58ec32c159
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/finalizados.component.js
+# sw.file.hash: 9578476d7ff589e134acc8ae106c4644850eb851
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/finalizados.component.js.map
+# sw.file.hash: b6a7140fe77a50b53a967abfb16590fb961af6ec
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/index.component.js
+# sw.file.hash: 3a99995293f9bc808a497d5e1d3256156c2f300d
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/index.component.js.map
+# sw.file.hash: c1aba02bd2e8403f585b1c21445508d47f8db58f
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/index.html
+# sw.file.hash: 0558be58364a79706954c0cf39911e991d159e46
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/juego.interface.js
+# sw.file.hash: 257e1cb3cf786e498c3ef41b38a04293beb71d33
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/juego.interface.js.map
+# sw.file.hash: 3e0ccb88dfb20cb449ccb8e31c81aff4081290df
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/jugador.interface.js
+# sw.file.hash: f62aff230251a2b1eb331dcd698a8cf6b62d7962
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/jugador.interface.js.map
+# sw.file.hash: 37602c33c68a437e89ea1782fabc17a444881097
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/login.service.js
+# sw.file.hash: 2ce17d28e71791754b684336a90707f715f8549b
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/login.service.js.map
+# sw.file.hash: b43cba2c9bd2f47f211335686d657fd90a7911d4
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/main.html
+# sw.file.hash: 336b4a727439320d20cd25a4ac157c5efc219ba7
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/main.js
+# sw.file.hash: 61dcf8cd8bf1e4003b79648f46c55616ed2d7f15
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/main.js.map
+# sw.file.hash: 6f6cb7ad6bbc821f2ff48dfbaa1b37e647e464e2
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/multipart-upload/multipart-item.js
+# sw.file.hash: f134b7385973c8ba65a87b4bd46ae087ea4949ab
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/multipart-upload/multipart-item.js.map
+# sw.file.hash: 482f5e3c3280b26c648c56777753bcc28c3d81bf
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/multipart-upload/multipart-uploader.js
+# sw.file.hash: d5c0f1bee5a6c94bd4f00dabb43b31b61e90b21f
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/multipart-upload/multipart-uploader.js.map
+# sw.file.hash: 678fb7032009b9b8ec261c77f8784bb2c3caa717
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/partido.component.html
+# sw.file.hash: f8022956538fcf6965e859039703c78b4d03768d
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/partido.component.js
+# sw.file.hash: 6ea5c756c7c6a45bef4c503db5ecd8fcfa2501a1
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/partido.component.js.map
+# sw.file.hash: 07bb11607a65900d5b2c1d16409b0413a13971a7
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/partido.service.js
+# sw.file.hash: ac3d60e06bd15c654191720f97552eebc2810c52
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/partido.service.js.map
+# sw.file.hash: 286775e36220c0242d38b544bddcffe033da3d0e
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/pie.component.html
+# sw.file.hash: 52edf78ddcea8a618fc2c8b14a555ef9b333f0cb
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/pie.component.js
+# sw.file.hash: 11f2294090fa9b346fb3924cb8a2fab0194e3f30
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/pie.component.js.map
+# sw.file.hash: 70de8246a3035544b45bf7b8fd69d66d12a7affa
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/profile.component.html
+# sw.file.hash: 3e025bbe3d9944e318d6683ac585c006313a4e5f
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/profile.component.js
+# sw.file.hash: 507ec847c5a84a0a15d250c7aa030145ec26ee2a
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/profile.component.js.map
+# sw.file.hash: 37b0a70a41992dbc6eda3be5390b55b59a00b4a6
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/registro.component.html
+# sw.file.hash: 7ce3284ab3321bb8f128a0e885d9dfd5172a074e
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/registro.component.js
+# sw.file.hash: 15b83c94e3250e1967aba83547d30003f8f745d7
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/registro.component.js.map
+# sw.file.hash: 8777ea42c1796418d6396685ed4ffb84816a2eaa
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/route-config.js
+# sw.file.hash: 803e3dd72b3a81e61dee110c60016456ec1ccc23
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/route-config.js.map
+# sw.file.hash: 2a57fc650d47b963c688931506b083fa30b46303
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/usuario.interface.js
+# sw.file.hash: ab2a6a55dbfba24e33fe2825273cee92f51cf6f0
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/usuario.interface.js.map
+# sw.file.hash: 7ad2c89fb9f1ca7a834d4e2a52c2edce81f9944f
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/utils.js
+# sw.file.hash: a8e80415d2937f30509695985e53535b9daa9521
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/app/utils.js.map
+# sw.file.hash: 8927b9a0bc65b1ce09eaa196996ae99072c44985
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/css/bootstrap-tabs-x.css
+# sw.file.hash: 91db39a4a13d50d8aacc78e1d2503d9b2dcd38b8
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/css/bootstrap-tabs-x.min.css
+# sw.file.hash: 317114b3c411149fc1ba0f613f317aaa0b7e1025
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/css/bootstrap-theme.css
+# sw.file.hash: 29d019dd007929a57c564b2b85785e4e12e58db2
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/css/bootstrap-theme.css.map
+# sw.file.hash: 1de7fdd891f7280761c6be2a31ff9c1bdd0ae2d9
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/css/bootstrap-theme.min.css
+# sw.file.hash: 55253bf57e974dc89014e57783a1a4c737e7c867
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/css/bootstrap-theme.min.css.map
+# sw.file.hash: f940ccb067b3c1a6f59973f8b739d8b3c7d040c6
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/css/bootstrap.css
+# sw.file.hash: 85cacfd84a6258ed0e193874efa31c87f86b9e87
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/css/bootstrap.css.map
+# sw.file.hash: c0a9529eaba059dc0082b0d9c01df73fc8680709
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/css/bootstrap.min.css
+# sw.file.hash: 95fb9d7b83bebc9c37cefee87514f5979ee8785d
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/css/bootstrap.min.css.map
+# sw.file.hash: 1eafd9a27bd3f3421f5aae1811b7386821886e57
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/css/flexslider.css
+# sw.file.hash: a02674d823c7b577d38c3cdb91953993b6e4b3a0
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/css/font-awesome.css
+# sw.file.hash: 3c1d63dd1176c77f9f4cdb1616fbb08c31b9822f
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/css/font-awesome.min.css
+# sw.file.hash: e01dc2f222f4a9f4771ab597d86071240f7d8668
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/css/ionicons.min.css
+# sw.file.hash: 335720c7c5d25c6f85216f4a7d53dcf72df9090f
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/css/jquery.bootstrap-touchspin.css
+# sw.file.hash: bdee15f32133330e77e22784ac6d8f60d02fe59a
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/css/select2.min.css
+# sw.file.hash: 5b0f180aeb2fc464e3ab310d0d261ab7a6f7efd9
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/css/style.css
+# sw.file.hash: 84e77d9ab3621a89599c37b016c7c50ae4dc71cf
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/css/ten.css
+# sw.file.hash: 84161b857f5c547e3699ddfbffc6d8d737542e01
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/favicon.ico
+# sw.file.hash: 1b22f17fdc38070de50e6d1ab3a32da71aa2d819
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/fonts/FontAwesome.otf
+# sw.file.hash: 965ce8f688fedbeed504efd498bc9c1622d12362
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/fonts/fontawesome-webfont.eot
+# sw.file.hash: 964e8dac2cee79c4b49b5bc300675773f6518812
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/fonts/fontawesome-webfont.svg
+# sw.file.hash: 61d8d967807ef12598d81582fa95b9f600c3ee01
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/fonts/fontawesome-webfont.ttf
+# sw.file.hash: 6d7e6a5fc802b13694d8820fc0138037c0977d2e
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/fonts/fontawesome-webfont.woff
+# sw.file.hash: 97e438cc545714309882fbceadbf344fcaddcec5
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/fonts/fontawesome-webfont.woff2
+# sw.file.hash: 86b6f62b7853e67d3e635f6512a5a5efc58ea3c3
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/fonts/glyphicons-halflings-regular.eot
+# sw.file.hash: 4dcf0ab896f5417047f881de91bad10dcbda48c6
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/fonts/glyphicons-halflings-regular.svg
+# sw.file.hash: 44bc1850f570972267b169ae18f1cb06b611ffa2
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/fonts/glyphicons-halflings-regular.ttf
+# sw.file.hash: 278e49a86e634da6f2a02f3b47dd9d2a8f26210f
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/fonts/glyphicons-halflings-regular.woff
+# sw.file.hash: ca35b697d99cae4d1b60f2d60fcd37771987eb07
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/fonts/glyphicons-halflings-regular.woff2
+# sw.file.hash: 61532e89e212f8dd16ba31f3ebcf35c0a7334035
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/fonts/ionicons.eot
+# sw.file.hash: a6f29d7d411b77aebfb32edf4f22d6fb227f399b
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/fonts/ionicons.svg
+# sw.file.hash: 1b0a0de084905946a20300ca8c354865dec46764
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/fonts/ionicons.ttf
+# sw.file.hash: e46819e863a46751d622c1190c4e8a83ebc20612
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/fonts/ionicons.woff
+# sw.file.hash: e78a6ea90cf586792dec07739e6ed0e6241fe47e
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/img/H2KLogo.png
+# sw.file.hash: 0a9454c2f41a9a664beb0d007118c57a17b01e48
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/img/UOLLogo.png
+# sw.file.hash: 611d6115e11ec1371326f73721f0968f70b21baf
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/img/c9Logo.png
+# sw.file.hash: dce96d70ea969d01b468ab999f5a67034dbc19b1
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/img/carlos.png
+# sw.file.hash: 7400e9cf1ff2d33d1702ebd6adbbd9b78042d368
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/img/elementsLogo.png
+# sw.file.hash: 35b36756d84c69ebd305d5df5458dd8d97536ac9
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/img/envyLogo.png
+# sw.file.hash: 5f28987b88c233819b445ecd9202c313cd740cf1
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/img/epsilonLogo.png
+# sw.file.hash: 340c4c343e131e856c6fc612557f9b4b211b4f13
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/img/excelLogo.png
+# sw.file.hash: 63628fd7bea845f196c53a6e1440145eec45d30b
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/img/fnaticLogo.png
+# sw.file.hash: 093014b83b45966c92629e5dad89ccbe1470ac53
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/img/giantsLogo.png
+# sw.file.hash: 93f7eae1af950a0efbee7057be8122a87731f3ce
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/img/icon-profile.png
+# sw.file.hash: 2371f2282fac277005809562e55e2d50d74b6e42
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/img/infusedLogo.png
+# sw.file.hash: 765f8098aa4833b5bd01ebc9177e7e7bbed64d15
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/img/ivan.png
+# sw.file.hash: 1c0e35b2eb45411706b74095e97ce14adc423bc5
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/img/loading.gif
+# sw.file.hash: 90909aaff323d26d499c1c1a35db6c93765840ee
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/img/logo.png
+# sw.file.hash: a1d62bd45524d549d30e261d1ed221d2ddcba07c
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/img/milleniumLogo.png
+# sw.file.hash: 7d74270047ad7661efad46c5eda94b0865dfde27
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/img/minion.png
+# sw.file.hash: 3b8fc7c8839ba33e9b801d3f25ca20e31fece48c
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/img/moneyicon.png
+# sw.file.hash: e94c43e9836b8ad498df336c0f094e597ddfd53d
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/img/naviLogo.png
+# sw.file.hash: 95d877eada800d98bade62e288036348cdfaff0d
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/img/nipLogo.png
+# sw.file.hash: 8b0a0bbe2d7cf789f54b9f5a26e8aeae673f6922
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/img/origenLogo.png
+# sw.file.hash: b62e2a0f20cb46ff2c2de119dcc59146e629c144
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/img/registroestadio.jpg
+# sw.file.hash: 5c795f4961863dd865c77374d3ec4af3fa7c41c4
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/img/splyceLogo.png
+# sw.file.hash: 8df467840fc549620f0e135caa4e3c8621ed8212
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/img/x6tenceLogo.png
+# sw.file.hash: da6e97d77774ff9f7e0f082ed13df527fb6296f7
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/index.html
+# sw.file.hash: 14a43b76106263d6376d1f705ce67d54ff7013a3
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/js/bootstrap-tabs-x.js
+# sw.file.hash: 6bf576fcd20b7cab9f11da354bd96f7ed0781022
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/js/bootstrap-tabs-x.min.js
+# sw.file.hash: 982c51d862ad982b4a852506a050bfa5d47d159c
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/js/bootstrap.js
+# sw.file.hash: c5c481ca5a263031d938f6c12abd2fe5fb4b6a83
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/js/bootstrap.min.js
+# sw.file.hash: 7fbd9db94fe93db1c641c663325871688f0a0d53
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/js/easings.js
+# sw.file.hash: 4c02b5322b57149fdda669eb27936d75804e2bf6
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/js/isotope.pkgd.min.js
+# sw.file.hash: 802649a55f85f4b0cdfbb9f92383c330f328b950
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/js/jS.js
+# sw.file.hash: 1327f754ff87d26bced46568543207e9df190aaa
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/js/jquery-2.1.4.min.js
+# sw.file.hash: 4d8f7e633d6fb32a6d39bc89a6b64d1ff39ed7cf
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/js/jquery.bootstrap-touchspin.js
+# sw.file.hash: 57162e7fea1f12a63b4ce4448f006b06afe54a3b
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/js/jquery.flexslider.js
+# sw.file.hash: 443ce776e0ea45962177fb002d8acb5a3a56c715
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/js/main.js
+# sw.file.hash: 0b9e83aa318b2b281c163a21246f576fb29e640f
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/js/npm.js
+# sw.file.hash: 513464d164c8e1e0e63777dbf271ba43211f36c3
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/js/responsive-tabs.js
+# sw.file.hash: d787e516dc68841ab355986be8b10a01af3415f1
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/js/script-responsive-faq.js
+# sw.file.hash: 411c2cf9aaf16e1927cfc0eb5940f510870727ce
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/js/script-responsive.js
+# sw.file.hash: 440671c00c0de875c0521f161441b751b7aa7703
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/js/scripttabscollapse.js
+# sw.file.hash: e87ac0828d9597fd32404ba1c3f1eac428a9230c
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/js/select2.min.js
+# sw.file.hash: edc201b5ae47a918348af15c2f9a3629539feb0f
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/js/smoothScroll.js
+# sw.file.hash: cdebf789760f4a04c9496cb26afdda41948f3e4b
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/js/touchspin-script.js
+# sw.file.hash: 472ec14f388c90a7201861e77faec317d038fd9c
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/less/animated.less
+# sw.file.hash: 66dc98ad0e4151e8938350f1ee3d0932348b37e8
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/less/bordered-pulled.less
+# sw.file.hash: 5f436a1afd7f1de7dde20ed8c2fd84812b8acf12
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/less/core.less
+# sw.file.hash: a9552c8a91766a6d926c43c4c0f74acb62aaf719
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/less/fixed-width.less
+# sw.file.hash: f85e373e19ddcb1b1b9f84247f98eed00f31c7bb
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/less/font-awesome.less
+# sw.file.hash: ad82271e3dc001fe9962a081cc0f7f66426e210d
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/less/icons.less
+# sw.file.hash: d9610d7f83b0aaf3fdd5fa048117bd8620adf346
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/less/larger.less
+# sw.file.hash: 2b203f3bacd6eaa58d0aa11efb9fb661b884eeb9
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/less/list.less
+# sw.file.hash: 9b53403a944d93c5d7238c8942534fccf7957cff
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/less/mixins.less
+# sw.file.hash: fce36570fe54da40c1c61f20d62bf9751a81a27e
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/less/path.less
+# sw.file.hash: 39ec6a3d98e5a55a2330935d139f95855c139dcf
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/less/rotated-flipped.less
+# sw.file.hash: 3fa86249735534461a08afa86b5d7d774de7ef3f
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/less/screen-reader.less
+# sw.file.hash: ee10b7a0bc941f8d0bbd092d4178b9fae9f1661f
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/less/stacked.less
+# sw.file.hash: 3a89cf87c8763e1f1a50d2b44da1f39a545edda3
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/less/variables.less
+# sw.file.hash: c3d081abee1076d36a289afc6488e676bc59f023
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/scss/_animated.scss
+# sw.file.hash: 39353047bbcce4f3f706666df1547e64546932a0
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/scss/_bordered-pulled.scss
+# sw.file.hash: 2dce8814642ef0ee86c65f3d29818c17fd8951f9
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/scss/_core.scss
+# sw.file.hash: f4af333866ff3c0da59493fc7077965c6e9d46ac
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/scss/_fixed-width.scss
+# sw.file.hash: e41cd58fc9df1a4de7e087f992c592005cb147cc
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/scss/_icons.scss
+# sw.file.hash: c5cf379c23025aa001f850bd560a87a92e4f711d
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/scss/_larger.scss
+# sw.file.hash: 8e9c5708bd91364a749f93555ba65af3c49ff1a6
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/scss/_list.scss
+# sw.file.hash: 25b2361e654e3512c1f6024f3a8d593413611a58
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/scss/_mixins.scss
+# sw.file.hash: 011339ce07bb12a5736edd7fdbed0b7f3c63bf72
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/scss/_path.scss
+# sw.file.hash: fd48d098af52ffff6f829e7f5a2250a9c3cfc87f
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/scss/_rotated-flipped.scss
+# sw.file.hash: ebe3fe40059e5a2a3a3c0c0f587a2e2bc23fd1b2
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/scss/_screen-reader.scss
+# sw.file.hash: c4fe90e7781e8b229bf2657312ba61ecf1026cab
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/scss/_stacked.scss
+# sw.file.hash: bf2c8d7e3e4d2deb87b6f51d6135ab4e5f4adcd8
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/scss/_variables.scss
+# sw.file.hash: 2a2978cbc95d41260f46c3b62cbf14f7fe310dcc
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/scss/font-awesome.scss
+# sw.file.hash: ffddf6c7c59593d3bb548b3f642a16b5dfd8a549
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/tsconfig.json
+# sw.file.hash: 43f415ae0510c32271984330aa4faf5e6583f2c5
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/vendor/angular2/bundles/angular2-polyfills.js
+# sw.file.hash: 9725ab0ce0483a0cf18282ce788a589505e49e6a
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/vendor/angular2/bundles/angular2.dev.js
+# sw.file.hash: e161d053cf096f7e43daa9aafc58026972429e6c
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/vendor/angular2/bundles/http.dev.js
+# sw.file.hash: b831fe6b5300ffc5f1c8a7c3b641b630de4a00c7
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/vendor/angular2/bundles/router.dev.js
+# sw.file.hash: 846b640e5f3d57fcda9df6368447fc99cf5a6c85
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/vendor/angular2/bundles/upgrade.dev.js
+# sw.file.hash: 2adbdc3a7b6d85ac53b76b52234f28b16c88c7b2
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/vendor/es6-shim/es6-shim.js
+# sw.file.hash: 736fe8675af5630486329adf5efe12ec7be449b1
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/vendor/rxjs/bundles/Rx.js
+# sw.file.hash: 064ab212cfd9e125474ae3bbb600c366b31e79cb
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/vendor/systemjs/dist/system-polyfills.js
+# sw.file.hash: 83128f4a4209eb7b16ad0bb729fda6939bc450fc
+\C:/Users/Carlos/Desktop/Univesidad/DAW/angular/main/tmp/diffing_swmanifest-input_base_path-MSbdID1h.tmp/0/vendor/systemjs/dist/system.src.js
+>>>>>>> origin/master

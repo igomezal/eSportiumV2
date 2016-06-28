@@ -199,6 +199,26 @@ public class UserController {
 		}
 	}
 	
+	@RequestMapping(value = "/doAdmin/{id}", method = RequestMethod.PUT)
+	public ResponseEntity<User> hacerAdmin(@PathVariable long id){
+		User user = repository.findOne(id);
+		
+		if(user != null){
+			List<String> l = new ArrayList<String>();
+			l = user.getRoles();
+			if(l.contains("ROLE_ADMIN")){
+				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			}else{
+				l.add("ROLE_ADMIN");
+				user.setRoles(l);
+				repository.save(user);
+				return new ResponseEntity<>(user, HttpStatus.OK);
+			}			
+		}else{
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+	}
+	
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<User> borraUser(@PathVariable long id){
 		if(repository.exists(id)){

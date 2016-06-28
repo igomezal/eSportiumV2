@@ -60,16 +60,20 @@ export class addPartidoComponent{
     console.log(juegoN);
   }
 
-  gotoMain(){
-    this._Router.navigate(['Inicio']);
-  }
-
   gotoHome(){
     this._Router.navigate(['Admin']);
   }
 
   gotoGestionJuegos(){
     this._Router.navigate(['GestionJuegos']);
+  }
+
+  gotoGestionEquipos(){
+    this._Router.navigate(['GestionEquipos']);
+  }
+
+  gotoGestionJugadores() {
+    this._Router.navigate(['GestionJugadores']);
   }
 
   gotoGestionPartidos(){
@@ -82,6 +86,10 @@ export class addPartidoComponent{
 
   gotoAjustes(){
     this._Router.navigate(['Ajustes']);
+  }
+
+  gotoMain(){
+    this._Router.navigate(['Inicio']);
   }
 
   cerrarSesion(){

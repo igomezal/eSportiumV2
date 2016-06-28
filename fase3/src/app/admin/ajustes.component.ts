@@ -19,6 +19,14 @@ export class ajustesComponent{
     this._Router.navigate(['GestionJuegos']);
   }
 
+  gotoGestionEquipos(){
+    this._Router.navigate(['GestionEquipos']);
+  }
+
+  gotoGestionJugadores() {
+    this._Router.navigate(['GestionJugadores']);
+  }
+
   gotoGestionPartidos(){
     this._Router.navigate(['GestionPartidos']);
   }
