@@ -109,6 +109,7 @@ export class CabeceraComponent implements OnInit{
 		response => {},
 		error => console.log("Error when trying to log out: "+error)
 	);
+  this.goToInicio();
   }
 
 }

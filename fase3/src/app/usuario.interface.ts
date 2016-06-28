@@ -153,6 +153,19 @@ export class UsuarioService{
         .catch(error => this.manejarError(error));
   }
 
+  doAdmin(user: Usuario){
+    let url = "https://localhost:8443/usuarios/doAdmin/"+user.id;
+    let item = {id:null};
+    let body = JSON.stringify(item);
+    let headers = new Headers({
+      'Content-Type' : 'application/json'
+    });
+    let options = new RequestOptions({headers});
+    return this.http.put(url, body, options)
+      .map(response => response.json)
+      .catch(error => this.manejarError(error));
+  }
+
   almacenarSesion(sesion:Usuario){ //Almacenamos los cambios realizados en la sesion
     for(var i=0; i < this.usuario.length; i++) {
         if(this.usuario[i].name === this.sesion.name){

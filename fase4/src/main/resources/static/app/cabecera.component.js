@@ -85,6 +85,7 @@ System.register(['angular2/core', 'angular2/router', './usuario.interface', './l
                 };
                 CabeceraComponent.prototype.logOutSpring = function () {
                     this.loginService.logOut().subscribe(function (response) { }, function (error) { return console.log("Error when trying to log out: " + error); });
+                    this.goToInicio();
                 };
                 CabeceraComponent = __decorate([
                     core_1.Component({

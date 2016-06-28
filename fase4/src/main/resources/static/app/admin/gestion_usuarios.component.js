@@ -69,6 +69,16 @@ System.register(['angular2/core', 'angular2/router', '../usuario.interface'], fu
                 gestionUsuariosComponent.prototype.borrarUsuario = function (usuario) {
                     this._UsuarioService.eliminarUsuario(usuario.id);
                 };
+                gestionUsuariosComponent.prototype.hacerAdmin = function (usuario) {
+                    var r = confirm("¿Quieres hacer Administrador a este usuario?");
+                    if (r == true) {
+                        console.log(usuario);
+                        this._UsuarioService.doAdmin(usuario).subscribe(function (response) { return alert("Privilegios actualizados"); }, function (error) {
+                            console.log(error);
+                            alert("Este usuario no existe o ya es Administrador");
+                        });
+                    }
+                };
                 gestionUsuariosComponent = __decorate([
                     core_1.Component({
                         selector: 'gestionUsuarios',

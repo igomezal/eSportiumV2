@@ -67,4 +67,16 @@ export class gestionUsuariosComponent {
     this._UsuarioService.eliminarUsuario(usuario.id);
   }
 
+  hacerAdmin(usuario: Usuario){
+    var r = confirm("¿Quieres hacer Administrador a este usuario?");
+    if(r == true){
+      console.log(usuario);
+      this._UsuarioService.doAdmin(usuario).subscribe(
+        response => alert("Privilegios actualizados"),
+        error => {console.log(error);
+        alert("Este usuario no existe o ya es Administrador");}
+      );
+    }
+  }
+
 }
