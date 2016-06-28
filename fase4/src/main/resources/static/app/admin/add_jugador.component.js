@@ -46,14 +46,14 @@ System.register(['angular2/core', '../equipo.interface', '../jugador.interface',
                 addJugadorComponent.prototype.gotoHome = function () {
                     this._Router.navigate(['Admin']);
                 };
+                addJugadorComponent.prototype.gotoGestionJuegos = function () {
+                    this._Router.navigate(['GestionJuegos']);
+                };
                 addJugadorComponent.prototype.gotoGestionEquipos = function () {
                     this._Router.navigate(['GestionEquipos']);
                 };
                 addJugadorComponent.prototype.gotoGestionJugadores = function () {
                     this._Router.navigate(['GestionJugadores']);
-                };
-                addJugadorComponent.prototype.gotoGestionJuegos = function () {
-                    this._Router.navigate(['GestionJuegos']);
                 };
                 addJugadorComponent.prototype.gotoGestionPartidos = function () {
                     this._Router.navigate(['GestionPartidos']);

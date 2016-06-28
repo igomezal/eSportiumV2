@@ -32,20 +32,16 @@ export class editJuegoComponent {
     }else{
       console.log(this.juego.id + " " + nombre + " " + siglas);
       this._JuegoService.editar(this.juego.id, nombre, siglas).subscribe(
-        respuesta => { alert("Juego editado correctamente"); this.goToJuegos();}
+        respuesta => { alert("Juego editado correctamente"); this.gotoGestionJuegos();}
       );
     }
   }
 
   eliminar(juego:Juego){
     this._JuegoService.eliminar(juego.id, juego.nombre, juego.siglas).subscribe(
-        respuesta => { alert("Juego eliminado correctamente"); this.goToJuegos() },
+        respuesta => { alert("Juego eliminado correctamente"); this.gotoGestionJuegos() },
         error => console.log(error)
     );;
-  }
-
-  goToJuegos(){
-    this._Router.navigate(['GestionJuegos']);
   }
 
   gotoHome(){
@@ -56,12 +52,16 @@ export class editJuegoComponent {
     this._Router.navigate(['GestionJuegos']);
   }
 
-  gotoGestionPartidos(){
-    this._Router.navigate(['GestionPartidos']);
+  gotoGestionEquipos(){
+    this._Router.navigate(['GestionEquipos']);
   }
 
-  gotoGestionEquipos() {
-    this._Router.navigate(['GestionEquipos']);
+  gotoGestionJugadores() {
+    this._Router.navigate(['GestionJugadores']);
+  }
+
+  gotoGestionPartidos(){
+    this._Router.navigate(['GestionPartidos']);
   }
 
   gotoGestionUsuarios(){

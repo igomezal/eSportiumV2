@@ -39,6 +39,12 @@ System.register(['angular2/core', 'angular2/router', '../usuario.interface'], fu
                 gestionUsuariosComponent.prototype.gotoGestionJuegos = function () {
                     this._Router.navigate(['GestionJuegos']);
                 };
+                gestionUsuariosComponent.prototype.gotoGestionEquipos = function () {
+                    this._Router.navigate(['GestionEquipos']);
+                };
+                gestionUsuariosComponent.prototype.gotoGestionJugadores = function () {
+                    this._Router.navigate(['GestionJugadores']);
+                };
                 gestionUsuariosComponent.prototype.gotoGestionPartidos = function () {
                     this._Router.navigate(['GestionPartidos']);
                 };

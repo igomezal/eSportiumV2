@@ -74,14 +74,17 @@ System.register(['angular2/core', '../partido.service', '../juego.interface', 'a
                     this.juegoN = juegoN;
                     console.log(juegoN);
                 };
-                addPartidoComponent.prototype.gotoMain = function () {
-                    this._Router.navigate(['Inicio']);
-                };
                 addPartidoComponent.prototype.gotoHome = function () {
                     this._Router.navigate(['Admin']);
                 };
                 addPartidoComponent.prototype.gotoGestionJuegos = function () {
                     this._Router.navigate(['GestionJuegos']);
+                };
+                addPartidoComponent.prototype.gotoGestionEquipos = function () {
+                    this._Router.navigate(['GestionEquipos']);
+                };
+                addPartidoComponent.prototype.gotoGestionJugadores = function () {
+                    this._Router.navigate(['GestionJugadores']);
                 };
                 addPartidoComponent.prototype.gotoGestionPartidos = function () {
                     this._Router.navigate(['GestionPartidos']);
@@ -91,6 +94,9 @@ System.register(['angular2/core', '../partido.service', '../juego.interface', 'a
                 };
                 addPartidoComponent.prototype.gotoAjustes = function () {
                     this._Router.navigate(['Ajustes']);
+                };
+                addPartidoComponent.prototype.gotoMain = function () {
+                    this._Router.navigate(['Inicio']);
                 };
                 addPartidoComponent.prototype.cerrarSesion = function () {
                     this._UsuarioService.setSesion(undefined);

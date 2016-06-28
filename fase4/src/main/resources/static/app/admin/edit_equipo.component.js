@@ -81,15 +81,14 @@ System.register(['angular2/core', '../equipo.interface', 'angular2/router', '../
                 };
                 //Fin imágenes
                 editEquipoComponent.prototype.editar = function (nombre) {
-                    var _this = this;
+                    var logo = "temp";
+                    this.upload();
                     if (nombre == "") {
                         alert("Datos incorrectos");
                     }
                     else {
-                        this._EquipoService.editar(this.equipo.id, nombre, "logotemp").subscribe(function (respuesta) {
+                        this._EquipoService.editar(this.equipo.id, nombre, logo).subscribe(function (respuesta) {
                             alert("Equipo editado correctamente");
-                            console.log(respuesta);
-                            _this.upload();
                         });
                     }
                 };
@@ -97,20 +96,20 @@ System.register(['angular2/core', '../equipo.interface', 'angular2/router', '../
                     var _this = this;
                     this._EquipoService.eliminar(id).subscribe(function (response) { alert('Se ha eliminado el equipo seleccionado.'); _this.gotoGestionEquipos(); }, function (error) { return console.log(error); });
                 };
-                editEquipoComponent.prototype.goToJuegos = function () {
-                    this._Router.navigate(['GestionJuegos']);
-                };
                 editEquipoComponent.prototype.gotoHome = function () {
                     this._Router.navigate(['Admin']);
                 };
                 editEquipoComponent.prototype.gotoGestionJuegos = function () {
                     this._Router.navigate(['GestionJuegos']);
                 };
-                editEquipoComponent.prototype.gotoGestionPartidos = function () {
-                    this._Router.navigate(['GestionPartidos']);
-                };
                 editEquipoComponent.prototype.gotoGestionEquipos = function () {
                     this._Router.navigate(['GestionEquipos']);
+                };
+                editEquipoComponent.prototype.gotoGestionJugadores = function () {
+                    this._Router.navigate(['GestionJugadores']);
+                };
+                editEquipoComponent.prototype.gotoGestionPartidos = function () {
+                    this._Router.navigate(['GestionPartidos']);
                 };
                 editEquipoComponent.prototype.gotoGestionUsuarios = function () {
                     this._Router.navigate(['GestionUsuarios']);

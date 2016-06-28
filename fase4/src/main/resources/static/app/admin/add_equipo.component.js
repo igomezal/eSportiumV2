@@ -85,14 +85,14 @@ System.register(['angular2/core', '../equipo.interface', 'angular2/router', '../
                 addEquipoComponent.prototype.gotoHome = function () {
                     this._Router.navigate(['Admin']);
                 };
+                addEquipoComponent.prototype.gotoGestionJuegos = function () {
+                    this._Router.navigate(['GestionJuegos']);
+                };
                 addEquipoComponent.prototype.gotoGestionEquipos = function () {
                     this._Router.navigate(['GestionEquipos']);
                 };
                 addEquipoComponent.prototype.gotoGestionJugadores = function () {
                     this._Router.navigate(['GestionJugadores']);
-                };
-                addEquipoComponent.prototype.gotoGestionJuegos = function () {
-                    this._Router.navigate(['GestionJuegos']);
                 };
                 addEquipoComponent.prototype.gotoGestionPartidos = function () {
                     this._Router.navigate(['GestionPartidos']);

@@ -48,16 +48,13 @@ System.register(['angular2/core', '../juego.interface', 'angular2/router', '../u
                     }
                     else {
                         console.log(this.juego.id + " " + nombre + " " + siglas);
-                        this._JuegoService.editar(this.juego.id, nombre, siglas).subscribe(function (respuesta) { alert("Juego editado correctamente"); _this.goToJuegos(); });
+                        this._JuegoService.editar(this.juego.id, nombre, siglas).subscribe(function (respuesta) { alert("Juego editado correctamente"); _this.gotoGestionJuegos(); });
                     }
                 };
                 editJuegoComponent.prototype.eliminar = function (juego) {
                     var _this = this;
-                    this._JuegoService.eliminar(juego.id, juego.nombre, juego.siglas).subscribe(function (respuesta) { alert("Juego eliminado correctamente"); _this.goToJuegos(); }, function (error) { return console.log(error); });
+                    this._JuegoService.eliminar(juego.id, juego.nombre, juego.siglas).subscribe(function (respuesta) { alert("Juego eliminado correctamente"); _this.gotoGestionJuegos(); }, function (error) { return console.log(error); });
                     ;
-                };
-                editJuegoComponent.prototype.goToJuegos = function () {
-                    this._Router.navigate(['GestionJuegos']);
                 };
                 editJuegoComponent.prototype.gotoHome = function () {
                     this._Router.navigate(['Admin']);
@@ -65,11 +62,14 @@ System.register(['angular2/core', '../juego.interface', 'angular2/router', '../u
                 editJuegoComponent.prototype.gotoGestionJuegos = function () {
                     this._Router.navigate(['GestionJuegos']);
                 };
-                editJuegoComponent.prototype.gotoGestionPartidos = function () {
-                    this._Router.navigate(['GestionPartidos']);
-                };
                 editJuegoComponent.prototype.gotoGestionEquipos = function () {
                     this._Router.navigate(['GestionEquipos']);
+                };
+                editJuegoComponent.prototype.gotoGestionJugadores = function () {
+                    this._Router.navigate(['GestionJugadores']);
+                };
+                editJuegoComponent.prototype.gotoGestionPartidos = function () {
+                    this._Router.navigate(['GestionPartidos']);
                 };
                 editJuegoComponent.prototype.gotoGestionUsuarios = function () {
                     this._Router.navigate(['GestionUsuarios']);
