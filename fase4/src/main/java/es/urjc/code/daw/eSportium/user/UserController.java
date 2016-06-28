@@ -40,6 +40,9 @@ import es.urjc.code.daw.eSportium.partido.PartidoController;
 @RequestMapping("/usuarios")
 public class UserController {
 	
+	@Autowired
+	private UserComponent usercomponent;
+	
 	private static final Path FILES_FOLDER = Paths.get(System.getProperty("user.dir"), "files");
 
 	private static final Logger log = LoggerFactory.getLogger(PartidoController.class);
@@ -60,29 +63,14 @@ public class UserController {
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<User> getUser(@PathVariable long id/*, HttpServletResponse res*/) throws FileNotFoundException, IOException {
 		log.info("Get User {}", id);
+		boolean sec = true;
+		
+		long userloggedId = usercomponent.getLoggedUser().getId();
+		if(userloggedId != id)
+			sec = false;
 		
 		User user = repository.findOne(id);
-		if(user != null){
-		
-		
-		/*NOTE: The url format "/images/{fileName:.+}" avoid Spring MVC remove file extension.
-		
-		//@RequestMapping("/images/{fileName:.+}")
-		//public void handleFileDownload(@PathVariable String fileName, HttpServletResponse res)
-				//throws FileNotFoundException, IOException {
-			
-			Path image = FILES_FOLDER.resolve(user.getFoto());
-
-			if (Files.exists(image)) {
-				res.setContentType("image/jpeg");
-				res.setContentLength((int) image.toFile().length());
-				FileCopyUtils.copy(Files.newInputStream(image), res.getOutputStream());
-				
-			} else {
-				res.sendError(404, "File" + user.getFoto() + "(" + image.toAbsolutePath() + ") does not exist");
-			}
-		//}*/
-		
+		if(user != null && sec){		
 			return new ResponseEntity<>(user, HttpStatus.OK);
 		}else{
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -157,37 +145,15 @@ public class UserController {
 	@RequestMapping(value ="/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<User> editarUser(@PathVariable long id, @RequestBody User updatedUser)throws IOException{
 		User user = repository.findOne(id);
-		if (user != null){
+		boolean sec = true;
+		
+		long userloggedId = usercomponent.getLoggedUser().getId();
+		if(userloggedId != id)
+			sec = false;
+		if (user != null && sec){
 			updatedUser.setId(id);
 			updatedUser.setRoles(user.getRoles());
-			updatedUser.setFoto(user.getFoto());
-			
-			
-				/*@RequestMapping(value = "/image/upload", method = RequestMethod.POST)
-				//public String handleFileUpload(@RequestParam String description, @RequestParam MultipartFile file) throws IOException {
-
-				if (file.isEmpty()) {
-					throw new RuntimeException("The file is empty");
-				}
-
-				if (!Files.exists(FILES_FOLDER)) {
-					Files.createDirectories(FILES_FOLDER);
-				}
-
-				String fileName = "image-" + user.getName() + ".png";
-				File uploadedFile = new File(FILES_FOLDER.toFile(), fileName);
-				file.transferTo(uploadedFile);
-				
-				updatedUser.setFoto(fileName);
-
-				//Image image = new Image(description, fileName);
-
-				//images.add(image);
-
-				//return fileName;
-				//}*/
-			
-			
+			updatedUser.setFoto(user.getFoto());			
 			if(updatedUser.getEstaeslacont() == (null)){
 				//El usuario quiere editar pero sin cambiar la contraseña
 				updatedUser.setPasswordHash(user.getPasswordHash());

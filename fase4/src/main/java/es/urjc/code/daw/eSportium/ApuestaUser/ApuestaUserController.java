@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 
 import es.urjc.code.daw.eSportium.apuesta.Apuesta;
 import es.urjc.code.daw.eSportium.user.User;
+import es.urjc.code.daw.eSportium.user.UserComponent;
 import es.urjc.code.daw.eSportium.equipo.Equipo;
 import es.urjc.code.daw.eSportium.partido.Partido;
 
@@ -25,6 +26,9 @@ import es.urjc.code.daw.eSportium.partido.Partido;
 @RestController
 @RequestMapping("/apuestaUser")
 public class ApuestaUserController {
+	
+	@Autowired
+	private UserComponent usercomponent;
 	
 	private static final Logger log = LoggerFactory.getLogger(ApuestaUserController.class);
 
@@ -78,8 +82,12 @@ public class ApuestaUserController {
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	public ApuestaUser nuevaApuestaUser(@RequestBody ApuestaUser apuestaUser){
-		repository.save(apuestaUser);
 		
+		boolean sec = true;
+		
+		long loggedId = usercomponent.getLoggedUser().getId();
+		if(loggedId == apuestaUser.getId())
+			repository.save(apuestaUser);
 		return apuestaUser;
 	}
 	
