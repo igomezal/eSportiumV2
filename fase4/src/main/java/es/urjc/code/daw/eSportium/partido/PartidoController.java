@@ -66,6 +66,7 @@ public class PartidoController {
 		}
 	}
 
+	@JsonView(PartidoListView.class)
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	public Partido nuevoPartido(@RequestBody Partido partido) {
@@ -75,6 +76,7 @@ public class PartidoController {
 		return partido;
 	}
 
+	@JsonView(PartidoListView.class)
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT)
 	public ResponseEntity<Partido> actulizaPartido(@PathVariable long id, @RequestBody Partido updatedPartido) {
 
@@ -91,6 +93,7 @@ public class PartidoController {
 		}
 	}
 
+	@JsonView(PartidoListView.class)
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Partido> borraPartido(@PathVariable long id) {
 

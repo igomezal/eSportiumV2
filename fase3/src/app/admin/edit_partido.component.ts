@@ -3,7 +3,7 @@ import {ROUTER_DIRECTIVES,Router} from 'angular2/router';
 import {Partido, PartidoService} from '../partido.service';
 import {RouteParams} from 'angular2/router';
 import {Juego, JuegoService} from '../juego.interface';
-import {Equipo} from '../equipo.interface';
+import {Equipo,EquipoService} from '../equipo.interface';
 import {UsuarioService} from '../usuario.interface';
 
 @Component({
@@ -13,10 +13,15 @@ import {UsuarioService} from '../usuario.interface';
 
 export class editPartidoComponent{
 
-  constructor(private _UsuarioService: UsuarioService ,private _Router: Router ,private _Partidoservice: PartidoService,private _JuegoService: JuegoService, private _routeParams: RouteParams){}
+  constructor(private _UsuarioService: UsuarioService ,private _Router: Router ,private _Partidoservice: PartidoService,
+    private _JuegoService: JuegoService, private _routeParams: RouteParams, private _EquipoService:EquipoService){}
 
   private partido: Partido;
+  private equipo1N = 0;
+  private juegoN = 0;
+  private equipo2N = 0;
 
+  private equipos: Equipo[];
   private juegos: Juego[];
 
   ngOnInit(){
@@ -29,14 +34,35 @@ export class editPartidoComponent{
       juegos => this.juegos = juegos,
       error => console.log(error)
     );
+    this._EquipoService.getEquipos().subscribe(
+      equipos => this.equipos = equipos,
+      error => console.log(error)
+    );
   }
 
-  editar(juego:Juego, eq1: Equipo, logo1:string, porcen1:string, eq2: Equipo, logo2:string, porcen2:string, url: string, rondas: string, estado: string){
-    if( juego == null || eq1 == null || logo1 == "" || porcen1 == "" ||eq2 == null || logo2 == "" || porcen2 =="" || url == "" || rondas == "" || estado ==""){
+  seleccion1N(equipo1N){
+    this.equipo1N = equipo1N;
+    console.log(equipo1N);
+  }
+
+  seleccion2N(equipo2N){
+    this.equipo2N = equipo2N;
+    console.log(equipo2N);
+  }
+
+  seleccionj(juegoN){
+    this.juegoN = juegoN;
+    console.log(juegoN);
+  }
+
+  editar(porcen1:string, porcen2:string, url: string, rondas: string, estado: string){
+    if(this.juegoN == 0 || this.equipo1N == 0 || this.equipo2N == 0 || porcen1 == "" || porcen2 =="" || url == "" || rondas == "" || estado ==""){
       alert("Datos incorrectos");
     }else{
       let id = +this._routeParams.get('id');
-      this._Partidoservice.editarPartido(id,juego, eq1, logo1, porcen1, eq2, logo2, porcen2, url, rondas, estado)
+      this._Partidoservice.editarPartido(id,this.juegoN, this.equipo1N, porcen1, this.equipo2N, porcen2, url, rondas, estado).subscribe(
+        response => alert("Partido editado")
+      );
     }
   }
 
