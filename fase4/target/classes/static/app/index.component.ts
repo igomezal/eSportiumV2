@@ -71,10 +71,10 @@ export class indexComponent {
   isVacio(a: Partido[],siglas: string){
     for (var i in a){
       if(a[i].juego.siglas == siglas){
-        console.log("partido encontrado "+i)
+        //console.log("partido encontrado "+i)
       }
     }
-    console.log("salgo, no se si hay partidos")
+    //console.log("salgo, no se si hay partidos")
   }
 
   goToPartido(partido: Partido){

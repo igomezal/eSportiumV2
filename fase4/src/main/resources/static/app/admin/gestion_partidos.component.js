@@ -1,4 +1,6 @@
-System.register(['angular2/core', 'angular2/router', '../partido.service', '../usuario.interface', '../apuestaUser.interface'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', '../partido.service', '../usuario.interface', '../apuestaUser.interface', '../login.service'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +10,7 @@ System.register(['angular2/core', 'angular2/router', '../partido.service', '../u
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, partido_service_1, usuario_interface_1, apuestaUser_interface_1;
+    var core_1, router_1, partido_service_1, usuario_interface_1, apuestaUser_interface_1, login_service_1;
     var gestionPartidosComponent;
     return {
         setters:[
@@ -26,14 +28,18 @@ System.register(['angular2/core', 'angular2/router', '../partido.service', '../u
             },
             function (apuestaUser_interface_1_1) {
                 apuestaUser_interface_1 = apuestaUser_interface_1_1;
+            },
+            function (login_service_1_1) {
+                login_service_1 = login_service_1_1;
             }],
         execute: function() {
             gestionPartidosComponent = (function () {
-                function gestionPartidosComponent(_UsuarioService, _Partidoservice, _Router, _ApuestaUserService) {
+                function gestionPartidosComponent(_UsuarioService, _Partidoservice, _Router, _ApuestaUserService, _LoginService) {
                     this._UsuarioService = _UsuarioService;
                     this._Partidoservice = _Partidoservice;
                     this._Router = _Router;
                     this._ApuestaUserService = _ApuestaUserService;
+                    this._LoginService = _LoginService;
                     this.ganadorN = "";
                     this.karma = 0;
                 }
@@ -98,6 +104,7 @@ System.register(['angular2/core', 'angular2/router', '../partido.service', '../u
                                 _this._ApuestaUserService.obtenerUserApuestas(response.apuestas[i].id).subscribe(function (response) {
                                     _this._UsuarioService.cobrarKarma(response[0].user, response[0].apuesta.karma).subscribe(function (response) {
                                         console.log("El user " + response.name + " ha ganado, sumando un total de " + response.karma + " de karma");
+                                        _this._LoginService.refresh().subscribe(function (response) { console.log("loginService actualizado / +Karma"); });
                                     });
                                 });
                             }
@@ -127,12 +134,12 @@ System.register(['angular2/core', 'angular2/router', '../partido.service', '../u
                         selector: 'gestionPartidos',
                         templateUrl: 'app/admin/gestion_partidos.html'
                     }), 
-                    __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, partido_service_1.PartidoService, router_1.Router, apuestaUser_interface_1.ApuestaUserService])
+                    __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, partido_service_1.PartidoService, router_1.Router, apuestaUser_interface_1.ApuestaUserService, login_service_1.LoginService])
                 ], gestionPartidosComponent);
                 return gestionPartidosComponent;
-            })();
+            }());
             exports_1("gestionPartidosComponent", gestionPartidosComponent);
         }
     }
 });
-//# sourceMappingURL=../../../../app/admin/gestion_partidos.component.js.map
+//# sourceMappingURL=gestion_partidos.component.js.map

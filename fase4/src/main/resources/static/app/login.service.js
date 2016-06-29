@@ -1,4 +1,6 @@
-System.register(['angular2/core', 'angular2/http', 'rxjs/Rx'], function(exports_1) {
+System.register(['angular2/core', 'angular2/http', 'rxjs/Rx', 'rxjs/Observable'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +10,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx'], function(exports_
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, http_1;
+    var core_1, http_1, Observable_1;
     var LoginService;
     function utf8_to_b64(str) {
         return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function (match, p1) {
@@ -23,7 +25,10 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx'], function(exports_
             function (http_1_1) {
                 http_1 = http_1_1;
             },
-            function (_1) {}],
+            function (_1) {},
+            function (Observable_1_1) {
+                Observable_1 = Observable_1_1;
+            }],
         execute: function() {
             LoginService = (function () {
                 function LoginService(http) {
@@ -32,6 +37,13 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx'], function(exports_
                     this.isAdmin = false;
                     this.reqIsLogged();
                 }
+                LoginService.prototype.refresh = function () {
+                    var _this = this;
+                    var url = "https://localhost:8443/ref/";
+                    return this.http.get(url)
+                        .map(function (response) { return _this.user = response.json(); })
+                        .catch(function (error) { return _this.manejarError(error); });
+                };
                 LoginService.prototype.reqIsLogged = function () {
                     var _this = this;
                     var headers = new http_1.Headers({
@@ -71,14 +83,18 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/Rx'], function(exports_
                         return response;
                     });
                 };
+                LoginService.prototype.manejarError = function (error) {
+                    console.log(error);
+                    return Observable_1.Observable.throw("Server error (" + error.status + "): " + error.text);
+                };
                 LoginService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [http_1.Http])
                 ], LoginService);
                 return LoginService;
-            })();
+            }());
             exports_1("LoginService", LoginService);
         }
     }
 });
-//# sourceMappingURL=../../../app/login.service.js.map
+//# sourceMappingURL=login.service.js.map

@@ -1,4 +1,6 @@
-System.register(['angular2/core', './usuario.interface', 'angular2/router', './login.service', "./multipart-upload/multipart-item", "./multipart-upload/multipart-uploader", './Image.service'], function(exports_1) {
+System.register(['angular2/core', './usuario.interface', 'angular2/router', './login.service', "./multipart-upload/multipart-item", "./multipart-upload/multipart-uploader", './Image.service'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -85,6 +87,7 @@ System.register(['angular2/core', './usuario.interface', 'angular2/router', './l
                 };
                 //Fin imágenes
                 editarPerfil.prototype.editar = function (user, nombre, Clave1, Clave2, foto, correo, genero) {
+                    var _this = this;
                     var contra = Clave1;
                     this.upload();
                     if (Clave1 == "" && Clave2 == "") {
@@ -97,6 +100,7 @@ System.register(['angular2/core', './usuario.interface', 'angular2/router', './l
                     else {
                         this._usuarioService.editarDatos(user, nombre, contra, foto, correo, genero).subscribe(function (response) {
                             alert("Usuario editado correctamente");
+                            _this._LoginService.refresh().subscribe(function (response) { console.log("loginService actualizado / +Karma"); });
                         });
                     }
                 };
@@ -153,9 +157,9 @@ System.register(['angular2/core', './usuario.interface', 'angular2/router', './l
                     __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, router_1.Router, login_service_1.LoginService, Image_service_1.ImageService])
                 ], editarPerfil);
                 return editarPerfil;
-            })();
+            }());
             exports_1("editarPerfil", editarPerfil);
         }
     }
 });
-//# sourceMappingURL=../../../app/editarpefil.component.js.map
+//# sourceMappingURL=editarpefil.component.js.map

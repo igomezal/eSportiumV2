@@ -52,5 +52,15 @@ public class LoginController {
 			return new ResponseEntity<>(true, HttpStatus.OK);
 		}
 	}
+	
+	@RequestMapping("/ref")
+	public ResponseEntity<User> refresh(){
+		if(!userComponent.isLoggedUser()){
+			log.info("Nada que actualizar");
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}else{
+			return new ResponseEntity<>(userComponent.getLoggedUser(), HttpStatus.OK);
+		}
+	}
 
 }

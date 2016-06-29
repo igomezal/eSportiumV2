@@ -1,4 +1,6 @@
-System.register(['angular2/core', './usuario.interface', './partido.service', 'angular2/router', './login.service', './apuestaUser.interface'], function(exports_1) {
+System.register(['angular2/core', './usuario.interface', './partido.service', 'angular2/router', './login.service', './apuestaUser.interface'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -99,9 +101,9 @@ System.register(['angular2/core', './usuario.interface', './partido.service', 'a
                     __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, partido_service_1.PartidoService, router_1.Router, login_service_1.LoginService, apuestaUser_interface_1.ApuestaUserService])
                 ], Perfil);
                 return Perfil;
-            })();
+            }());
             exports_1("Perfil", Perfil);
         }
     }
 });
-//# sourceMappingURL=../../../app/profile.component.js.map
+//# sourceMappingURL=profile.component.js.map

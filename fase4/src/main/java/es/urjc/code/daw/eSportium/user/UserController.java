@@ -164,6 +164,7 @@ public class UserController {
 				
 			}
 			repository.save(updatedUser);
+			usercomponent.setLoggedUser(updatedUser);
 			return new ResponseEntity<>(updatedUser, HttpStatus.OK);
 		}else{
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -194,6 +195,7 @@ public class UserController {
 				
 			}
 			repository.save(updatedUser);
+			usercomponent.setLoggedUser(updatedUser);
 			return new ResponseEntity<>(updatedUser, HttpStatus.OK);
 		}else{
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);

@@ -2,6 +2,8 @@ import { Injectable, OnInit } from 'angular2/core';
 import { Http, RequestOptions, Headers } from 'angular2/http';
 import 'rxjs/Rx';
 import {Usuario} from './usuario.interface';
+import {Observable} from 'rxjs/Observable';
+import {withObserver} from './utils';
 
 export interface User {
     id?: number;
@@ -19,6 +21,13 @@ export class LoginService {
 	constructor(private http: Http){
 		this.reqIsLogged();
 	}
+
+  refresh(){
+    let url = "https://localhost:8443/ref/";
+    return this.http.get(url)
+      .map(response => this.user = response.json())
+      .catch(error => this.manejarError(error));
+  }
 
 	reqIsLogged(){
 
@@ -74,6 +83,10 @@ export class LoginService {
 			}
 		);
 	}
+  private manejarError(error:any){
+    console.log(error);
+    return Observable.throw("Server error (" + error.status + "): " + error.text);
+  }
 }
 
 function utf8_to_b64(str) {
