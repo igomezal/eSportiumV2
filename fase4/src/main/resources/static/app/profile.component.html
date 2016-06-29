@@ -52,7 +52,8 @@
                                                         <img class="img-responsive" alt="{{bet.apuesta.partido.equipo2.nombre}}" src="img/{{bet.apuesta.partido.equipo2.logo}}.png">
                                                     </div>
                                                 </div>
-                                                <p class="blue-text">Apostado: {{bet.apuesta.equipo.nombre}} </p>
+                                                <p *ngIf="bet.apuesta.partido.ganando == 'eq1'" class="blue-text">Apostado: {{bet.apuesta.equipo.nombre}} <span [class.hidden]="partido.estado != 'Directo'">|  Ganado: {{bet.apuesta.partido.equipo1.nombre}} </span></p>
+                                                <p *ngIf="bet.apuesta.partido.ganando == 'eq2'" class="blue-text">Apostado: {{bet.apuesta.equipo.nombre}} <span [class.hidden]="partido.estado != 'Directo'">|  Ganado: {{bet.apuesta.partido.equipo2.nombre}} </span></p>
                                             </a>
                                         </div>
                                     </div>
@@ -74,7 +75,8 @@
                                                         <img class="img-responsive" alt="{{bet.apuesta.partido.equipo2.nombre}}" src="img/{{bet.apuesta.partido.equipo2.logo}}.png">
                                                     </div>
                                                 </div>
-                                                <p class="blue-text">Apostado : {{bet.apuesta.equipo.nombre}}</p>
+                                                <p *ngIf="bet.apuesta.partido.ganando == 'eq1'" class="blue-text">Apostado: {{bet.apuesta.equipo.nombre}} |  Ganador: {{bet.apuesta.partido.equipo1.nombre}} </p>
+                                                <p *ngIf="bet.apuesta.partido.ganando == 'eq2'" class="blue-text">Apostado: {{bet.apuesta.equipo.nombre}} |  Ganador: {{bet.apuesta.partido.equipo2.nombre}} </p>
                                             </a>
                                         </div>
                                     </div>

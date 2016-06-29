@@ -34,9 +34,9 @@ export class Perfil {
   );
   this.apuestas = [];
   this._ApuestaUserService.obtenerApuestasUser(this.loginService.user.id).subscribe(
-    apuesta => this.apuestas = apuesta,
+    apuesta => { this.apuestas = apuesta; console.log(this.apuestas) })
     error => console.log(error)
-  )
+
   }
 
   getApuesta(id:number){

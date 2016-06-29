@@ -135,7 +135,7 @@ export class UsuarioService{
   }
 
   cobrarKarma(user : Usuario, karma: number){
-    let url ="https://localhost:8443/usuarios/"+user.id;
+    let url ="https://localhost:8443/usuarios/actKarma/"+user.id;
     let item = {id: user.id, name: user.name, karma: (user.karma+(2*karma)), fecha: user.fecha, foto: user.foto, genero:user.genero, correo: user.correo };
     let body = JSON.stringify(item);
     let headers = new Headers({
