@@ -65,17 +65,19 @@
                           <td>{{partido.rondas}}</td>
                           <td>
                                 <a (click)="gotoEditPartido(partido)" class="fa fa-pencil">Editar</a><br>
-                                <a [class.hidden]="partido.estado != 'Directo'" (click)="finalizarPartido(partido)" class="glyphicon glyphicon-ok">Finalizar</a><br>
-                                <a [class.hidden]="partido.estado != 'Proximamente'" (click)="aDirecto(partido)" class="glyphicon glyphicon-record">Directo</a><br>
                                 <a (click)="borrarPartido(partido)" class="glyphicon glyphicon-remove">Eliminar</a><br>
-                                <input [class.hidden]="partido.estado != 'Directo'" name="ganador{{partido.id}}" type="radio"
+                                <a [class.hidden]="partido.estado != 'Proximamente'" (click)="aDirecto(partido)" class="glyphicon glyphicon-record">Directo</a><br>
+                                <label [class.hidden]="partido.estado != 'Directo'">Finalizar :</label><br>
+                                <button [class.hidden]="partido.estado != 'Directo'" (click)="finalizarPartido(partido,'eq1')">{{partido.equipo1.nombre}}</button>
+                                <button [class.hidden]="partido.estado != 'Directo'" (click)="finalizarPartido(partido,'eq2')">{{partido.equipo2.nombre}}</button>
+                                <!--<input [class.hidden]="partido.estado != 'Directo'" name="ganador{{partido.id}}" type="radio"
                                      ng-model="ganadorN"
                                      (click)="ganadorN = 'eq1'"
                                      [checked]="ganadorN == 'eq1'"/><span [class.hidden]="partido.estado != 'Directo'">{{partido.equipo1.nombre}}</span>
                                 <input [class.hidden]="partido.estado != 'Directo'" name="ganado{{partido.id}}" type="radio"
                                    ng-model="ganadorN"
                                    (click)="ganadorN = 'eq2'"
-                                   [checked]="ganadorN == 'eq2'"/> <span [class.hidden]="partido.estado != 'Directo'">{{partido.equipo2.nombre}}</span>
+                                   [checked]="ganadorN == 'eq2'"/> <span [class.hidden]="partido.estado != 'Directo'">{{partido.equipo2.nombre}}</span>-->
                             </td>
 
                             <!--<div class="modal fade" id="elegirGanador{{partido.equipo1.nombre}}{{partido.equipo2.nombre}}" role="dialog" aria-labelledby="etiquetaModal">

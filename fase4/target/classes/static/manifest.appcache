@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: 0bb718570c894569aea96ed6ec9508f678969fec
+# sw.version: ba96b4e66f8e267c984c09e09f17513b526cc693
 # sw.file.hash: a854e502c61b4e5332ebb34ce15c79c75aeb8468
 /app.js
 # sw.file.hash: c4e106e2aa015bcd49a1a30716e438c8e54d27e5
@@ -207,13 +207,13 @@ CACHE MANIFEST
 /app/admin/gestion_jugadores.component.ts
 # sw.file.hash: c3aba9a83555bcf02ffb68a2254650f76ae17f40
 /app/admin/gestion_jugadores.html
-# sw.file.hash: 1c717647953c13d80c3df78aacbf16a66081b156
+# sw.file.hash: 8cf491eba9b2dd1ed5ad7a29fc32521f4730e7f9
 /app/admin/gestion_partidos.component.js
-# sw.file.hash: 6f96b0c23457a00b60e18130e1d333049933a5ab
+# sw.file.hash: 6b638d1b59b340f9fc39ab01568b0e38daa9434e
 /app/admin/gestion_partidos.component.js.map
-# sw.file.hash: a640e8d6dea372dd17fc6f6c525177cd71d5558a
+# sw.file.hash: 6067fa9d911d3b06235c0bd07c22cbc139a9bdd8
 /app/admin/gestion_partidos.component.ts
-# sw.file.hash: 31706c9e1a59eef52e68b77f6ec681bfa9b24ab9
+# sw.file.hash: 0b021e7c8e3d356e26d8e785bec272cfc3f99820
 /app/admin/gestion_partidos.html
 # sw.file.hash: a6ff9261aa9b0d8c6997a114d01e7b44da57aaf3
 /app/admin/gestion_usuarios.component.js

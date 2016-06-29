@@ -71,18 +71,18 @@ System.register(['angular2/core', 'angular2/router', '../partido.service', '../u
                 gestionPartidosComponent.prototype.gotoAddPartido = function () {
                     this._Router.navigate(['AddPartido']);
                 };
-                gestionPartidosComponent.prototype.finalizarPartido = function (partido) {
+                gestionPartidosComponent.prototype.finalizarPartido = function (partido, equipo) {
                     var _this = this;
                     var id_ganador;
-                    if (this.ganadorN == "eq1") {
+                    if (equipo == "eq1") {
                         id_ganador = partido.equipo1.id;
                         console.log("Ganador: " + partido.equipo1.nombre + " id: " + id_ganador);
                     }
-                    if (this.ganadorN == "eq2") {
+                    if (equipo == "eq2") {
                         id_ganador = partido.equipo2.id;
                         console.log("Ganador: " + partido.equipo2.nombre + " id: " + id_ganador);
                     }
-                    this._Partidoservice.terminarPartido(partido, this.ganadorN).subscribe(function (response) { return _this.refresh(); });
+                    this._Partidoservice.terminarPartido(partido, equipo).subscribe(function (response) { return _this.refresh(); });
                     (function (error) { return _this.refresh(); });
                     this._Partidoservice.obetenerPuestas(partido).subscribe(function (response) {
                         _this.refresh();

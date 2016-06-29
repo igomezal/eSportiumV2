@@ -63,17 +63,17 @@ export class gestionPartidosComponent {
     this._Router.navigate(['AddPartido']);
   }
 
-  finalizarPartido(partido: Partido){
+  finalizarPartido(partido: Partido, equipo: string){
     var id_ganador: number;
-    if (this.ganadorN == "eq1"){
+    if (equipo == "eq1"){
       id_ganador = partido.equipo1.id;
       console.log("Ganador: "+partido.equipo1.nombre+" id: "+id_ganador);
     }
-    if (this.ganadorN == "eq2"){
+    if (equipo == "eq2"){
       id_ganador = partido.equipo2.id;
       console.log("Ganador: "+partido.equipo2.nombre+" id: "+id_ganador);
     }
-    this._Partidoservice.terminarPartido(partido, this.ganadorN).subscribe(
+    this._Partidoservice.terminarPartido(partido, equipo).subscribe(
       response => this.refresh())
       error => this.refresh()
     this._Partidoservice.obetenerPuestas(partido).subscribe(
