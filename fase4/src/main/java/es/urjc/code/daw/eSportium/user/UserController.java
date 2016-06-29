@@ -150,6 +150,36 @@ public class UserController {
 		long userloggedId = usercomponent.getLoggedUser().getId();
 		if(userloggedId != id)
 			sec = false;
+		if (user != null && sec){
+			updatedUser.setId(id);
+			updatedUser.setRoles(user.getRoles());
+			updatedUser.setFoto(user.getFoto());			
+			if(updatedUser.getEstaeslacont() == (null)){
+				//El usuario quiere editar pero sin cambiar la contraseña
+				updatedUser.setPasswordHash(user.getPasswordHash());
+			}else{
+				//El usuario quiere editar además cambiando la contraseña
+				updatedUser.setPasswordHash(new BCryptPasswordEncoder().encode(updatedUser.getEstaeslacont()));
+				updatedUser.setEstaeslacont(null);
+				
+			}
+			repository.save(updatedUser);
+			return new ResponseEntity<>(updatedUser, HttpStatus.OK);
+		}else{
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+	}
+	
+	//Método igual que el put pero solamente para actualizar el karma, requiere privilegios de Admin
+	@JsonView(UserListView.class)
+	@RequestMapping(value ="/actKarma/{id}", method = RequestMethod.PUT)
+	public ResponseEntity<User> editarUserKarma(@PathVariable long id, @RequestBody User updatedUser)throws IOException{
+		User user = repository.findOne(id);
+		boolean sec = true;
+		
+		long userloggedId = usercomponent.getLoggedUser().getId();
+		if(userloggedId != id)
+			sec = false;
 		if (user != null){
 			updatedUser.setId(id);
 			updatedUser.setRoles(user.getRoles());

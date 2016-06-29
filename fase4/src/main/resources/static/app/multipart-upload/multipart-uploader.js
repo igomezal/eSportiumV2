@@ -1,4 +1,6 @@
-System.register([], function(exports_1) {
+System.register([], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var MultipartUploader;
     return {
         setters:[],
@@ -121,9 +123,9 @@ System.register([], function(exports_1) {
                     this._render();
                 };
                 return MultipartUploader;
-            })();
+            }());
             exports_1("MultipartUploader", MultipartUploader);
         }
     }
 });
-//# sourceMappingURL=../../../../app/multipart-upload/multipart-uploader.js.map
+//# sourceMappingURL=multipart-uploader.js.map
