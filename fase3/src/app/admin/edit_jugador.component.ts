@@ -75,7 +75,7 @@ export class editJugadorComponent {
       alert("Completa los campos correctamente")
     } else {
       this._JugadorService.editar(this.jugador.id,nombre, posicion, media, this.equipoN).subscribe(
-        response => { alert("Editado jugador " + nombre); this.gotoGestionJugadores(); }
+        response => { alert("Editado jugador " + nombre);}
       );
     }
   }

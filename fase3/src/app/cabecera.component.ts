@@ -33,10 +33,12 @@ export class CabeceraComponent implements OnInit{
   }
 
   goToInicio(){
-    this.loginService.refresh().subscribe(
-      response => undefined
-    );
-    this._router.navigate(['Inicio']);
+    if(this.loginService.isLogged == true){
+      this.loginService.refresh().subscribe(
+        response => undefined
+      );
+      this._router.navigate(['Inicio']);
+    }
   }
 
   goToFinalizados(){

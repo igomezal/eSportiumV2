@@ -121,7 +121,7 @@ export class gestionPartidosComponent {
   borrarPartido(partido: Partido){
     this._Partidoservice.eliminarPartido(partido.id).subscribe(
       response => this.refresh(),
-      error => console.log(error)
+      error => alert("Error al borrar")
     );
   }
 

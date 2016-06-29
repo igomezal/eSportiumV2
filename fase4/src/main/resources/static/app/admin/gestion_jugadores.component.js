@@ -80,7 +80,7 @@ System.register(['angular2/core', '../jugador.interface', 'angular2/router', '..
                 };
                 gestionJugadoresComponent.prototype.borrarJugador = function (jugador) {
                     var _this = this;
-                    this._JugadorService.eliminar(jugador.id).subscribe(function (respuesta) { return _this.refresh(); }, function (error) { return console.log(error); });
+                    this._JugadorService.eliminar(jugador.id).subscribe(function (respuesta) { return _this.refresh(); }, function (error) { return alert("Error al borrar"); });
                 };
                 gestionJugadoresComponent = __decorate([
                     core_1.Component({

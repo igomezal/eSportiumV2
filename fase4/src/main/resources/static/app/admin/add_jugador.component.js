@@ -73,13 +73,12 @@ System.register(['angular2/core', '../equipo.interface', '../jugador.interface',
                     this.gotoMain();
                 };
                 addJugadorComponent.prototype.anadir = function (nombre, posicion, media) {
-                    var _this = this;
                     console.log(nombre, posicion, media, this.equipoN);
                     if ((typeof (this.equipoN) === "undefined") || (this.equipoN === 0) || (nombre === "") || (posicion === "")) {
                         alert("Completa los campos correctamente");
                     }
                     else {
-                        this._JugadorService.anadirJugador(nombre, posicion, media, this.equipoN).subscribe(function (response) { alert("Añadido jugador " + nombre); _this.gotoGestionJugadores(); });
+                        this._JugadorService.anadirJugador(nombre, posicion, media, this.equipoN).subscribe(function (response) { alert("Añadido jugador " + nombre); });
                     }
                 };
                 addJugadorComponent.prototype.seleccion = function (equipoN) {

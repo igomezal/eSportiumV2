@@ -79,7 +79,7 @@ export class gestionJuegosComponent {
   borrarJuego(juego: Juego){
     this._JuegoService.eliminar(juego.id, juego.nombre, juego.siglas).subscribe(
       respuesta => this.refresh(),
-      error => console.log(error)
+      error => alert("Error al borrar")
     );
   }
 

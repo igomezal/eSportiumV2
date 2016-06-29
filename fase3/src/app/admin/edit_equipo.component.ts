@@ -90,7 +90,7 @@ export class editEquipoComponent {
 
   eliminar(id: number) {
       this._EquipoService.eliminar(id).subscribe(
-      response => { alert('Se ha eliminado el equipo seleccionado.'); this.gotoGestionEquipos()},
+      response => { alert('Se ha eliminado el equipo seleccionado.'); },
         error => console.log(error)
       );
   }

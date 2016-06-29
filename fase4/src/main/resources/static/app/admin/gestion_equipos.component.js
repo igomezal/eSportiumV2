@@ -80,7 +80,7 @@ System.register(['angular2/core', '../equipo.interface', 'angular2/router', '../
                 };
                 gestionEquiposComponent.prototype.borrarEquipo = function (equipo) {
                     var _this = this;
-                    this._EquipoService.eliminar(equipo.id).subscribe(function (respuesta) { return _this.refresh(); }, function (error) { return console.log(error); });
+                    this._EquipoService.eliminar(equipo.id).subscribe(function (respuesta) { return _this.refresh(); }, function (error) { return alert("Error al borrar"); });
                 };
                 gestionEquiposComponent = __decorate([
                     core_1.Component({

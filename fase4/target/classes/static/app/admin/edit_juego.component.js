@@ -42,18 +42,16 @@ System.register(['angular2/core', '../juego.interface', 'angular2/router', '../u
                     this._JuegoService.getJuego(id).subscribe(function (juego) { return _this.juego = juego; }, function (error) { return console.log(Error); });
                 };
                 editJuegoComponent.prototype.editar = function (nombre, siglas) {
-                    var _this = this;
                     if (nombre == "" || siglas == "") {
                         alert("Datos incorrectos");
                     }
                     else {
                         console.log(this.juego.id + " " + nombre + " " + siglas);
-                        this._JuegoService.editar(this.juego.id, nombre, siglas).subscribe(function (respuesta) { alert("Juego editado correctamente"); _this.gotoGestionJuegos(); });
+                        this._JuegoService.editar(this.juego.id, nombre, siglas).subscribe(function (respuesta) { alert("Juego editado correctamente"); });
                     }
                 };
                 editJuegoComponent.prototype.eliminar = function (juego) {
-                    var _this = this;
-                    this._JuegoService.eliminar(juego.id, juego.nombre, juego.siglas).subscribe(function (respuesta) { alert("Juego eliminado correctamente"); _this.gotoGestionJuegos(); }, function (error) { return console.log(error); });
+                    this._JuegoService.eliminar(juego.id, juego.nombre, juego.siglas).subscribe(function (respuesta) { alert("Juego eliminado correctamente"); }, function (error) { return console.log(error); });
                     ;
                 };
                 editJuegoComponent.prototype.gotoHome = function () {

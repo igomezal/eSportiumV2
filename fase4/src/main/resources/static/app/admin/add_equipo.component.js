@@ -117,7 +117,6 @@ System.register(['angular2/core', '../equipo.interface', 'angular2/router', '../
                         console.log(response);
                         _this.upload();
                     });
-                    this.gotoGestionEquipos();
                 };
                 addEquipoComponent = __decorate([
                     core_1.Component({

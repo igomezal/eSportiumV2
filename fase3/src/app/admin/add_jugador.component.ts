@@ -68,7 +68,7 @@ export class addJugadorComponent {
       alert("Completa los campos correctamente")
     }else{
       this._JugadorService.anadirJugador(nombre, posicion, media, this.equipoN).subscribe(
-        response => { alert("Añadido jugador " + nombre); this.gotoGestionJugadores(); }
+        response => { alert("Añadido jugador " + nombre);}
       );
     }
   }

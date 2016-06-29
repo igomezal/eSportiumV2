@@ -41,7 +41,6 @@ System.register(['angular2/core', '../usuario.interface', 'angular2/router'], fu
                     if (r == true) {
                         var id = +this._RouteParams.get('id');
                         this._UsuarioService.eliminarUsuario(id);
-                        this.gotoGestionUsuarios();
                     }
                     else {
                         alert("Casi la lias");

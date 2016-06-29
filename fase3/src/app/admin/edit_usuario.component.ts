@@ -27,7 +27,6 @@ export class editUsuarioComponent {
     if (r == true){
       let id = +this._RouteParams.get('id');
       this._UsuarioService.eliminarUsuario(id);
-      this.gotoGestionUsuarios();
     }else{
       alert("Casi la lias");
     }

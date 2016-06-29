@@ -65,7 +65,8 @@ export class gestionUsuariosComponent {
 
   borrarUsuario(usuario: Usuario){
     this._UsuarioService.eliminarUsuario(usuario.id).subscribe(
-        response => undefined
+        response => undefined,
+        error => alert("Error al borrar")
     );
   }
 

@@ -39,8 +39,10 @@ System.register(['angular2/core', 'angular2/router', './usuario.interface', './l
                     this._usuarioService.getAdmin().subscribe(function (admin) { return _this.admin = admin; }, function (error) { return console.log(error); });
                 };
                 CabeceraComponent.prototype.goToInicio = function () {
-                    this.loginService.refresh().subscribe(function (response) { return undefined; });
-                    this._router.navigate(['Inicio']);
+                    if (this.loginService.isLogged == true) {
+                        this.loginService.refresh().subscribe(function (response) { return undefined; });
+                        this._router.navigate(['Inicio']);
+                    }
                 };
                 CabeceraComponent.prototype.goToFinalizados = function () {
                     this._router.navigate(['Finalizados']);

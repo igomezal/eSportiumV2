@@ -76,13 +76,12 @@ System.register(['angular2/core', '../equipo.interface', '../jugador.interface',
                     this.gotoMain();
                 };
                 editJugadorComponent.prototype.editar = function (nombre, posicion, media) {
-                    var _this = this;
                     console.log(nombre, posicion, media, this.equipoN);
                     if ((typeof (this.equipoN) === "undefined") || (this.equipoN === 0) || (nombre === "") || (posicion === "")) {
                         alert("Completa los campos correctamente");
                     }
                     else {
-                        this._JugadorService.editar(this.jugador.id, nombre, posicion, media, this.equipoN).subscribe(function (response) { alert("Editado jugador " + nombre); _this.gotoGestionJugadores(); });
+                        this._JugadorService.editar(this.jugador.id, nombre, posicion, media, this.equipoN).subscribe(function (response) { alert("Editado jugador " + nombre); });
                     }
                 };
                 editJugadorComponent.prototype.eliminar = function (jugador) {

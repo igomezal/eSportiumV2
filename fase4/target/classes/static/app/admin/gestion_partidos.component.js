@@ -119,7 +119,7 @@ System.register(['angular2/core', 'angular2/router', '../partido.service', '../u
                 };
                 gestionPartidosComponent.prototype.borrarPartido = function (partido) {
                     var _this = this;
-                    this._Partidoservice.eliminarPartido(partido.id).subscribe(function (response) { return _this.refresh(); }, function (error) { return console.log(error); });
+                    this._Partidoservice.eliminarPartido(partido.id).subscribe(function (response) { return _this.refresh(); }, function (error) { return alert("Error al borrar"); });
                 };
                 gestionPartidosComponent.prototype.ganadorAdd = function (ganadorN) {
                     this.ganadorN = ganadorN;

@@ -93,8 +93,7 @@ System.register(['angular2/core', '../equipo.interface', 'angular2/router', '../
                     }
                 };
                 editEquipoComponent.prototype.eliminar = function (id) {
-                    var _this = this;
-                    this._EquipoService.eliminar(id).subscribe(function (response) { alert('Se ha eliminado el equipo seleccionado.'); _this.gotoGestionEquipos(); }, function (error) { return console.log(error); });
+                    this._EquipoService.eliminar(id).subscribe(function (response) { alert('Se ha eliminado el equipo seleccionado.'); }, function (error) { return console.log(error); });
                 };
                 editEquipoComponent.prototype.gotoHome = function () {
                     this._Router.navigate(['Admin']);
