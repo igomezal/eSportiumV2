@@ -71,6 +71,10 @@ System.register(['angular2/core', '../juego.interface', 'angular2/router', '../u
                     this._UsuarioService.setAdmin(false);
                     this.gotoMain();
                 };
+                gestionJuegosComponent.prototype.gotoEditJuego = function (juego) {
+                    var link = ['EditarJuego', { id: juego.id }];
+                    this._Router.navigate(link);
+                };
                 gestionJuegosComponent.prototype.gotoaddJuego = function () {
                     this._Router.navigate(['AddJuego']);
                 };

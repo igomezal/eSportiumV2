@@ -206,12 +206,13 @@ System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http',
                     return utils_1.withObserver(this.usuario[id]);
                 };
                 UsuarioService.prototype.eliminarUsuario = function (id) {
-                    var u;
-                    u = this.usuario[id];
+                    var _this = this;
+                    var url = "https://localhost:8443/usuarios/" + id;
                     var r = confirm("¿Quieres borrar a este usuario?");
                     if (r == true) {
-                        this.usuario.splice(id, 1);
-                        return utils_1.withObserver(u);
+                        return this.http.delete(url)
+                            .map(function (response) { return undefined; })
+                            .catch(function (error) { return _this.manejarError(error); });
                     }
                     else {
                         alert("Casi la lías");

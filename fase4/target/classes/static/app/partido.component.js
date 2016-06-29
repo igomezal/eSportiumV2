@@ -114,7 +114,7 @@ System.register(['angular2/core', 'angular2/router', './partido.service', './usu
                                 console.log("usuario con apuesta añadido");
                                 _this._usuarioService.quitarKarma(_this.loginService.user, parseInt(karma)).subscribe(function (response) {
                                     console.log("Karma quitado");
-                                    _this.loginService.refresh().subscribe(function (response) { console.log("loginService actualizado / +Karma"); });
+                                    _this.loginService.refresh().subscribe(function (response) { console.log("loginService actualizado / -Karma"); });
                                 });
                             });
                         });

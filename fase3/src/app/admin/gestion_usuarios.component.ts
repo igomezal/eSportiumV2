@@ -64,7 +64,9 @@ export class gestionUsuariosComponent {
   }
 
   borrarUsuario(usuario: Usuario){
-    this._UsuarioService.eliminarUsuario(usuario.id);
+    this._UsuarioService.eliminarUsuario(usuario.id).subscribe(
+        response => undefined
+    );
   }
 
   hacerAdmin(usuario: Usuario){

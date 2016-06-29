@@ -67,7 +67,7 @@ System.register(['angular2/core', 'angular2/router', '../usuario.interface'], fu
                     this._Router.navigate(link);
                 };
                 gestionUsuariosComponent.prototype.borrarUsuario = function (usuario) {
-                    this._UsuarioService.eliminarUsuario(usuario.id);
+                    this._UsuarioService.eliminarUsuario(usuario.id).subscribe(function (response) { return undefined; });
                 };
                 gestionUsuariosComponent.prototype.hacerAdmin = function (usuario) {
                     var r = confirm("¿Quieres hacer Administrador a este usuario?");

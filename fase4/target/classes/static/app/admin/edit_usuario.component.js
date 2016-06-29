@@ -34,7 +34,7 @@ System.register(['angular2/core', '../usuario.interface', 'angular2/router'], fu
                 editUsuarioComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     var id = +this._RouteParams.get('id');
-                    this._UsuarioService.getUsuarioporId(id).subscribe(function (usuario) { return _this.usuario = usuario; }, function (error) { return console.log(error); });
+                    this._UsuarioService.getUsuario(id).subscribe(function (usuario) { return _this.usuario = usuario; }, function (error) { return console.log(error); });
                 };
                 editUsuarioComponent.prototype.eliminar = function () {
                     var r = confirm("¿Quierres borrar el usuario?");

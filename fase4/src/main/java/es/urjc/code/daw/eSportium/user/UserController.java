@@ -66,9 +66,17 @@ public class UserController {
 		boolean sec = true;
 		
 		long userloggedId = usercomponent.getLoggedUser().getId();
+		List<String> roles = new ArrayList<String>();
+		roles = usercomponent.getLoggedUser().getRoles();
+		
 		if(userloggedId != id)
 			sec = false;
-		
+		for( String s : roles){
+			if (s.equals("ROLE_ADMIN")){
+				//log.info("Rol : {}",s);
+				sec = true;
+			}
+		}
 		User user = repository.findOne(id);
 		if(user != null && sec){		
 			return new ResponseEntity<>(user, HttpStatus.OK);

@@ -16,7 +16,7 @@ export class editUsuarioComponent {
 
   ngOnInit(){
     let id = +this._RouteParams.get('id');
-    this._UsuarioService.getUsuarioporId(id).subscribe(
+    this._UsuarioService.getUsuario(id).subscribe(
       usuario => this.usuario = usuario,
       error => console.log(error)
     );

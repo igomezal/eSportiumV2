@@ -100,7 +100,7 @@ System.register(['angular2/core', './usuario.interface', 'angular2/router', './l
                     else {
                         this._usuarioService.editarDatos(user, nombre, contra, foto, correo, genero).subscribe(function (response) {
                             alert("Usuario editado correctamente");
-                            _this._LoginService.refresh().subscribe(function (response) { console.log("loginService actualizado / +Karma"); });
+                            _this._LoginService.refresh().subscribe(function (response) { console.log("loginService actualizado / User"); });
                         });
                     }
                 };

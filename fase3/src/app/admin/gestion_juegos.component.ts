@@ -67,6 +67,11 @@ export class gestionJuegosComponent {
     this.gotoMain();
   }
 
+  gotoEditJuego(juego: Juego){
+    let link = ['EditarJuego', {id: juego.id}];
+    this._Router.navigate(link);
+  }
+
   gotoaddJuego(){
     this._Router.navigate(['AddJuego']);
   }
