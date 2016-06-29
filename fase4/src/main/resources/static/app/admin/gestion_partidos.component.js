@@ -1,10 +1,4 @@
-<<<<<<< HEAD
 System.register(['angular2/core', 'angular2/router', '../partido.service', '../usuario.interface', '../apuestaUser.interface'], function(exports_1) {
-=======
-System.register(['angular2/core', 'angular2/router', '../partido.service', '../usuario.interface'], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
->>>>>>> origin/master
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -93,9 +87,11 @@ System.register(['angular2/core', 'angular2/router', '../partido.service', '../u
                     this._Partidoservice.obetenerPuestas(partido).subscribe(function (response) {
                         _this.refresh();
                         for (var i in response.apuestas) {
+                            console.log("bucle " + i);
                             if (response.apuestas[i].equipo.id == id_ganador) {
                                 //if de si el equipo es o no por el que has apostado
                                 _this._ApuestaUserService.obtenerUserApuestas(response.apuestas[i].id).subscribe(function (response) {
+                                    console.log(response);
                                     console.log(response[0].apuesta.karma);
                                     _this._UsuarioService.cobrarKarma(response[0].user, response[0].apuesta.karma).subscribe(function (response) {
                                         console.log("eeee");
@@ -133,9 +129,9 @@ System.register(['angular2/core', 'angular2/router', '../partido.service', '../u
                     __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, partido_service_1.PartidoService, router_1.Router, apuestaUser_interface_1.ApuestaUserService])
                 ], gestionPartidosComponent);
                 return gestionPartidosComponent;
-            }());
+            })();
             exports_1("gestionPartidosComponent", gestionPartidosComponent);
         }
     }
 });
-//# sourceMappingURL=gestion_partidos.component.js.map
+//# sourceMappingURL=../../../../app/admin/gestion_partidos.component.js.map

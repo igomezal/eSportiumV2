@@ -150,7 +150,7 @@ public class UserController {
 		long userloggedId = usercomponent.getLoggedUser().getId();
 		if(userloggedId != id)
 			sec = false;
-		if (user != null && sec){
+		if (user != null){
 			updatedUser.setId(id);
 			updatedUser.setRoles(user.getRoles());
 			updatedUser.setFoto(user.getFoto());			

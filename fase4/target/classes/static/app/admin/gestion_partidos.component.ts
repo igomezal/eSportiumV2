@@ -80,10 +80,12 @@ export class gestionPartidosComponent {
       response => {
         this.refresh()
           for(var i in response.apuestas){
+            console.log("bucle "+i)
             if(response.apuestas[i].equipo.id == id_ganador){
               //if de si el equipo es o no por el que has apostado
               this._ApuestaUserService.obtenerUserApuestas(response.apuestas[i].id).subscribe(
                response =>{
+                console.log(response);
                 console.log(response[0].apuesta.karma);
                 this._UsuarioService.cobrarKarma(response[0].user,response[0].apuesta.karma).subscribe(
                   response => {

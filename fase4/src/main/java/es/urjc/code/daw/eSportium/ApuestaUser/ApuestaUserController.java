@@ -86,7 +86,11 @@ public class ApuestaUserController {
 		boolean sec = true;
 		
 		long loggedId = usercomponent.getLoggedUser().getId();
-		if(loggedId == apuestaUser.getId())
+			//log.info("LoggedId: {}",loggedId);
+			//log.info("apeustaUser id : {}", apuestaUser.getId());
+		if(loggedId == apuestaUser.getId()){
+			log.info("ApuestaUser guardada");
+		}
 			repository.save(apuestaUser);
 		return apuestaUser;
 	}
