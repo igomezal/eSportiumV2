@@ -65,11 +65,12 @@ System.register(['angular2/core', 'angular2/router', './partido.service', './jue
                         }
                     }
                 };
-                indexComponent.prototype.isVacio = function (a) {
-                    if (a.length === 0) {
-                        return true;
+                indexComponent.prototype.isVacio = function (a, siglas) {
+                    for (var i in a) {
+                        if (a[i].juego.siglas == siglas) {
+                        }
                     }
-                    return false;
+                    //console.log("salgo, no se si hay partidos")
                 };
                 indexComponent.prototype.goToPartido = function (partido) {
                     var link = ['Partido', { id: partido.id }];

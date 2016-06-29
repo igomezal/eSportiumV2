@@ -17,6 +17,8 @@ export class Perfil {
   partidoAc:Partido[];
   partidoFin:Partido[];
   apuestas : ApuestaUser[];
+  finalizados = 0;
+  no_finalizados= 0;
   constructor (private _usuarioService: UsuarioService, private _partidoService: PartidoService,
     private _router:Router, private loginService: LoginService, private _ApuestaUserService: ApuestaUserService){}
 
@@ -34,7 +36,15 @@ export class Perfil {
   );
   this.apuestas = [];
   this._ApuestaUserService.obtenerApuestasUser(this.loginService.user.id).subscribe(
-    apuesta => { this.apuestas = apuesta; console.log(this.apuestas) })
+    apuesta => {
+      this.apuestas = apuesta;
+      for(var i in this.apuestas){
+        if(this.apuestas[i].apuesta.partido.estado == 'Finalizado'){
+          this.finalizados++;
+        }else{
+          this.no_finalizados++;
+        }
+      }})
     error => console.log(error)
 
   }

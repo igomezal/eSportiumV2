@@ -38,6 +38,8 @@ System.register(['angular2/core', './usuario.interface', './partido.service', 'a
                     this._router = _router;
                     this.loginService = loginService;
                     this._ApuestaUserService = _ApuestaUserService;
+                    this.finalizados = 0;
+                    this.no_finalizados = 0;
                 }
                 Perfil.prototype.ngOnInit = function () {
                     var _this = this;
@@ -50,7 +52,17 @@ System.register(['angular2/core', './usuario.interface', './partido.service', 'a
                   */
                     this._usuarioService.getUsuario(this.loginService.user.id).subscribe(function (user) { return _this.usuario = user; }, function (error) { return console.log(error); });
                     this.apuestas = [];
-                    this._ApuestaUserService.obtenerApuestasUser(this.loginService.user.id).subscribe(function (apuesta) { _this.apuestas = apuesta; console.log(_this.apuestas); });
+                    this._ApuestaUserService.obtenerApuestasUser(this.loginService.user.id).subscribe(function (apuesta) {
+                        _this.apuestas = apuesta;
+                        for (var i in _this.apuestas) {
+                            if (_this.apuestas[i].apuesta.partido.estado == 'Finalizado') {
+                                _this.finalizados++;
+                            }
+                            else {
+                                _this.no_finalizados++;
+                            }
+                        }
+                    });
                     (function (error) { return console.log(error); });
                 };
                 Perfil.prototype.getApuesta = function (id) {

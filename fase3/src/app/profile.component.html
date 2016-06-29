@@ -39,7 +39,7 @@
                         <div class="tab-content panel responsive">
                             <div class="tab-pane fade in active darker-text" id="actuales">
                               <!--<h3 *ngIf="sesion.apuestas.length === 0"  class="alert alert-warning"><center>No hay apuestas activas.</center></h3>-->
-                                <!-- <h3 class="alert alert-warning"><center>No hay apuestas activas.</center></h3>-->
+                                <h3 *ngIf="no_finalizados == 0" class="alert alert-warning"><center>No hay apuestas activas.</center></h3>
                                 <div class="row">
                                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" *ngFor="#bet of apuestas" (click)="goToPartido(bet.apuesta.partido)">
                                         <div *ngIf="bet.apuesta.partido.estado != 'Finalizado'">
@@ -52,8 +52,8 @@
                                                         <img class="img-responsive" alt="{{bet.apuesta.partido.equipo2.nombre}}" src="img/{{bet.apuesta.partido.equipo2.logo}}.png">
                                                     </div>
                                                 </div>
-                                                <p *ngIf="bet.apuesta.partido.ganando == 'eq1'" class="blue-text">Apostado: {{bet.apuesta.equipo.nombre}} <span [class.hidden]="partido.estado != 'Directo'">|  Ganado: {{bet.apuesta.partido.equipo1.nombre}} </span></p>
-                                                <p *ngIf="bet.apuesta.partido.ganando == 'eq2'" class="blue-text">Apostado: {{bet.apuesta.equipo.nombre}} <span [class.hidden]="partido.estado != 'Directo'">|  Ganado: {{bet.apuesta.partido.equipo2.nombre}} </span></p>
+                                                <p *ngIf="bet.apuesta.partido.ganando == 'eq1'" class="blue-text">Apostado: {{bet.apuesta.equipo.nombre}} <span [class.hidden]="bet.apuesta.partido.estado != 'Directo'">|  Ganado: {{bet.apuesta.partido.equipo1.nombre}} </span></p>
+                                                <p *ngIf="bet.apuesta.partido.ganando == 'eq2'" class="blue-text">Apostado: {{bet.apuesta.equipo.nombre}} <span [class.hidden]="bet.apuesta.partido.estado != 'Directo'">|  Ganado: {{bet.apuesta.partido.equipo2.nombre}} </span></p>
                                             </a>
                                         </div>
                                     </div>
@@ -62,7 +62,7 @@
                             </div>
                             <div class="tab-pane fade darker-text" id="terminadas">
                               <!--<h3 *ngIf="sesion.finalizados.length === 0"  class="alert alert-warning"><center>No hay apuestas activas.</center></h3>-->
-                                <!--<h3 class="alert alert-warning"><center>No hay apuestas activas.</center></h3>-->
+                                <h3 *ngIf="finalizados == 0" class="alert alert-warning"><center>No hay apuestas activas.</center></h3>
                                 <div class="row">
                                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" *ngFor="#bet of apuestas" (click)="goToPartido(bet.apuesta.partido)">
                                         <div *ngIf="bet.apuesta.partido.estado == 'Finalizado'">

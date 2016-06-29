@@ -1,6 +1,6 @@
 CACHE MANIFEST
 # sw.bundle: ng-cli
-# sw.version: e85433c5ca2e24e4295b0d5654774435c2ce7b7f
+# sw.version: a5dfb704953843ae432ab5bb61098c688ed51609
 # sw.file.hash: a854e502c61b4e5332ebb34ce15c79c75aeb8468
 /app.js
 # sw.file.hash: c4e106e2aa015bcd49a1a30716e438c8e54d27e5
@@ -207,11 +207,11 @@ CACHE MANIFEST
 /app/admin/gestion_jugadores.component.ts
 # sw.file.hash: c3aba9a83555bcf02ffb68a2254650f76ae17f40
 /app/admin/gestion_jugadores.html
-# sw.file.hash: 1a75b20f0a758da598ff734d0b5611eb654c7b6d
+# sw.file.hash: 26d1b533e1f1c61ca4dbd44fe81d408256963a44
 /app/admin/gestion_partidos.component.js
-# sw.file.hash: 8373a9368f79cb2c831b6a355ccaaaf77491d027
+# sw.file.hash: 91e1d7e87fbc44654dac6780c92fb6cbb0b75629
 /app/admin/gestion_partidos.component.js.map
-# sw.file.hash: 4438fc8bf05d6934ff42be0f29415f5f0207233c
+# sw.file.hash: 3e15cb9c93cc6e02ad0eb301a60acc974809b253
 /app/admin/gestion_partidos.component.ts
 # sw.file.hash: 88f4fdbf5548d52de534c35868ccaedd33bf62b2
 /app/admin/gestion_partidos.html
@@ -319,13 +319,13 @@ CACHE MANIFEST
 /app/finalizados.component.js.map
 # sw.file.hash: 12c8998fcbe874601df76050b0cf03bdad20dc83
 /app/finalizados.component.ts
-# sw.file.hash: b268c93ed155e5413c4e4698bac211c3f78107f2
+# sw.file.hash: 3c9068f9ed93d9bf26fabce33e9165120029ced8
 /app/index.component.js
-# sw.file.hash: bf7b9db2992cc0417568019502567f7a847d7397
+# sw.file.hash: 8b0fb102b06f2e9ba45fcfc28df22f2c1f6c1193
 /app/index.component.js.map
-# sw.file.hash: cd9438ca1e854a13c713fba029dd09e5e9fa1b26
+# sw.file.hash: e6a3068d01a7a631bce2948ca72294bab70e90f3
 /app/index.component.ts
-# sw.file.hash: 465c11f0911dae59694d7595ce1ae76cf37f2201
+# sw.file.hash: abfb06381d2bf0e3849bb8f6c35fcb6ab1f25855
 /app/index.html
 # sw.file.hash: ef328c8b6f8457306787701156d10253c10722a7
 /app/juego.interface.js
@@ -387,13 +387,13 @@ CACHE MANIFEST
 /app/pie.component.js.map
 # sw.file.hash: 2590adaaa9b68414cea41e594b00cff38a9dcf9c
 /app/pie.component.ts
-# sw.file.hash: 415c230b20a40a950aa108513cb01438c17a5928
+# sw.file.hash: 227c931c9fa8088d55240636f5c482076410b340
 /app/profile.component.html
-# sw.file.hash: c087f5f76d1a8b117e739feac420947403efdf87
+# sw.file.hash: f4857ec0bd672ee259c23486a0133b3be1dc88e8
 /app/profile.component.js
-# sw.file.hash: 5e814562ce99e75c287ec5c7ea9cd5aefd1b7ad2
+# sw.file.hash: d8f4be3c88f1e0670499da2a8012268f278dccbc
 /app/profile.component.js.map
-# sw.file.hash: 37fa9d96a98f6bcec37f6e6d0ff9e6633b67f2d6
+# sw.file.hash: 3668990c53e818c49bf893b67f8250e648f2cf51
 /app/profile.component.ts
 # sw.file.hash: 0c2125dd05c70a1ed4005aeb3cee15ac564f9b72
 /app/registro.component.html

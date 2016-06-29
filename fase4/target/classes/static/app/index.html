@@ -17,7 +17,7 @@
                 <div class="container">
                   <div class="row">
                     <div *ngFor="#partido of arrayDirtemp; #indpart = index" (click)="goToPartido(partido)" class="col-lg-4 col-md-6 col-sm-6" [class.hidden]="partido.juego.siglas != juego.siglas || partido.estado != 'Directo'">
-                      <h2 *ngIf="isVacio(arrayDirtemp)">No hay partidos </h2>
+                      <h2 *ngIf="isVacio(arrayDirtemp,juego.siglas)">No hay partidos </h2>
                         <div id="partido{{partido.id}}">
                         <a>
                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -59,7 +59,7 @@
                 <div class="container">
                   <div class="row">
                     <div *ngFor="#partido of arrayFintemp; #indpart = index" (click)="goToPartido(partido)" class="col-lg-4 col-md-6 col-sm-6" [class.hidden]="partido.juego.siglas != juego.siglas || partido.estado != 'Proximamente'">
-                      <h2 *ngIf="isVacio(arrayFintemp)" >No hay partidos</h2>
+                      <h2 *ngIf="isVacio(arrayFintemp,juego.siglas)" >No hay partidos</h2>
                       <div id="partido{{partido.id}}">
                         <a>
                           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">

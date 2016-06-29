@@ -93,16 +93,11 @@ System.register(['angular2/core', 'angular2/router', '../partido.service', '../u
                     this._Partidoservice.obetenerPuestas(partido).subscribe(function (response) {
                         _this.refresh();
                         for (var i in response.apuestas) {
-                            console.log("bucle " + i);
                             if (response.apuestas[i].equipo.id == id_ganador) {
                                 //if de si el equipo es o no por el que has apostado
                                 _this._ApuestaUserService.obtenerUserApuestas(response.apuestas[i].id).subscribe(function (response) {
-                                    console.log(response);
-                                    console.log(response[0].apuesta.karma);
                                     _this._UsuarioService.cobrarKarma(response[0].user, response[0].apuesta.karma).subscribe(function (response) {
-                                        console.log("eeee");
                                         console.log("El user " + response.name + " ha ganado, sumando un total de " + response.karma + " de karma");
-                                        console.log("bbbbbb");
                                     });
                                 });
                             }
