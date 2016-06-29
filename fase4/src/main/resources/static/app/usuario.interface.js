@@ -147,6 +147,19 @@ System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http',
                         .map(function (response) { return response.json(); })
                         .catch(function (error) { return _this.manejarError(error); });
                 };
+                UsuarioService.prototype.cobrarKarma = function (user, karma) {
+                    var _this = this;
+                    var url = "https://localhost:8443/usuarios/" + user.id;
+                    var item = { id: user.id, name: user.name, karma: (user.karma + (2 * karma)), fecha: user.fecha, foto: user.foto, genero: user.genero, correo: user.correo };
+                    var body = JSON.stringify(item);
+                    var headers = new http_1.Headers({
+                        'Content-Type': 'application/json'
+                    });
+                    var options = new http_1.RequestOptions({ headers: headers });
+                    return this.http.put(url, body, options)
+                        .map(function (response) { return response.json(); })
+                        .catch(function (error) { return _this.manejarError(error); });
+                };
                 UsuarioService.prototype.editarDatos = function (user, nombre, contraseña, foto, correo, genero) {
                     var _this = this;
                     var url = "https://localhost:8443/usuarios/" + user.id;

@@ -37,6 +37,14 @@ export class gestionJuegosComponent {
     this._Router.navigate(['GestionJuegos']);
   }
 
+  gotoGestionEquipos(){
+    this._Router.navigate(['GestionEquipos']);
+  }
+
+  gotoGestionJugadores() {
+    this._Router.navigate(['GestionJugadores']);
+  }
+
   gotoGestionPartidos(){
     this._Router.navigate(['GestionPartidos']);
   }
@@ -47,15 +55,6 @@ export class gestionJuegosComponent {
 
   gotoAjustes(){
     this._Router.navigate(['Ajustes']);
-  }
-
-  gotoEditJuego(juego : Juego){
-    let link = ['EditarJuego',{id:juego.id}]
-    this._Router.navigate(link);
-  }
-
-  gotoGestionEquipos() {
-    this._Router.navigate(['GestionEquipos']);
   }
 
   gotoMain(){

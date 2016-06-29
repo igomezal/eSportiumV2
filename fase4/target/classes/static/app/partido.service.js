@@ -166,7 +166,6 @@ System.register(['angular2/core', './jugador.interface', 'rxjs/Observable', './e
                     //COBRAR APUESTAS  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 };
                 PartidoService.prototype.pasarADirecto = function (part) {
-                    var _this = this;
                     var url = "https://localhost:8443/partidos/" + part.id;
                     var item = { id: part.id, estado: "Directo", ganando: part.ganando, diferencia: part.diferencia, url: part.url, rondas: part.rondas, juego: part.juego, equipo1: part.equipo1, equipo2: part.equipo2 };
                     var body = JSON.stringify(item);
@@ -175,15 +174,15 @@ System.register(['angular2/core', './jugador.interface', 'rxjs/Observable', './e
                     });
                     var options = new http_1.RequestOptions({ headers: headers });
                     return this.http.put(url, body, options)
-                        .map(function (response) { return response.json(); })
-                        .catch(function (error) { return _this.manejarError(error); });
+                        .map(function (response) { return response.json(); });
+                    /*.catch(error => this.manejarError(error)
+                  );*/
                 };
                 PartidoService.prototype.obetenerPuestas = function (part) {
-                    var _this = this;
                     var url = "https://localhost:8443/partidos/apuestas/" + part.id;
                     return this.http.get(url)
-                        .map(function (response) { return response.json(); })
-                        .catch(function (error) { return _this.manejarError(error); });
+                        .map(function (response) { return response.json(); });
+                    /*.catch(error => this.manejarError(error));*/
                 };
                 PartidoService.prototype.manejarError = function (error) {
                     console.log(error);

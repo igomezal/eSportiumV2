@@ -72,6 +72,11 @@ constructor(private http: Http){}
     return this.http.get(url).map(response => response.json()).catch(error => this.manejarError(error));
   }
 
+  obtenerUserApuestas(id :number){
+    let url = "https://localhost:8443/apuestaUser/apuesta/" + id;
+    return this.http.get(url).map(response => response.json()).catch(error => this.manejarError(error));
+  }
+
   eliminar(id: number, apuesta: Apuesta, usuario: Usuario){
     let url = "https://localhost:8443/apuestaUser/" + id;
     return this.http.delete(url)

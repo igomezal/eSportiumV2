@@ -2,6 +2,7 @@ import {Component} from 'angular2/core';
 import {ROUTER_DIRECTIVES,Router} from 'angular2/router';
 import {Partido, PartidoService} from '../partido.service';
 import {UsuarioService} from '../usuario.interface';
+import {ApuestaUserService} from '../apuestaUser.interface';
 
 @Component({
   selector:'gestionPartidos',
@@ -10,10 +11,11 @@ import {UsuarioService} from '../usuario.interface';
 
 export class gestionPartidosComponent {
 
-  constructor(private _UsuarioService: UsuarioService, private _Partidoservice:PartidoService, private _Router: Router){}
+  constructor(private _UsuarioService: UsuarioService, private _Partidoservice:PartidoService, private _Router: Router, private _ApuestaUserService: ApuestaUserService){}
 
   private partidos: Partido[];
   private ganadorN = "";
+  private karma = 0;
 
   ngOnInit(){
     this._Partidoservice.getPartidos().subscribe(
@@ -28,14 +30,6 @@ export class gestionPartidosComponent {
 
   gotoGestionJuegos(){
     this._Router.navigate(['GestionJuegos']);
-  }
-
-  gotoGestionEquipos(){
-    this._Router.navigate(['GestionEquipos']);
-  }
-
-  gotoGestionJugadores() {
-    this._Router.navigate(['GestionJugadores']);
   }
 
   gotoGestionPartidos(){
@@ -70,18 +64,48 @@ export class gestionPartidosComponent {
   }
 
   finalizarPartido(partido: Partido){
+    var id_ganador: number;
+    if (this.ganadorN == "eq1"){
+      id_ganador = partido.equipo1.id;
+      console.log("Ganador: "+partido.equipo1.nombre+" id: "+id_ganador);
+    }
+    if (this.ganadorN == "eq2"){
+      id_ganador = partido.equipo2.id;
+      console.log("Ganador: "+partido.equipo2.nombre+" id: "+id_ganador);
+    }
     this._Partidoservice.terminarPartido(partido, this.ganadorN).subscribe(
-      response => this.refresh(),
-      error => {this.refresh(),console.log(error)}
-    );
+      response => this.refresh())
+      error => this.refresh()
+    this._Partidoservice.obetenerPuestas(partido).subscribe(
+      response => {
+        this.refresh()
+          for(var i in response.apuestas){
+            if(response.apuestas[i].equipo.id == id_ganador){
+              //if de si el equipo es o no por el que has apostado
+              this._ApuestaUserService.obtenerUserApuestas(response.apuestas[i].id).subscribe(
+               response =>{
+                console.log(response[0].apuesta.karma);
+                this._UsuarioService.cobrarKarma(response[0].user,response[0].apuesta.karma).subscribe(
+                  response => {
+                    console.log("eeee")
+                    console.log("El user "+response.name+" ha ganado, sumando un total de "+response.karma+" de karma")
+                    console.log("bbbbbb")
+                  }
+                )
+              }
+            )
+          }
+        }
+      }
+    )
     this.refresh()
   }
 
   aDirecto(partido:Partido){
     this._Partidoservice.pasarADirecto(partido).subscribe(
-      response => this.refresh(),
-      error => console.log(error)
+      response => this.refresh()
     );
+    this.refresh()
   }
 
   borrarPartido(partido: Partido){

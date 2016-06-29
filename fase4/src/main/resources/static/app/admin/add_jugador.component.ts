@@ -24,11 +24,15 @@ export class addJugadorComponent {
     );
   }
 
-  gotoHome() {
+  gotoHome(){
     this._Router.navigate(['Admin']);
   }
 
-  gotoGestionEquipos() {
+  gotoGestionJuegos(){
+    this._Router.navigate(['GestionJuegos']);
+  }
+
+  gotoGestionEquipos(){
     this._Router.navigate(['GestionEquipos']);
   }
 
@@ -36,23 +40,19 @@ export class addJugadorComponent {
     this._Router.navigate(['GestionJugadores']);
   }
 
-  gotoGestionJuegos() {
-    this._Router.navigate(['GestionJuegos']);
-  }
-
-  gotoGestionPartidos() {
+  gotoGestionPartidos(){
     this._Router.navigate(['GestionPartidos']);
   }
 
-  gotoGestionUsuarios() {
+  gotoGestionUsuarios(){
     this._Router.navigate(['GestionUsuarios']);
   }
 
-  gotoAjustes() {
+  gotoAjustes(){
     this._Router.navigate(['Ajustes']);
   }
 
-  gotoMain() {
+  gotoMain(){
     this._Router.navigate(['Inicio']);
   }
 

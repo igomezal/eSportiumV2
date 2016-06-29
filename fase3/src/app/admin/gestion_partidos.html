@@ -4,21 +4,19 @@
 
                 <!-- sidebar: style can be found in sidebar.less -->
                 <div class="row">
-                  <div class="sidebar col-md-3">
-                      <h5 class="uppercase montserrat-text">Administración</h5>
-                      <!-- Sidebar Menu -->
-                      <nav class="link-list">
-                          <ul>
-                              <li><a (click)="gotoHome()"><i class="fa fa-home"></i> <span>Home</span></a></li>
-                              <li><a (click)="gotoGestionEquipos()"><i class="fa fa-shield"></i> <span>Equipos</span></a></li>
-                              <li><a (click)="gotoGestionJugadores()"><i class="fa fa-users"></i> <span>Jugadores</span></a></li>
-                              <li><a (click)="gotoGestionJuegos()"><i class="fa fa-gamepad"></i> <span>Juegos</span></a></li>
-                              <li><a (click)="gotoGestionPartidos()"><i class="fa fa-book"></i> <span>Partidos</span></a></li>
-                              <li><a (click)="gotoGestionUsuarios()"><i class="fa fa-users"></i> <span>Usuarios</span></a></li>
-                              <li><a (click)="gotoAjustes()"><i class="fa fa-cogs"></i> <span>Ajustes</span></a></li>
-                          </ul>
-                      </nav>
-                  </div>
+                    <div class="sidebar col-md-3">
+                        <h5 class="uppercase montserrat-text">Administración</h5>
+                        <!-- Sidebar Menu -->
+                        <nav class="link-list">
+                            <ul>
+                                <li><a (click)="gotoHome()"><i class="fa fa-home"></i> <span>Home</span></a></li>
+                                <li><a (click)="gotoGestionJuegos()"><i class="fa fa-gamepad"></i> <span>Juegos</span></a></li>
+                                <li><a (click)="gotoGestionPartidos()"><i class="fa fa-book"></i> <span>Partidos</span></a></li>
+                                <li><a (click)="gotoGestionUsuarios()"><i class="fa fa-users"></i> <span>Usuarios</span></a></li>
+                                <li><a (click)="gotoAjustes()"><i class="fa fa-cogs"></i> <span>Ajustes</span></a></li>
+                            </ul>
+                        </nav>
+                    </div>
 
                     <!-- /.sidebar -->
                     <div class="col-md-8 col-md-offset-1">
@@ -67,7 +65,7 @@
                           <td>{{partido.rondas}}</td>
                           <td>
                                 <a (click)="gotoEditPartido(partido)" class="fa fa-pencil">Editar</a><br>
-                                 <a [class.hidden]="partido.estado != 'Directo'" (click)="finalizarPartido(partido)" class="glyphicon glyphicon-ok">Finalizar</a><br>
+                                <a [class.hidden]="partido.estado != 'Directo'" (click)="finalizarPartido(partido)" class="glyphicon glyphicon-ok">Finalizar</a><br>
                                 <a [class.hidden]="partido.estado != 'Proximamente'" (click)="aDirecto(partido)" class="glyphicon glyphicon-record">Directo</a><br>
                                 <a (click)="borrarPartido(partido)" class="glyphicon glyphicon-remove">Eliminar</a><br>
                                 <input [class.hidden]="partido.estado != 'Directo'" name="ganador{{partido.id}}" type="radio"

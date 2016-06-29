@@ -79,13 +79,8 @@ System.register(['angular2/core', '../equipo.interface', 'angular2/router', '../
                 };
                 //Fin imágenes
                 editEquipoComponent.prototype.editar = function (nombre) {
-<<<<<<< HEAD
-                    var _this = this;
-                    var logo = "temp";
-=======
                     var logo = "temp";
                     this.upload();
->>>>>>> origin/master
                     if (nombre == "") {
                         alert("Datos incorrectos");
                     }

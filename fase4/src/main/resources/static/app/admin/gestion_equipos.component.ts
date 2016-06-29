@@ -29,27 +29,31 @@ export class gestionEquiposComponent {
     )
   }
 
-  gotoHome() {
+  gotoHome(){
     this._Router.navigate(['Admin']);
   }
 
-  gotoGestionEquipos() {
-    this._Router.navigate(['GestionEquipos']);
-  }
-
-  gotoGestionJuegos() {
+  gotoGestionJuegos(){
     this._Router.navigate(['GestionJuegos']);
   }
 
-  gotoGestionPartidos() {
+  gotoGestionEquipos(){
+    this._Router.navigate(['GestionEquipos']);
+  }
+
+  gotoGestionJugadores() {
+    this._Router.navigate(['GestionJugadores']);
+  }
+
+  gotoGestionPartidos(){
     this._Router.navigate(['GestionPartidos']);
   }
 
-  gotoGestionUsuarios() {
+  gotoGestionUsuarios(){
     this._Router.navigate(['GestionUsuarios']);
   }
 
-  gotoAjustes() {
+  gotoAjustes(){
     this._Router.navigate(['Ajustes']);
   }
 

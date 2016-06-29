@@ -93,6 +93,11 @@ System.register(['angular2/core', 'rxjs/Observable', './apuesta.interface', './u
                     var url = "https://localhost:8443/apuestaUser/user/" + id;
                     return this.http.get(url).map(function (response) { return response.json(); }).catch(function (error) { return _this.manejarError(error); });
                 };
+                ApuestaUserService.prototype.obtenerUserApuestas = function (id) {
+                    var _this = this;
+                    var url = "https://localhost:8443/apuestaUser/apuesta/" + id;
+                    return this.http.get(url).map(function (response) { return response.json(); }).catch(function (error) { return _this.manejarError(error); });
+                };
                 ApuestaUserService.prototype.eliminar = function (id, apuesta, usuario) {
                     var _this = this;
                     var url = "https://localhost:8443/apuestaUser/" + id;

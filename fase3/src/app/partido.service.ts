@@ -162,15 +162,15 @@ export class PartidoService {
 
     return this.http.put(url, body, options)
       .map(response => response.json())
-      .catch(error => this.manejarError(error)
-    );
+      /*.catch(error => this.manejarError(error)
+    );*/
   }
 
   obetenerPuestas(part: Partido){
     let url ="https://localhost:8443/partidos/apuestas/"+part.id;
     return this.http.get(url)
       .map(response => response.json())
-      .catch(error => this.manejarError(error));
+      /*.catch(error => this.manejarError(error));*/
   }
 
   private manejarError(error:any){

@@ -27,14 +27,10 @@ export class editUsuarioComponent {
     if (r == true){
       let id = +this._RouteParams.get('id');
       this._UsuarioService.eliminarUsuario(id);
-      this.gotoUsuarios();
+      this.gotoGestionUsuarios();
     }else{
       alert("Casi la lias");
     }
-  }
-
-  gotoUsuarios(){
-    this._Router.navigate(['GestionUsuarios']);
   }
 
   gotoHome(){
@@ -43,6 +39,14 @@ export class editUsuarioComponent {
 
   gotoGestionJuegos(){
     this._Router.navigate(['GestionJuegos']);
+  }
+
+  gotoGestionEquipos(){
+    this._Router.navigate(['GestionEquipos']);
+  }
+
+  gotoGestionJugadores() {
+    this._Router.navigate(['GestionJugadores']);
   }
 
   gotoGestionPartidos(){

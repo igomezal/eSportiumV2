@@ -134,6 +134,20 @@ export class UsuarioService{
       .catch(error => this.manejarError(error));
   }
 
+  cobrarKarma(user : Usuario, karma: number){
+    let url ="https://localhost:8443/usuarios/"+user.id;
+    let item = {id: user.id, name: user.name, karma: (user.karma+(2*karma)), fecha: user.fecha, foto: user.foto, genero:user.genero, correo: user.correo };
+    let body = JSON.stringify(item);
+    let headers = new Headers({
+      'Content-Type':'application/json'
+    });
+    let options = new RequestOptions({headers});
+     return this.http.put(url, body, options)
+      .map(response => response.json())
+      .catch(error => this.manejarError(error));
+  }
+
+
   editarDatos(user: Usuario, nombre: string, contraseña:string,foto:string,correo:string,genero:string){
       let url ="https://localhost:8443/usuarios/"+user.id;
       let contra;

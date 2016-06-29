@@ -28,6 +28,14 @@ export class gestionUsuariosComponent {
     this._Router.navigate(['GestionJuegos']);
   }
 
+  gotoGestionEquipos(){
+    this._Router.navigate(['GestionEquipos']);
+  }
+
+  gotoGestionJugadores() {
+    this._Router.navigate(['GestionJugadores']);
+  }
+
   gotoGestionPartidos(){
     this._Router.navigate(['GestionPartidos']);
   }
@@ -57,6 +65,18 @@ export class gestionUsuariosComponent {
 
   borrarUsuario(usuario: Usuario){
     this._UsuarioService.eliminarUsuario(usuario.id);
+  }
+
+  hacerAdmin(usuario: Usuario){
+    var r = confirm("¿Quieres hacer Administrador a este usuario?");
+    if(r == true){
+      console.log(usuario);
+      this._UsuarioService.doAdmin(usuario).subscribe(
+        response => alert("Privilegios actualizados"),
+        error => {console.log(error);
+        alert("Este usuario no existe o ya es Administrador");}
+      );
+    }
   }
 
 }
