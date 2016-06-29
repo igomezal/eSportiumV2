@@ -203,7 +203,10 @@ public class UserController {
 				
 			}
 			repository.save(updatedUser);
-			usercomponent.setLoggedUser(updatedUser);
+			
+			if(userloggedId == id){
+				usercomponent.setLoggedUser(updatedUser);
+			}
 			return new ResponseEntity<>(updatedUser, HttpStatus.OK);
 		}else{
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);

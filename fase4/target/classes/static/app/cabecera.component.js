@@ -39,6 +39,7 @@ System.register(['angular2/core', 'angular2/router', './usuario.interface', './l
                     this._usuarioService.getAdmin().subscribe(function (admin) { return _this.admin = admin; }, function (error) { return console.log(error); });
                 };
                 CabeceraComponent.prototype.goToInicio = function () {
+                    this.loginService.refresh().subscribe(function (response) { return undefined; });
                     this._router.navigate(['Inicio']);
                 };
                 CabeceraComponent.prototype.goToFinalizados = function () {
@@ -71,9 +72,7 @@ System.register(['angular2/core', 'angular2/router', './usuario.interface', './l
                     document.head.appendChild(h);
                 };
                 CabeceraComponent.prototype.actualizar = function () {
-                    var _this = this;
-                    this._usuarioService.getSesion().subscribe(function (usuario) { return _this.sesion = usuario; }, function (error) { return console.log(error); });
-                    this._usuarioService.getAdmin().subscribe(function (admin) { return _this.admin = admin; }, function (error) { return console.log(error); });
+                    this.loginService.refresh().subscribe(function (response) { return undefined; });
                 };
                 CabeceraComponent.prototype.getKarmaFromSession = function (usuario) {
                     var karm = this._usuarioService.getKarma(usuario);

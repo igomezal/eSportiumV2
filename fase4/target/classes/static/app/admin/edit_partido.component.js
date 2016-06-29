@@ -49,7 +49,12 @@ System.register(['angular2/core', 'angular2/router', '../partido.service', '../j
                 editPartidoComponent.prototype.ngOnInit = function () {
                     var _this = this;
                     var id = +this._routeParams.get('id');
-                    this._Partidoservice.getPartido(id).subscribe(function (partido) { return _this.partido = partido; }, function (error) { return console.log(error); });
+                    this._Partidoservice.getPartido(id).subscribe(function (partido) {
+                        _this.partido = partido;
+                        _this.juegoN = _this.partido.juego.id;
+                        _this.equipo1N = _this.partido.equipo1.id;
+                        _this.equipo2N = _this.partido.equipo2.id;
+                    }, function (error) { return console.log(error); });
                     this._JuegoService.getJuegos().subscribe(function (juegos) { return _this.juegos = juegos; }, function (error) { return console.log(error); });
                     this._EquipoService.getEquipos().subscribe(function (equipos) { return _this.equipos = equipos; }, function (error) { return console.log(error); });
                 };

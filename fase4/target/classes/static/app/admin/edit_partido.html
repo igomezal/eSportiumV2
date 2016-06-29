@@ -52,7 +52,7 @@
                                 <div class="form-group">
                                   <label>Juego:</label>
                                     <select class="form-control" [(ngModel)]="juegoN" (change)="seleccionj($event.target.value)" style="width: 100%;">
-                                      <option *ngFor="#juego of juegos; #ind = index" [value]="juego.id" [selected]="partido.juego.id == juego.id">{{juego.nombre}}</option>
+                                      <option *ngFor="#juego of juegos; #ind = index" [value]="juego.id" >{{juego.nombre}}</option>
                                     </select>
                                     <label>Equipo 1:</label>
                                     <select class="form-control" [(ngModel)]="equipo1N" (change)="seleccion1N($event.target.value)" style="width: 100%;">

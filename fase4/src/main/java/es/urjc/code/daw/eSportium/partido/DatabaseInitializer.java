@@ -39,7 +39,7 @@ public class DatabaseInitializer implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		Juego j1 = new Juego("League of Legends","lol");
+		/*Juego j1 = new Juego("League of Legends","lol");
 		Juego j2 = new Juego("Counter Strike","cs");
 		Juego j3 = new Juego("Call of Duty: BO", "cod");
 		
@@ -176,7 +176,7 @@ public class DatabaseInitializer implements CommandLineRunner {
 		
 		ApuestaUser au1 = new ApuestaUser(a1, user1);
 		
-		apuestauserRepository.save(au1);
+		apuestauserRepository.save(au1);*/
 			
 	
 	}

@@ -82,16 +82,11 @@ public class ApuestaUserController {
 	@RequestMapping(value = "/", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.CREATED)
 	public ApuestaUser nuevaApuestaUser(@RequestBody ApuestaUser apuestaUser){
-		
-		boolean sec = true;
-		
 		long loggedId = usercomponent.getLoggedUser().getId();
-			//log.info("LoggedId: {}",loggedId);
-			//log.info("apeustaUser id : {}", apuestaUser.getId());
-		if(loggedId == apuestaUser.getId()){
+		if(loggedId == apuestaUser.getUser().getId()){
 			log.info("ApuestaUser guardada");
-		}
 			repository.save(apuestaUser);
+		}
 		return apuestaUser;
 	}
 	
