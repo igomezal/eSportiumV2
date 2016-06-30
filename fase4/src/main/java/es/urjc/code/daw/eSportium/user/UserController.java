@@ -235,6 +235,23 @@ public class UserController {
 	}
 	
 	@JsonView(UserListView.class)
+	@RequestMapping(value = "/actLog/{id}", method = RequestMethod.GET)
+	public ResponseEntity<User> actLogged(@PathVariable long id){
+		
+		User u = repository.findOne(id);
+		//log.info("{}",u);
+		//log.info("{}",usercomponent.isLoggedUser());
+		if(usercomponent.isLoggedUser()){
+			if( u != null){
+				
+				usercomponent.setLoggedUser(u);
+				return new ResponseEntity<>(u, HttpStatus.OK);
+			}
+		}
+		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+	}
+	
+	@JsonView(UserListView.class)
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<User> borraUser(@PathVariable long id){
 		if(repository.exists(id)){

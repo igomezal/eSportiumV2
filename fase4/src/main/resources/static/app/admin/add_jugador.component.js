@@ -1,4 +1,6 @@
-System.register(['angular2/core', '../equipo.interface', '../jugador.interface', 'angular2/router', '../usuario.interface'], function(exports_1) {
+System.register(['angular2/core', '../equipo.interface', '../jugador.interface', 'angular2/router', '../usuario.interface'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -102,9 +104,9 @@ System.register(['angular2/core', '../equipo.interface', '../jugador.interface',
                     __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, equipo_interface_1.EquipoService, jugador_interface_1.JugadorService, router_1.Router])
                 ], addJugadorComponent);
                 return addJugadorComponent;
-            })();
+            }());
             exports_1("addJugadorComponent", addJugadorComponent);
         }
     }
 });
-//# sourceMappingURL=../../../../app/admin/add_jugador.component.js.map
+//# sourceMappingURL=add_jugador.component.js.map

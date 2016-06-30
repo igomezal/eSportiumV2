@@ -1,0 +1,228 @@
+<br>
+<div class="container-fluid" *ngIf="partido">
+        <div class="panel panel-default" id="apuesta">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#apostar1" [disabled]="!(partido.estado =='Proximamente')">Apostar</button>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3 col-sm-offset-1  col-xs-offset-1 muestra">
+                                {{partido.equipo1.nombre}}
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                <div class=" btn btn-info no-pointer">70%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-md-offset-2 muestra">{{partido.rondas}}</div>
+                    <div class="col-md-3 col-md-offset-2">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#apostar2" [disabled]="!(partido.estado =='Proximamente')">Apostar</button>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-xs-3 col-xs-offset-1 col-sm-offset-1 muestra">
+                                {{partido.equipo2.nombre}}
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                <div class="btn btn-info no-pointer">30%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-md-8">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="{{partido.url}}" allowfullscreen></iframe>
+                </div>
+                <br>
+            </div>
+            <div class="col-md-4">
+                <div class="form-control" id="chat"></div>
+                <br>
+                <div class="row">
+                    <div class="col-md-8 col-sm-10 col-xs-6">
+                        <input class="form-control input-lg" rows="1" id="chat-input">
+                    </div>
+                    <div class="col-md-4 col-sm-2 col-xs-4">
+                        <button type="button" class="btn btn-primary" id="enviar">Enviar</button>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+        </div>
+
+        <div class="row" id="informacion-jugadores">
+            <div class="col-md-5 col-sm-6">
+                <div class="section-title">
+                    <h2 class="big-title">{{partido.equipo1.nombre}}</h2>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Invocador</th>
+                                <th>Posición</th>
+                                <th>KDA</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngIf="equipo1">
+                            <tr *ngFor="#jug of equipo1.jugadores">
+                                <th>{{jug.nombre}}</th>
+                                <th>{{jug.posicion}}</th>
+                                <th>{{jug.media}}</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-5 col-md-offset-2 col-sm-6">
+                <div class="section-title">
+                    <h2 class="big-title">{{partido.equipo2.nombre}}</h2>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Invocador</th>
+                                <th>Posición</th>
+                                <th>KDA</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngIf="equipo2">
+                            <tr *ngFor="#jug of equipo2.jugadores">
+                                <th>{{jug.nombre}}</th>
+                                <th>{{jug.posicion}}</th>
+                                <th>{{jug.media}}</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <!--Modal de apuesta / Equipo1-->
+    <div *ngIf="loginService.isLogged && partido"  class="modal fade" id="apostar1" role="dialog" aria-labelledby="etiquetaModal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h3 class="etiquetaModal">Apostar por {{partido.equipo1.nombre}}</h3>
+                    <div class="karma btn-success no-pointer">{{loginService.user.karma}}</div>
+                    <br/>
+                    <center><input class="input-lg" id="spin-apuessta" type="text" value="0" name="spin-apuesta" #apuesta1></center>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-7 col-sm-7 col-xs-7">
+                            <button class="btn btn-primary btn-sp" data-dismiss="modal" (click)="anadirAp(partido,partido.equipo1,apuesta1.value)">Realizar Apuesta</button>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <button class="btn btn-danger btn-sp" data-dismiss="modal">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fin de modal de apuesta-->
+
+    <!--Modal de apuesta / Equipo2-->
+     <div *ngIf="loginService.isLogged && partido"  class="modal fade" id="apostar2" role="dialog" aria-labelledby="etiquetaModal">
+         <div class="modal-dialog modal-sm">
+             <div class="modal-content">
+                 <div class="modal-body">
+                     <h3 class="etiquetaModal">Apostar a {{partido.equipo2.nombre}}</h3>
+                     <div class="karma btn-success no-pointer">{{loginService.user.karma}}</div>
+                     <br/>
+                     <center><input class="input-lg" id="spin-apuessta" type="text" value="0" name="spin-apuesta" #apuesta2></center>
+                     <br>
+                     <br>
+                     <div class="row">
+                         <div class="col-md-7 col-sm-7 col-xs-7">
+                             <button class="btn btn-primary btn-sp" data-dismiss="modal" (click)="anadirAp(partido,partido.equipo2,apuesta2.value)">Realizar Apuesta</button>
+                         </div>
+                         <div class="col-md-4 col-sm-4 col-xs-4">
+                             <button class="btn btn-danger btn-sp" data-dismiss="modal">Cancelar</button>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <!--Fin de modal de apuesta-->
+
+    <!--Modal de Log In / 1-->
+<div *ngIf="!loginService.isLogged"  class="modal fade" id="apostar1" role="dialog" aria-labelledby="etiquetaModal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div id="tituloAcceso">
+                    <img class="logoLogin" src="img/logo.png" />
+                    <h3 id="etiquetaModal">Acceso</h3>
+                </div>
+                <div name="formularioLogIn" class="form-group">
+                    <input type="text" name="NombreUsuario" autocomplete="on" placeholder="Usuario" class="form-control" #NombreUsuario>
+                    <br/>
+                    <input type="password" name="Password" autocomplete="on" placeholder="Contraseña" class="form-control" #Clave>
+                    <br/>
+                    <a class="cerrar" data-dismiss="modal" (click)="logInSpring($event,NombreUsuario.value,Clave.value)">
+                        <button class="btn btn-primary">¡Acceder!</button>
+                    </a>
+                    <div class="checkbox checkDerecho">
+                        <label>
+                            <input type="checkbox" value="">Recordarme
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer footer-login">
+                No eres un miembro aún, registrate <a class="link cerrar"  data-dismiss="modal" (click)="goToRegistro()">aqui.</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!--Fin de modal de Log In-->
+
+    <!--Modal de Log In / 2-->
+<div *ngIf="!loginService.isLogged"  class="modal fade" id="apostar2" role="dialog" aria-labelledby="etiquetaModal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div id="tituloAcceso">
+                    <img class="logoLogin" src="img/logo.png" />
+                    <h3 id="etiquetaModal">Acceso</h3>
+                </div>
+                <div name="formularioLogIn" class="form-group">
+                    <input type="text" name="NombreUsuario" autocomplete="on" placeholder="Usuario" class="form-control" #NombreUsuario>
+                    <br/>
+                    <input type="password" name="Password" autocomplete="on" placeholder="Contraseña" class="form-control" #Clave>
+                    <br/>
+                    <a class="cerrar" data-dismiss="modal" (click)="logInSpring($event,NombreUsuario.value,Clave.value)">
+                        <button class="btn btn-primary">¡Acceder!</button>
+                    </a>
+                    <div class="checkbox checkDerecho">
+                        <label>
+                            <input type="checkbox" value="">Recordarme
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer footer-login">
+                No eres un miembro aún, registrate <a class="link cerrar"  data-dismiss="modal" (click)="goToRegistro()">aqui.</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!--Fin de modal de Log In-->

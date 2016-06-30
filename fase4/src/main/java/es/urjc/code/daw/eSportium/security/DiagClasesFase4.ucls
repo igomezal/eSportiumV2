@@ -21,17 +21,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="3" language="java" name="es.urjc.code.daw.eSportium.apuesta.Apuesta.UserAtt" project="security_ejem1" 
-    file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/apuesta/Apuesta.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="63" width="161" x="610" y="465"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </interface>  
-  <interface id="4" language="java" name="es.urjc.code.daw.eSportium.apuesta.Apuesta.EquipoAtt" project="security_ejem1" 
+  <interface id="3" language="java" name="es.urjc.code.daw.eSportium.apuesta.Apuesta.EquipoAtt" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/apuesta/Apuesta.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="63" width="161" x="811" y="465"/>    
@@ -41,7 +31,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="5" language="java" name="es.urjc.code.daw.eSportium.apuesta.Apuesta" project="security_ejem1" 
+  <class id="4" language="java" name="es.urjc.code.daw.eSportium.apuesta.Apuesta" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/apuesta/Apuesta.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="333" width="161" x="711" y="92"/>    
@@ -51,7 +41,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="6" language="java" name="es.urjc.code.daw.eSportium.apuesta.Apuesta.BasicAtt" project="security_ejem1" 
+  <interface id="5" language="java" name="es.urjc.code.daw.eSportium.apuesta.Apuesta.BasicAtt" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/apuesta/Apuesta.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="63" width="161" x="1012" y="465"/>    
@@ -61,7 +51,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="7" language="java" name="es.urjc.code.daw.eSportium.apuesta.ApuestaController" project="security_ejem1" 
+  <class id="6" language="java" name="es.urjc.code.daw.eSportium.apuesta.ApuestaController" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/apuesta/ApuestaController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1410" y="124"/>    
@@ -71,7 +61,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="8" language="java" name="es.urjc.code.daw.eSportium.apuesta.ApuestaController.ApuestaListView" 
+  <interface id="7" language="java" name="es.urjc.code.daw.eSportium.apuesta.ApuestaController.ApuestaListView" 
     project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/apuesta/ApuestaController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
@@ -82,7 +72,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="9" language="java" name="es.urjc.code.daw.eSportium.apuesta.ApuestaRepository" project="security_ejem1" 
+  <interface id="8" language="java" name="es.urjc.code.daw.eSportium.apuesta.ApuestaRepository" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/apuesta/ApuestaRepository.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1124" y="40"/>    
@@ -92,7 +82,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="10" language="java" name="es.urjc.code.daw.eSportium.equipo.Equipo.BasicAtt" project="security_ejem1" 
+  <interface id="9" language="java" name="es.urjc.code.daw.eSportium.equipo.Equipo.BasicAtt" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/equipo/Equipo.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="139" y="457"/>    
@@ -102,7 +92,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="11" language="java" name="es.urjc.code.daw.eSportium.equipo.Equipo.JugadoresAtt" 
+  <interface id="10" language="java" name="es.urjc.code.daw.eSportium.equipo.Equipo.JugadoresAtt" 
     project="security_ejem1" file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/equipo/Equipo.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="311" y="492"/>    
@@ -112,7 +102,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="12" language="java" name="es.urjc.code.daw.eSportium.equipo.Equipo" project="security_ejem1" 
+  <class id="11" language="java" name="es.urjc.code.daw.eSportium.equipo.Equipo" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/equipo/Equipo.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="292" y="203"/>    
@@ -122,7 +112,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="13" language="java" name="es.urjc.code.daw.eSportium.equipo.EquipoController" project="security_ejem1" 
+  <class id="12" language="java" name="es.urjc.code.daw.eSportium.equipo.EquipoController" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/equipo/EquipoController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="423" y="690"/>    
@@ -132,7 +122,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="14" language="java" name="es.urjc.code.daw.eSportium.equipo.EquipoController.EquipoListView" 
+  <interface id="13" language="java" name="es.urjc.code.daw.eSportium.equipo.EquipoController.EquipoListView" 
     project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/equipo/EquipoController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
@@ -143,7 +133,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="15" language="java" name="es.urjc.code.daw.eSportium.equipo.EquipoRepository" project="security_ejem1" 
+  <interface id="14" language="java" name="es.urjc.code.daw.eSportium.equipo.EquipoRepository" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/equipo/EquipoRepository.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="709" y="675"/>    
@@ -153,7 +143,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="16" language="java" name="es.urjc.code.daw.eSportium.juego.Juego" project="security_ejem1" 
+  <class id="15" language="java" name="es.urjc.code.daw.eSportium.juego.Juego" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/juego/Juego.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1354" y="595"/>    
@@ -163,7 +153,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="17" language="java" name="es.urjc.code.daw.eSportium.juego.Juego.PartidosAtt" project="security_ejem1" 
+  <interface id="16" language="java" name="es.urjc.code.daw.eSportium.juego.Juego.PartidosAtt" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/juego/Juego.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1332" y="820"/>    
@@ -173,7 +163,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="18" language="java" name="es.urjc.code.daw.eSportium.juego.Juego.BasicAtt" project="security_ejem1" 
+  <interface id="17" language="java" name="es.urjc.code.daw.eSportium.juego.Juego.BasicAtt" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/juego/Juego.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1169" y="821"/>    
@@ -183,7 +173,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="19" language="java" name="es.urjc.code.daw.eSportium.juego.JuegoController.JuegoListView" 
+  <interface id="18" language="java" name="es.urjc.code.daw.eSportium.juego.JuegoController.JuegoListView" 
     project="security_ejem1" file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/juego/JuegoController.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="944" y="840"/>    
@@ -193,7 +183,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="20" language="java" name="es.urjc.code.daw.eSportium.juego.JuegoController" project="security_ejem1" 
+  <class id="19" language="java" name="es.urjc.code.daw.eSportium.juego.JuegoController" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/juego/JuegoController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="943" y="665"/>    
@@ -203,7 +193,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="21" language="java" name="es.urjc.code.daw.eSportium.juego.JuegoRepository" project="security_ejem1" 
+  <interface id="20" language="java" name="es.urjc.code.daw.eSportium.juego.JuegoRepository" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/juego/JuegoRepository.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="706" y="773"/>    
@@ -213,7 +203,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="22" language="java" name="es.urjc.code.daw.eSportium.jugador.Jugador.EquipoAtt" 
+  <interface id="21" language="java" name="es.urjc.code.daw.eSportium.jugador.Jugador.EquipoAtt" 
     project="security_ejem1" file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/jugador/Jugador.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="-145" y="540"/>    
@@ -223,7 +213,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="23" language="java" name="es.urjc.code.daw.eSportium.jugador.Jugador" project="security_ejem1" 
+  <class id="22" language="java" name="es.urjc.code.daw.eSportium.jugador.Jugador" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/jugador/Jugador.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="-45" y="230"/>    
@@ -233,7 +223,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="24" language="java" name="es.urjc.code.daw.eSportium.jugador.Jugador.BasicAtt" project="security_ejem1" 
+  <interface id="23" language="java" name="es.urjc.code.daw.eSportium.jugador.Jugador.BasicAtt" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/jugador/Jugador.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="32" y="540"/>    
@@ -243,7 +233,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="25" language="java" name="es.urjc.code.daw.eSportium.partido.DatabaseInitializer" project="security_ejem1" 
+  <class id="24" language="java" name="es.urjc.code.daw.eSportium.partido.DatabaseInitializer" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/partido/DatabaseInitializer.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1056" y="228"/>    
@@ -253,7 +243,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="26" language="java" name="es.urjc.code.daw.eSportium.partido.Partido.JuegoAtt" project="security_ejem1" 
+  <interface id="25" language="java" name="es.urjc.code.daw.eSportium.partido.Partido.JuegoAtt" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/partido/Partido.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="475" y="1644"/>    
@@ -263,7 +253,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="27" language="java" name="es.urjc.code.daw.eSportium.partido.Partido.BasicAtt" project="security_ejem1" 
+  <interface id="26" language="java" name="es.urjc.code.daw.eSportium.partido.Partido.BasicAtt" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/partido/Partido.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="671" y="1644"/>    
@@ -273,7 +263,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="28" language="java" name="es.urjc.code.daw.eSportium.partido.Partido.ApuestaAtt" 
+  <interface id="27" language="java" name="es.urjc.code.daw.eSportium.partido.Partido.ApuestaAtt" 
     project="security_ejem1" file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/partido/Partido.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="867" y="1644"/>    
@@ -283,7 +273,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="29" language="java" name="es.urjc.code.daw.eSportium.partido.Partido" project="security_ejem1" 
+  <class id="28" language="java" name="es.urjc.code.daw.eSportium.partido.Partido" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/partido/Partido.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="656" y="1214"/>    
@@ -293,7 +283,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="30" language="java" name="es.urjc.code.daw.eSportium.partido.PartidoController" project="security_ejem1" 
+  <class id="29" language="java" name="es.urjc.code.daw.eSportium.partido.PartidoController" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/partido/PartidoController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1127" y="1088"/>    
@@ -303,7 +293,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="31" language="java" name="es.urjc.code.daw.eSportium.partido.PartidoController.PartidoListView" 
+  <interface id="30" language="java" name="es.urjc.code.daw.eSportium.partido.PartidoController.PartidoListView" 
     project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/partido/PartidoController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
@@ -314,7 +304,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="32" language="java" name="es.urjc.code.daw.eSportium.partido.PartidoRepository" 
+  <interface id="31" language="java" name="es.urjc.code.daw.eSportium.partido.PartidoRepository" 
     project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/partido/PartidoRepository.java" binary="false" 
     corner="BOTTOM_RIGHT">    
@@ -325,7 +315,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="33" language="java" name="es.urjc.code.daw.eSportium.jugador.JugadorController" project="security_ejem1" 
+  <class id="32" language="java" name="es.urjc.code.daw.eSportium.jugador.JugadorController" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/jugador/JugadorController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="-19" y="941"/>    
@@ -335,7 +325,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="34" language="java" name="es.urjc.code.daw.eSportium.jugador.JugadorController.JugadorListView" 
+  <interface id="33" language="java" name="es.urjc.code.daw.eSportium.jugador.JugadorController.JugadorListView" 
     project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/jugador/JugadorController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
@@ -346,7 +336,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="35" language="java" name="es.urjc.code.daw.eSportium.jugador.JugadorRepository" 
+  <interface id="34" language="java" name="es.urjc.code.daw.eSportium.jugador.JugadorRepository" 
     project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/jugador/JugadorRepository.java" binary="false" 
     corner="BOTTOM_RIGHT">    
@@ -357,7 +347,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="36" language="java" name="es.urjc.code.daw.eSportium.security.LoginController" project="security_ejem1" 
+  <class id="35" language="java" name="es.urjc.code.daw.eSportium.security.LoginController" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/security/LoginController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="980" y="1462"/>    
@@ -367,7 +357,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="37" language="java" name="es.urjc.code.daw.eSportium.security.SecurityConfig" project="security_ejem1" 
+  <class id="36" language="java" name="es.urjc.code.daw.eSportium.security.SecurityConfig" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/security/SecurityConfig.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="318" y="1316"/>    
@@ -377,7 +367,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="38" language="java" name="es.urjc.code.daw.eSportium.security.UserRepositoryAuthProvider" 
+  <class id="37" language="java" name="es.urjc.code.daw.eSportium.security.UserRepositoryAuthProvider" 
     project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/security/UserRepositoryAuthProvider.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -388,7 +378,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="39" language="java" name="es.urjc.code.daw.eSportium.user.User.ApuestaAtt" project="security_ejem1" 
+  <interface id="38" language="java" name="es.urjc.code.daw.eSportium.user.User.ApuestaAtt" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/user/User.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1586" y="1531"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -397,7 +387,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="40" language="java" name="es.urjc.code.daw.eSportium.user.User" project="security_ejem1" 
+  <class id="39" language="java" name="es.urjc.code.daw.eSportium.user.User" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/user/User.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1700" y="1149"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -406,7 +396,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="41" language="java" name="es.urjc.code.daw.eSportium.user.User.BasicAtt" project="security_ejem1" 
+  <interface id="40" language="java" name="es.urjc.code.daw.eSportium.user.User.BasicAtt" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/user/User.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1772" y="1531"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -415,7 +405,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="42" language="java" name="es.urjc.code.daw.eSportium.user.UserComponent" project="security_ejem1" 
+  <class id="41" language="java" name="es.urjc.code.daw.eSportium.user.UserComponent" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/user/UserComponent.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1424" y="1345"/>    
@@ -425,7 +415,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="43" language="java" name="es.urjc.code.daw.eSportium.user.UserController.UserListView" 
+  <interface id="42" language="java" name="es.urjc.code.daw.eSportium.user.UserController.UserListView" 
     project="security_ejem1" file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/user/UserController.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1265" y="1722"/>    
@@ -435,7 +425,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="44" language="java" name="es.urjc.code.daw.eSportium.user.UserController" project="security_ejem1" 
+  <class id="43" language="java" name="es.urjc.code.daw.eSportium.user.UserController" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/user/UserController.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1321" y="1547"/>    
@@ -445,7 +435,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="45" language="java" name="es.urjc.code.daw.eSportium.user.UserRepository" project="security_ejem1" 
+  <interface id="44" language="java" name="es.urjc.code.daw.eSportium.user.UserRepository" project="security_ejem1" 
     file="/security_ejem1/src/main/java/es/urjc/code/daw/eSportium/user/UserRepository.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="-1" width="-1" x="1723" y="1685"/>    
@@ -455,400 +445,444 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <generalization id="46">    
-    <end type="SOURCE" refId="34"/>    
-    <end type="TARGET" refId="22"/>  
-  </generalization>  
+  <nesting id="45">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="5"/>  
+  </nesting>  
+  <nesting id="46">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="16"/>  
+  </nesting>  
   <association id="47">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="48" name="repository"/>      
-      <multiplicity id="49" minimum="0" maximum="1"/>    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="48" name="repository">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="49" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
+    <end type="TARGET" refId="20" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <nesting id="50">    
-    <end type="SOURCE" refId="29"/>    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="7"/>  
+  </nesting>  
+  <nesting id="51">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="10"/>  
+  </nesting>  
+  <association id="52">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="53" name="userRepository">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="54" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="44" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="55">    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="56" name="userRepository">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="57" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="44" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="58">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="9"/>  
+  </generalization>  
+  <generalization id="59">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <nesting id="60">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="18"/>  
+  </nesting>  
+  <association id="61">    
+    <end type="SOURCE" refId="35" navigable="false">      
+      <attribute id="62" name="userComponent">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="63" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="41" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="64">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <association id="65">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="66" name="partido">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="67" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="68">    
+    <end type="SOURCE" refId="28"/>    
     <end type="TARGET" refId="26"/>  
   </nesting>  
-  <association id="51">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="52" name="partidoRepository"/>      
-      <multiplicity id="53" minimum="0" maximum="1"/>    
+  <association id="69">    
+    <end type="SOURCE" refId="41" navigable="false">      
+      <attribute id="70" name="user">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="71" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="32" navigable="true"/>    
+    <end type="TARGET" refId="39" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="54">    
-    <end type="SOURCE" refId="40" navigable="false">      
-      <attribute id="55" name="apuestas"/>      
-      <multiplicity id="56" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="57">    
-    <end type="SOURCE" refId="30"/>    
-    <end type="TARGET" refId="31"/>  
+  <nesting id="72">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="2"/>  
   </nesting>  
-  <generalization id="58">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="18"/>  
-  </generalization>  
-  <association id="59">    
-    <end type="SOURCE" refId="30" navigable="false">      
-      <attribute id="60" name="repository"/>      
-      <multiplicity id="61" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="32" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="62">    
-    <end type="SOURCE" refId="36" navigable="false">      
-      <attribute id="63" name="userComponent"/>      
-      <multiplicity id="64" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="42" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="65">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="10"/>  
-  </generalization>  
-  <nesting id="66">    
-    <end type="SOURCE" refId="33"/>    
-    <end type="TARGET" refId="34"/>  
-  </nesting>  
-  <nesting id="67">    
-    <end type="SOURCE" refId="23"/>    
-    <end type="TARGET" refId="22"/>  
-  </nesting>  
-  <nesting id="68">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="8"/>  
-  </nesting>  
-  <nesting id="69">    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="14"/>  
-  </nesting>  
-  <association id="70">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="71" name="apuestaRepository"/>      
-      <multiplicity id="72" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
   <association id="73">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="74" name="partido"/>      
-      <multiplicity id="75" minimum="0" maximum="1"/>    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="74" name="juegoRepository">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="75" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="29" navigable="true"/>    
+    <end type="TARGET" refId="20" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="76">    
-    <end type="SOURCE" refId="23" navigable="false">      
-      <attribute id="77" name="equipo"/>      
-      <multiplicity id="78" minimum="0" maximum="1"/>    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="77" name="equipoRepository">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="78" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
+    <end type="TARGET" refId="14" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="79">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="4"/>  
-  </generalization>  
-  <nesting id="80">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="3"/>  
+  <nesting id="79">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="38"/>  
   </nesting>  
-  <generalization id="81">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="18"/>  
-  </generalization>  
-  <association id="82">    
-    <end type="SOURCE" refId="42" navigable="false">      
-      <attribute id="83" name="user"/>      
-      <multiplicity id="84" minimum="0" maximum="1"/>    
+  <association id="80">    
+    <end type="SOURCE" refId="36" navigable="false">      
+      <attribute id="81" name="userRepoAuthProvider">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="82" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="40" navigable="true"/>    
+    <end type="TARGET" refId="37" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="85">    
-    <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="86" name="repository"/>      
-      <multiplicity id="87" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="21" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="88">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="10"/>  
-  </generalization>  
-  <nesting id="89">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="2"/>  
-  </nesting>  
-  <nesting id="90">    
-    <end type="SOURCE" refId="16"/>    
-    <end type="TARGET" refId="18"/>  
-  </nesting>  
-  <nesting id="91">    
-    <end type="SOURCE" refId="23"/>    
-    <end type="TARGET" refId="24"/>  
-  </nesting>  
-  <generalization id="92">    
-    <end type="SOURCE" refId="31"/>    
+  <generalization id="83">    
+    <end type="SOURCE" refId="30"/>    
     <end type="TARGET" refId="26"/>  
   </generalization>  
-  <nesting id="93">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="11"/>  
-  </nesting>  
-  <generalization id="94">    
-    <end type="SOURCE" refId="34"/>    
-    <end type="TARGET" refId="10"/>  
-  </generalization>  
-  <association id="95">    
-    <end type="SOURCE" refId="38" navigable="false">      
-      <attribute id="96" name="userRepository"/>      
-      <multiplicity id="97" minimum="0" maximum="1"/>    
+  <association id="84">    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="85" name="repository">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="86" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="45" navigable="true"/>    
+    <end type="TARGET" refId="34" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="87">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="40"/>  
+  </nesting>  
+  <association id="88">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="89" name="equipo2">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="90" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="91">    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="42"/>  
+  </nesting>  
+  <association id="92">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="93" name="equipo">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="94" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="95">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="96" name="apuestaRepository">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="97" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <nesting id="98">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="4"/>  
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="17"/>  
   </nesting>  
   <generalization id="99">    
-    <end type="SOURCE" refId="31"/>    
-    <end type="TARGET" refId="27"/>  
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="9"/>  
   </generalization>  
-  <nesting id="100">    
-    <end type="SOURCE" refId="44"/>    
-    <end type="TARGET" refId="43"/>  
-  </nesting>  
-  <generalization id="101">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="2"/>  
-  </generalization>  
-  <generalization id="102">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="11"/>  
-  </generalization>  
-  <association id="103">    
-    <end type="SOURCE" refId="37" navigable="false">      
-      <attribute id="104" name="userRepoAuthProvider"/>      
-      <multiplicity id="105" minimum="0" maximum="1"/>    
+  <association id="100">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="101" name="jugadores">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="102" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="38" navigable="true"/>    
+    <end type="TARGET" refId="22" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <generalization id="103">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <nesting id="104">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="23"/>  
+  </nesting>  
+  <generalization id="105">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
   <nesting id="106">    
-    <end type="SOURCE" refId="29"/>    
-    <end type="TARGET" refId="28"/>  
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="33"/>  
   </nesting>  
   <association id="107">    
-    <end type="SOURCE" refId="38" navigable="false">      
-      <attribute id="108" name="userComponent"/>      
-      <multiplicity id="109" minimum="0" maximum="1"/>    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="108" name="repository">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="109" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="42" navigable="true"/>    
+    <end type="TARGET" refId="44" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="110">    
-    <end type="SOURCE" refId="43"/>    
-    <end type="TARGET" refId="6"/>  
-  </generalization>  
+  <nesting id="110">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="25"/>  
+  </nesting>  
   <association id="111">    
-    <end type="SOURCE" refId="33" navigable="false">      
-      <attribute id="112" name="repository"/>      
-      <multiplicity id="113" minimum="0" maximum="1"/>    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="112" name="equipo">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="113" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="35" navigable="true"/>    
+    <end type="TARGET" refId="11" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="114">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="115" name="equipo"/>      
-      <multiplicity id="116" minimum="0" maximum="1"/>    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="115" name="repository">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="116" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
+    <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <nesting id="117">    
-    <end type="SOURCE" refId="40"/>    
-    <end type="TARGET" refId="39"/>  
+  <generalization id="117">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="26"/>  
+  </generalization>  
+  <generalization id="118">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <generalization id="119">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="9"/>  
+  </generalization>  
+  <generalization id="120">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <nesting id="121">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="9"/>  
   </nesting>  
-  <nesting id="118">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="6"/>  
-  </nesting>  
-  <association id="119">    
-    <end type="SOURCE" refId="16" navigable="false">      
-      <attribute id="120" name="partidos"/>      
-      <multiplicity id="121" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="29" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
   <association id="122">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="123" name="jugadorRepository"/>      
-      <multiplicity id="124" minimum="0" maximum="1"/>    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="123" name="repository">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="124" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="35" navigable="true"/>    
+    <end type="TARGET" refId="31" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <generalization id="125">    
-    <end type="SOURCE" refId="43"/>    
-    <end type="TARGET" refId="27"/>  
+    <end type="SOURCE" refId="42"/>    
+    <end type="TARGET" refId="40"/>  
   </generalization>  
-  <generalization id="126">    
-    <end type="SOURCE" refId="8"/>    
+  <nesting id="126">    
+    <end type="SOURCE" refId="4"/>    
     <end type="TARGET" refId="3"/>  
-  </generalization>  
-  <association id="127">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="128" name="equipoRepository"/>      
-      <multiplicity id="129" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="15" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="130">    
-    <end type="SOURCE" refId="29" navigable="false">      
-      <attribute id="131" name="apuestas"/>      
-      <multiplicity id="132" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="133">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="24"/>  
-  </generalization>  
-  <association id="134">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="135" name="userRepository"/>      
-      <multiplicity id="136" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="45" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="137">    
+  </nesting>  
+  <nesting id="127">    
     <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="30"/>  
+  </nesting>  
+  <association id="128">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="129" name="apuestas">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="130" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="131">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="132" name="equipo1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="133" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="134">    
+    <end type="SOURCE" refId="28"/>    
     <end type="TARGET" refId="27"/>  
   </nesting>  
-  <generalization id="138">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="41"/>  
-  </generalization>  
-  <association id="139">    
-    <end type="SOURCE" refId="29" navigable="false">      
-      <attribute id="140" name="juego"/>      
-      <multiplicity id="141" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="142">    
+  <nesting id="135">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="21"/>  
+  </nesting>  
+  <association id="136">    
     <end type="SOURCE" refId="12" navigable="false">      
-      <attribute id="143" name="jugadores"/>      
-      <multiplicity id="144" minimum="0" maximum="2147483647"/>    
+      <attribute id="137" name="repository">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="138" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
-    <end type="TARGET" refId="23" navigable="true"/>    
+    <end type="TARGET" refId="14" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="145">    
-    <end type="SOURCE" refId="34"/>    
-    <end type="TARGET" refId="24"/>  
+  <generalization id="139">    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="21"/>  
   </generalization>  
-  <generalization id="146">    
-    <end type="SOURCE" refId="43"/>    
-    <end type="TARGET" refId="18"/>  
+  <generalization id="140">    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="23"/>  
   </generalization>  
-  <nesting id="147">    
-    <end type="SOURCE" refId="40"/>    
-    <end type="TARGET" refId="41"/>  
-  </nesting>  
-  <association id="148">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="149" name="juegoRepository"/>      
-      <multiplicity id="150" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="21" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="151">    
-    <end type="SOURCE" refId="31"/>    
-    <end type="TARGET" refId="6"/>  
-  </generalization>  
-  <generalization id="152">    
-    <end type="SOURCE" refId="31"/>    
-    <end type="TARGET" refId="10"/>  
-  </generalization>  
-  <generalization id="153">    
-    <end type="SOURCE" refId="43"/>    
-    <end type="TARGET" refId="41"/>  
-  </generalization>  
-  <association id="154">    
-    <end type="SOURCE" refId="29" navigable="false">      
-      <attribute id="155" name="equipo2"/>      
-      <multiplicity id="156" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="157">    
-    <end type="SOURCE" refId="20"/>    
-    <end type="TARGET" refId="19"/>  
-  </nesting>  
-  <generalization id="158">    
-    <end type="SOURCE" refId="31"/>    
-    <end type="TARGET" refId="18"/>  
-  </generalization>  
-  <association id="159">    
-    <end type="SOURCE" refId="29" navigable="false">      
-      <attribute id="160" name="equipo1"/>      
-      <multiplicity id="161" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="162">    
+  <nesting id="141">    
     <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="10"/>  
+    <end type="TARGET" refId="13"/>  
   </nesting>  
-  <association id="163">    
-    <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="164" name="repository"/>      
-      <multiplicity id="165" minimum="0" maximum="1"/>    
+  <association id="142">    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="143" name="userComponent">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="144" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="41" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="145">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="146" name="partidos">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="147" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="148">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="9"/>  
+  </generalization>  
+  <generalization id="149">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="10"/>  
+  </generalization>  
+  <generalization id="150">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="23"/>  
+  </generalization>  
+  <generalization id="151">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <association id="152">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="153" name="juego">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="154" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="15" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="166">    
-    <end type="SOURCE" refId="16"/>    
-    <end type="TARGET" refId="17"/>  
-  </nesting>  
-  <generalization id="167">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="6"/>  
-  </generalization>  
-  <generalization id="168">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="27"/>  
-  </generalization>  
-  <association id="169">    
-    <end type="SOURCE" refId="44" navigable="false">      
-      <attribute id="170" name="repository"/>      
-      <multiplicity id="171" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="45" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 

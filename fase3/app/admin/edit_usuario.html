@@ -1,0 +1,64 @@
+<br>
+<div class="container-fluid" *ngIf="usuario">
+        <!-- Left side column. contains the logo and sidebar -->
+
+                <!-- sidebar: style can be found in sidebar.less -->
+                <div class="row">
+                  <div class="sidebar col-md-3">
+                      <h5 class="uppercase montserrat-text">Administración</h5>
+                      <!-- Sidebar Menu -->
+                      <nav class="link-list">
+                          <ul>
+                              <li><a (click)="gotoHome()"><i class="fa fa-home"></i> <span>Home</span></a></li>
+                              <li><a (click)="gotoGestionEquipos()"><i class="fa fa-shield"></i> <span>Equipos</span></a></li>
+                              <li><a (click)="gotoGestionJugadores()"><i class="fa fa-users"></i> <span>Jugadores</span></a></li>
+                              <li><a (click)="gotoGestionJuegos()"><i class="fa fa-gamepad"></i> <span>Juegos</span></a></li>
+                              <li><a (click)="gotoGestionPartidos()"><i class="fa fa-book"></i> <span>Partidos</span></a></li>
+                              <li><a (click)="gotoGestionUsuarios()"><i class="fa fa-users"></i> <span>Usuarios</span></a></li>
+                              <li><a (click)="gotoAjustes()"><i class="fa fa-cogs"></i> <span>Ajustes</span></a></li>
+                          </ul>
+                      </nav>
+                  </div>
+
+                    <!-- /.sidebar -->
+                    <div class="col-md-8 col-md-offset-1">
+                        <div class="row">
+          <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <h3 class="montserrat-text white-text uppercase no-margin-top">
+            Gestión de usuarios.
+            <small>Edita o elimina usuarios.</small>
+          </h3>
+                <ol class="breadcrumb">
+                    <li><a (click)="gotoHome()"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li class="active">Gestionar Usuarios</li>
+                </ol>
+            </div>
+
+            <!-- Main content -->
+            <section class="content no-margin-top">
+              <div class="box-body">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <h3>Edita los datos del usuario {{usuario.name}}</h3>
+
+                        <label>Nombre</label><br>
+                        <input type="text" class="form-control" value="{{usuario.name}}"><br>
+                        <label>Correo : {{usuario.correo}}</label>
+                        <br>
+                        <div class="pull-right">
+                            <button type="button" (click)="gotoGestionUsuarios()" class="btn btn-success">Volver</button>
+                            <button type="button" (click)="eliminar()" class="btn btn-danger">Eliminar</button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- /.content -->
+                            </div>
+                        </div>
+                    </div>
+
+</div>

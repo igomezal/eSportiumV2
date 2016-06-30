@@ -1,4 +1,6 @@
-System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http', 'rxjs/Rx'], function(exports_1) {
+System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http', 'rxjs/Rx'], function(exports_1, context_1) {
+    "use strict";
+    var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -44,7 +46,7 @@ System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http',
                     this.roles = roles;
                 }
                 return Usuario;
-            })();
+            }());
             exports_1("Usuario", Usuario);
             UsuarioService = (function () {
                 function UsuarioService(http) {
@@ -216,6 +218,13 @@ System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http',
                         alert("Casi la lías");
                     }
                 };
+                UsuarioService.prototype.refLogged = function (id) {
+                    var _this = this;
+                    var url = "https://localhost:8443/usuarios/actLog/" + id;
+                    return this.http.get(url)
+                        .map(function (response) { return response.json(); })
+                        .catch(function (error) { return _this.manejarError(error); });
+                };
                 UsuarioService.prototype.getKarma = function (usuario) {
                     return usuario.karma;
                 };
@@ -228,9 +237,9 @@ System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http',
                     __metadata('design:paramtypes', [http_1.Http])
                 ], UsuarioService);
                 return UsuarioService;
-            })();
+            }());
             exports_1("UsuarioService", UsuarioService);
         }
     }
 });
-//# sourceMappingURL=../../../app/usuario.interface.js.map
+//# sourceMappingURL=usuario.interface.js.map
