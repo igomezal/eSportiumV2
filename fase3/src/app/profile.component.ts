@@ -14,8 +14,8 @@ export class Perfil {
 
   usuario:Usuario;
   sesion:Usuario;
-  partidoAc:Partido[];
-  partidoFin:Partido[];
+  partidoAc:Partido[] = [];
+  partidoFin:Partido[] = [];
   apuestas : ApuestaUser[];
   finalizados = 0;
   no_finalizados= 0;

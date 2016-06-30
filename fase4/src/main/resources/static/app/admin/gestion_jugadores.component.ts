@@ -80,7 +80,7 @@ export class gestionJugadoresComponent {
   borrarJugador(jugador: Jugador) {
     this._JugadorService.eliminar(jugador.id).subscribe(
       respuesta => this.refresh(),
-      error => console.log(error)
+      error =>alert("Error al borrar")
     );
   }
 

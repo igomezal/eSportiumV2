@@ -193,12 +193,13 @@ export class UsuarioService{
   }
 
   eliminarUsuario(id: number){
-    let u: Usuario;
-    u = this.usuario[id];
+    let url ="https://localhost:8443/usuarios/"+id
     var r = confirm("¿Quieres borrar a este usuario?");
     if(r == true){
-      this.usuario.splice(id, 1);
-      return withObserver(u);
+      return this.http.delete(url)
+        .map(response => undefined)
+        .catch(error => this.manejarError(error)
+      );
     }else{
       alert("Casi la lías");
     }

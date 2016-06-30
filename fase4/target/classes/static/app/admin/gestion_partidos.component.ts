@@ -3,6 +3,7 @@ import {ROUTER_DIRECTIVES,Router} from 'angular2/router';
 import {Partido, PartidoService} from '../partido.service';
 import {UsuarioService} from '../usuario.interface';
 import {ApuestaUserService} from '../apuestaUser.interface';
+import {LoginService} from '../login.service';
 
 @Component({
   selector:'gestionPartidos',
@@ -11,7 +12,8 @@ import {ApuestaUserService} from '../apuestaUser.interface';
 
 export class gestionPartidosComponent {
 
-  constructor(private _UsuarioService: UsuarioService, private _Partidoservice:PartidoService, private _Router: Router, private _ApuestaUserService: ApuestaUserService){}
+  constructor(private _UsuarioService: UsuarioService, private _Partidoservice:PartidoService, private _Router: Router,
+     private _ApuestaUserService: ApuestaUserService, private _LoginService: LoginService){}
 
   private partidos: Partido[];
   private ganadorN = "";
@@ -94,7 +96,10 @@ export class gestionPartidosComponent {
                response =>{
                 this._UsuarioService.cobrarKarma(response[0].user,response[0].apuesta.karma).subscribe(
                   response => {
-                    console.log("El user "+response.name+" ha ganado, sumando un total de "+response.karma+" de karma")
+                    console.log("El user "+response.name+" ha ganado, sumando un total de "+response.karma+" de karma");
+                    this._LoginService.refresh().subscribe(
+                      response => {console.log("loginService actualizado / +Karma");}
+                    )
                   }
                 )
               }
@@ -116,7 +121,7 @@ export class gestionPartidosComponent {
   borrarPartido(partido: Partido){
     this._Partidoservice.eliminarPartido(partido.id).subscribe(
       response => this.refresh(),
-      error => console.log(error)
+      error => alert("Error al borrar")
     );
   }
 

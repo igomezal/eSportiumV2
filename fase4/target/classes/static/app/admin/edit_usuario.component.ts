@@ -16,7 +16,7 @@ export class editUsuarioComponent {
 
   ngOnInit(){
     let id = +this._RouteParams.get('id');
-    this._UsuarioService.getUsuarioporId(id).subscribe(
+    this._UsuarioService.getUsuario(id).subscribe(
       usuario => this.usuario = usuario,
       error => console.log(error)
     );
@@ -27,7 +27,6 @@ export class editUsuarioComponent {
     if (r == true){
       let id = +this._RouteParams.get('id');
       this._UsuarioService.eliminarUsuario(id);
-      this.gotoGestionUsuarios();
     }else{
       alert("Casi la lias");
     }

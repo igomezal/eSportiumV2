@@ -131,7 +131,10 @@ export class PartidoComponent implements OnInit {
            this._ApuestaUserService.anadirApuestaUser(response,this.loginService.user).subscribe(
              response => { console.log("usuario con apuesta añadido");
              this._usuarioService.quitarKarma(this.loginService.user, parseInt(karma)).subscribe(
-               response => { console.log("Karma quitado");}
+               response => { console.log("Karma quitado");
+                this.loginService.refresh().subscribe(
+                  response => {console.log("loginService actualizado / -Karma");}
+                )}
              );}
          );}
        );

@@ -91,7 +91,9 @@ export class editarPerfil {
 
       this._usuarioService.editarDatos(user, nombre, contra, foto, correo, genero).subscribe(
         response => {alert("Usuario editado correctamente");
-          }
+          this._LoginService.refresh().subscribe(
+            response => {console.log("loginService actualizado / User");}
+          )}
       )
     }
   }

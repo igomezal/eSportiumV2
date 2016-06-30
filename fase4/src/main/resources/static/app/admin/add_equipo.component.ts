@@ -120,6 +120,5 @@ export class addEquipoComponent {
       response => { console.log(response);
         this.upload();}
     );
-    this.gotoGestionEquipos();
   }
 }

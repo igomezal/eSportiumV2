@@ -79,7 +79,7 @@ export class gestionEquiposComponent {
   borrarEquipo(equipo: Equipo) {
     this._EquipoService.eliminar(equipo.id).subscribe(
       respuesta =>  this.refresh(),
-      error => console.log(error)
+      error => alert("Error al borrar")
     );
   }
 

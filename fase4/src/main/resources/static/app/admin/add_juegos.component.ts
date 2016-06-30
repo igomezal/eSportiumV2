@@ -19,7 +19,6 @@ export class addJuegoComponent {
       this._JuegoService.anadirJuego(nombre, siglas).subscribe(
         respuesta => alert("Juego " + respuesta.nombre + " creado correctamente")
       );
-      this.gotoGestionJuegos();
     }
   }
 

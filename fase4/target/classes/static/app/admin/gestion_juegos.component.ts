@@ -67,6 +67,11 @@ export class gestionJuegosComponent {
     this.gotoMain();
   }
 
+  gotoEditJuego(juego: Juego){
+    let link = ['EditarJuego', {id: juego.id}];
+    this._Router.navigate(link);
+  }
+
   gotoaddJuego(){
     this._Router.navigate(['AddJuego']);
   }
@@ -74,7 +79,7 @@ export class gestionJuegosComponent {
   borrarJuego(juego: Juego){
     this._JuegoService.eliminar(juego.id, juego.nombre, juego.siglas).subscribe(
       respuesta => this.refresh(),
-      error => console.log(error)
+      error => alert("Error al borrar")
     );
   }
 

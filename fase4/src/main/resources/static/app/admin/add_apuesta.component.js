@@ -1,6 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../usuario.interface', '../apuesta.interface', '../apuestaUser.interface', '../login.service'], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
+System.register(['angular2/core', 'angular2/router', '../usuario.interface', '../apuesta.interface', '../apuestaUser.interface', '../login.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -99,9 +97,9 @@ System.register(['angular2/core', 'angular2/router', '../usuario.interface', '..
                     __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, router_1.Router, apuesta_interface_1.ApuestaService, apuestaUser_interface_1.ApuestaUserService, login_service_1.LoginService])
                 ], addApuestaComponent);
                 return addApuestaComponent;
-            }());
+            })();
             exports_1("addApuestaComponent", addApuestaComponent);
         }
     }
 });
-//# sourceMappingURL=add_apuesta.component.js.map
+//# sourceMappingURL=../../../../app/admin/add_apuesta.component.js.map

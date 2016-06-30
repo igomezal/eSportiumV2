@@ -46,10 +46,10 @@
                                             <a>
                                                 <div class="row">
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                                        <img class="img-responsive" alt="{{bet.apuesta.partido.equipo1.nombre}}" src="img/{{bet.apuesta.partido.equipo1.logo}}.png">
+                                                        <img class="img-responsive" alt="{{bet.apuesta.partido.equipo1.nombre}}" src="equipos/images/{{bet.apuesta.partido.equipo1.logo}}">
                                                     </div>
                                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                                        <img class="img-responsive" alt="{{bet.apuesta.partido.equipo2.nombre}}" src="img/{{bet.apuesta.partido.equipo2.logo}}.png">
+                                                        <img class="img-responsive" alt="{{bet.apuesta.partido.equipo2.nombre}}" src="equipos/images/{{bet.apuesta.partido.equipo2.logo}}">
                                                     </div>
                                                 </div>
                                                 <p *ngIf="bet.apuesta.partido.ganando == 'eq1'" class="blue-text">Apostado: {{bet.apuesta.equipo.nombre}} <span [class.hidden]="bet.apuesta.partido.estado != 'Directo'">|  Ganado: {{bet.apuesta.partido.equipo1.nombre}} </span></p>

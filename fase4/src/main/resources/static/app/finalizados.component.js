@@ -1,6 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './partido.service', './juego.interface'], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
+System.register(['angular2/core', 'angular2/router', './partido.service', './juego.interface'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,13 +36,13 @@ System.register(['angular2/core', 'angular2/router', './partido.service', './jue
                     this._Partidoservice.getPartidos().subscribe(function (partidos) { return _this.partidos = partidos; }, function (error) { return console.log(error); });
                     this._JuegoService.getJuegos().subscribe(function (juegos) { return _this.juegos = juegos; });
                     this._Partidoservice.getPartidos().subscribe(function (partidos) { return _this.arrayDirtemp = partidos; }, function (error) { return console.log(error); });
-                    this._Partidoservice.getPartidos().subscribe(function (partidos) { return _this.arrayFintemp = partidos; }, function (error) { return console.log(error); });
                 };
                 finalizadosComponent.prototype.setPruebasDir = function (s) {
                     this.arrayDirtemp = [];
                     for (var i = 0; i < this.partidos.length; i++) {
                         if (this.partidos[i].juego.siglas == s) {
                             if (this.partidos[i].estado == 'Finalizado') {
+                                console.log("HOLA");
                                 this.arrayDirtemp.push(this.partidos[i]);
                             }
                         }
@@ -79,9 +77,9 @@ System.register(['angular2/core', 'angular2/router', './partido.service', './jue
                     __metadata('design:paramtypes', [partido_service_1.PartidoService, juego_interface_1.JuegoService, router_1.Router])
                 ], finalizadosComponent);
                 return finalizadosComponent;
-            }());
+            })();
             exports_1("finalizadosComponent", finalizadosComponent);
         }
     }
 });
-//# sourceMappingURL=finalizados.component.js.map
+//# sourceMappingURL=../../../app/finalizados.component.js.map

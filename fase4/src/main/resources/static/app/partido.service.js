@@ -1,6 +1,4 @@
-System.register(['angular2/core', './jugador.interface', 'rxjs/Observable', './equipo.interface', './juego.interface', 'angular2/http', 'rxjs/Rx'], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
+System.register(['angular2/core', './jugador.interface', 'rxjs/Observable', './equipo.interface', './juego.interface', 'angular2/http', 'rxjs/Rx'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -60,7 +58,7 @@ System.register(['angular2/core', './jugador.interface', 'rxjs/Observable', './e
                     __metadata('design:paramtypes', [Number, equipo_interface_1.Equipo, equipo_interface_1.Equipo, juego_interface_1.Juego, String, String, String, String, String])
                 ], Partido);
                 return Partido;
-            }());
+            })();
             exports_1("Partido", Partido);
             PartidoService = (function () {
                 function PartidoService(service, http) {
@@ -196,9 +194,9 @@ System.register(['angular2/core', './jugador.interface', 'rxjs/Observable', './e
                     __metadata('design:paramtypes', [jugador_interface_1.JugadorService, http_1.Http])
                 ], PartidoService);
                 return PartidoService;
-            }());
+            })();
             exports_1("PartidoService", PartidoService);
         }
     }
 });
-//# sourceMappingURL=partido.service.js.map
+//# sourceMappingURL=../../../app/partido.service.js.map

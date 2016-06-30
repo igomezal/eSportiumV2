@@ -1,6 +1,4 @@
-System.register(['rxjs/Observable'], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
+System.register(['rxjs/Observable'], function(exports_1) {
     var Observable_1;
     function withObserver(data) {
         return Observable_1.Observable.create(function (observer) {
@@ -18,4 +16,4 @@ System.register(['rxjs/Observable'], function(exports_1, context_1) {
         }
     }
 });
-//# sourceMappingURL=utils.js.map
+//# sourceMappingURL=../../../app/utils.js.map

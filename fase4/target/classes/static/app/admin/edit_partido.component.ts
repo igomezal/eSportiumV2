@@ -27,7 +27,10 @@ export class editPartidoComponent{
   ngOnInit(){
     let id = +this._routeParams.get('id');
     this._Partidoservice.getPartido(id).subscribe(
-      partido => this.partido = partido,
+      partido => {this.partido = partido;
+        this.juegoN = this.partido.juego.id;
+        this.equipo1N = this.partido.equipo1.id;
+        this.equipo2N = this.partido.equipo2.id},
       error => console.log(error)
     );
     this._JuegoService.getJuegos().subscribe(
