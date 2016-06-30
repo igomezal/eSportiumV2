@@ -84,3 +84,17 @@ Funcionalidad privada: Podrá realizar apuestas, consultar su saldo de puntos ac
 
 ![Diagrama de Clases](https://github.com/igomezal/eSportiumV2/blob/master/diagrama/diagramaclasesfase3.png?raw=true)
 >Diagrama de Clases
+
+### Fase 4:
+
+![Diagrama de Clases Java](https://raw.githubusercontent.com/igomezal/eSportiumV2/master/diagrama/%C3%BAltimodiagrama.png)
+>Diagrama de Clases proyecto de Spring.
+
+
+![Diagrama ER](https://github.com/igomezal/eSportiumV2/raw/master/diagrama/Diagrama%20BBDD.png)
+>Diagrama ER.
+
+Configuración de la base de datos mysql:
+* Usuario: root
+* Contraseña: pass
+* Esquema: esportiumdb
