@@ -1,6 +1,4 @@
-System.register(['angular2/core', 'angular2/router', '../usuario.interface'], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
+System.register(['angular2/core', 'angular2/router', '../usuario.interface', '../login.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -10,7 +8,7 @@ System.register(['angular2/core', 'angular2/router', '../usuario.interface'], fu
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, usuario_interface_1;
+    var core_1, router_1, usuario_interface_1, login_service_1;
     var gestionUsuariosComponent;
     return {
         setters:[
@@ -22,14 +20,22 @@ System.register(['angular2/core', 'angular2/router', '../usuario.interface'], fu
             },
             function (usuario_interface_1_1) {
                 usuario_interface_1 = usuario_interface_1_1;
+            },
+            function (login_service_1_1) {
+                login_service_1 = login_service_1_1;
             }],
         execute: function() {
             gestionUsuariosComponent = (function () {
-                function gestionUsuariosComponent(_UsuarioService, _Router) {
+                function gestionUsuariosComponent(_UsuarioService, _LoginService, _Router) {
                     this._UsuarioService = _UsuarioService;
+                    this._LoginService = _LoginService;
                     this._Router = _Router;
                 }
                 gestionUsuariosComponent.prototype.ngOnInit = function () {
+                    var _this = this;
+                    this._UsuarioService.getUsuarios().subscribe(function (usuarios) { return _this.usuarios = usuarios; }, function (error) { return console.log(error); });
+                };
+                gestionUsuariosComponent.prototype.refresh = function () {
                     var _this = this;
                     this._UsuarioService.getUsuarios().subscribe(function (usuarios) { return _this.usuarios = usuarios; }, function (error) { return console.log(error); });
                 };
@@ -79,17 +85,28 @@ System.register(['angular2/core', 'angular2/router', '../usuario.interface'], fu
                         });
                     }
                 };
+                gestionUsuariosComponent.prototype.nuevokarma = function () {
+                    var _this = this;
+                    this._UsuarioService.nuevokarma().subscribe(function (response) {
+                        _this._LoginService.refresh().subscribe(function (response) { return console.log("Actualizado loginService"); });
+                        _this.refresh();
+                        alert("A todos los usuarios se les ha añadido 2000 puntos de karma");
+                    }, function (error) {
+                        console.log(error);
+                        alert("No se ha podido realizar la operación con exito");
+                    });
+                };
                 gestionUsuariosComponent = __decorate([
                     core_1.Component({
                         selector: 'gestionUsuarios',
                         templateUrl: 'app/admin/gestion_usuarios.html'
                     }), 
-                    __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, router_1.Router])
+                    __metadata('design:paramtypes', [usuario_interface_1.UsuarioService, login_service_1.LoginService, router_1.Router])
                 ], gestionUsuariosComponent);
                 return gestionUsuariosComponent;
-            }());
+            })();
             exports_1("gestionUsuariosComponent", gestionUsuariosComponent);
         }
     }
 });
-//# sourceMappingURL=gestion_usuarios.component.js.map
+//# sourceMappingURL=../../../../app/admin/gestion_usuarios.component.js.map

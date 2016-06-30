@@ -22,6 +22,10 @@ export class LoginService {
 		this.reqIsLogged();
 	}
 
+  setUser(user: Usuario){
+    this.user = user;
+  }
+
   refresh(){
     let url = "https://localhost:8443/ref/";
     return this.http.get(url)

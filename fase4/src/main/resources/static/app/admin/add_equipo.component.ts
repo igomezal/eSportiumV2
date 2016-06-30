@@ -115,10 +115,12 @@ export class addEquipoComponent {
     this.gotoMain();
   }
 
-  anadir(nombre:string, logo:string){
-    this._EquipoService.anadirEquipo(nombre, logo).subscribe(
+  anadir(nombre:string){
+    let logo = "temp";
+    this._EquipoService.anadirEquipo(nombre,logo).subscribe(
       response => { console.log(response);
-        this.upload();}
+        this.upload();
+        alert("El equipo se añadió correctamente");}
     );
   }
 }

@@ -1,6 +1,4 @@
-System.register(['angular2/core', 'angular2/router', './usuario.interface', './login.service'], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
+System.register(['angular2/core', 'angular2/router', './usuario.interface', './login.service'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -75,7 +73,10 @@ System.register(['angular2/core', 'angular2/router', './usuario.interface', './l
                     document.head.appendChild(h);
                 };
                 CabeceraComponent.prototype.actualizar = function () {
-                    this.loginService.refresh().subscribe(function (response) { return undefined; });
+                    var _this = this;
+                    if (this.loginService.isLogged == true) {
+                        this._usuarioService.refLogged(this.loginService.user.id).subscribe(function (user) { return _this.loginService.setUser(user); });
+                    }
                 };
                 CabeceraComponent.prototype.getKarmaFromSession = function (usuario) {
                     var karm = this._usuarioService.getKarma(usuario);
@@ -97,9 +98,9 @@ System.register(['angular2/core', 'angular2/router', './usuario.interface', './l
                     __metadata('design:paramtypes', [router_1.Router, usuario_interface_1.UsuarioService, login_service_1.LoginService])
                 ], CabeceraComponent);
                 return CabeceraComponent;
-            }());
+            })();
             exports_1("CabeceraComponent", CabeceraComponent);
         }
     }
 });
-//# sourceMappingURL=cabecera.component.js.map
+//# sourceMappingURL=../../../app/cabecera.component.js.map

@@ -205,6 +205,13 @@ export class UsuarioService{
     }
   }
 
+  refLogged(id: number){
+    let url = "https://localhost:8443/usuarios/actLog/"+id;
+    return this.http.get(url)
+      .map(response => response.json())
+      .catch(error => this.manejarError(error));
+  }
+
   getKarma(usuario: Usuario){
     return usuario.karma;
   }
@@ -212,5 +219,16 @@ export class UsuarioService{
   private manejarError(error:any){
     console.log(error);
     return Observable.throw("Server error (" + error.status + "): " + error.text);
+  }
+
+  nuevokarma(){
+    let url = "https://localhost:8443/usuarios/karmanuevo";
+    let headers = new Headers({
+      'Content-Type' : 'application/json'
+    });
+    let options = new RequestOptions({headers});
+    return this.http.put(url,null,options)
+      .map(response => response.json)
+      .catch(error => this.manejarError(error));
   }
 }

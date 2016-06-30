@@ -179,6 +179,22 @@ public class UserController {
 		}
 	}
 	
+	@RequestMapping(value ="/karmanuevo", method = RequestMethod.PUT)
+	public void karmaNuevo(){
+		if(usercomponent.getLoggedUser().getRoles().contains("ROLE_ADMIN")){
+			List<User> listaUser = new ArrayList<User>();
+			listaUser = repository.findAll();
+			
+			for(int i = 0; i<listaUser.size();i++){
+				User u = listaUser.get(i);
+				u.setKarma(u.getKarma() + 2000);
+				repository.save(u);
+			}
+			User u = repository.findOne(usercomponent.getLoggedUser().getId());
+			usercomponent.setLoggedUser(u);
+		}
+	}
+	
 	//Método igual que el put pero solamente para actualizar el karma, requiere privilegios de Admin
 	@JsonView(UserListView.class)
 	@RequestMapping(value ="/actKarma/{id}", method = RequestMethod.PUT)

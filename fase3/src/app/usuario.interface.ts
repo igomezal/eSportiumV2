@@ -220,4 +220,15 @@ export class UsuarioService{
     console.log(error);
     return Observable.throw("Server error (" + error.status + "): " + error.text);
   }
+
+  nuevokarma(){
+    let url = "https://localhost:8443/usuarios/karmanuevo";
+    let headers = new Headers({
+      'Content-Type' : 'application/json'
+    });
+    let options = new RequestOptions({headers});
+    return this.http.put(url,null,options)
+      .map(response => response.json)
+      .catch(error => this.manejarError(error));
+  }
 }

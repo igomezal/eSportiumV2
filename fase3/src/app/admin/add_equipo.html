@@ -15,7 +15,6 @@
                               <li><a (click)="gotoGestionJuegos()"><i class="fa fa-gamepad"></i> <span>Juegos</span></a></li>
                               <li><a (click)="gotoGestionPartidos()"><i class="fa fa-book"></i> <span>Partidos</span></a></li>
                               <li><a (click)="gotoGestionUsuarios()"><i class="fa fa-users"></i> <span>Usuarios</span></a></li>
-                              <li><a (click)="gotoAjustes()"><i class="fa fa-cogs"></i> <span>Ajustes</span></a></li>
                           </ul>
                       </nav>
                   </div>
@@ -51,12 +50,11 @@
                                     <label>Nombre del nuevo equipo:</label>
                                     <input type="text" class="form-control" #nombre placeholder="Introduce el nombre del equipo">
                                     <label>Logo del equipo:</label>
-                                    <input type="text" class="form-control" #logo placeholder="Logo">
                                     <label for="exampleInputFile">Selecciona el logo del equipo</label> <input type="file"
                               				(change)="selectFile($event)">
                                     <br>
                                     <div class="pull-right">
-                                        <button type="button" (click)="anadir(nombre.value,logo.value)" class="btn btn-success">Publicar</button>
+                                        <button type="button" (click)="anadir(nombre.value)" class="btn btn-success">Publicar</button>
                                         <button type="button" (click)="gotoGestionEquipos()" class="btn btn-danger">Cancelar</button>
                                     </div>
                                 </div>

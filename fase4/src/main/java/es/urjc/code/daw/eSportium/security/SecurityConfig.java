@@ -75,7 +75,29 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/usuarios").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.GET, "/editUsuario/**").hasRole("ADMIN");
 		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/editUsuario/**").hasRole("ADMIN");
-		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/editUsuario/**").hasRole("ADMIN");		
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/usuarios/karmanuevo/").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/editUsuario/**").hasRole("ADMIN");
+		
+		
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/equipos/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/equipos/").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/equipos/**").hasRole("ADMIN");
+		
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/jugadores/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/jugadores/").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/jugadores/**").hasRole("ADMIN");
+		
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/juegos/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/juegos/").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/juegos/**").hasRole("ADMIN");
+		
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/apuestaUser/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/apuestaUser/").hasRole("USER");
+		
+		http.authorizeRequests().antMatchers(HttpMethod.PUT, "/apuestas/**").hasRole("ADMIN");
+		http.authorizeRequests().antMatchers(HttpMethod.POST, "/apuestas/").hasRole("USER");
+		http.authorizeRequests().antMatchers(HttpMethod.DELETE, "/apuestas/**").hasRole("ADMIN");
+
 
 		// Other URLs can be accessed without authentication
 		http.authorizeRequests().anyRequest().permitAll();

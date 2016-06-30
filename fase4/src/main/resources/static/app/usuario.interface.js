@@ -1,6 +1,4 @@
-System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http', 'rxjs/Rx'], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
+System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http', 'rxjs/Rx'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -46,7 +44,7 @@ System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http',
                     this.roles = roles;
                 }
                 return Usuario;
-            }());
+            })();
             exports_1("Usuario", Usuario);
             UsuarioService = (function () {
                 function UsuarioService(http) {
@@ -232,14 +230,25 @@ System.register(['angular2/core', 'rxjs/Observable', './utils', 'angular2/http',
                     console.log(error);
                     return Observable_1.Observable.throw("Server error (" + error.status + "): " + error.text);
                 };
+                UsuarioService.prototype.nuevokarma = function () {
+                    var _this = this;
+                    var url = "https://localhost:8443/usuarios/karmanuevo";
+                    var headers = new http_1.Headers({
+                        'Content-Type': 'application/json'
+                    });
+                    var options = new http_1.RequestOptions({ headers: headers });
+                    return this.http.put(url, null, options)
+                        .map(function (response) { return response.json; })
+                        .catch(function (error) { return _this.manejarError(error); });
+                };
                 UsuarioService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [http_1.Http])
                 ], UsuarioService);
                 return UsuarioService;
-            }());
+            })();
             exports_1("UsuarioService", UsuarioService);
         }
     }
 });
-//# sourceMappingURL=usuario.interface.js.map
+//# sourceMappingURL=../../../app/usuario.interface.js.map

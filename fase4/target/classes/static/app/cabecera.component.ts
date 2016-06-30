@@ -34,11 +34,11 @@ export class CabeceraComponent implements OnInit{
 
   goToInicio(){
     if(this.loginService.isLogged == true){
-      this.loginService.refresh().subscribe(
-        response => undefined
+      this._usuarioService.refLogged(this.loginService.user.id).subscribe(
+        user => this.loginService.setUser(user)
       );
-      this._router.navigate(['Inicio']);
     }
+    this._router.navigate(['Inicio']);
   }
 
   goToFinalizados(){
@@ -83,9 +83,11 @@ export class CabeceraComponent implements OnInit{
    }
 
    actualizar(){
-     this.loginService.refresh().subscribe(
-       response => undefined
-     );
+     if(this.loginService.isLogged == true){
+      this._usuarioService.refLogged(this.loginService.user.id).subscribe(
+        user => this.loginService.setUser(user)
+      );
+    }
    }
 
    getKarmaFromSession(usuario: Usuario){
